@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forged Grappling — No-Gi Submission Grappling · Westbury, Wiltshire</title>
+<meta name="description" content="Westbury's only dedicated no-gi submission grappling gym. Structured curriculum, 4 coaches with 80+ competition wins, 5 days a week. Free trial class, founding membership from £50/month.">
+<!-- TODO: Replace YOUR-DOMAIN with actual domain once connected -->
+<link rel="canonical" href="https://YOUR-DOMAIN/">
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Forged Grappling — No-Gi Submission Grappling · Westbury, Wiltshire">
+<meta property="og:description" content="Westbury's only dedicated no-gi grappling gym. Structured curriculum, 4 coaches with 80+ competition wins, 5 days a week. Free trial class, founding membership from £50/month.">
+<!-- TODO: Replace with actual OG image URL (recommended 1200x630px) -->
+<meta property="og:image" content="https://YOUR-DOMAIN/og-image.jpg">
+<meta property="og:url" content="https://YOUR-DOMAIN/">
+<meta property="og:site_name" content="Forged Grappling">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --green: #4A5C38;
+  --green-mid: #566b41;
+  --green-light: #637d4a;
+  --silver: #9BA2AA;
+  --iron: #1E2020;
+  --iron-mid: #242727;
+  --iron-light: #2c2f2f;
+  --iron-border: rgba(255,255,255,0.07);
+  --brushed: #C4C7CA;
+  --white: #FFFFFF;
+  --green-tint: rgba(74,92,56,0.12);
+  --green-border: rgba(74,92,56,0.35);
+}
+
+body { background: var(--iron); color: var(--white); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+
+/* ─── UTILITY ─── */
+.label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-light); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.label::before { content: ''; width: 28px; height: 1px; background: var(--green-light); flex-shrink: 0; }
+h1,h2,h3,h4 { font-family: 'Manrope', sans-serif; line-height: 1.05; }
+.btn-green { display: inline-block; background: var(--green); color: var(--white); padding: 0.9rem 2.2rem; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.88rem; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; }
+.btn-green:hover { background: var(--green-mid); transform: translateY(-1px); }
+.btn-ghost { display: inline-block; border: 1px solid rgba(196,199,202,0.3); color: var(--brushed); padding: 0.9rem 2.2rem; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.88rem; letter-spacing: 0.06em; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.btn-ghost:hover { border-color: var(--white); color: var(--white); }
+.btn-full { width: 100%; text-align: center; display: block; }
+.section-wrap { padding: 6rem 5rem; }
+@media (max-width: 1024px) { .section-wrap { padding: 5rem 2rem; } }
+@media (max-width: 640px) { .section-wrap { padding: 4rem 1.25rem; } }
+
+/* ─── NAV ─── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 5rem; background: rgba(30,32,32,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--iron-border); }
+.nav-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; text-transform: uppercase; }
+.nav-logo span { color: var(--green-light); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+.nav-links a { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.08em; color: var(--silver); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--green) !important; color: var(--white) !important; padding: 0.55rem 1.4rem; font-weight: 500 !important; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--green-mid) !important; }
+@media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } }
+
+/* ─── SKIP LINK ─── */
+.skip-link { position: absolute; top: -100%; left: 1rem; background: var(--green); color: var(--white); padding: 0.6rem 1.2rem; z-index: 300; font-family: 'Inter', sans-serif; font-size: 0.85rem; text-decoration: none; }
+.skip-link:focus { top: 0.5rem; }
+
+/* ─── HAMBURGER ─── */
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; width: 36px; height: 36px; position: relative; z-index: 250; }
+.nav-hamburger span { display: block; width: 20px; height: 1.5px; background: var(--white); margin: 4px auto; transition: transform 0.25s, opacity 0.2s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+@media (max-width: 900px) { .nav-hamburger { display: block; } }
+
+/* ─── MOBILE NAV ─── */
+.mobile-nav { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 199; background: rgba(30,32,32,0.98); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+.mobile-nav.open { opacity: 1; pointer-events: auto; }
+.mobile-nav-links { display: flex; flex-direction: column; gap: 1.5rem; text-align: center; }
+.mobile-nav-links a { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; transition: color 0.2s; }
+.mobile-nav-links a:hover { color: var(--green-light); }
+
+/* ─── HERO ─── */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 5rem; padding-top: 72px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px), repeating-linear-gradient(0deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px); pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--iron-border); }
+.hero-content { position: relative; z-index: 2; padding-right: 3rem; padding-top: 2rem; padding-bottom: 2rem; }
+.hero-location { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-light); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
+.hero-location::before { content: ''; width: 28px; height: 1px; background: var(--green-light); }
+.hero h1 { font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; color: var(--white); margin-bottom: 1.5rem; line-height: 1.08; }
+.hero h1 em { font-style: normal; color: var(--green-light); }
+.hero-sub { font-size: 1rem; font-weight: 300; color: var(--brushed); line-height: 1.75; max-width: 480px; margin-bottom: 2rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.85rem; }
+.hero-reassure { font-size: 0.75rem; color: var(--silver); }
+.hero-reassure a { color: var(--green-light); text-decoration: none; border-bottom: 1px solid rgba(99,125,74,0.4); transition: border-color 0.2s; }
+.hero-reassure a:hover { border-color: var(--green-light); }
+
+/* Hero right — VSL */
+.hero-right { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 2px; }
+.vsl-wrap { position: relative; background: var(--iron-mid); border: 1px solid var(--green-border); overflow: hidden; }
+.vsl-placeholder { width: 100%; padding-top: 56.25%; position: relative; background: var(--iron-light); cursor: pointer; }
+.vsl-placeholder:hover .vsl-play { background: var(--green-mid); }
+.vsl-thumb-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
+.vsl-play { width: 64px; height: 64px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.15s; }
+.vsl-play:hover { transform: scale(1.05); }
+.vsl-play svg { width: 22px; height: 22px; fill: var(--white); margin-left: 4px; }
+.vsl-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--silver); }
+.vsl-duration { font-size: 0.7rem; color: rgba(138,145,153,0.6); }
+
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(74,92,56,0.15); margin-top: 2px; }
+.stat-cell { background: var(--iron-mid); padding: 1rem; text-align: center; }
+.stat-num { font-family: 'Manrope', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--green-light); line-height: 1; margin-bottom: 0.25rem; }
+.stat-lbl { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--silver); }
+
+.founding-banner { background: var(--green-tint); border: 1px solid var(--green-border); padding: 0.9rem 1.25rem; margin-top: 2px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.founding-banner-text { font-size: 0.8rem; color: var(--brushed); }
+.founding-banner-text strong { color: var(--white); font-weight: 600; }
+.spots-counter { font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 800; color: var(--green-light); white-space: nowrap; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-location { animation: fadeUp 0.5s ease 0.1s both; }
+.hero h1 { animation: fadeUp 0.5s ease 0.25s both; }
+.hero-sub { animation: fadeUp 0.5s ease 0.38s both; }
+.hero-actions { animation: fadeUp 0.5s ease 0.48s both; }
+.hero-right { animation: fadeUp 0.6s ease 0.4s both; }
+
+@media (max-width: 900px) { .hero { grid-template-columns: 1fr; padding: 5.5rem 1.5rem 4rem; gap: 2.5rem; } .hero-content { padding-right: 0; } .hero-stats { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 480px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
+
+
+
+/* ─── PROBLEM ─── */
+.problem { background: var(--iron-mid); }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.problem h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1.25rem; }
+.problem h2 em { font-style: normal; color: var(--silver); }
+.problem-body { color: var(--brushed); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+.complaint-list { list-style: none; display: flex; flex-direction: column; gap: 1px; background: rgba(74,92,56,0.12); margin-top: 1.5rem; }
+.complaint-item { background: var(--iron); padding: 1.1rem 1.25rem; display: flex; gap: 1rem; align-items: flex-start; border-left: 2px solid transparent; transition: border-color 0.2s, background 0.2s; }
+.complaint-item:hover { background: var(--iron-light); border-color: var(--green); }
+.complaint-dot { width: 5px; height: 5px; background: var(--green-light); flex-shrink: 0; border-radius: 50%; margin-top: 0.5rem; }
+.complaint-text { font-style: italic; color: var(--brushed); font-size: 0.88rem; line-height: 1.65; }
+@media (max-width: 860px) { .problem-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+/* ─── CLA ─── */
+.cla { background: var(--iron); }
+.cla-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.cla h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1.25rem; }
+.cla-body { color: var(--brushed); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+.cla-closer { font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--iron-border); }
+.cla-compare { display: flex; flex-direction: column; gap: 2px; }
+.compare-card { padding: 2rem; }
+.compare-old { background: var(--iron-mid); }
+.compare-new { background: var(--green-tint); border: 1px solid var(--green-border); }
+.compare-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1rem; }
+.tag-old { color: var(--silver); }
+.tag-new { color: var(--green-light); }
+.compare-title { font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+.compare-steps { display: flex; flex-direction: column; gap: 0.6rem; }
+.compare-step { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.85rem; color: var(--brushed); }
+.compare-step strong { color: var(--white); font-weight: 500; }
+.compare-step.dim { opacity: 0.4; text-decoration: line-through; }
+.step-arrow { color: var(--silver); font-size: 0.75rem; margin-top: 0.15rem; flex-shrink: 0; }
+.step-arrow-green { color: var(--green-light); font-size: 0.75rem; margin-top: 0.15rem; flex-shrink: 0; }
+.compare-note { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--green-border); font-size: 0.78rem; color: var(--silver); line-height: 1.6; }
+@media (max-width: 860px) { .cla-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+/* ─── COACHES ─── */
+.coaches { background: var(--iron-mid); }
+.coaches-intro { max-width: 600px; margin-bottom: 3rem; }
+.coaches-intro h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; }
+.coaches-intro p { color: var(--brushed); font-size: 0.92rem; line-height: 1.75; }
+.coaches-intro p em { font-style: normal; background: var(--green-tint); border: 1px solid var(--green-border); padding: 0.12rem 0.45rem; font-size: 0.85rem; color: var(--brushed); }
+.coaches-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(74,92,56,0.1); }
+.coach-card { background: var(--iron); overflow: hidden; position: relative; transition: background 0.2s; }
+.coach-card:hover { background: var(--iron-light); }
+.coach-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+.coach-card:hover::before { transform: scaleX(1); }
+.coach-avatar { width: 100%; padding-top: 70%; position: relative; background: var(--iron-light); }
+.coach-avatar-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.coach-initials { font-family: 'Manrope', sans-serif; font-size: 2.2rem; font-weight: 800; color: rgba(74,92,56,0.45); }
+.coach-photo-note { position: absolute; bottom: 0.6rem; left: 0.75rem; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--silver); background: rgba(30,32,32,0.75); padding: 0.25rem 0.45rem; }
+.coach-body { padding: 1.25rem 1.25rem 1.5rem; }
+.coach-name { font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+.coach-tag { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--silver); margin-bottom: 0.85rem; line-height: 1.5; }
+.coach-wins { display: inline-block; background: var(--green-tint); border: 1px solid var(--green-border); color: var(--green-light); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.28rem 0.65rem; }
+@media (max-width: 860px) { .coaches-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .coaches-grid { grid-template-columns: 1fr; } }
+
+/* ─── WHO ─── */
+.who { background: var(--iron); }
+.who-header { text-align: center; max-width: 560px; margin: 0 auto 3.5rem; }
+.who-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.6rem; }
+.who-header p { color: var(--silver); font-size: 0.92rem; }
+.who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(74,92,56,0.1); }
+.who-card { background: var(--iron-mid); padding: 2.5rem; position: relative; overflow: hidden; }
+.who-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green); }
+.who-tag { display: inline-block; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-light); background: var(--green-tint); border: 1px solid var(--green-border); padding: 0.3rem 0.75rem; margin-bottom: 1.25rem; }
+.who-card h3 { font-size: clamp(1.3rem, 1.8vw, 1.6rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; line-height: 1.1; }
+.who-card p { color: var(--brushed); font-size: 0.92rem; line-height: 1.75; margin-bottom: 1rem; }
+.who-points { list-style: none; margin: 1.25rem 0 1.75rem; display: flex; flex-direction: column; gap: 0.55rem; }
+.who-points li { display: flex; gap: 0.7rem; align-items: flex-start; font-size: 0.86rem; color: var(--silver); line-height: 1.5; }
+.who-points li::before { content: ''; width: 4px; height: 4px; background: var(--green-light); flex-shrink: 0; margin-top: 0.5rem; border-radius: 50%; }
+@media (max-width: 800px) { .who-grid { grid-template-columns: 1fr; } .who-card { padding: 2rem; } }
+
+/* ─── SCHEDULE ─── */
+.schedule { background: var(--iron-mid); }
+.schedule-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1.5rem; }
+.schedule-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); }
+.schedule-compact { max-width: 640px; display: flex; flex-direction: column; gap: 2px; background: rgba(74,92,56,0.12); }
+.schedule-days-bar { background: var(--iron); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+.schedule-days-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-light); flex-shrink: 0; }
+.schedule-days-list { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.schedule-day-pill { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--brushed); background: var(--iron-mid); border: 1px solid var(--iron-border); padding: 0.3rem 0.7rem; }
+.schedule-row { background: var(--iron); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: 1rem 1.5rem; align-items: start; border-left: 2px solid transparent; transition: border-color 0.2s, background 0.2s; }
+.schedule-row:hover { background: var(--iron-light); }
+.schedule-row.foundations:hover { border-color: var(--green); }
+.schedule-row.alllevels:hover { border-color: var(--brushed); }
+.schedule-row-time { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; color: var(--silver); white-space: nowrap; padding-top: 0.1rem; }
+.schedule-row-name { font-size: 0.95rem; font-weight: 500; color: var(--white); margin-bottom: 0.2rem; }
+.schedule-row-desc { font-size: 0.82rem; color: var(--silver); line-height: 1.55; }
+
+/* ─── VALUE STACK ─── */
+.pricing { background: var(--iron); }
+.pricing-header { text-align: center; max-width: 560px; margin: 0 auto 3.5rem; }
+.pricing-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; }
+.pricing-header p { color: var(--silver); font-size: 0.92rem; }
+.value-stack { max-width: 860px; margin: 0 auto 3rem; background: var(--iron-mid); border: 1px solid var(--green-border); overflow: hidden; }
+.value-stack-header { background: var(--green-tint); border-bottom: 1px solid var(--green-border); padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+.value-stack-header-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-light); }
+.value-stack-header-sub { font-size: 0.8rem; color: var(--silver); }
+.value-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; padding: 1rem 2rem; border-bottom: 1px solid var(--iron-border); transition: background 0.15s; }
+.value-row:last-child { border-bottom: none; }
+.value-row:hover { background: var(--iron-light); }
+.value-row.bonus { background: rgba(74,92,56,0.04); }
+.value-row-left { display: flex; align-items: flex-start; gap: 0.9rem; }
+.value-row-dot { width: 5px; height: 5px; background: var(--green-light); flex-shrink: 0; border-radius: 50%; margin-top: 0.42rem; }
+.value-row-name { font-size: 0.9rem; font-weight: 500; color: var(--white); }
+.value-row-badge { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--green-tint); border: 1px solid var(--green-border); color: var(--green-light); padding: 0.15rem 0.4rem; margin-left: 0.45rem; vertical-align: middle; }
+.value-row-desc { font-size: 0.76rem; color: var(--silver); margin-top: 0.18rem; }
+.value-row-price { font-family: 'Manrope', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--brushed); white-space: nowrap; text-align: right; }
+.value-stack-total { background: var(--iron-light); border-top: 2px solid var(--green-border); padding: 1.25rem 2rem; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; }
+.value-total-label { font-size: 0.78rem; font-weight: 500; color: var(--silver); text-transform: uppercase; letter-spacing: 0.1em; }
+.value-total-amount { font-family: 'Manrope', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--white); text-align: right; }
+.value-total-sub { font-size: 0.7rem; font-weight: 400; color: var(--silver); display: block; text-align: right; margin-top: 0.1rem; }
+.value-stack-cta-row { background: var(--green-tint); border-top: 1px solid var(--green-border); padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.value-cta-text { font-size: 0.9rem; color: var(--white); line-height: 1.6; }
+.value-cta-text strong { color: var(--green-light); font-weight: 700; }
+.saving-badge { display: inline-block; background: var(--green); color: var(--white); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; padding: 0.18rem 0.55rem; margin-left: 0.4rem; vertical-align: middle; }
+
+/* ─── GUARANTEE ─── */
+.guarantee-block { max-width: 860px; margin: 0 auto 2.5rem; background: var(--iron-mid); border: 1px solid var(--iron-border); display: grid; grid-template-columns: auto 1fr; overflow: hidden; }
+.guarantee-icon-col { background: var(--green-tint); border-right: 1px solid var(--green-border); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; min-width: 95px; }
+.guarantee-num { font-family: 'Manrope', sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--green-light); line-height: 1; }
+.guarantee-day-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--silver); text-align: center; }
+.guarantee-body-col { padding: 1.5rem 2rem; }
+.guarantee-title { font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--white); letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.guarantee-text { font-size: 0.87rem; color: var(--brushed); line-height: 1.75; }
+.guarantee-text strong { color: var(--white); font-weight: 600; }
+
+/* ─── PRICING CARDS ─── */
+.pricing-grid { display: grid; grid-template-columns: 1fr 1.12fr 1fr; gap: 2px; background: rgba(74,92,56,0.1); max-width: 860px; margin: 0 auto; }
+.price-card { background: var(--iron-mid); padding: 2.25rem 1.75rem; position: relative; }
+.price-card.featured { background: var(--iron-light); border: 1px solid var(--green-border); }
+.featured-badge { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--green); color: var(--white); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.3rem 0.9rem; white-space: nowrap; }
+.price-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); margin-bottom: 1.1rem; margin-top: 0.6rem; }
+.price-amount { font-family: 'Manrope', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--white); line-height: 1; margin-bottom: 0.25rem; }
+.price-amount span { font-size: 1.1rem; font-weight: 500; color: var(--silver); vertical-align: super; margin-right: 0.08rem; }
+.price-per { font-size: 0.75rem; color: var(--silver); margin-bottom: 1.5rem; }
+.price-features { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem; }
+.price-features li { display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.85rem; color: var(--brushed); line-height: 1.5; }
+.price-features li::before { content: ''; width: 4px; height: 4px; background: var(--green-light); flex-shrink: 0; margin-top: 0.52rem; border-radius: 50%; }
+.price-features li.highlight { color: var(--white); font-weight: 500; }
+.price-features li.highlight::before { background: var(--green); width: 5px; height: 5px; }
+.spots-remaining { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 1.25rem; padding: 0.65rem 0.9rem; background: var(--green-tint); border: 1px solid var(--green-border); }
+.spots-dot { width: 6px; height: 6px; background: var(--green-light); border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.spots-text { font-size: 0.76rem; color: var(--brushed); }
+.spots-text strong { color: var(--white); font-weight: 600; }
+.price-note { font-size: 0.76rem; color: var(--silver); line-height: 1.6; margin-bottom: 1.25rem; padding-top: 0.9rem; border-top: 1px solid var(--iron-border); font-style: italic; }
+.pricing-footer { max-width: 860px; margin: 2rem auto 0; padding: 1.25rem 1.75rem; background: var(--iron-mid); border: 1px solid var(--iron-border); }
+.pricing-footer p { font-size: 0.85rem; color: var(--silver); line-height: 1.75; }
+.pricing-footer p strong { color: var(--white); }
+@media (max-width: 800px) { .pricing-grid { grid-template-columns: 1fr; max-width: 400px; } .guarantee-block { grid-template-columns: 1fr; } .guarantee-icon-col { flex-direction: row; padding: 1.1rem 1.5rem; border-right: none; border-bottom: 1px solid var(--green-border); min-width: unset; gap: 0.75rem; } .value-row { padding: 0.9rem 1.25rem; } .value-stack-header, .value-stack-total, .value-stack-cta-row { padding: 1.1rem 1.25rem; } }
+
+/* ─── FAQ ─── */
+.faq { background: var(--iron-mid); }
+.faq-header { max-width: 540px; margin-bottom: 3rem; }
+.faq-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.6rem; }
+.faq-header p { color: var(--silver); font-size: 0.92rem; }
+.faq-list { max-width: 760px; display: flex; flex-direction: column; gap: 2px; }
+.faq-item { background: var(--iron); overflow: hidden; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; background: none; border: none; cursor: pointer; text-align: left; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 500; color: var(--white); transition: background 0.2s; }
+.faq-q:hover { background: var(--iron-light); }
+.faq-icon { width: 18px; height: 18px; flex-shrink: 0; border: 1px solid var(--iron-border); display: flex; align-items: center; justify-content: center; position: relative; }
+.faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--silver); transition: transform 0.25s, opacity 0.25s; }
+.faq-icon::before { width: 7px; height: 1px; }
+.faq-icon::after { width: 1px; height: 7px; }
+.faq-item.open .faq-icon::after { transform: rotate(90deg); opacity: 0; }
+.faq-item.open .faq-q { background: var(--iron-light); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s; padding: 0 1.5rem; }
+.faq-item.open .faq-a { max-height: 400px; padding: 0 1.5rem 1.5rem; }
+.faq-a p { font-size: 0.88rem; color: var(--brushed); line-height: 1.8; }
+
+/* ─── CLOSE ─── */
+.close-section { background: var(--iron); padding: 7rem 5rem; position: relative; overflow: hidden; }
+.close-section::before { content: 'FORGED'; position: absolute; right: -1rem; top: 50%; transform: translateY(-50%); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 15rem; color: rgba(74,92,56,0.06); pointer-events: none; line-height: 1; white-space: nowrap; }
+.close-inner { position: relative; z-index: 2; max-width: 600px; }
+.close-section h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; text-transform: uppercase; color: var(--white); line-height: 1.1; margin-bottom: 1.25rem; }
+.close-body { color: var(--brushed); font-size: 0.97rem; line-height: 1.8; margin-bottom: 2rem; }
+.close-body strong { color: var(--white); }
+.close-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.close-contact { font-size: 0.8rem; color: var(--silver); }
+.close-contact a { color: var(--green-light); text-decoration: none; }
+.urgency-inline { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--green-tint); border: 1px solid var(--green-border); padding: 0.4rem 0.9rem; font-size: 0.78rem; color: var(--brushed); margin-bottom: 1.75rem; }
+.urgency-dot { width: 6px; height: 6px; background: var(--green-light); border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
+.urgency-inline strong { color: var(--white); }
+@media (max-width: 640px) { .close-section { padding: 5rem 1.5rem; } }
+
+/* ─── FOOTER ─── */
+footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--iron-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-left {}
+.footer-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
+.footer-logo span { color: var(--green-light); }
+.footer-tagline { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); margin-top: 0.35rem; }
+.footer-address { font-size: 0.8rem; color: rgba(138,145,153,0.6); margin-top: 0.35rem; }
+.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.78rem; color: var(--silver); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-contact { font-size: 0.78rem; color: rgba(138,145,153,0.6); }
+.footer-contact a { color: rgba(138,145,153,0.6); text-decoration: none; transition: color 0.2s; }
+.footer-contact a:hover { color: var(--silver); }
+.footer-copy { font-size: 0.72rem; color: rgba(138,145,153,0.4); }
+.footer-social { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
+.social-icon { color: rgba(138,145,153,0.5); display: flex; align-items: center; transition: color 0.2s; }
+.social-icon:hover { color: #637d4a; }
+@media (max-width: 640px) { footer { padding: 2rem 1.5rem; } .footer-right { align-items: flex-start; } }
+
+/* ─── COOKIE BANNER ─── */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: #242727;
+  border-top: 1px solid rgba(74,92,56,0.35);
+  padding: 1.25rem 5rem;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
+}
+#cookie-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+#cookie-banner-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+#cookie-banner-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #C4C7CA;
+  line-height: 1.6;
+  max-width: 680px;
+}
+#cookie-banner-body a {
+  color: #637d4a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(99,125,74,0.4);
+}
+#cookie-banner-body a:hover { border-color: #637d4a; }
+#cookie-banner-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+#cookie-decline {
+  background: transparent;
+  border: 1px solid rgba(196,199,202,0.3);
+  color: #C4C7CA;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+#cookie-decline:hover { border-color: #ffffff; color: #ffffff; }
+#cookie-accept {
+  background: #4A5C38;
+  border: 1px solid #4A5C38;
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#cookie-accept:hover { background: #566b41; }
+@media (max-width: 768px) {
+  #cookie-banner { padding: 1.25rem 1.5rem; }
+  #cookie-banner-actions { width: 100%; }
+  #cookie-decline, #cookie-accept { flex: 1; text-align: center; }
+}
+
+/* ─── VSL COMING SOON ─── */
+.vsl-coming-soon {
+  position: absolute;
+  inset: 0;
+  background: rgba(30,32,32,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--silver);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.vsl-coming-soon.visible { opacity: 1; }
+</style>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Forged Grappling",
+  "description": "Westbury's only dedicated no-gi submission grappling gym. 4 coaches, 80+ competition wins, 5 days a week.",
+  "url": "https://YOUR-DOMAIN/",
+  "telephone": "+447513104760",
+  "email": "info@forgedgrappling.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 21 Woodland Industrial Estate, Eden Vale Road",
+    "addressLocality": "Westbury",
+    "addressRegion": "Wiltshire",
+    "postalCode": "BA13 3QS",
+    "addressCountry": "GB"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "18:00",
+      "closes": "20:00"
+    }
+  ],
+  "priceRange": "£10-£80",
+  "currenciesAccepted": "GBP",
+  "sport": "Submission Grappling"
+}
+</script>
+</head>
+<body>
+
+<!-- Skip to content -->
+<a href="#top" class="skip-link">Skip to content</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">Forged <span>Grappling</span></a>
+  <ul class="nav-links">
+    <li><a href="#coaches">Coaches</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="nav-cta">Book Free Class</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-links">
+    <a href="#coaches" onclick="closeMobileNav()">Coaches</a>
+    <a href="#schedule" onclick="closeMobileNav()">Schedule</a>
+    <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+    <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+    <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green" style="text-align:center;margin-top:0.5rem;" onclick="closeMobileNav()">→ Book Free Class</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <div class="hero-location">No-Gi Submission Grappling &nbsp;·&nbsp; Westbury, Wiltshire</div>
+    <h1>Dedicated no-gi.<br>Five days a week.<br><em>Built from<br>the ground up.</em></h1>
+    <p class="hero-sub">Westbury's only gym built entirely around no-gi submission grappling. Four competitive coaches, a modern coaching method, and a structured curriculum designed to actually develop your game. Try a free class.</p>
+    <div class="hero-actions">
+      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Try a Free Class</a>
+      <a href="/start-here" class="btn-ghost">Never trained before?</a>
+    </div>
+    <p class="hero-reassure">No contracts. No joining fees. <a href="#pricing">Founding membership from £50/month →</a></p>
+  </div>
+
+  <div class="hero-right">
+    <div class="vsl-wrap">
+      <div class="vsl-placeholder" onclick="document.getElementById('vsl-soon').classList.add('visible');setTimeout(function(){document.getElementById('vsl-soon').classList.remove('visible')},2000)">
+        <div class="vsl-thumb-overlay">
+          <div class="vsl-play">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <div class="vsl-label">Watch — 2 minutes</div>
+          <div class="vsl-duration">Why we built Forged, and what you get</div>
+        </div>
+        <div class="vsl-coming-soon" id="vsl-soon">Video coming soon</div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-cell"><div class="stat-num">80+</div><div class="stat-lbl">Coach wins</div></div>
+      <div class="stat-cell"><div class="stat-num">5</div><div class="stat-lbl">Days a week</div></div>
+      <div class="stat-cell"><div class="stat-num">£50</div><div class="stat-lbl">Founding price</div></div>
+      <div class="stat-cell"><div class="stat-num">30</div><div class="stat-lbl">Day guarantee</div></div>
+    </div>
+    <div class="founding-banner">
+      <div class="founding-banner-text"><strong>Founding membership — 25 spots only.</strong> £50/month locked for life.</div>
+      <div class="spots-counter" id="hero-spots">25 left</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROBLEM -->
+<section class="problem section-wrap">
+  <div class="problem-grid">
+    <div>
+      <div class="label">Sound familiar?</div>
+      <h2>You've been putting in the work.<br><em>The results haven't matched.</em></h2>
+      <p class="problem-body">You train consistently, but your development has stalled. No-gi gets two sessions a week at most. There's no structured curriculum, no clear progression, and the skills you drill don't hold up under pressure. You're not short on effort. You're short on environment.</p>
+      <ul class="complaint-list">
+        <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">"No-gi is an afterthought — two classes a week, first to get cancelled when numbers drop."</span></li>
+        <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">"I drill techniques perfectly, then forget everything the moment someone resists."</span></li>
+        <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">"I want to compete no-gi but there's nowhere serious to train locally."</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">What we built</div>
+      <h2>A gym designed around<br><em>no-gi from day one.</em></h2>
+      <p class="problem-body">Forged isn't a gi gym with the jacket taken off. Every class, every curriculum, every coaching decision is built around no-gi submission grappling. Five days a week, structured progression, and coaches with 80+ competition wins between them.</p>
+      <ul class="complaint-list">
+        <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">Dedicated no-gi curriculum — not a gi programme adapted for no-gi.</span></li>
+        <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">Coaching method built around problem-solving under real pressure, not memorising sequences.</span></li>
+        <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">Five sessions a week with training partners who actually show up.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CLA -->
+<section class="cla section-wrap">
+  <div class="cla-grid">
+    <div>
+      <div class="label">How We Coach</div>
+      <h2>We don't teach grappling like a choreography.</h2>
+      <p class="cla-body">Traditional coaching: watch a technique, repeat it fifty times with a compliant partner, try to remember it when it matters. It works — slowly. The problem is that pressure and fatigue scramble memory. Techniques drilled perfectly in class evaporate the moment someone's actually resisting.</p>
+      <p class="cla-body">We use the Constraints-Led Approach. Instead of drilling isolated techniques, we structure training so the right movements emerge through problem-solving under real pressure. You develop instinct, not recall. Your game — not a copy of someone else's.</p>
+      <p class="cla-closer">You won't just learn techniques at Forged. You'll learn how to grapple.</p>
+    </div>
+    <div class="cla-compare">
+      <div class="compare-card compare-old">
+        <div class="compare-tag tag-old">Traditional drilling</div>
+        <div class="compare-title">What most gyms do</div>
+        <div class="compare-steps">
+          <div class="compare-step"><span class="step-arrow">→</span><span>Coach <strong>demonstrates</strong> a technique</span></div>
+          <div class="compare-step"><span class="step-arrow">→</span><span><strong>Repeat 50 times</strong> with a compliant partner</span></div>
+          <div class="compare-step"><span class="step-arrow">→</span><span><strong>Try to remember it</strong> in live rolling</span></div>
+          <div class="compare-step dim"><span class="step-arrow">→</span><span>Technique <strong>vanishes under pressure</strong></span></div>
+        </div>
+      </div>
+      <div class="compare-card compare-new">
+        <div class="compare-tag tag-new">Constraints-Led Approach</div>
+        <div class="compare-title">How we coach at Forged</div>
+        <div class="compare-steps">
+          <div class="compare-step"><span class="step-arrow-green">→</span><span>Coach sets a <strong>problem to solve</strong></span></div>
+          <div class="compare-step"><span class="step-arrow-green">→</span><span>You <strong>attempt, adapt, iterate</strong> under real pressure</span></div>
+          <div class="compare-step"><span class="step-arrow-green">→</span><span>Movements become <strong>instinctive</strong>, not memorised</span></div>
+          <div class="compare-step"><span class="step-arrow-green">→</span><span>Skills <strong>hold under competition pressure</strong></span></div>
+        </div>
+        <div class="compare-note">Backed by motor learning research. Used by elite coaches in wrestling, rugby, and MMA worldwide. Rare in grappling — standard at Forged.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHES -->
+<section class="coaches section-wrap" id="coaches">
+  <div class="coaches-intro">
+    <div class="label">The Coaching Team</div>
+    <h2>Four coaches. 80+ competition wins.</h2>
+    <p>Belt colour reflects gi jiu-jitsu rank. <em>It tells you very little about no-gi ability.</em> Competition record and mat time tell the real story.</p>
+  </div>
+  <div class="coaches-grid">
+    <div class="coach-card">
+      <div class="coach-avatar"><div class="coach-avatar-inner"><div class="coach-initials">HW</div></div><div class="coach-photo-note">Photo coming soon</div></div>
+      <div class="coach-body">
+        <div class="coach-name">Harry Whitburn</div>
+        <div class="coach-tag">Head Coach · Blue Belt · 2.5 Years</div>
+        <div class="coach-wins">30 Wins · International Competitor</div>
+      </div>
+    </div>
+    <div class="coach-card">
+      <div class="coach-avatar"><div class="coach-avatar-inner"><div class="coach-initials">JW</div></div><div class="coach-photo-note">Photo coming soon</div></div>
+      <div class="coach-body">
+        <div class="coach-name">Jack Whitburn</div>
+        <div class="coach-tag">Coach · Blue Belt · 3.5 Years</div>
+        <div class="coach-wins">50+ Wins · International Competitor</div>
+      </div>
+    </div>
+    <div class="coach-card">
+      <div class="coach-avatar"><div class="coach-avatar-inner"><div class="coach-initials">MC</div></div><div class="coach-photo-note">Photo coming soon</div></div>
+      <div class="coach-body">
+        <div class="coach-name">Mitchell Cullum</div>
+        <div class="coach-tag">Coach · Purple Belt · 6 Years</div>
+        <div class="coach-wins">6 Years Competitive Grappling</div>
+      </div>
+    </div>
+    <div class="coach-card">
+      <div class="coach-avatar"><div class="coach-avatar-inner"><div class="coach-initials">NC</div></div><div class="coach-photo-note">Photo coming soon</div></div>
+      <div class="coach-body">
+        <div class="coach-name">Nathan Cullum</div>
+        <div class="coach-tag">Coach · Blue Belt · 4 Years</div>
+        <div class="coach-wins">4 Years Competitive Grappling</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="who section-wrap">
+  <div class="who-header">
+    <div class="label" style="justify-content:center">Who Trains Here</div>
+    <h2>Grapplers who want more from their training.</h2>
+    <p>Whether you've been training for six months or six years.</p>
+  </div>
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-tag">Your training</div>
+      <h3>No-gi shouldn't be<br>a side offering.</h3>
+      <p>If no-gi is what you want to get good at, you need a gym where it's the focus, not an afterthought. A place with a structured curriculum, coaches who compete no-gi themselves, and enough sessions per week to actually build momentum.</p>
+      <ul class="who-points">
+        <li>Structured no-gi curriculum from fundamentals through to competition prep</li>
+        <li>Coaches who can watch you roll and identify what's actually holding you back</li>
+        <li>Five days a week — enough volume to see real progress</li>
+        <li>Competition prep available, but never an obligation</li>
+      </ul>
+    </div>
+    <div class="who-card">
+      <div class="who-tag">Your options</div>
+      <h3>Come and see for yourself.</h3>
+      <p>The best way to tell if this is the right fit is to train here. Your first class is free, there's no sales pitch, and you're under no obligation to sign up. Just come, roll, and see how it compares.</p>
+      <ul class="who-points">
+        <li>Free trial class — register and show up</li>
+        <li>30-day money-back guarantee on all memberships</li>
+        <li>No contracts, cancel anytime</li>
+        <li>Founding membership at £50/month — locked for life</li>
+      </ul>
+      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green" style="margin-top:1rem;">→ Try a Free Class</a>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--silver);">Never trained before? <a href="/start-here" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(99,125,74,0.4);">Start here →</a></p>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule section-wrap" id="schedule">
+  <div class="schedule-header">
+    <div>
+      <div class="label">When We Train</div>
+      <h2>Five days a week.<br>Two classes every night.</h2>
+    </div>
+    <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Book Free Class</a>
+  </div>
+  <div class="schedule-compact">
+    <div class="schedule-days-bar">
+      <div class="schedule-days-label">Every</div>
+      <div class="schedule-days-list">
+        <div class="schedule-day-pill">Mon</div>
+        <div class="schedule-day-pill">Tue</div>
+        <div class="schedule-day-pill">Wed</div>
+        <div class="schedule-day-pill">Thu</div>
+        <div class="schedule-day-pill">Fri</div>
+      </div>
+    </div>
+    <div class="schedule-row foundations">
+      <div class="schedule-row-time">6:00 – 7:00 PM</div>
+      <div>
+        <div class="schedule-row-name">Foundations</div>
+        <div class="schedule-row-desc">Revolving 4-week curriculum. Built for beginners, valuable at every level.</div>
+      </div>
+    </div>
+    <div class="schedule-row alllevels">
+      <div class="schedule-row-time">7:00 – 8:00 PM</div>
+      <div>
+        <div class="schedule-row-name">All Levels</div>
+        <div class="schedule-row-desc">Open to everyone. Technique focus with live rolling.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing section-wrap" id="pricing">
+  <div class="pricing-header">
+    <div class="label" style="justify-content:center">Membership</div>
+    <h2>Everything you get.<br>What it's worth.</h2>
+    <p>No contracts. No joining fees. No surprises.</p>
+  </div>
+
+  <div class="value-stack">
+    <div class="value-stack-header">
+      <div class="value-stack-header-label">What's included in every membership</div>
+      <div class="value-stack-header-sub">Individual market value shown</div>
+    </div>
+    <div class="value-row">
+      <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Unlimited no-gi training — all classes, all levels</div><div class="value-row-desc">5 days a week, 2 classes per night. £10/session × 5 sessions/week × 52 weeks ÷ 12 months</div></div></div>
+      <div class="value-row-price">£216/mo</div>
+    </div>
+    <div class="value-row">
+      <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Strength &amp; conditioning area + showers</div><div class="value-row-desc">Full S&amp;C access before and after every session. Equivalent to a standard gym membership.</div></div></div>
+      <div class="value-row-price">£40/mo</div>
+    </div>
+    <div class="value-row">
+      <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Private members coaching group</div><div class="value-row-desc">Direct access to all four coaches between sessions. Questions, footage review, feedback.</div></div></div>
+      <div class="value-row-price">£30/mo</div>
+    </div>
+    <div class="value-row bonus">
+      <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Technique video library <span class="value-row-badge">Launching at opening</span></div><div class="value-row-desc">Coach-produced videos covering key concepts from each week's sessions.</div></div></div>
+      <div class="value-row-price">£20/mo</div>
+    </div>
+    <div class="value-stack-total">
+      <div class="value-total-label">Total combined value</div>
+      <div class="value-total-amount">£300+<span style="font-size:0.95rem;font-weight:400;color:var(--silver)">/month</span></div>
+    </div>
+    <div class="value-stack-cta-row">
+      <div class="value-cta-text">Founding membership: <strong>£50/month</strong><span class="saving-badge">Save £250+/mo · 83% off</span><br><span style="font-size:0.78rem;color:var(--silver)">Price locked for life. 25 spots total.</span></div>
+      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Secure Your Founding Spot</a>
+    </div>
+  </div>
+
+  <div class="guarantee-block">
+    <div class="guarantee-icon-col">
+      <div class="guarantee-num">30</div>
+      <div class="guarantee-day-label">Day<br>Guarantee</div>
+    </div>
+    <div class="guarantee-body-col">
+      <div class="guarantee-title">Train. Improve. Or your money back.</div>
+      <p class="guarantee-text">Train for 30 days. If you don't feel your grappling has measurably improved, we'll refund your first month in full — no questions asked. We're confident enough in what we've built to put our money behind it.</p>
+    </div>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-label">Drop In</div>
+      <div class="price-amount"><span>£</span>10</div>
+      <div class="price-per">per session</div>
+      <ul class="price-features">
+        <li>Single session access</li>
+        <li>All levels welcome</li>
+        <li>No commitment required</li>
+      </ul>
+      <p class="price-note">Perfect for your free trial class or a short-term visit.</p>
+      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-ghost btn-full">→ Book a Session</a>
+    </div>
+    <div class="price-card featured">
+      <div class="featured-badge">Recommended · 25 Spots Only</div>
+      <div class="price-label" style="margin-top:1.4rem;">Founding Member</div>
+      <div class="price-amount"><span>£</span>50</div>
+      <div class="price-per">per month · locked for life</div>
+      <div class="spots-remaining">
+        <div class="spots-dot"></div>
+        <div class="spots-text"><strong id="pricing-spots">25 founding spots remaining</strong> out of 25</div>
+      </div>
+      <ul class="price-features">
+        <li class="highlight">Everything in the value stack above</li>
+        <li class="highlight">Price locked forever — never increases</li>
+        <li class="highlight">30-day money-back guarantee</li>
+        <li>Founding member recognition</li>
+        <li>No contract — cancel anytime</li>
+      </ul>
+      <p class="price-note">Total value: £300+/month. You pay £50. Once founding spots are gone, the price goes to £80 permanently.</p>
+      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green btn-full">→ Secure Your Founding Spot</a>
+    </div>
+    <div class="price-card">
+      <div class="price-label">Standard</div>
+      <div class="price-amount"><span>£</span>80</div>
+      <div class="price-per">per month</div>
+      <ul class="price-features">
+        <li>Everything in the value stack</li>
+        <li>30-day money-back guarantee</li>
+        <li>No contract — cancel anytime</li>
+      </ul>
+      <p class="price-note">Available once founding spots are filled. Identical to founding — only the price differs.</p>
+      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-ghost btn-full">→ Join on Standard</a>
+    </div>
+  </div>
+
+  <div class="pricing-footer">
+    <p><strong>No contracts, ever.</strong> Month-to-month. No notice periods, no cancellation fees. We'd rather earn your membership every month than lock you into something you didn't want — which is also why we back it with a 30-day guarantee.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section-wrap" id="faq">
+  <div class="faq-header">
+    <div class="label">Questions</div>
+    <h2>Everything you want to know before you book.</h2>
+    <p>The questions we actually get asked.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-1">What's the difference between Forged and a regular BJJ gym?<div class="faq-icon"></div></button>
+      <div class="faq-a" id="faq-1" role="region"><p>Three things. First, we're entirely no-gi — our curriculum and competition focus are built around grappling without the gi. Second, we use the Constraints-Led Approach: a modern coaching methodology that builds adaptable, instinctive grapplers rather than athletes who can only execute techniques in controlled conditions. Third, our coaches have 80+ competition wins between them — their credentials come from performance, not belt colour.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-2">I train gi. Will my skills transfer?<div class="faq-icon"></div></button>
+      <div class="faq-a" id="faq-2" role="region"><p>A lot transfers — positional awareness, submissions, pressure. But no-gi has its own game: different grips, faster scrambles, and positions that don't exist in the gi (like the front headlock and bodylock systems). If you've been training gi, you'll pick things up quickly, but expect your game to evolve in ways that also improve your gi work.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-3">What's the Constraints-Led Approach?<div class="faq-icon"></div></button>
+      <div class="faq-a" id="faq-3" role="region"><p>Instead of drilling techniques in isolation and hoping they show up under pressure, we structure training so the right movements emerge through guided problem-solving in live scenarios. It's backed by motor learning research and used by elite coaches in wrestling, rugby, and MMA. The result is skills that hold up in competition — not just in drilling.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-4">Do I have to compete?<div class="faq-icon"></div></button>
+      <div class="faq-a" id="faq-4" role="region"><p>No. Some members compete locally, nationally, and internationally. Many train purely for the enjoyment of it and have no interest in competing. Both are completely fine. Competition is an option, never an expectation. That said, if you do want to compete, we offer structured comp prep and our coaches have significant competition experience to draw from.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-5">How does the founding membership work?<div class="faq-icon"></div></button>
+      <div class="faq-a" id="faq-5" role="region"><p>The founding membership is £50/month for the first 25 members — as a thank-you for being part of building the gym from the start. That price is locked for as long as your membership remains active. Once those spots are filled, new members join at £80/month. No contracts, no joining fees on either option.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-6">What's the 30-day guarantee?<div class="faq-icon"></div></button>
+      <div class="faq-a" id="faq-6" role="region"><p>Train for 30 days. If you don't feel your grappling has measurably improved, contact us and we'll refund your first month in full — no questions asked. If you show up consistently and it doesn't work for you, we don't want your money.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-7">Can I train here alongside my current gym?<div class="faq-icon"></div></button>
+      <div class="faq-a" id="faq-7" role="region"><p>Absolutely. Some members use Forged as their primary gym, others supplement their existing training with our no-gi sessions. The £10 drop-in rate is there for exactly this. No commitment required unless you want it.</p></div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--silver);">New to grappling entirely? We've answered your questions on the <a href="/start-here" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(99,125,74,0.4);">Start Here</a> page.</p>
+</section>
+
+<!-- FINAL CLOSE -->
+<section class="close-section">
+  <div class="close-inner">
+    <div class="label">The Decision</div>
+    <div class="urgency-inline">
+      <div class="urgency-dot"></div>
+      <span><strong id="close-spots">25 founding spots</strong> remaining at £50/month — once gone, the price goes to £80 permanently.</span>
+    </div>
+    <h2>Come and train.<br>See how it compares.</h2>
+    <p class="close-body">Your first class is free. If it works for you, the founding price is the best deal you'll find. If it doesn't, we'll refund your first month in full — <strong>no questions asked</strong>. The only thing you risk is finding out you should have switched sooner.</p>
+    <div class="close-actions">
+      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Try a Free Class</a>
+    </div>
+    <p class="close-contact">Questions first? <a href="mailto:info@forgedgrappling.co.uk">info@forgedgrappling.co.uk</a> · <a href="tel:+447513104760">07513 104760</a> · <a href="/start-here">Never trained before?</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-logo">Forged <span>Grappling</span></div>
+    <div class="footer-tagline">Shaped by the Process</div>
+    <div class="footer-address" style="margin-top:0.5rem;font-size:0.78rem;color:rgba(138,145,153,0.55);line-height:1.7;">
+      Unit 21 Woodland Industrial Estate, Eden Vale Road<br>
+      Westbury, Wiltshire, BA13 3QS<br><br>
+      © 2026 Forged Grappling Limited. All rights reserved.<br>
+      Forged Grappling Limited (17049559) is a company registered in England and Wales.
+    </div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="#coaches">Coaches</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" title="Instagram" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@forgedgrappling" target="_blank" title="TikTok" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+      </a>
+      <a href="https://smoothcomp.com/en/club/86870" target="_blank" title="Smoothcomp" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+      </a>
+      <a href="mailto:info@forgedgrappling.co.uk" title="Email" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+    <div class="footer-contact"><a href="mailto:info@forgedgrappling.co.uk">info@forgedgrappling.co.uk</a> · <a href="tel:07513104760">07513 104760</a></div>
+    <div class="footer-copy"><a href="/privacy" style="color:inherit;text-decoration:none;">Privacy Policy</a> · <a href="/cookies" style="color:inherit;text-decoration:none;">Cookie Policy</a> · <a href="/terms" style="color:inherit;text-decoration:none;">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+
+<!-- ── COOKIE BANNER ── -->
+<div id="cookie-banner" style="display:none;">
+  <div id="cookie-banner-inner">
+    <div id="cookie-banner-text">
+      <p id="cookie-banner-title">We use cookies</p>
+      <p id="cookie-banner-body">We use essential cookies to make this site work. We'd also like to set analytics cookies to help us understand how you use it — these will only be set with your consent. <a href="/cookies">Cookie Policy</a> · <a href="/privacy">Privacy Policy</a></p>
+    </div>
+    <div id="cookie-banner-actions">
+      <button id="cookie-decline" onclick="cookieChoice(false)">Decline analytics</button>
+      <button id="cookie-accept" onclick="cookieChoice(true)">Accept all</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const FOUNDING_REMAINING = 25;
+document.querySelectorAll('#hero-spots').forEach(el => el.textContent = FOUNDING_REMAINING + ' left');
+document.querySelectorAll('#pricing-spots').forEach(el => el.textContent = FOUNDING_REMAINING + ' founding spots remaining');
+document.querySelectorAll('#close-spots').forEach(el => el.textContent = FOUNDING_REMAINING + ' founding spots');
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // ── Cookie banner ──
+  var consent = localStorage.getItem('fg_cookie_consent');
+
+  if (consent === 'accepted') {
+    loadAnalytics();
+  } else if (consent === 'declined') {
+    // No analytics — do nothing
+  } else {
+    // No choice made yet — show banner
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+
+});
+
+function cookieChoice(accepted) {
+  document.getElementById('cookie-banner').style.display = 'none';
+  if (accepted) {
+    localStorage.setItem('fg_cookie_consent', 'accepted');
+    loadAnalytics();
+  } else {
+    localStorage.setItem('fg_cookie_consent', 'declined');
+  }
+}
+
+function loadAnalytics() {
+  // TODO: Replace G-XXXXXXXXXX with your actual Google Analytics measurement ID
+  var gaId = 'G-XXXXXXXXXX';
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', gaId);
+}
+
+// ── Mobile nav ──
+function toggleMobileNav() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.getElementById('mobile-nav');
+  var isOpen = nav.classList.contains('open');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+  btn.setAttribute('aria-expanded', !isOpen);
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+function closeMobileNav() {
+  document.querySelector('.nav-hamburger').classList.remove('open');
+  document.getElementById('mobile-nav').classList.remove('open');
+  document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+</script>
+
+</body>
+</html>

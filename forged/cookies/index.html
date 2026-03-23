@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Policy — Forged Grappling</title>
+<meta name="description" content="Cookie policy for Forged Grappling. Learn how we use cookies on our website.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --green: #4A5C38; --green-light: #637d4a; --silver: #9BA2AA;
+  --iron: #1E2020; --iron-mid: #242727; --iron-light: #2c2f2f;
+  --iron-border: rgba(255,255,255,0.07); --brushed: #C4C7CA; --white: #FFFFFF;
+  --green-tint: rgba(74,92,56,0.12); --green-border: rgba(74,92,56,0.35);
+}
+body { background: var(--iron); color: var(--white); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.65; }
+h1,h2,h3 { font-family: 'Manrope', sans-serif; }
+
+.site-header { background: var(--iron-mid); border-bottom: 1px solid var(--iron-border); padding: 1.1rem 5rem; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; text-transform: uppercase; }
+.nav-logo span { color: var(--green-light); }
+.nav-btn { display: inline-block; background: var(--green); color: var(--white); padding: 0.55rem 1.4rem; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.82rem; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s; }
+.nav-btn:hover { background: #566b41; }
+@media (max-width: 640px) { .site-header { padding: 1rem 1.5rem; } }
+
+.policy-hero { background: var(--iron-mid); padding: 5rem 5rem 4rem; border-bottom: 1px solid var(--iron-border); }
+.policy-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-light); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.policy-label::before { content: ''; width: 28px; height: 1px; background: var(--green-light); }
+.policy-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; }
+.policy-meta { font-size: 0.82rem; color: var(--silver); }
+@media (max-width: 640px) { .policy-hero { padding: 4rem 1.5rem 3rem; } }
+
+.policy-body { max-width: 960px; margin: 0 auto; padding: 4rem 5rem; }
+@media (max-width: 1100px) { .policy-body { padding: 4rem 3rem; } }
+@media (max-width: 900px) { .policy-body { padding: 3.5rem 2rem; } }
+@media (max-width: 640px) { .policy-body { padding: 2.5rem 1.5rem; } }
+
+.policy-body h2 { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); margin: 3rem 0 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--iron-border); }
+.policy-body h2:first-child { margin-top: 0; }
+.policy-body p { font-size: 0.95rem; color: var(--brushed); line-height: 1.8; margin-bottom: 1rem; }
+.policy-body a { color: var(--green-light); text-decoration: none; border-bottom: 1px solid rgba(99,125,74,0.4); transition: border-color 0.2s; }
+.policy-body a:hover { border-color: var(--green-light); }
+.policy-body strong { color: var(--white); font-weight: 500; }
+
+.info-block { background: var(--iron-mid); border: 1px solid var(--green-border); padding: 1.5rem; margin: 1.5rem 0; }
+.info-block p { margin-bottom: 0; }
+.info-block p + p { margin-top: 0.75rem; }
+
+.data-table-wrap { overflow-x: auto; margin: 1.25rem 0; -webkit-overflow-scrolling: touch; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 420px; }
+.data-table th { background: var(--green-tint); border: 1px solid var(--green-border); padding: 0.75rem 1rem; text-align: left; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-light); white-space: nowrap; }
+.data-table td { border: 1px solid var(--iron-border); padding: 0.75rem 1rem; color: var(--brushed); vertical-align: top; line-height: 1.6; }
+.data-table tr:hover td { background: var(--iron-mid); }
+
+footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--iron-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
+.footer-logo span { color: var(--green-light); }
+.footer-tagline { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); margin-top: 0.35rem; }
+.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.78rem; color: var(--silver); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-social { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
+.social-icon { color: rgba(138,145,153,0.5); display: flex; align-items: center; transition: color 0.2s; }
+.social-icon:hover { color: #637d4a; }
+@media (max-width: 640px) { footer { padding: 2rem 1.5rem; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="nav-logo">Forged <span>Grappling</span></a>
+  <a href="https://mattrack.io/YOUR-FREE-CLASS-LINK" target="_blank" class="nav-btn">→ Book Free Class</a>
+</header>
+
+<div class="policy-hero">
+  <div class="policy-label">Legal</div>
+  <h1>Cookie Policy</h1>
+  <p class="policy-meta">Last Updated: March 2026</p>
+</div>
+
+<div class="policy-body">
+
+  <h2>What are cookies?</h2>
+  <p>Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work, or to provide information to the website owner about how the site is being used.</p>
+
+  <h2>What cookies do we use?</h2>
+  <p>We use three categories of cookies on this website.</p>
+
+  <p><strong>Strictly necessary cookies</strong></p>
+  <p>These cookies are essential for the website to function and cannot be switched off. They do not store any personally identifiable information. No consent is required for these cookies.</p>
+  <div class="data-table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Cookie</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Platform cookies</td><td>Required for the website to load and function correctly</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>Analytics cookies</strong></p>
+  <p>These cookies help us understand how visitors interact with our website. All data collected is anonymised and aggregated. These cookies will only be set with your prior consent.</p>
+  <div class="data-table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr></thead>
+    <tbody>
+      <tr><td>_ga</td><td>Google Analytics</td><td>Distinguishes unique users</td><td>2 years</td></tr>
+      <tr><td>_ga_*</td><td>Google Analytics</td><td>Stores and counts page views</td><td>2 years</td></tr>
+      <tr><td>_gid</td><td>Google Analytics</td><td>Distinguishes unique users</td><td>24 hours</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>You can find more information about how Google uses this data at <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
+
+  <p><strong>Functional cookies</strong></p>
+  <p>These cookies are set by third-party services embedded on our website. They support the operation of embedded features but do not track you across other websites.</p>
+  <div class="data-table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr></thead>
+    <tbody>
+      <tr><td>Kit form cookies</td><td>Kit (ConvertKit LLC)</td><td>Supports the operation of our waitlist signup form, including preventing duplicate submissions</td><td>Session</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Your cookie choices</h2>
+  <p>When you first visit our website, a cookie banner will ask for your consent before any analytics cookies are set. You can choose to accept or decline analytics cookies at that point.</p>
+  <p>You can also change your preferences at any time by clearing your browser cookies and revisiting the site, which will prompt the consent banner again.</p>
+  <p>Additionally, you can opt out of Google Analytics across all websites by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a>.</p>
+  <p>Most browsers also allow you to refuse or delete cookies through their settings. Please note that disabling cookies may affect the functionality of some websites.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this cookie policy from time to time to reflect changes in the cookies we use or for other operational, legal, or regulatory reasons. The date at the top of this page reflects the most recent version.</p>
+
+  <h2>Contact</h2>
+  <div class="info-block">
+    <p><a href="mailto:support@forgedgrappling.co.uk">support@forgedgrappling.co.uk</a></p>
+    <p>Forged Grappling Limited, 9 Perseus Close, Warminster, England, BA12 8GS</p>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Forged <span>Grappling</span></div>
+    <div class="footer-tagline">Shaped by the Process</div>
+    <div style="font-size:0.78rem;color:rgba(138,145,153,0.55);line-height:1.7;margin-top:0.5rem;">
+      Unit 21 Woodland Industrial Estate, Eden Vale Road<br>
+      Westbury, Wiltshire, BA13 3QS<br><br>
+      &copy; 2026 Forged Grappling Limited. All rights reserved.<br>
+      Forged Grappling Limited (17049559) is a company registered in England and Wales.
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.75rem;">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" title="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.tiktok.com/@forgedgrappling" target="_blank" title="TikTok" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+      <a href="https://smoothcomp.com/en/club/86870" target="_blank" title="Smoothcomp" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></a>
+      <a href="mailto:info@forgedgrappling.co.uk" title="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    </div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+    </div>
+    <div style="font-size:0.75rem;color:rgba(138,145,153,0.5);"><a href="mailto:info@forgedgrappling.co.uk" style="color:inherit;text-decoration:none;">info@forgedgrappling.co.uk</a> &nbsp;&middot;&nbsp; <a href="tel:07513104760" style="color:inherit;text-decoration:none;">07513 104760</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
