@@ -60,31 +60,53 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .mobile-nav-links a:hover { color: var(--green-light); }
 
 /* HERO */
-.hero-start { min-height: 80vh; display: flex; align-items: center; padding: 7rem 5rem 5rem; position: relative; overflow: hidden; }
+.hero-start { min-height: 70vh; display: flex; align-items: center; padding: 7rem 5rem 5rem; position: relative; overflow: hidden; }
 .hero-start::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px), repeating-linear-gradient(0deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px); pointer-events: none; }
 .hero-start::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--iron-border); }
-.hero-start-inner { position: relative; z-index: 2; max-width: 680px; }
-.hero-start-inner h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; }
-.hero-start-inner h1 em { font-style: normal; color: var(--green-light); }
-.hero-start-inner p { font-size: 1.05rem; font-weight: 300; color: var(--brushed); line-height: 1.8; max-width: 540px; margin-bottom: 2rem; }
+.hero-start-inner { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.hero-left h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; }
+.hero-left h1 em { font-style: normal; color: var(--green-light); }
+.hero-left p { font-size: 1.05rem; font-weight: 300; color: var(--brushed); line-height: 1.8; margin-bottom: 2rem; }
 .hero-start-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-@media (max-width: 900px) { .hero-start { padding: 6rem 1.5rem 4rem; } }
+.hero-image { width: 100%; aspect-ratio: 4/3; background: var(--iron-mid); border: 1px solid var(--iron-border); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.hero-image::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(74,92,56,0.06) 0, rgba(74,92,56,0.06) 1px, transparent 1px, transparent 12px); }
+.hero-image-label { position: relative; z-index: 2; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); opacity: 0.5; }
+@media (max-width: 900px) {
+  .hero-start { padding: 6rem 1.5rem 4rem; }
+  .hero-start-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-image { aspect-ratio: 16/9; }
+}
+
+/* STATS BAR */
+.stats-bar { background: var(--iron-mid); border-bottom: 1px solid var(--iron-border); }
+.stats-bar-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+.stat-item { padding: 2.5rem 5rem; border-right: 1px solid var(--iron-border); display: flex; align-items: center; gap: 1.75rem; }
+.stat-item:last-child { border-right: none; }
+.stat-value { font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; color: var(--green-light); white-space: nowrap; }
+.stat-divider { width: 1px; height: 2rem; background: var(--iron-border); flex-shrink: 0; }
+.stat-label { font-size: 0.82rem; color: var(--silver); line-height: 1.55; }
+@media (max-width: 900px) {
+  .stats-bar-inner { grid-template-columns: 1fr; }
+  .stat-item { padding: 1.75rem 2rem; border-right: none; border-bottom: 1px solid var(--iron-border); }
+  .stat-item:last-child { border-bottom: none; }
+}
+@media (max-width: 640px) { .stat-item { padding: 1.5rem 1.25rem; } }
 
 /* REASSURANCE */
-.reassure { background: var(--iron-mid); }
+.reassure { background: var(--iron); }
 .reassure-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(74,92,56,0.1); }
-.reassure-card { background: var(--iron); padding: 2.25rem; }
+.reassure-card { background: var(--iron-mid); padding: 2.25rem; }
 .reassure-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; text-transform: uppercase; }
 .reassure-card p { font-size: 0.9rem; color: var(--brushed); line-height: 1.75; }
 @media (max-width: 800px) { .reassure-grid { grid-template-columns: 1fr; } }
 
 /* FIRST CLASS */
-.first-class { background: var(--iron); }
-.first-class-header { max-width: 600px; margin-bottom: 3rem; }
+.first-class { background: var(--iron-mid); }
+.first-class-header { margin-bottom: 3rem; }
 .first-class-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; }
 .first-class-header p { color: var(--silver); font-size: 0.92rem; }
 .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(74,92,56,0.1); }
-.step-card { background: var(--iron-mid); padding: 2rem 1.5rem; position: relative; }
+.step-card { background: var(--iron); padding: 2rem 1.5rem; position: relative; }
 .step-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green); }
 .step-num { font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; color: rgba(74,92,56,0.4); margin-bottom: 0.75rem; }
 .step-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; text-transform: uppercase; }
@@ -93,7 +115,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 @media (max-width: 480px) { .steps-grid { grid-template-columns: 1fr; } }
 
 /* WHAT TO BRING */
-.bring { background: var(--iron-mid); }
+.bring { background: var(--iron); }
 .bring-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
 .bring h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1.25rem; }
 .bring-body { color: var(--brushed); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
@@ -104,8 +126,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 @media (max-width: 800px) { .bring-grid { grid-template-columns: 1fr; gap: 3rem; } }
 
 /* FOUNDATIONS */
-.foundations { background: var(--iron); }
-.foundations-block { max-width: 700px; background: var(--iron-mid); border: 1px solid var(--green-border); overflow: hidden; }
+.foundations { background: var(--iron-mid); }
+.foundations-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.foundations-intro h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
+.foundations-intro p { font-size: 0.95rem; color: var(--brushed); line-height: 1.8; }
+.foundations-block { background: var(--iron); border: 1px solid var(--green-border); overflow: hidden; }
 .foundations-header { background: var(--green-tint); border-bottom: 1px solid var(--green-border); padding: 1.25rem 2rem; }
 .foundations-header h3 { font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.04em; }
 .foundations-body { padding: 1.75rem 2rem; }
@@ -115,38 +140,20 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .foundations-schedule { display: flex; gap: 1rem; align-items: center; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--iron-border); flex-wrap: wrap; }
 .foundations-time { font-size: 0.82rem; color: var(--silver); }
 .foundations-time strong { color: var(--green-light); font-weight: 600; }
+@media (max-width: 900px) { .foundations-inner { grid-template-columns: 1fr; gap: 3rem; } }
 
 /*
-═══ FOUNDATIONS PASS (uncomment to activate) ═══
-.fpass { background: var(--iron-mid); }
-.fpass-card { max-width: 860px; margin: 0 auto; background: var(--iron); border: 1px solid var(--green-border); overflow: hidden; }
-.fpass-badge { background: var(--green); color: var(--white); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.5rem 2rem; }
-.fpass-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(74,92,56,0.1); }
-.fpass-left { background: var(--iron); padding: 2.5rem; }
-.fpass-left h2 { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
-.fpass-price { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1.25rem; }
-.fpass-amount { font-family: 'Manrope', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--green-light); }
-.fpass-per { font-size: 0.85rem; color: var(--silver); }
-.fpass-desc { font-size: 0.92rem; color: var(--brushed); line-height: 1.75; margin-bottom: 1.75rem; }
-.fpass-right { background: var(--iron); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
-.fpass-includes-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-light); margin-bottom: 0.75rem; }
-.fpass-includes ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
-.fpass-includes li { display: flex; gap: 0.7rem; align-items: flex-start; font-size: 0.85rem; color: var(--brushed); line-height: 1.5; }
-.fpass-includes li::before { content: ''; width: 4px; height: 4px; background: var(--green-light); flex-shrink: 0; margin-top: 0.45rem; border-radius: 50%; }
-.fpass-upgrade { background: var(--green-tint); border: 1px solid var(--green-border); padding: 1.25rem; }
-.fpass-upgrade p { font-size: 0.85rem; color: var(--brushed); line-height: 1.7; margin: 0; }
-.fpass-upgrade strong { color: var(--white); font-weight: 600; }
-@media (max-width: 800px) { .fpass-grid { grid-template-columns: 1fr; } }
-═══ END FOUNDATIONS PASS CSS ═══
+  FOUNDATIONS PASS — commented out for future use.
+  To activate: uncomment the CSS block in <style> and the HTML below.
 */
 
 /* FAQ */
-.faq { background: var(--iron-mid); }
-.faq-header { max-width: 540px; margin-bottom: 3rem; }
+.faq { background: var(--iron); }
+.faq-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
 .faq-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.6rem; }
-.faq-header p { color: var(--silver); font-size: 0.92rem; }
-.faq-list { max-width: 760px; display: flex; flex-direction: column; gap: 2px; }
-.faq-item { background: var(--iron); overflow: hidden; }
+.faq-header p { color: var(--silver); font-size: 0.92rem; margin-top: 0.75rem; }
+.faq-list { display: flex; flex-direction: column; gap: 2px; }
+.faq-item { background: var(--iron-mid); overflow: hidden; }
 .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; background: none; border: none; cursor: pointer; text-align: left; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 500; color: var(--white); transition: background 0.2s; }
 .faq-q:hover { background: var(--iron-light); }
 .faq-icon { width: 18px; height: 18px; flex-shrink: 0; border: 1px solid var(--iron-border); display: flex; align-items: center; justify-content: center; position: relative; }
@@ -158,18 +165,28 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s; padding: 0 1.5rem; }
 .faq-item.open .faq-a { max-height: 400px; padding: 0 1.5rem 1.5rem; }
 .faq-a p { font-size: 0.88rem; color: var(--brushed); line-height: 1.8; }
+@media (max-width: 900px) { .faq-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
 
 /* CLOSE */
-.close-section { background: var(--iron); padding: 7rem 5rem; position: relative; overflow: hidden; }
-.close-section::before { content: 'FORGED'; position: absolute; right: -1rem; top: 50%; transform: translateY(-50%); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 15rem; color: rgba(74,92,56,0.06); pointer-events: none; line-height: 1; white-space: nowrap; }
-.close-inner { position: relative; z-index: 2; max-width: 600px; }
+.close-section { background: var(--iron-mid); padding: 7rem 5rem; position: relative; overflow: hidden; }
+
+.close-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .close-section h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; text-transform: uppercase; color: var(--white); line-height: 1.1; margin-bottom: 1.25rem; }
 .close-body { color: var(--brushed); font-size: 0.97rem; line-height: 1.8; margin-bottom: 2rem; }
 .close-body strong { color: var(--white); }
 .close-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
 .close-contact { font-size: 0.8rem; color: var(--silver); }
 .close-contact a { color: var(--green-light); text-decoration: none; }
-@media (max-width: 640px) { .close-section { padding: 5rem 1.5rem; } }
+.close-right { border-left: 1px solid var(--iron-border); padding-left: 5rem; }
+.close-guarantee { background: var(--iron); border: 1px solid var(--green-border); padding: 2rem; }
+.close-guarantee-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-light); margin-bottom: 1rem; }
+.close-guarantee h3 { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); text-transform: uppercase; margin-bottom: 0.75rem; }
+.close-guarantee p { font-size: 0.88rem; color: var(--brushed); line-height: 1.8; }
+@media (max-width: 900px) {
+  .close-section { padding: 5rem 1.5rem; }
+  .close-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .close-right { border-left: none; border-top: 1px solid var(--iron-border); padding-left: 0; padding-top: 3rem; }
+}
 
 /* FOOTER */
 footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--iron-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
@@ -185,9 +202,10 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
 @media (max-width: 640px) { footer { padding: 2rem 1.5rem; } }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.hero-start-inner h1 { animation: fadeUp 0.5s ease 0.15s both; }
-.hero-start-inner p { animation: fadeUp 0.5s ease 0.3s both; }
+.hero-left h1 { animation: fadeUp 0.5s ease 0.15s both; }
+.hero-left p { animation: fadeUp 0.5s ease 0.3s both; }
 .hero-start-actions { animation: fadeUp 0.5s ease 0.42s both; }
+.hero-image { animation: fadeUp 0.5s ease 0.3s both; }
 </style>
 </head>
 <body>
@@ -217,15 +235,41 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
 <!-- HERO -->
 <section class="hero-start">
   <div class="hero-start-inner">
-    <div class="label">Complete Beginners</div>
-    <h1>You don't need experience.<br>You don't need to be fit.<br><em>You just need to show up.</em></h1>
-    <p>Forged Grappling is Westbury's only dedicated no-gi grappling gym. Your first class is free, and we'll walk you through everything. Here's what to expect.</p>
-    <div class="hero-start-actions">
-      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">&rarr; Book Your Free First Class</a>
-      <a href="#first-class" class="btn-ghost">What to expect</a>
+    <div class="hero-left">
+      <div class="label">Complete Beginners</div>
+      <h1>You don't need experience.<br>You don't need to be fit.<br><em>You just need to show up.</em></h1>
+      <p>Forged Grappling runs a structured four-week beginner curriculum that builds real grappling instincts from day one — not just moves you'll forget under pressure. Your first class is free, and we'll walk you through everything. Here's what to expect.</p>
+      <div class="hero-start-actions">
+        <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">&rarr; Book Your Free First Class</a>
+        <a href="#first-class" class="btn-ghost">What to expect</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <span class="hero-image-label">Image placeholder</span>
     </div>
   </div>
 </section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-value">Free</div>
+      <div class="stat-divider"></div>
+      <div class="stat-label">Your first class,<br>no strings attached</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">4 Weeks</div>
+      <div class="stat-divider"></div>
+      <div class="stat-label">Structured beginner<br>curriculum</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">30 Days</div>
+      <div class="stat-divider"></div>
+      <div class="stat-label">Money-back guarantee<br>on your first month</div>
+    </div>
+  </div>
+</div>
 
 <!-- REASSURANCE -->
 <section class="reassure section-wrap">
@@ -300,89 +344,58 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
 <!-- FOUNDATIONS CLASS -->
 <section class="foundations section-wrap">
   <div class="label">The class you'll start in</div>
-  <h2 style="font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:2rem;">Foundations</h2>
-  <div class="foundations-block">
-    <div class="foundations-header">
-      <h3>Revolving 4-week beginner curriculum</h3>
+  <div class="foundations-inner">
+    <div class="foundations-intro">
+      <h2>Foundations</h2>
+      <p>A structured class that cycles through core grappling concepts over four weeks. Each week builds on the last, but you can join at any point in the cycle. You won't be expected to remember anything from a previous class.</p>
     </div>
-    <div class="foundations-body">
-      <p>Foundations is a structured class that cycles through core grappling concepts over four weeks. Each week builds on the last, but you can join at any point in the cycle. You won't be expected to remember anything from a previous class.</p>
-      <p>Rather than demonstrating techniques for you to copy, the coach sets up <strong>structured games and challenges</strong> that teach you to move, react, and solve problems on the mat. You develop real instincts from day one, not a list of moves you can't use under pressure. The class covers fundamental positions, movement, escapes, and submissions — all at a pace that works for you.</p>
-      <div class="foundations-schedule">
-        <span class="foundations-time"><strong>Mon — Fri</strong> &nbsp; 6:00 — 7:00 PM</span>
+    <div class="foundations-block">
+      <div class="foundations-header">
+        <h3>Revolving 4-week beginner curriculum</h3>
       </div>
-    </div>
-  </div>
-</section>
-
-<!--
-═══════════════════════════════════════════════════════════════
-  FOUNDATIONS PASS — commented out for future use.
-  To activate: uncomment the CSS block in <style> and the HTML below.
-  Update the CTA link if a separate payment link is needed.
-═══════════════════════════════════════════════════════════════
-
-<section class="fpass section-wrap">
-  <div class="fpass-card">
-    <div class="fpass-badge">New to grappling?</div>
-    <div class="fpass-grid">
-      <div class="fpass-left">
-        <h2>The Foundations Pass</h2>
-        <p class="fpass-price"><span class="fpass-amount">&pound;40</span><span class="fpass-per">for 4 weeks</span></p>
-        <p class="fpass-desc">Unlimited Foundations classes for a full 4-week curriculum cycle. Complete the course and get a free Forged Grappling rashguard.</p>
-        <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">&rarr; Get the Foundations Pass</a>
-      </div>
-      <div class="fpass-right">
-        <div class="fpass-includes">
-          <div class="fpass-includes-label">What's included</div>
-          <ul>
-            <li>Unlimited Foundations classes (Mon&ndash;Fri, 6&ndash;7pm) for 4 weeks</li>
-            <li>Full rotation of the beginner curriculum</li>
-            <li>Free Forged Grappling rashguard on completion</li>
-            <li>No commitment to continue after the 4 weeks</li>
-          </ul>
-        </div>
-        <div class="fpass-upgrade">
-          <p><strong>Want to keep going?</strong> Upgrade to a founding membership within your 4 weeks and your pass payment counts toward your first month. You pay just &pound;10 to top up to the full &pound;50/month founding rate.</p>
+      <div class="foundations-body">
+        <p>Rather than demonstrating techniques for you to copy, the coach sets up <strong>structured games and challenges</strong> that teach you to move, react, and solve problems on the mat. You develop real instincts from day one, not a list of moves you can't use under pressure. The class covers fundamental positions, movement, escapes, and submissions — all at a pace that works for you.</p>
+        <div class="foundations-schedule">
+          <span class="foundations-time"><strong>Mon — Fri</strong> &nbsp; 6:00 — 7:00 PM</span>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-  END FOUNDATIONS PASS
--->
 
 <!-- FAQ -->
 <section class="faq section-wrap" id="faq">
-  <div class="faq-header">
-    <div class="label">Questions</div>
-    <h2>The things people ask before they book.</h2>
-  </div>
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" aria-controls="faq-s1">Will I be completely lost in my first class?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-s1" role="region"><p>No. The Foundations class is designed for exactly this. You'll be introduced to fundamental positions and movements before anything else. You won't be thrown into live sparring before you're ready. Everyone starts from zero — including the coaches, once.</p></div>
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="label">Questions</div>
+      <h2>The things people ask before they book.</h2>
+      <p>If something isn't covered here, drop us a message at <a href="mailto:info&#64;forgedgrappling.co.uk" style="color:var(--green-light);text-decoration:none;">info&#64;forgedgrappling.co.uk</a>.</p>
     </div>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" aria-controls="faq-s2">What if I'm overweight or out of shape?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-s2" role="region"><p>Grappling fitness comes from grappling. Plenty of people start unfit and build conditioning through training. You go at your own pace, rest when you need to, and improve week by week. There is no fitness test.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" aria-controls="faq-s3">What's no-gi grappling? Is it like MMA?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-s3" role="region"><p>No-gi grappling is submission wrestling without the traditional martial arts uniform. No punching, no kicking. You use takedowns, control positions, and submissions (joint locks and chokes) to win. It's the grappling component of MMA, trained as its own discipline.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" aria-controls="faq-s4">How much does it cost?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-s4" role="region"><p>Your first class is free. After that, founding membership is £50/month (limited to 25 spots, locked for life) or £80/month standard. Drop-in is £10/session. No contracts, no joining fees. Full details on the <a href="/#pricing" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(99,125,74,0.4);">pricing page</a>.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" aria-controls="faq-s5">What's the 30-day guarantee?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-s5" role="region"><p>Train for 30 days. If you don't feel your grappling has measurably improved, we'll refund your first month in full — no questions asked. We're confident enough in what we've built to put our money behind it.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" aria-controls="faq-s6">Will I have to spar in my first class?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-s6" role="region"><p>There's no traditional sparring in the Foundations class. Instead, you'll play structured grappling games that gradually increase in complexity. You're always working with a partner, but the games are designed so you're problem-solving, not fighting. It's competitive enough to be fun, controlled enough to be safe.</p></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-s1">Will I be completely lost in my first class?<div class="faq-icon"></div></button>
+        <div class="faq-a" id="faq-s1" role="region"><p>No. The Foundations class is designed for exactly this. You'll be introduced to fundamental positions and movements before anything else. You won't be thrown into live sparring before you're ready. Everyone starts from zero — including the coaches, once.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-s2">What if I'm overweight or out of shape?<div class="faq-icon"></div></button>
+        <div class="faq-a" id="faq-s2" role="region"><p>Grappling fitness comes from grappling. Plenty of people start unfit and build conditioning through training. You go at your own pace, rest when you need to, and improve week by week. There is no fitness test.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-s3">What's no-gi grappling? Is it like MMA?<div class="faq-icon"></div></button>
+        <div class="faq-a" id="faq-s3" role="region"><p>No-gi grappling is submission wrestling without the traditional martial arts uniform. No punching, no kicking. You use takedowns, control positions, and submissions (joint locks and chokes) to win. It's the grappling component of MMA, trained as its own discipline.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-s4">How much does it cost?<div class="faq-icon"></div></button>
+        <div class="faq-a" id="faq-s4" role="region"><p>Your first class is free. After that, founding membership is £50/month (limited to 25 spots, locked for life) or £80/month standard. Drop-in is £10/session. No contracts, no joining fees. Full details on the <a href="/#pricing" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(99,125,74,0.4);">pricing page</a>.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-s5">What's the 30-day guarantee?<div class="faq-icon"></div></button>
+        <div class="faq-a" id="faq-s5" role="region"><p>Train for 30 days. If you don't feel your grappling has measurably improved, we'll refund your first month in full — no questions asked. We're confident enough in what we've built to put our money behind it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-s6">Will I have to spar in my first class?<div class="faq-icon"></div></button>
+        <div class="faq-a" id="faq-s6" role="region"><p>There's no traditional sparring in the Foundations class. Instead, you'll play structured grappling games that gradually increase in complexity. You're always working with a partner, but the games are designed so you're problem-solving, not fighting. It's competitive enough to be fun, controlled enough to be safe.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -390,13 +403,22 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
 <!-- CLOSE -->
 <section class="close-section">
   <div class="close-inner">
-    <div class="label">The Decision</div>
-    <h2>Your first class is free.<br>Your first month is guaranteed.</h2>
-    <p class="close-body">You risk nothing by showing up. If it's not for you, you'll know after one session. If it is — you'll wonder why you didn't start sooner.</p>
-    <div class="close-actions">
-      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">&rarr; Book Your Free First Class</a>
+    <div class="close-left">
+      <div class="label">The Decision</div>
+      <h2>Your first class is free.<br>Your first month is guaranteed.</h2>
+      <p class="close-body">You risk nothing by showing up. If it's not for you, you'll know after one session. If it is — you'll wonder why you didn't start sooner.</p>
+      <div class="close-actions">
+        <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">&rarr; Book Your Free First Class</a>
+      </div>
+      <p class="close-contact">Questions first? <a href="mailto:info&#64;forgedgrappling.co.uk">info&#64;forgedgrappling.co.uk</a> · <a href="tel:+447513104760">07513 104760</a></p>
     </div>
-    <p class="close-contact">Questions first? <a href="mailto:info@forgedgrappling.co.uk">info@forgedgrappling.co.uk</a> · <a href="tel:+447513104760">07513 104760</a></p>
+    <div class="close-right">
+      <div class="close-guarantee">
+        <div class="close-guarantee-label">Our Promise</div>
+        <h3>30-Day Money-Back Guarantee</h3>
+        <p>Train for 30 days. If you don't feel your grappling has measurably improved, we'll refund your first month in full — no questions asked. We're confident enough in what we've built to put our money behind it.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -417,7 +439,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
       <a href="https://www.instagram.com/forgedgrappling/" target="_blank" title="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
       <a href="https://www.tiktok.com/@forgedgrappling" target="_blank" title="TikTok" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
       <a href="https://smoothcomp.com/en/club/86870" target="_blank" title="Smoothcomp" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></a>
-      <a href="mailto:info@forgedgrappling.co.uk" title="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+      <a href="mailto:info&#64;forgedgrappling.co.uk" title="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
     </div>
     <div class="footer-links">
       <a href="/">Home</a>
@@ -425,7 +447,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
       <a href="/cookies">Cookies</a>
       <a href="/terms">Terms</a>
     </div>
-    <div style="font-size:0.75rem;color:rgba(138,145,153,0.5);"><a href="mailto:info@forgedgrappling.co.uk" style="color:inherit;text-decoration:none;">info@forgedgrappling.co.uk</a> &nbsp;&middot;&nbsp; <a href="tel:07513104760" style="color:inherit;text-decoration:none;">07513 104760</a></div>
+    <div style="font-size:0.75rem;color:rgba(138,145,153,0.5);"><a href="mailto:info&#64;forgedgrappling.co.uk" style="color:inherit;text-decoration:none;">info&#64;forgedgrappling.co.uk</a> &nbsp;&middot;&nbsp; <a href="tel:07513104760" style="color:inherit;text-decoration:none;">07513 104760</a></div>
   </div>
 </footer>
 
@@ -448,21 +470,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function toggleMobileNav() {
-  var btn = document.querySelector('.nav-hamburger');
-  var nav = document.getElementById('mobile-nav');
-  var isOpen = nav.classList.contains('open');
-  nav.classList.toggle('open');
-  btn.classList.toggle('open');
-  btn.setAttribute('aria-expanded', !isOpen);
-  document.body.style.overflow = isOpen ? '' : 'hidden';
-}
-function closeMobileNav() {
-  document.querySelector('.nav-hamburger').classList.remove('open');
-  document.getElementById('mobile-nav').classList.remove('open');
-  document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
-</script>
-
-</body>
-</html>
+  var btn = document.querySel
