@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forged Grappling | No-Gi Grappling Gym | Westbury, Wiltshire</title>
+<title>Forged Grappling — No-Gi Submission Grappling · Westbury, Wiltshire</title>
 <meta name="description" content="Westbury's only dedicated no-gi submission grappling gym. Structured curriculum, 4 coaches with 125+ competition wins, 5 days a week. Free trial class, founding membership from £50/month.">
 <!-- TODO: Replace YOUR-DOMAIN with actual domain once connected -->
 <link rel="canonical" href="https://YOUR-DOMAIN/">
@@ -14,7 +14,7 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Forged Grappling | No-Gi Grappling Gym | Westbury, Wiltshire">
+<meta property="og:title" content="Forged Grappling — No-Gi Submission Grappling · Westbury, Wiltshire">
 <meta property="og:description" content="Westbury's only dedicated no-gi grappling gym. Structured curriculum, 4 coaches with 125+ competition wins, 5 days a week. Free trial class, founding membership from £50/month.">
 <!-- TODO: Replace with actual OG image URL (recommended 1200x630px) -->
 <meta property="og:image" content="https://YOUR-DOMAIN/og-image.jpg">
@@ -92,12 +92,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 5rem; padding-top: 72px; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px), repeating-linear-gradient(0deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px); pointer-events: none; }
 .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--iron-border); }
-.hero-content { position: relative; z-index: 2; padding-right: 3rem; padding-top: 2rem; padding-bottom: 2rem; }
+.hero-content { position: relative; z-index: 2; padding-right: 5rem; padding-top: 2rem; padding-bottom: 2rem; }
 .hero-location { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-light); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
 .hero-location::before { content: ''; width: 28px; height: 1px; background: var(--green-light); }
 .hero h1 { font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; color: var(--white); margin-bottom: 1.5rem; line-height: 1.08; }
 .hero h1 em { font-style: normal; color: var(--green-light); }
-.hero-sub { font-size: 1rem; font-weight: 300; color: var(--brushed); line-height: 1.75; max-width: 480px; margin-bottom: 2rem; }
+.hero-sub { font-size: 1rem; font-weight: 300; color: var(--brushed); line-height: 1.75; margin-bottom: 2rem; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.85rem; }
 .hero-reassure { font-size: 0.75rem; color: var(--silver); }
 .hero-reassure a { color: var(--green-light); text-decoration: none; border-bottom: 1px solid rgba(99,125,74,0.4); transition: border-color 0.2s; }
@@ -215,7 +215,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .schedule { background: var(--iron-mid); }
 .schedule-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1.5rem; }
 .schedule-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); }
-.schedule-compact { display: flex; flex-direction: column; gap: 2px; background: rgba(74,92,56,0.12); }
+.schedule-compact { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; background: rgba(74,92,56,0.12); }
 .schedule-days-bar { background: var(--iron); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
 .schedule-days-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-light); flex-shrink: 0; }
 .schedule-days-list { display: flex; gap: 0.5rem; flex-wrap: wrap; }
@@ -247,14 +247,24 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .value-row-badge { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--green-tint); border: 1px solid var(--green-border); color: var(--green-light); padding: 0.15rem 0.4rem; margin-left: 0.45rem; vertical-align: middle; }
 .value-row-desc { font-size: 0.76rem; color: var(--silver); margin-top: 0.18rem; }
 .value-row-price { font-family: 'Manrope', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--silver); white-space: nowrap; text-align: right; text-decoration: line-through; opacity: 0.55; }
+.value-row-main { background: var(--iron-light); }
+.value-row-price-col { display: flex; flex-direction: column; align-items: flex-end; gap: 0.1rem; white-space: nowrap; }
+.value-row-was { font-family: 'Manrope', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--silver); text-decoration: line-through; opacity: 0.55; }
+.value-row-now { font-family: 'Manrope', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--green-light); line-height: 1; }
+.value-row-now span { font-size: 0.75rem; font-weight: 400; color: var(--silver); margin-left: 0.1rem; }
+.value-bonus-header { background: var(--green-tint); border-top: 1px solid var(--green-border); border-bottom: 1px solid var(--green-border); padding: 0.5rem 2rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-light); }
+.value-row-free { font-family: 'Manrope', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--green-light); white-space: nowrap; letter-spacing: 0.06em; text-transform: uppercase; }
 .value-stack-total { background: var(--iron-light); border-top: 2px solid var(--green-border); padding: 1.25rem 2rem; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; }
 .value-total-label { font-size: 0.78rem; font-weight: 500; color: var(--silver); text-transform: uppercase; letter-spacing: 0.1em; }
 .value-total-amount { font-family: 'Manrope', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--white); text-align: right; }
 .value-total-sub { font-size: 0.7rem; font-weight: 400; color: var(--silver); display: block; text-align: right; margin-top: 0.1rem; }
-.value-stack-cta-row { background: var(--green-tint); border-top: 1px solid var(--green-border); padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-.value-cta-text { font-size: 0.9rem; color: var(--white); line-height: 1.6; }
-.value-cta-text strong { color: var(--green-light); font-weight: 700; }
-.saving-badge { display: inline-block; background: var(--green); color: var(--white); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; padding: 0.18rem 0.55rem; margin-left: 0.4rem; vertical-align: middle; }
+.value-founding-row { background: var(--green-tint); border-top: 2px solid var(--green); padding: 1.75rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.value-founding-left { display: flex; flex-direction: column; gap: 0.4rem; }
+.value-founding-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-light); }
+.value-founding-price { font-family: 'Manrope', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--white); line-height: 1; }
+.value-founding-price span { font-size: 1rem; font-weight: 400; color: var(--silver); margin-left: 0.2rem; }
+.value-founding-sub { font-size: 0.78rem; color: var(--silver); }
+.saving-badge { display: inline-block; background: var(--green); color: var(--white); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; padding: 0.18rem 0.55rem; margin-right: 0.35rem; vertical-align: middle; }
 
 /* ─── GUARANTEE ─── */
 .guarantee-block { max-width: 860px; margin: 0 auto 2.5rem; background: var(--iron-mid); border: 1px solid var(--iron-border); display: grid; grid-template-columns: auto 1fr; overflow: hidden; }
@@ -291,12 +301,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .pricing-footer p strong { color: var(--white); }
 @media (max-width: 800px) { .pricing-grid { grid-template-columns: 1fr; max-width: 400px; } .guarantee-block { grid-template-columns: 1fr; } .guarantee-icon-col { flex-direction: row; padding: 1.1rem 1.5rem; border-right: none; border-bottom: 1px solid var(--green-border); min-width: unset; gap: 0.75rem; } .value-row { padding: 0.9rem 1.25rem; } .value-stack-header, .value-stack-total, .value-stack-cta-row { padding: 1.1rem 1.25rem; } }
 
+/* ─── FAQ ─── */
 .faq { background: var(--iron-mid); }
-.faq-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+.faq-header { max-width: 540px; margin-bottom: 3rem; }
 .faq-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.6rem; }
-.faq-header p { color: var(--silver); font-size: 0.92rem; margin-top: 0.75rem; }
-.faq-list { display: flex; flex-direction: column; gap: 2px; }
-@media (max-width: 900px) { .faq-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+.faq-header p { color: var(--silver); font-size: 0.92rem; }
+.faq-list { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
 .faq-item { background: var(--iron); overflow: hidden; }
 .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; background: none; border: none; cursor: pointer; text-align: left; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 500; color: var(--white); transition: background 0.2s; }
 .faq-q:hover { background: var(--iron-light); }
@@ -323,7 +333,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .urgency-dot { width: 6px; height: 6px; background: var(--green-light); border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
 .urgency-inline strong { color: var(--white); }
 .close-right { border-left: 1px solid var(--iron-border); padding-left: 5rem; }
-.close-urgency-card { background: var(--iron); border: 1px solid var(--green-border); padding: 2rem; }
+.close-urgency-card { background: var(--iron-mid); border: 1px solid var(--green-border); padding: 2rem; }
 .close-urgency-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-light); margin-bottom: 1rem; }
 .close-urgency-card h3 { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); text-transform: uppercase; margin-bottom: 0.75rem; }
 .close-urgency-card p { font-size: 0.88rem; color: var(--brushed); line-height: 1.8; }
@@ -476,7 +486,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
   ],
   "priceRange": "£10-£80",
   "currenciesAccepted": "GBP",
-  "sport": "No-Gi Grappling"
+  "sport": "Submission Grappling"
 }
 </script>
 </head>
@@ -493,7 +503,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
     <li><a href="#schedule">Schedule</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="nav-cta">→ Try a Free Class</a></li>
+    <li><a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="nav-cta">Try a Free Class</a></li>
   </ul>
   <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
     <span></span><span></span><span></span>
@@ -514,12 +524,12 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-content">
-    <div class="hero-location">No-Gi Grappling &nbsp;·&nbsp; Westbury, Wiltshire</div>
-    <h1>Dedicated no-gi.<br>Five days a week.<br><em>Built for purpose.</em></h1>
-    <p class="hero-sub">Westbury's only gym built entirely around no-gi grappling. Four competitive coaches, a modern coaching method, and a structured curriculum designed to actually develop your game. Try a free class.</p>
+    <div class="hero-location">No-Gi Submission Grappling &nbsp;·&nbsp; Westbury, Wiltshire</div>
+    <h1>Dedicated no-gi.<br>Five days a week.<br><em>Built from<br>the ground up.</em></h1>
+    <p class="hero-sub">Westbury's only gym built entirely around no-gi submission grappling. Four competitive coaches, a modern coaching method, and a structured curriculum designed to actually develop your game. Try a free class.</p>
     <div class="hero-actions">
       <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Try a Free Class</a>
-      <a href="/start-here" class="btn-ghost">Never trained before?</a>
+      <a href="/start-here" class="btn-ghost">New to grappling? Start here →</a>
     </div>
     <p class="hero-reassure">No contracts. No joining fees. <a href="#pricing">Founding membership from £50/month →</a></p>
   </div>
@@ -531,14 +541,14 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
           <div class="vsl-play">
             <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
           </div>
-          <div class="vsl-label">Watch — 3 minutes</div>
+          <div class="vsl-label">Watch — 2 minutes</div>
           <div class="vsl-duration">Why we built Forged, and what you get</div>
         </div>
         <div class="vsl-coming-soon" id="vsl-soon">Video coming soon</div>
       </div>
     </div>
     <div class="hero-stats">
-      <div class="stat-cell"><div class="stat-num">120+</div><div class="stat-lbl">Coach wins</div></div>
+      <div class="stat-cell"><div class="stat-num">125+</div><div class="stat-lbl">Coach wins</div></div>
       <div class="stat-cell"><div class="stat-num">5</div><div class="stat-lbl">Days a week</div></div>
       <div class="stat-cell"><div class="stat-num">£50</div><div class="stat-lbl">Founding price</div></div>
       <div class="stat-cell"><div class="stat-num">30</div><div class="stat-lbl">Day guarantee</div></div>
@@ -557,7 +567,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
     <div>
       <div class="label">Sound familiar?</div>
       <h2>You've been putting in the work.<br><em>The results haven't matched.</em></h2>
-      <p class="problem-body">You train consistently, but your development has stalled. No-gi gets two sessions a week at most and the skills you drill don't hold up under pressure. You're not short on effort. You just don't have the right training environment.</p>
+      <p class="problem-body">You train consistently, but your development has stalled. No-gi gets two sessions a week at most. There's no structured curriculum, no clear progression, and the skills you drill don't hold up under pressure. You're not short on effort. You're short on environment.</p>
       <ul class="complaint-list">
         <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">"No-gi is an afterthought — two classes a week, first to get cancelled when numbers drop."</span></li>
         <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">"I drill techniques perfectly, then forget everything the moment someone resists."</span></li>
@@ -567,11 +577,11 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
     <div>
       <div class="label">What we built</div>
       <h2>A gym designed around<br><em>no-gi from day one.</em></h2>
-      <p class="problem-body">Forged isn't a gi gym with the jacket taken off. Every class is built around no-gi grappling. Five days a week with structured progression and coaches with 120+ competition wins between them.</p>
+      <p class="problem-body">Forged isn't a gi gym with the jacket taken off. Every class, every curriculum, every coaching decision is built around no-gi submission grappling. Five days a week, structured progression, and coaches with 125+ competition wins between them.</p>
       <ul class="complaint-list">
         <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">Dedicated no-gi curriculum — not a gi programme adapted for no-gi.</span></li>
         <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">Coaching method built around problem-solving under real pressure, not memorising sequences.</span></li>
-        <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">Five sessions a week with training partners who all want to learn.</span></li>
+        <li class="complaint-item"><span class="complaint-dot"></span><span class="complaint-text">Five sessions a week with training partners who actually show up.</span></li>
       </ul>
     </div>
   </div>
@@ -582,29 +592,31 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
   <div class="cla-grid">
     <div>
       <div class="label">How We Coach</div>
-      <h2>We don't teach grappling like a choreography.</h2>
+      <h2>We don't teach grappling like choreography.</h2>
       <p class="cla-body">Traditional coaching: watch a technique, repeat it fifty times with a compliant partner, try to remember it when it matters. It works — slowly. The problem is that pressure and fatigue scramble memory. Techniques drilled perfectly in class evaporate the moment someone's actually resisting.</p>
-      <p class="cla-body">We use the Constraints-Led Approach. Instead of drilling isolated techniques, we structure training so the right movements emerge through problem-solving under real pressure. We give you the oppotunity to develop your own game, not a copy of someone else's.</p>
-      <p class="cla-closer">You won't just learn techniques at Forged. You'll learn how to grapple.</p>
+      <p class="cla-body">We use the Constraints-Led Approach. Instead of drilling isolated techniques, we structure training so the right movements emerge through problem-solving under real pressure. You develop instinct, not recall. Your game — not a copy of someone else's.</p>
     </div>
     <div class="cla-compare">
       <div class="compare-card compare-old">
-        <div class="compare-tag tag-old">Traditional class</div>
+        <div class="compare-tag tag-old">Traditional drilling</div>
+        <div class="compare-title">What most gyms do</div>
         <div class="compare-steps">
           <div class="compare-step"><span class="step-arrow">→</span><span>Coach <strong>demonstrates</strong> a technique</span></div>
-          <div class="compare-step"><span class="step-arrow">→</span><span>Repeat <strong>50 times</strong> with a compliant partner</span></div>
-          <div class="compare-step"><span class="step-arrow">→</span><span>Try to use the <strong>move of the day</strong> in positional sparring</span></div>
-          <div class="compare-step"><span class="step-arrow">→</span><span><strong>Forget it</strong> as soon as you go spar</span></div>
+          <div class="compare-step"><span class="step-arrow">→</span><span><strong>Repeat 50 times</strong> with a compliant partner</span></div>
+          <div class="compare-step"><span class="step-arrow">→</span><span><strong>Try to remember it</strong> in live rolling</span></div>
+          <div class="compare-step dim"><span class="step-arrow">→</span><span>Technique <strong>vanishes under pressure</strong></span></div>
         </div>
       </div>
       <div class="compare-card compare-new">
-        <div class="compare-tag tag-new">How we coach at Forged</div>
+        <div class="compare-tag tag-new">Constraints-Led Approach</div>
+        <div class="compare-title">How we coach at Forged</div>
         <div class="compare-steps">
-          <div class="compare-step"><span class="step-arrow-green">→</span><span>Coach <strong>sets a problem</strong> to solve</span></div>
+          <div class="compare-step"><span class="step-arrow-green">→</span><span>Coach sets a <strong>problem to solve</strong></span></div>
           <div class="compare-step"><span class="step-arrow-green">→</span><span>You <strong>attempt, adapt, iterate</strong> under real pressure</span></div>
           <div class="compare-step"><span class="step-arrow-green">→</span><span>Movements become <strong>instinctive</strong>, not memorised</span></div>
-          <div class="compare-step"><span class="step-arrow-green">→</span><span>Skills <strong>hold up</strong> under competition pressure</span></div>
+          <div class="compare-step"><span class="step-arrow-green">→</span><span>Skills <strong>hold under competition pressure</strong></span></div>
         </div>
+        <div class="compare-note">Backed by motor learning research. Used by elite coaches in wrestling, rugby, and MMA worldwide. Rare in grappling — standard at Forged.</div>
       </div>
     </div>
   </div>
@@ -614,7 +626,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
 <section class="coaches section-wrap" id="coaches">
   <div class="coaches-intro">
     <div class="label">The Coaching Team</div>
-    <h2>Four coaches. 120+ competition wins.</h2>
+    <h2>Four coaches. 125+ competition wins.</h2>
     <p>Belt colour reflects gi jiu-jitsu rank. <em>It tells you very little about no-gi ability.</em> Competition record and mat time tell the real story.</p>
   </div>
   <div class="coaches-grid">
@@ -622,32 +634,32 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
       <div class="coach-avatar"><div class="coach-avatar-inner"><div class="coach-initials">HW</div></div><div class="coach-photo-note">Photo coming soon</div></div>
       <div class="coach-body">
         <div class="coach-name">Harry Whitburn</div>
-        <div class="coach-tag">Coach · Blue Belt · 2.5 Years</div>
-        <div class="coach-wins">60+ Wins · 28 Medals · International Competitor</div>
+        <div class="coach-tag">Coach · Blue Belt · 2.5 Years Training</div>
+        <div class="coach-wins">61 Wins · 28 Medals · International Competitor</div>
       </div>
     </div>
     <div class="coach-card">
       <div class="coach-avatar"><div class="coach-avatar-inner"><div class="coach-initials">JW</div></div><div class="coach-photo-note">Photo coming soon</div></div>
       <div class="coach-body">
         <div class="coach-name">Jack Whitburn</div>
-        <div class="coach-tag">Coach · Blue Belt · 3.5 Years</div>
-        <div class="coach-wins">30+ Wins · 19 Medals · International Competitor</div>
+        <div class="coach-tag">Coach · Blue Belt · 3.5 Years Training</div>
+        <div class="coach-wins">31 Wins · 19 Medals · International Competitor</div>
       </div>
     </div>
     <div class="coach-card">
       <div class="coach-avatar"><div class="coach-avatar-inner"><div class="coach-initials">MC</div></div><div class="coach-photo-note">Photo coming soon</div></div>
       <div class="coach-body">
         <div class="coach-name">Mitchell Cullum</div>
-        <div class="coach-tag">Coach · Purple Belt · 5 Years</div>
-        <div class="coach-wins">30+ Wins · 18 Medals · National Competitor</div>
+        <div class="coach-tag">Coach · Purple Belt · 5 Years Training</div>
+        <div class="coach-wins">32 Wins · 18 Medals · National Competitor</div>
       </div>
     </div>
     <div class="coach-card">
       <div class="coach-avatar"><div class="coach-avatar-inner"><div class="coach-initials">NC</div></div><div class="coach-photo-note">Photo coming soon</div></div>
       <div class="coach-body">
         <div class="coach-name">Nathan Cullum</div>
-        <div class="coach-tag">Coach · Blue Belt · 3 Years</div>
-        <div class="coach-wins">4 Medals · National Competitor</div>
+        <div class="coach-tag">Coach · Blue Belt · 3 Years Training</div>
+        <div class="coach-wins">1 Win · 4 Medals · National Competitor</div>
       </div>
     </div>
   </div>
@@ -663,26 +675,28 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
   <div class="who-grid">
     <div class="who-card">
       <div class="who-tag">Your training</div>
-      <h3>No-gi shouldn't be a side offering.</h3>
-      <p>If no-gi is what you want to get good at, you need a gym where it's the focus, not an afterthought. A place with a structured program, coaches with competition eperience, and enough classes each week to build momentum.</p>
+      <h3>No-gi shouldn't be<br>a side offering.</h3>
+      <p>If no-gi is what you want to get good at, you need a gym where it's the focus, not an afterthought. A place with a structured curriculum, coaches who compete no-gi themselves, and enough sessions per week to actually build momentum.</p>
       <ul class="who-points">
         <li>Structured no-gi curriculum from fundamentals through to competition prep</li>
         <li>Coaches who can watch you roll and identify what's actually holding you back</li>
-        <li>Over 500 hours of classes each year</li>
+        <li>Five days a week — enough volume to see real progress</li>
         <li>Competition prep available, but never an obligation</li>
       </ul>
     </div>
     <div class="who-card">
       <div class="who-tag">Your options</div>
       <h3>Come and see for yourself.</h3>
-      <p>The best way to tell if Forged is the right fit for you is to come and train with us. Your first class is free, there's no sales pitch, and you're under no obligation to sign up.</p>
+      <p>The best way to tell if this is the right fit is to train here. Your first class is free, there's no sales pitch, and you're under no obligation to sign up. Just come, roll, and see how it compares.</p>
       <ul class="who-points">
-        <li>Free trial class — click to button below to register</li>
+        <li>Free trial class — register and show up</li>
         <li>30-day money-back guarantee on all memberships</li>
         <li>No contracts, cancel anytime</li>
         <li>Founding membership at £50/month — locked for life</li>
       </ul>
-      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green" style="margin-top:1rem;">→ Try a Free Class</a>
+      <div style="text-align:center;margin-top:1.75rem;">
+        <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Try a Free Class</a>
+      </div>
     </div>
   </div>
   <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--silver);">Never trained before? <a href="/start-here" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(99,125,74,0.4);">Start here →</a></p>
@@ -690,12 +704,11 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
 
 <!-- SCHEDULE -->
 <section class="schedule section-wrap" id="schedule">
-  <div class="schedule-header">
+  <div class="schedule-header" style="max-width:860px;margin:0 auto 2.5rem;">
     <div>
       <div class="label">When We Train</div>
       <h2>Five days a week.<br>Two classes every night.</h2>
     </div>
-    <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Try a Free Class</a>
   </div>
   <div class="schedule-compact">
     <div class="schedule-days-bar">
@@ -712,14 +725,14 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
       <div class="schedule-row-time">6:00 – 7:00 PM</div>
       <div>
         <div class="schedule-row-name">Foundations</div>
-        <div class="schedule-row-desc">Revolving 4-week curriculum. Built for beginners, valuable at every level.</div>
+        <div class="schedule-row-desc">Revolving 4-week curriculum. Built for beginners, structured enough to be valuable at every level. No prior experience needed — this is where everyone starts.</div>
       </div>
     </div>
     <div class="schedule-row alllevels">
       <div class="schedule-row-time">7:00 – 8:00 PM</div>
       <div>
         <div class="schedule-row-name">All Levels</div>
-        <div class="schedule-row-desc">Open to everyone.</div>
+        <div class="schedule-row-desc">Open to everyone. Technique focus followed by live rolling. Once you've completed a few weeks of Foundations, this is where your game starts to develop under real pressure.</div>
       </div>
     </div>
   </div>
@@ -736,31 +749,40 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
   <div class="value-stack">
     <div class="value-stack-header">
       <div class="value-stack-header-label">What's included in every membership</div>
-      <div class="value-stack-header-sub">Individual market value shown</div>
+      <div class="value-stack-header-sub">Founding membership — £50/month</div>
+    </div>
+    <div class="value-row value-row-main">
+      <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Unlimited no-gi training — all classes, all levels</div><div class="value-row-desc">5 days a week, 2 classes per night. £10/session drop-in equivalent.</div></div></div>
+      <div class="value-row-price-col">
+        <div class="value-row-was">£216/mo</div>
+        <div class="value-row-now">£50<span>/mo</span></div>
+      </div>
+    </div>
+    <div class="value-bonus-header">
+      <span>Free with every membership</span>
     </div>
     <div class="value-row">
-      <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Unlimited no-gi training — all classes, all levels</div><div class="value-row-desc">5 days a week, 2 classes per night. £10/session × 5 sessions/week × 52 weeks ÷ 12 months</div></div></div>
-      <div class="value-row-price">£216/mo</div>
-    </div>
-    <div class="value-row">
-      <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Strength &amp; conditioning area + showers</div><div class="value-row-desc">Full S&amp;C access before and after every session. Equivalent to a standard gym membership.</div></div></div>
-      <div class="value-row-price">£40/mo</div>
+      <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Strength &amp; conditioning area + showers</div><div class="value-row-desc">Full S&amp;C access before and after every session.</div></div></div>
+      <div class="value-row-free">Free</div>
     </div>
     <div class="value-row">
       <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Private members coaching group</div><div class="value-row-desc">Direct access to all four coaches between sessions. Questions, footage review, feedback.</div></div></div>
-      <div class="value-row-price">£30/mo</div>
+      <div class="value-row-free">Free</div>
     </div>
     <div class="value-row bonus">
       <div class="value-row-left"><div class="value-row-dot"></div><div><div class="value-row-name">Technique video library <span class="value-row-badge">Launching at opening</span></div><div class="value-row-desc">Coach-produced videos covering key concepts from each week's sessions.</div></div></div>
-      <div class="value-row-price">£20/mo</div>
+      <div class="value-row-free">Free</div>
     </div>
-    <div class="value-stack-total">
-      <div class="value-total-label">Total combined value</div>
-      <div class="value-total-amount"><span style="font-size:0.95rem;font-weight:400;color:var(--silver)">+£300/mo</span></div>
-    </div>
-    <div class="value-stack-cta-row">
-      <div class="value-cta-text">Founding membership: <strong>£50/month</strong><span class="saving-badge">Save £250+/mo · 83% off</span><br><span style="font-size:0.78rem;color:var(--silver)">Price locked for life. 25 spots total.</span></div>
-      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Become a Founding Member</a>
+    <div class="value-founding-row">
+      <div class="value-founding-left">
+        <div class="value-founding-label">Founding Membership</div>
+        <div class="value-founding-price">£50<span>/month</span></div>
+        <div class="value-founding-sub">
+          <span class="saving-badge">Save £250+/mo &nbsp;·&nbsp; 83% off</span>
+          &nbsp; Price locked for life &nbsp;·&nbsp; 25 spots total
+        </div>
+      </div>
+      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Secure Your Founding Spot</a>
     </div>
   </div>
 
@@ -786,9 +808,9 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
         <li>No commitment required</li>
       </ul>
       <p class="price-note">Perfect for testing the waters or a short-term visit.</p>
-      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-ghost btn-full">→ Book a Session</a>
     </div>
     <div class="price-card featured">
+      <div class="featured-badge">Best Value</div>
       <div class="price-label">Founding Member</div>
       <div class="price-amount"><span>£</span>50</div>
       <div class="price-per">per month</div>
@@ -802,7 +824,6 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
         <li class="highlight">30-day money-back guarantee</li>
       </ul>
       <p class="price-note">Total value: £300+/month. You pay £50. Once founding spots are gone, prices will never be this low again.</p>
-      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green btn-full">→ Secure Your Founding Spot</a>
     </div>
     <div class="price-card">
       <div class="price-label">Standard</div>
@@ -814,8 +835,11 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
         <li>No contract — cancel anytime</li>
       </ul>
       <p class="price-note">Available once founding spots are filled.</p>
-      <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-ghost btn-full">→ Join on Standard</a>
     </div>
+  </div>
+
+  <div style="text-align:center;margin-top:2rem;">
+    <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green" style="font-size:0.95rem;padding:1rem 2.8rem;">→ Secure Your Founding Spot</a>
   </div>
 
   <div class="pricing-footer">
@@ -825,21 +849,19 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
 
 <!-- FAQ -->
 <section class="faq section-wrap" id="faq">
-  <div class="faq-inner">
-    <div class="faq-header">
-      <div class="label">Questions</div>
-      <h2>Everything you want to know before you book.</h2>
-      <p>The questions we actually get asked. New to grappling entirely? We've answered your questions on the <a href="/start-here" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(99,125,74,0.4);">Start Here</a> page.</p>
-    </div>
-    <div>
-      <div class="faq-list">
+  <div class="faq-header">
+    <div class="label">Questions</div>
+    <h2>Everything you want to know before you book.</h2>
+    <p>The questions we actually get asked.</p>
+  </div>
+  <div class="faq-list">
     <div class="faq-item">
       <button class="faq-q" aria-expanded="false" aria-controls="faq-1">What's the difference between Forged and a regular BJJ gym?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-1" role="region"><p>First, we're entirely no-gi. Our curriculum and competition focus are built solely around grappling without the gi. Second, we use the Constraints-Led Approach: a modern coaching methodology that builds adaptable, instinctive grapplers rather than athletes who can only execute techniques in controlled conditions. Third, our coaches have 120+ competition wins between them — their credentials come from performance, not belt colour.</p></div>
+      <div class="faq-a" id="faq-1" role="region"><p>Three things. First, we're entirely no-gi — our curriculum and competition focus are built around grappling without the gi. Second, we use the Constraints-Led Approach: a modern coaching methodology that builds adaptable, instinctive grapplers rather than athletes who can only execute techniques in controlled conditions. Third, our coaches have 125+ competition wins between them — their credentials come from performance, not belt colour.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" aria-expanded="false" aria-controls="faq-2">I train gi. Will my skills transfer?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-2" role="region"><p>A lot transfers — positional awareness, submissions, pressure. But no-gi has its own game: different grips, faster scrambles, and submissions that aren't legal in the gi. If you've been training gi, you'll pick things up quickly, but expect your game to evolve in ways that also improve your gi work.</p></div>
+      <div class="faq-a" id="faq-2" role="region"><p>A lot transfers — positional awareness, submissions, pressure. But no-gi has its own game: different grips, faster scrambles, and positions that don't exist in the gi (like the front headlock and bodylock systems). If you've been training gi, you'll pick things up quickly, but expect your game to evolve in ways that also improve your gi work.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" aria-expanded="false" aria-controls="faq-3">What's the Constraints-Led Approach?<div class="faq-icon"></div></button>
@@ -855,15 +877,14 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
     </div>
     <div class="faq-item">
       <button class="faq-q" aria-expanded="false" aria-controls="faq-6">What's the 30-day guarantee?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-6" role="region"><p>Train for 30 days. If you don't feel your grappling has measurably improved, contact us and we'll refund your first month in full — no questions asked.</p></div>
+      <div class="faq-a" id="faq-6" role="region"><p>Train for 30 days. If you don't feel your grappling has measurably improved, contact us and we'll refund your first month in full — no questions asked. If you show up consistently and it doesn't work for you, we don't want your money.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" aria-expanded="false" aria-controls="faq-7">Can I train here alongside my current gym?<div class="faq-icon"></div></button>
-      <div class="faq-a" id="faq-7" role="region"><p>Absolutely. Some members use Forged as their primary gym, others supplement their existing training with our no-gi sessions. No commitment required unless you want it.</p></div>
-    </div>
-    </div>
+      <div class="faq-a" id="faq-7" role="region"><p>Absolutely. Some members use Forged as their primary gym, others supplement their existing training with our no-gi sessions. The £10 drop-in rate is there for exactly this. No commitment required unless you want it.</p></div>
     </div>
   </div>
+  <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--silver);">New to grappling entirely? We've answered your questions on the <a href="/start-here" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(99,125,74,0.4);">Start Here</a> page.</p>
 </section>
 
 <!-- FINAL CLOSE -->
@@ -876,14 +897,14 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
       <div class="close-actions">
         <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green">→ Try a Free Class</a>
       </div>
-      <p class="close-contact">Questions first? <a href="mailto:info&#64;forgedgrappling.co.uk">info&#64;forgedgrappling.co.uk</a> · <a href="tel:+447513104760">07513 104760</a></p>
+      <p class="close-contact">Questions first? <a href="mailto:info&#64;forgedgrappling.co.uk">info&#64;forgedgrappling.co.uk</a> · <a href="tel:+447513104760">07513 104760</a> · <a href="/start-here">Never trained before?</a></p>
     </div>
     <div class="close-right">
       <div class="close-urgency-card">
         <div class="close-urgency-label">Founding Membership</div>
         <h3>£50/month — Price Locked for Life</h3>
-        <p>
-          <span class="urgency-inline" style="margin-bottom:1rem;display:inline-flex;">
+        <p style="margin-bottom:1rem;">
+          <span class="urgency-inline" style="display:inline-flex;">
             <span class="urgency-dot"></span>
             <span><strong id="close-spots">25 founding spots</strong> remaining — once gone, the price goes to £80 permanently.</span>
           </span>
