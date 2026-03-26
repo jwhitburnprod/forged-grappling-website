@@ -1020,7 +1020,8 @@ function loadAnalytics() {
   !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","cdn.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.people.toString()+" (stub)"},o="init be gu on track capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted loadToolbar resetSessionId useNewCapturePipeline".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
   posthog.init('phc_fqIBsgomDXDXcJv8volxC8kriBY9Hq6cRO93J26dPlC', {
     api_host: 'https://eu.i.posthog.com',
-    person_profiles: 'identified_only'
+    person_profiles: 'identified_only',
+    loaded: function() { setupPostHogTracking(); }
   });
 
   // TODO: Replace G-XXXXXXXXXX with your actual Google Analytics measurement ID
@@ -1033,6 +1034,70 @@ function loadAnalytics() {
   function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', gaId);
+}
+
+// ── PostHog custom event tracking ──
+function setupPostHogTracking() {
+
+  // Button clicks — capture button text as a property
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    var text = (btn.innerText || btn.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ');
+    posthog.capture('button_clicked', {
+      button_text: text,
+      button_id: btn.id || null,
+      button_class: btn.className || null
+    });
+  });
+
+  // Outbound link clicks — external URLs, mailto, and tel
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a');
+    if (!link || !link.href) return;
+    var href = link.href;
+    var text = (link.innerText || link.title || '').trim().replace(/\s+/g, ' ');
+
+    if (href.indexOf('mailto:') === 0) {
+      posthog.capture('email_link_clicked', {
+        email_address: href.replace('mailto:', ''),
+        link_text: text
+      });
+    } else if (href.indexOf('tel:') === 0) {
+      posthog.capture('phone_link_clicked', {
+        phone_number: href.replace('tel:', ''),
+        link_text: text
+      });
+    } else if (href.indexOf('http') === 0 && href.indexOf(window.location.hostname) === -1) {
+      var destination;
+      try { destination = new URL(href).hostname; } catch(err) { destination = href; }
+      posthog.capture('outbound_link_clicked', {
+        destination_url: href,
+        destination_host: destination,
+        link_text: text,
+        link_class: link.className || null
+      });
+    }
+  });
+
+  // Scroll depth — fires once each at 25%, 50%, 75%, 100%
+  var depthsReached = {};
+  window.addEventListener('scroll', function() {
+    var scrolled = window.scrollY || document.documentElement.scrollTop;
+    var total = document.documentElement.scrollHeight - window.innerHeight;
+    if (total <= 0) return;
+    var pct = Math.round((scrolled / total) * 100);
+    [25, 50, 75, 100].forEach(function(depth) {
+      if (pct >= depth && !depthsReached[depth]) {
+        depthsReached[depth] = true;
+        posthog.capture('scroll_depth_reached', {
+          depth_percent: depth,
+          page: window.location.pathname
+        });
+      }
+    });
+  }, { passive: true });
+
 }
 
 // ── Mobile nav ──
