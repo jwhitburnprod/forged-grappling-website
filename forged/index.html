@@ -1080,6 +1080,25 @@ function setupPostHogTracking() {
     }
   });
 
+  // A/B test — hero section
+  posthog.onFeatureFlags(function() {
+    var variant = posthog.getFeatureFlag('hero-ab-test');
+
+    if (variant === 'test') {
+      var h1 = document.querySelector('.hero h1');
+      var sub = document.querySelector('.hero-sub');
+      var cta = document.querySelector('.hero-actions .btn-green');
+      if (h1) h1.innerHTML = 'Get better at grappling.<br><em>Guaranteed.</em>';
+      if (sub) sub.textContent = 'Train with four competitive coaches, five days a week. Westbury\'s only dedicated no-gi submission gym — with a 30-day money-back guarantee if your game doesn\'t improve.';
+      if (cta) cta.innerHTML = '→ Claim Your Free Class';
+    }
+
+    posthog.capture('hero_variant_viewed', {
+      variant: variant || 'control',
+      ab_test_key: 'hero-ab-test'
+    });
+  });
+
   // Scroll depth — fires once each at 25%, 50%, 75%, 100%
   var depthsReached = {};
   window.addEventListener('scroll', function() {
