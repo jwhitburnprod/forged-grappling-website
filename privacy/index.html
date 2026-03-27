@@ -11,93 +11,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-:root {
-  --green: #4A5C38; --green-light: #637d4a; --green-mid: #566b41; --silver: #9BA2AA;
-  --iron: #1E2020; --iron-mid: #242727; --iron-light: #2c2f2f;
-  --iron-border: rgba(255,255,255,0.07); --brushed: #C4C7CA; --white: #FFFFFF;
-  --green-tint: rgba(74,92,56,0.12); --green-border: rgba(74,92,56,0.35);
-}
-body { background: var(--iron); color: var(--white); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
-h1,h2,h3 { font-family: 'Manrope', sans-serif; }
-
-/* ─── NAV ─── */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 5rem; background: rgba(30,32,32,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--iron-border); }
-.nav-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; text-transform: uppercase; }
-.nav-logo span { color: var(--green-light); }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-.nav-links a { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.08em; color: var(--silver); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--white); }
-.nav-cta { background: var(--green) !important; color: var(--white) !important; padding: 0.55rem 1.4rem; font-weight: 500 !important; transition: background 0.2s !important; }
-.nav-cta:hover { background: var(--green-mid) !important; }
-.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; width: 36px; height: 36px; position: relative; z-index: 250; }
-.nav-hamburger span { display: block; width: 20px; height: 1.5px; background: var(--white); margin: 4px auto; transition: transform 0.25s, opacity 0.2s; }
-.nav-hamburger.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
-@media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .nav-hamburger { display: block; } }
-.mobile-nav { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 199; background: rgba(30,32,32,0.98); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
-.mobile-nav.open { opacity: 1; pointer-events: auto; }
-.mobile-nav-links { display: flex; flex-direction: column; gap: 1.5rem; text-align: center; }
-.mobile-nav-links a { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; transition: color 0.2s; }
-.mobile-nav-links a:hover { color: var(--green-light); }
-.btn-green { display: inline-block; background: var(--green); color: var(--white); padding: 0.9rem 2.2rem; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.88rem; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s; }
-.btn-green:hover { background: var(--green-mid); }
-
-/* ─── POLICY HERO ─── */
-.policy-hero { background: var(--iron-mid); padding: 7rem 5rem 4rem; border-bottom: 1px solid var(--iron-border); }
-.policy-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-light); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
-.policy-label::before { content: ''; width: 28px; height: 1px; background: var(--green-light); }
-.policy-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; }
-.policy-meta { font-size: 0.82rem; color: var(--silver); }
-@media (max-width: 640px) { .policy-hero { padding: 6rem 1.5rem 3rem; } }
-
-/* ─── POLICY BODY ─── */
-.policy-body { max-width: 960px; margin: 0 auto; padding: 4rem 5rem; }
-@media (max-width: 1100px) { .policy-body { padding: 4rem 3rem; } }
-@media (max-width: 900px) { .policy-body { padding: 3.5rem 2rem; } }
-@media (max-width: 640px) { .policy-body { padding: 2.5rem 1.5rem; } }
-.policy-body h2 { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); margin: 3rem 0 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--iron-border); }
-.policy-body h2:first-child { margin-top: 0; }
-.policy-body p { font-size: 0.95rem; color: var(--brushed); line-height: 1.8; margin-bottom: 1rem; }
-.policy-body a { color: var(--green-light); text-decoration: none; border-bottom: 1px solid rgba(99,125,74,0.4); transition: border-color 0.2s; }
-.policy-body a:hover { border-color: var(--green-light); }
-.policy-body ul { list-style: none; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
-.policy-body ul li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.92rem; color: var(--brushed); line-height: 1.65; }
-.policy-body ul li::before { content: ''; width: 4px; height: 4px; background: var(--green-light); flex-shrink: 0; margin-top: 0.55rem; border-radius: 50%; }
-.policy-body strong { color: var(--white); font-weight: 500; }
-.info-block { background: var(--iron-mid); border: 1px solid var(--green-border); padding: 1.5rem; margin: 1.5rem 0; }
-.info-block p { margin-bottom: 0; }
-.info-block p + p { margin-top: 0.75rem; }
-.data-table-wrap { overflow-x: auto; margin: 1.25rem 0; -webkit-overflow-scrolling: touch; }
-.data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 420px; }
-.data-table th { background: var(--green-tint); border: 1px solid var(--green-border); padding: 0.75rem 1rem; text-align: left; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-light); white-space: nowrap; }
-.data-table td { border: 1px solid var(--iron-border); padding: 0.75rem 1rem; color: var(--brushed); vertical-align: top; line-height: 1.6; }
-.data-table tr:hover td { background: var(--iron-mid); }
-
-/* ─── FOOTER ─── */
-footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--iron-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-.footer-left {}
-.footer-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
-.footer-logo span { color: var(--green-light); }
-.footer-tagline { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); margin-top: 0.35rem; }
-.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
-.footer-links { display: flex; gap: 1.5rem; }
-.footer-links a { font-size: 0.78rem; color: var(--silver); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
-.footer-links a:hover { color: var(--white); }
-.footer-contact { font-size: 0.78rem; color: rgba(138,145,153,0.6); }
-.footer-contact a { color: rgba(138,145,153,0.6); text-decoration: none; transition: color 0.2s; }
-.footer-contact a:hover { color: var(--silver); }
-.footer-copy { font-size: 0.72rem; color: rgba(138,145,153,0.4); }
-.footer-social { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
-.social-icon { color: rgba(138,145,153,0.5); display: flex; align-items: center; transition: color 0.2s; }
-.social-icon:hover { color: #637d4a; }
-@media (max-width: 640px) { footer { padding: 2rem 1.5rem; } .footer-right { align-items: flex-start; } }
-</style>
+<link rel="canonical" href="https://forgedgrappling.co.uk/privacy/">
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/policy.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <nav>
   <a href="/" class="nav-logo">Forged <span>Grappling</span></a>
@@ -106,7 +25,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
     <li><a href="/#schedule">Schedule</a></li>
     <li><a href="/#pricing">Pricing</a></li>
     <li><a href="/#faq">FAQ</a></li>
-    <li><a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="nav-cta">Book Free Class</a></li>
+    <li><a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" rel="noopener noreferrer" class="nav-cta">Book Free Class</a></li>
   </ul>
   <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
     <span></span><span></span><span></span>
@@ -119,11 +38,11 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
     <a href="/#schedule" onclick="closeMobileNav()">Schedule</a>
     <a href="/#pricing" onclick="closeMobileNav()">Pricing</a>
     <a href="/#faq" onclick="closeMobileNav()">FAQ</a>
-    <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" class="btn-green" style="text-align:center;margin-top:0.5rem;" onclick="closeMobileNav()">→ Book Free Class</a>
+    <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" rel="noopener noreferrer" class="btn-green" style="text-align:center;margin-top:0.5rem;" onclick="closeMobileNav()">→ Book Free Class</a>
   </div>
 </div>
 
-<div class="policy-hero">
+<div class="policy-hero" id="main-content">
   <div class="policy-label">Legal</div>
   <h1>Privacy Policy</h1>
   <p class="policy-meta">Last Updated: March 2026</p>
@@ -149,9 +68,9 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
   <h2>Our third-party processors</h2>
   <p>We use the following third-party services to operate our business. Each acts as a data processor under our instruction:</p>
   <ul>
-    <li><strong>Mat Track</strong> — Membership management and CRM (<a href="https://mattrack.io/privacy" target="_blank">mattrack.io/privacy</a>)</li>
-    <li><strong>Stripe</strong> — Payment processing (<a href="https://stripe.com/gb/privacy" target="_blank">stripe.com/gb/privacy</a>)</li>
-    <li><strong>Google Analytics (Google LLC)</strong> — Website analytics (<a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>)</li>
+    <li><strong>Mat Track</strong> — Membership management and CRM (<a href="https://mattrack.io/privacy" target="_blank" rel="noopener noreferrer">mattrack.io/privacy</a>)</li>
+    <li><strong>Stripe</strong> — Payment processing (<a href="https://stripe.com/gb/privacy" target="_blank" rel="noopener noreferrer">stripe.com/gb/privacy</a>)</li>
+    <li><strong>Google Analytics (Google LLC)</strong> — Website analytics (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>)</li>
   </ul>
 
   <h2>How long we keep your data</h2>
@@ -184,7 +103,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
   <h2>Complaints</h2>
   <p>If you are unhappy with how we handle your personal data, you have the right to lodge a complaint with the UK's data protection regulator, the Information Commissioner's Office (ICO):</p>
   <div class="info-block">
-    <p>Website: <a href="https://ico.org.uk" target="_blank">ico.org.uk</a></p>
+    <p>Website: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a></p>
     <p>Telephone: 0303 123 1113</p>
   </div>
 
@@ -218,9 +137,9 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
       <a href="/#faq">FAQ</a>
     </div>
     <div class="footer-social">
-      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" title="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-      <a href="https://www.tiktok.com/@forgedgrappling" target="_blank" title="TikTok" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
-      <a href="https://smoothcomp.com/en/club/86870" target="_blank" title="Smoothcomp" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></a>
+      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.tiktok.com/@forgedgrappling" target="_blank" rel="noopener noreferrer" title="TikTok" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+      <a href="https://smoothcomp.com/en/club/86870" target="_blank" rel="noopener noreferrer" title="Smoothcomp" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></a>
       <a href="mailto:info&#64;forgedgrappling.co.uk" title="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
     </div>
     <div class="footer-contact"><a href="mailto:info&#64;forgedgrappling.co.uk">info&#64;forgedgrappling.co.uk</a> · <a href="tel:07513104760">07513 104760</a></div>
@@ -228,23 +147,7 @@ footer { background: #161818; padding: 2.5rem 5rem; border-top: 1px solid var(--
   </div>
 </footer>
 
-<script>
-function toggleMobileNav() {
-  var btn = document.querySelector('.nav-hamburger');
-  var nav = document.getElementById('mobile-nav');
-  var isOpen = nav.classList.contains('open');
-  nav.classList.toggle('open');
-  btn.classList.toggle('open');
-  btn.setAttribute('aria-expanded', !isOpen);
-  document.body.style.overflow = isOpen ? '' : 'hidden';
-}
-function closeMobileNav() {
-  document.querySelector('.nav-hamburger').classList.remove('open');
-  document.getElementById('mobile-nav').classList.remove('open');
-  document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
-</script>
+<script src="/shared.js"></script>
 
 </body>
 </html>
