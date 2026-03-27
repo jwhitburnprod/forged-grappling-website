@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found | Forged Grappling</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+<style>
+
+.error-main {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.error-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px),
+    repeating-linear-gradient(0deg,  rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px);
+  pointer-events: none;
+}
+
+.error-main::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(74,92,56,0.13) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.error-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+}
+
+.error-code {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(5rem, 18vw, 9rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #8cb86a 0%, #4A5C38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.4s ease both;
+}
+
+.error-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.4s ease 0.1s both;
+}
+
+.error-headline {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.4s ease 0.2s both;
+}
+
+.error-sub {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.4s ease 0.3s both;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.4s ease 0.4s both;
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border: 1px solid var(--iron-border);
+  color: var(--silver);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--green-border);
+  color: var(--green-light);
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<nav>
+  <a href="/" class="nav-logo">Forged <span>Grappling</span></a>
+</nav>
+
+<main id="main-content" class="error-main">
+  <div class="error-inner">
+    <div class="error-code">404</div>
+    <div class="error-label">Page Not Found</div>
+    <h1 class="error-headline">Wrong Room</h1>
+    <p class="error-sub">
+      The page you're looking for doesn't exist or has been moved.<br>
+      Head back and find your way.
+    </p>
+    <div class="error-actions">
+      <a href="/" class="btn-green">← Back to Home</a>
+      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" class="btn-ghost">Follow on Instagram</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <div class="footer-logo">Forged <span>Grappling</span></div>
+    <div class="footer-tagline">Shaped by the Process</div>
+    <div style="font-size:0.78rem;color:rgba(138,145,153,0.55);line-height:1.7;margin-top:0.5rem;">
+      Unit 21 Woodland Industrial Estate, Eden Vale Road<br>
+      Westbury, Wiltshire, BA13 3QS<br><br>
+      &copy; 2026 Forged Grappling Limited. All rights reserved.<br>
+      Forged Grappling Limited (17049559) is a company registered in England and Wales.
+    </div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="/#coaches">Coaches</a>
+      <a href="/#schedule">Schedule</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.tiktok.com/@forgedgrappling" target="_blank" rel="noopener noreferrer" title="TikTok" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+      <a href="https://smoothcomp.com/en/club/86870" target="_blank" rel="noopener noreferrer" title="Smoothcomp" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></a>
+      <a href="mailto:info&#64;forgedgrappling.co.uk" title="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    </div>
+    <div class="footer-contact"><a href="mailto:info&#64;forgedgrappling.co.uk">info&#64;forgedgrappling.co.uk</a> · <a href="tel:07513104760">07513 104760</a></div>
+    <div class="footer-copy"><a href="/privacy" style="color:inherit;text-decoration:none;">Privacy Policy</a> · <a href="/cookies" style="color:inherit;text-decoration:none;">Cookie Policy</a> · <a href="/terms" style="color:inherit;text-decoration:none;">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+
+<script src="/shared.js"></script>
+
+</body>
+</html>
