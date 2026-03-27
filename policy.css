@@ -1,9 +1,60 @@
 /* ─── POLICY HERO ─── */
-.policy-hero { background: var(--iron-mid); padding: 7rem 5rem 4rem; border-bottom: 1px solid var(--iron-border); }
-.policy-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-light); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.policy-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 5rem 4rem;
+  border-bottom: 1px solid var(--iron-border);
+}
+.policy-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px),
+    repeating-linear-gradient(0deg,  rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px);
+  pointer-events: none;
+}
+.policy-hero::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(74,92,56,0.13) 0%, transparent 70%);
+  pointer-events: none;
+}
+.policy-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+.policy-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  animation: policyFadeUp 0.5s ease 0.1s both;
+}
 .policy-label::before { content: ''; width: 28px; height: 1px; background: var(--green-light); }
-.policy-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; }
-.policy-meta { font-size: 0.82rem; color: var(--silver); }
+.policy-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  animation: policyFadeUp 0.5s ease 0.22s both;
+}
+.policy-meta {
+  font-size: 0.82rem;
+  color: var(--silver);
+  animation: policyFadeUp 0.5s ease 0.34s both;
+}
+@keyframes policyFadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 640px) { .policy-hero { padding: 6rem 1.5rem 3rem; } }
 
 /* ─── POLICY BODY ─── */
