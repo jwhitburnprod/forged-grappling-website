@@ -3,41 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- TODO: Update page title -->
-<title>Coming Soon — Forged Grappling</title>
-<!-- TODO: Update meta description -->
-<meta name="description" content="">
+<title>Forged Grappling | Coming Soon</title>
+<meta name="description" content="Forged Grappling is coming to Westbury. A dedicated no-gi grappling gym with structured coaching, five days a week. Register for a free trial class.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<!-- TODO: Add canonical URL once page is ready to index:
-<link rel="canonical" href="https://forgedgrappling.co.uk/coming-soon/"> -->
-<!-- TODO: Add OG tags once page has real content:
-<meta property="og:type" content="website">
-<meta property="og:title" content="">
-<meta property="og:description" content="">
-<meta property="og:url" content="https://forgedgrappling.co.uk/coming-soon/">
-<meta property="og:image" content="https://forgedgrappling.co.uk/og-image.jpg"> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
-/* ─── TODO: ADD PAGE-SPECIFIC STYLES BELOW ─── */
 
-/* ─── PLACEHOLDER HERO ─── */
-.placeholder-hero {
+/* ─── PAGE LAYOUT ─── */
+.cs-main {
   min-height: calc(100vh - 70px);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
-  padding: 7rem 2rem 4rem;
+  padding: 7rem 2rem 5rem;
   position: relative;
   overflow: hidden;
 }
-.placeholder-hero::before {
+.cs-main::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -46,125 +34,419 @@
     repeating-linear-gradient(0deg,  rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px);
   pointer-events: none;
 }
-.placeholder-inner {
+.cs-main::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(74,92,56,0.13) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── CONTENT WRAPPER ─── */
+.cs-inner {
   position: relative;
   z-index: 2;
-  max-width: 640px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: center;
 }
-.placeholder-inner .label {
-  justify-content: center;
+@media (max-width: 960px) {
+  .cs-inner {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    max-width: 600px;
+  }
 }
-.placeholder-inner .label::before {
-  display: none;
-}
-.placeholder-inner h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 1.25rem;
-}
-.placeholder-inner p {
-  font-size: 1rem;
-  color: var(--brushed);
-  line-height: 1.75;
-  margin-bottom: 2rem;
-}
-.placeholder-badge {
+
+/* ─── LEFT: COPY ─── */
+.cs-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: var(--green-tint);
   border: 1px solid var(--green-border);
   color: var(--green-light);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  padding: 0.45rem 1rem;
+  padding: 0.4rem 0.9rem;
   margin-bottom: 2rem;
 }
+.cs-badge {
+  animation: badgeGlow 3.5s ease-in-out infinite;
+}
+.cs-badge-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--green-light);
+  border-radius: 50%;
+  animation: pulse 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.cs-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.5s ease 0.1s both;
+}
+.cs-location::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--green-light);
+  flex-shrink: 0;
+}
+
+.cs-headline {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.5s ease 0.25s both;
+}
+.cs-headline em {
+  font-style: normal;
+  background: linear-gradient(135deg, #8cb86a 0%, #4A5C38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.cs-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.5s ease 0.38s both;
+}
+
+/* Proof pills */
+.cs-proof {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.cs-proof-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+  border-left: 2px solid var(--green-light);
+  padding: 0.38rem 0.85rem;
+  font-size: 0.76rem;
+  color: var(--brushed);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  animation: fadeUp 0.35s ease both;
+}
+.cs-proof-pill:nth-child(1) { animation-delay: 0.5s; }
+.cs-proof-pill:nth-child(2) { animation-delay: 0.62s; }
+.cs-proof-pill:nth-child(3) { animation-delay: 0.74s; }
+.cs-proof-pill strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Social CTA */
+.cs-social-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--silver);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  animation: fadeUp 0.5s ease 0.5s both;
+}
+.cs-social-cta:hover {
+  color: var(--green-light);
+  border-color: rgba(99,125,74,0.4);
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes badgeGlow {
+  0%, 100% { border-color: var(--green-border); box-shadow: none; }
+  50% { border-color: rgba(74,92,56,0.65); box-shadow: 0 0 14px rgba(74,92,56,0.25); }
+}
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.07),
+      0 4px 8px rgba(0,0,0,0.4),
+      0 16px 40px rgba(0,0,0,0.35),
+      0 32px 64px rgba(0,0,0,0.2);
+  }
+  50% {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.07),
+      0 4px 8px rgba(0,0,0,0.4),
+      0 16px 40px rgba(0,0,0,0.35),
+      0 32px 64px rgba(0,0,0,0.2),
+      0 8px 48px rgba(74,92,56,0.22);
+  }
+}
+
+/* ─── RIGHT: CTA CARD ─── */
+.cs-card {
+  background: var(--iron-mid);
+  border: 1px solid var(--green-border);
+  padding: 2.25rem 2rem;
+  animation: fadeUp 0.6s ease 0.4s both, cardGlow 5s ease-in-out 1.5s infinite;
+  will-change: transform;
+}
+.cs-card-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 0.6rem;
+}
+.cs-card-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+.cs-card-desc {
+  font-size: 0.85rem;
+  color: var(--brushed);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+.cs-card-desc strong {
+  color: var(--white);
+  font-weight: 500;
+}
+.cs-card-cta {
+  margin-bottom: 0.75rem;
+}
+.cs-card-cta .btn-green {
+  width: 100%;
+  text-align: center;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.cs-card-cta .btn-green::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.cs-card-cta .btn-green:hover::after {
+  left: 160%;
+}
+.cs-card-reassure {
+  font-size: 0.72rem;
+  color: rgba(138,145,153,0.5);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Divider */
+.cs-card-divider {
+  height: 1px;
+  background: var(--iron-border);
+  margin: 1.75rem 0;
+}
+
+/* Founding teaser inside card */
+.cs-founding-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--green-tint);
+  border: 1px solid var(--green-border);
+  padding: 1rem 1.25rem;
+}
+.cs-founding-teaser-label {
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 0.2rem;
+}
+.cs-founding-teaser-price {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.cs-founding-teaser-price span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--silver);
+  margin-left: 0.15rem;
+}
+.cs-founding-teaser-sub {
+  font-size: 0.74rem;
+  color: var(--silver);
+  margin-top: 0.25rem;
+}
+.cs-founding-limited {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--green);
+  color: var(--white);
+  padding: 0.28rem 0.65rem;
+  white-space: nowrap;
+}
+
+/* ─── GRAIN OVERLAY ─── */
+.cs-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  pointer-events: none;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
 </style>
 </head>
 <body>
 
+<div class="cs-noise" aria-hidden="true"></div>
 <a href="#main-content" class="skip-link">Skip to content</a>
 
-<!-- NAV -->
-<!-- TODO: Update nav links to match the rest of the site if this page has its own anchors -->
+<!-- NAV: logo only — full nav links added at launch -->
 <nav>
   <a href="/" class="nav-logo">Forged <span>Grappling</span></a>
-  <ul class="nav-links">
-    <li><a href="/#coaches">Coaches</a></li>
-    <li><a href="/#schedule">Schedule</a></li>
-    <li><a href="/#pricing">Pricing</a></li>
-    <li><a href="/#faq">FAQ</a></li>
-    <li><a href="/start-here" class="nav-cta">Start Here</a></li>
-  </ul>
-  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open navigation menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<div class="mobile-nav" id="mobile-nav">
-  <nav class="mobile-nav-links">
-    <a href="/" onclick="closeMobileNav()">Home</a>
-    <a href="/#coaches" onclick="closeMobileNav()">Coaches</a>
-    <a href="/#schedule" onclick="closeMobileNav()">Schedule</a>
-    <a href="/#pricing" onclick="closeMobileNav()">Pricing</a>
-    <a href="/#faq" onclick="closeMobileNav()">FAQ</a>
-    <a href="/start-here" onclick="closeMobileNav()">Start Here</a>
-  </nav>
-</div>
-
 <!-- MAIN CONTENT -->
-<!-- TODO: Replace placeholder section with real page content -->
-<main id="main-content">
-  <section class="placeholder-hero">
-    <div class="placeholder-inner">
-      <div class="placeholder-badge">Work in progress</div>
-      <div class="label">Forged Grappling</div>
-      <!-- TODO: Replace with real page heading -->
-      <h1>Page Title Here</h1>
-      <!-- TODO: Replace with real intro copy -->
-      <p>This page is being built. Replace this section with your content — hero, sections, CTAs, whatever this page needs.</p>
-      <a href="/" class="btn-green">Back to Home</a>
+<main id="main-content" class="cs-main">
+  <div class="cs-inner">
+
+    <!-- LEFT: COPY -->
+    <div class="cs-left">
+      <div class="cs-badge">
+        <span class="cs-badge-dot"></span>
+        Opening Soon
+      </div>
+      <div class="cs-location">No-Gi Grappling · Westbury, Wiltshire</div>
+      <h1 class="cs-headline">
+        No-Gi Grappling<br>
+        <em>Coming to Westbury</em>
+      </h1>
+      <p class="cs-sub">
+        Forged Grappling is coming to Westbury. A dedicated no-gi grappling gym with a structured curriculum, experienced coaches, and classes five days a week.
+      </p>
+      <div class="cs-proof">
+        <div class="cs-proof-pill"><strong>4</strong> Competition-Tested Coaches</div>
+        <div class="cs-proof-pill"><strong>5</strong> Days a Week</div>
+        <div class="cs-proof-pill"><strong>30-Day</strong> Guarantee</div>
+      </div>
+      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" class="cs-social-cta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Follow us on Instagram for updates
+      </a>
     </div>
-  </section>
 
-  <!-- TODO: Add page sections below -->
-  <!--
-  <section class="section-wrap">
-    ...
-  </section>
-  -->
+    <!-- RIGHT: CTA CARD -->
+    <div class="cs-right">
+      <div class="cs-card">
+        <div class="cs-card-label">Get Early Access</div>
+        <h2 class="cs-card-title">Be First Through the Door</h2>
+        <p class="cs-card-desc">
+          Register now and you will be first on the list when we open. Sign up for your free trial class and we will be in touch as soon as we are ready.
+        </p>
+        <div class="cs-card-cta">
+          <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" rel="noopener noreferrer" class="btn-green">→ Register for a Free Class</a>
+        </div>
+        <p class="cs-card-reassure">Takes 2 minutes · No commitment required</p>
 
+        <div class="cs-card-divider"></div>
+
+        <!-- Founding membership teaser -->
+        <div class="cs-founding-teaser">
+          <div>
+            <div class="cs-founding-teaser-label">Founding Member Rate</div>
+            <div class="cs-founding-teaser-price">£50<span>/month</span></div>
+            <div class="cs-founding-teaser-sub">Locked in for life · Limited spots</div>
+          </div>
+          <div class="cs-founding-limited">Limited</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </main>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
     <div class="footer-logo">Forged <span>Grappling</span></div>
-    <div class="footer-tagline">No-Gi Submission Grappling · Westbury, Wiltshire</div>
+    <div class="footer-tagline">Shaped by the Process</div>
+    <div style="font-size:0.78rem;color:rgba(138,145,153,0.55);line-height:1.7;margin-top:0.5rem;">
+      Unit 21 Woodland Industrial Estate, Eden Vale Road<br>
+      Westbury, Wiltshire, BA13 3QS<br><br>
+      &copy; 2026 Forged Grappling Limited. All rights reserved.<br>
+      Forged Grappling Limited (17049559) is a company registered in England and Wales.
+    </div>
   </div>
   <div class="footer-right">
-    <div class="footer-social">
-      <a href="https://www.instagram.com/forgedgrappling" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </a>
-    </div>
     <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/cookies">Cookies</a>
-      <a href="/terms">Terms</a>
+      <a href="/#coaches">Coaches</a>
+      <a href="/#schedule">Schedule</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
     </div>
-    <div class="footer-copy">&copy; 2025 Forged Grappling. All rights reserved.</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.tiktok.com/@forgedgrappling" target="_blank" rel="noopener noreferrer" title="TikTok" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+      <a href="https://smoothcomp.com/en/club/86870" target="_blank" rel="noopener noreferrer" title="Smoothcomp" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></a>
+      <a href="mailto:info&#64;forgedgrappling.co.uk" title="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    </div>
+    <div class="footer-contact"><a href="mailto:info&#64;forgedgrappling.co.uk">info&#64;forgedgrappling.co.uk</a> · <a href="tel:07513104760">07513 104760</a></div>
+    <div class="footer-copy"><a href="/privacy" style="color:inherit;text-decoration:none;">Privacy Policy</a> · <a href="/cookies" style="color:inherit;text-decoration:none;">Cookie Policy</a> · <a href="/terms" style="color:inherit;text-decoration:none;">Terms &amp; Conditions</a></div>
   </div>
 </footer>
 
 <script src="/shared.js"></script>
-<!-- TODO: Add any page-specific JS below -->
 
 </body>
 </html>
