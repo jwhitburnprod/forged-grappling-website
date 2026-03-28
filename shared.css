@@ -41,7 +41,7 @@ h1,h2,h3,h4 { font-family: 'Manrope', sans-serif; line-height: 1.1; }
 
 /* ─── NAV ─── */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 5rem; background: rgba(30,32,32,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--iron-border); }
-.nav-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; text-transform: uppercase; }
+.nav-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; text-transform: uppercase; }
 .nav-logo span { color: var(--green-light); }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
 .nav-links a { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.08em; color: var(--silver); text-decoration: none; transition: color 0.2s; }
