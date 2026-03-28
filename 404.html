@@ -139,7 +139,19 @@
 
 <nav>
   <a href="/" class="nav-logo">Forged <span>Grappling</span></a>
+  <button class="nav-hamburger" aria-label="Open navigation" aria-expanded="false" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-links">
+    <a href="/" onclick="closeMobileNav()">Home</a>
+    <a href="/privacy/" onclick="closeMobileNav()">Privacy Policy</a>
+    <a href="/cookies/" onclick="closeMobileNav()">Cookie Policy</a>
+    <a href="/terms/" onclick="closeMobileNav()">Terms &amp; Conditions</a>
+  </div>
+</div>
 
 <main id="main-content" class="error-main">
   <div class="error-inner">
