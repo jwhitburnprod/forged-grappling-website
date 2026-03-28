@@ -68,9 +68,10 @@
 @media (max-width: 960px) {
   .cs-inner {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 2rem;
     max-width: 600px;
   }
+  .cs-proof { margin-bottom: 1.25rem; }
 }
 
 /* ─── LEFT: COPY ─── */
@@ -190,19 +191,21 @@ nav .cs-badge {
 .cs-social-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  color: var(--silver);
+  gap: 0.45rem;
+  color: rgba(138,145,153,0.5);
   text-decoration: none;
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
   border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s;
   animation: fadeUp 0.5s ease 0.5s both;
 }
+.cs-social-cta svg { opacity: 0.65; width: 14px; height: 14px; }
 .cs-social-cta:hover {
-  color: var(--green-light);
-  border-color: rgba(99,125,74,0.4);
+  color: var(--silver);
+  border-color: rgba(138,145,153,0.25);
 }
+.cs-social-cta:hover svg { opacity: 1; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes badgeGlow {
@@ -353,7 +356,7 @@ nav .cs-badge {
 }
 
 @media (max-width: 480px) {
-  .cs-headline { font-size: 1.5rem; }
+  .cs-headline { font-size: 1.6rem; }
   .cs-headline em { white-space: normal; }
   .cs-sub { font-size: 0.92rem; }
   .cs-proof-pill { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
