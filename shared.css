@@ -85,3 +85,80 @@ footer { background: var(--iron-darker); padding: 2.5rem 5rem; border-top: 1px s
 .social-icon:hover { color: var(--green-light); }
 .footer-bottom { grid-area: bottom; font-size: 0.72rem; color: rgba(138,145,153,0.4); line-height: 1.4; }
 @media (max-width: 640px) { footer { padding: 2rem 1.5rem; } .footer-right { align-items: flex-start; } }
+
+/* ─── COOKIE BANNER ─── */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: #242727;
+  border-top: 1px solid rgba(74,92,56,0.35);
+  padding: 1.25rem 5rem;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
+}
+#cookie-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+#cookie-banner-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+#cookie-banner-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #C4C7CA;
+  line-height: 1.6;
+  max-width: 680px;
+}
+#cookie-banner-body a {
+  color: #637d4a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(99,125,74,0.4);
+}
+#cookie-banner-body a:hover { border-color: #637d4a; }
+#cookie-banner-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+#cookie-decline {
+  background: transparent;
+  border: 1px solid rgba(196,199,202,0.3);
+  color: #C4C7CA;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+#cookie-decline:hover { border-color: #ffffff; color: #ffffff; }
+#cookie-accept {
+  background: #4A5C38;
+  border: 1px solid #4A5C38;
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#cookie-accept:hover { background: #566b41; }
+@media (max-width: 768px) {
+  #cookie-banner { padding: 1.25rem 1.5rem; }
+  #cookie-banner-actions { width: 100%; }
+  #cookie-decline, #cookie-accept { flex: 1; text-align: center; }
+}
