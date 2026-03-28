@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forged Grappling | Coming Soon</title>
 <meta name="description" content="Forged Grappling is coming to Westbury. A dedicated no-gi grappling gym with structured coaching, five days a week. Register for a free trial class.">
+<meta name="theme-color" content="#1E2020">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Forged Grappling | No-Gi Grappling · Westbury">
+<meta property="og:description" content="Forged Grappling is coming to Westbury. A dedicated no-gi grappling gym with structured coaching, five days a week. Register for a free trial class.">
+<meta property="og:url" content="https://forgedgrappling.co.uk/">
+<meta property="og:image" content="https://forgedgrappling.co.uk/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://forgedgrappling.co.uk/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -218,7 +226,7 @@
   border: 1px solid var(--green-border);
   padding: 2.25rem 2rem;
   animation: fadeUp 0.6s ease 0.4s both, cardGlow 5s ease-in-out 1.5s infinite;
-  will-change: transform;
+  will-change: box-shadow;
 }
 .cs-card-label {
   font-size: 0.68rem;
@@ -332,17 +340,6 @@
   white-space: nowrap;
 }
 
-/* ─── GRAIN OVERLAY ─── */
-.cs-noise {
-  position: fixed;
-  inset: 0;
-  z-index: 998;
-  pointer-events: none;
-  opacity: 0.038;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 200px 200px;
-}
 
 </style>
 </head>
@@ -421,20 +418,8 @@
   <div class="footer-left">
     <div class="footer-logo">Forged <span>Grappling</span></div>
     <div class="footer-tagline">Shaped by the Process</div>
-    <div style="font-size:0.78rem;color:rgba(138,145,153,0.55);line-height:1.7;margin-top:0.5rem;">
-      Unit 21 Woodland Industrial Estate, Eden Vale Road<br>
-      Westbury, Wiltshire, BA13 3QS<br><br>
-      &copy; 2026 Forged Grappling Limited. All rights reserved.<br>
-      Forged Grappling Limited (17049559) is a company registered in England and Wales.
-    </div>
   </div>
   <div class="footer-right">
-    <div class="footer-links">
-      <a href="/#coaches">Coaches</a>
-      <a href="/#schedule">Schedule</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/#faq">FAQ</a>
-    </div>
     <div class="footer-social">
       <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
       <a href="https://www.tiktok.com/@forgedgrappling" target="_blank" rel="noopener noreferrer" title="TikTok" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
@@ -444,9 +429,14 @@
     <div class="footer-contact"><a href="mailto:info&#64;forgedgrappling.co.uk">info&#64;forgedgrappling.co.uk</a> · <a href="tel:07513104760">07513 104760</a></div>
     <div class="footer-copy"><a href="/privacy" style="color:inherit;text-decoration:none;">Privacy Policy</a> · <a href="/cookies" style="color:inherit;text-decoration:none;">Cookie Policy</a> · <a href="/terms" style="color:inherit;text-decoration:none;">Terms &amp; Conditions</a></div>
   </div>
+  <div class="footer-bottom">
+    Unit 21 Woodland Industrial Estate, Eden Vale Road, Westbury, Wiltshire, BA13 3QS<br>
+    &copy; 2026 Forged Grappling Limited. All rights reserved.<br>
+    Forged Grappling Limited (17049559) is a company registered in England and Wales.
+  </div>
 </footer>
 
-<script src="/shared.js"></script>
+<script src="/shared.js?v=2"></script>
 
 </body>
 </html>

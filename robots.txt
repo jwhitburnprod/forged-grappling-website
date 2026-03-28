@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block pre-launch and utility pages
+Disallow: /coming-soon/
+Disallow: /start-here/
+
+Sitemap: https://forgedgrappling.co.uk/sitemap.xml
