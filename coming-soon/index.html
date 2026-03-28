@@ -91,6 +91,12 @@
 .cs-badge {
   animation: badgeGlow 3.5s ease-in-out infinite;
 }
+nav .cs-badge {
+  margin-bottom: 0;
+  font-size: 0.6rem;
+  padding: 0.28rem 0.75rem;
+  letter-spacing: 0.12em;
+}
 .cs-badge-dot {
   width: 5px;
   height: 5px;
@@ -198,12 +204,6 @@
 }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-@media (max-width: 480px) {
-  .cs-headline { font-size: 1.5rem; }
-  .cs-headline em { white-space: normal; }
-  .cs-sub { font-size: 0.92rem; }
-  .cs-proof-pill { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
-}
 @keyframes badgeGlow {
   0%, 100% { border-color: var(--green-border); box-shadow: none; }
   50% { border-color: rgba(74,92,56,0.65); box-shadow: 0 0 14px rgba(74,92,56,0.25); }
@@ -346,6 +346,22 @@
   white-space: nowrap;
 }
 
+@media (max-width: 480px) {
+  .cs-headline { font-size: 1.5rem; }
+  .cs-headline em { white-space: normal; }
+  .cs-sub { font-size: 0.92rem; }
+  .cs-proof-pill { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+  .cs-location { font-size: 0.62rem; letter-spacing: 0.1em; }
+  .cs-card { padding: 2.25rem 1.25rem; }
+  .cs-card-cta .btn-green { font-size: 0.82rem; letter-spacing: 0.03em; padding: 0.9rem 1.25rem; }
+  .cs-founding-teaser { padding: 0.75rem 1rem; }
+  .cs-founding-teaser-label { font-size: 0.6rem; letter-spacing: 0.1em; }
+  .cs-founding-teaser-sub { font-size: 0.62rem; }
+  .cs-founding-limited { display: none; }
+}
+@media (min-width: 961px) {
+  .cs-social-cta { grid-column: 1; margin-top: -3.5rem; }
+}
 
 </style>
 </head>
@@ -357,6 +373,7 @@
 <!-- NAV: logo only — full nav links added at launch -->
 <nav>
   <a href="/" class="nav-logo">Forged <span>Grappling</span></a>
+  <div class="cs-badge"><span class="cs-badge-dot"></span> Opening Soon</div>
 </nav>
 
 <!-- MAIN CONTENT -->
@@ -365,10 +382,6 @@
 
     <!-- LEFT: COPY -->
     <div class="cs-left">
-      <div class="cs-badge">
-        <span class="cs-badge-dot"></span>
-        Opening Soon
-      </div>
       <div class="cs-location">No-Gi Grappling · Westbury, Wiltshire</div>
       <h1 class="cs-headline">
         No-Gi Grappling<br>
@@ -382,10 +395,6 @@
         <div class="cs-proof-pill"><strong>5</strong> Days a Week</div>
         <div class="cs-proof-pill"><strong>30-Day</strong> Guarantee</div>
       </div>
-      <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" class="cs-social-cta">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        Follow us on Instagram for updates
-      </a>
     </div>
 
     <!-- RIGHT: CTA CARD -->
@@ -415,6 +424,11 @@
 
       </div>
     </div>
+
+    <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" class="cs-social-cta">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Follow us on Instagram for updates
+    </a>
 
   </div>
 </main>
