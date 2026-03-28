@@ -66,12 +66,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 .mobile-nav-links a:hover { color: var(--green-light); }
 
 /* ─── FOOTER ─── */
-footer { background: var(--iron-darker); padding: 2.5rem 5rem; border-top: 1px solid var(--iron-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+footer { background: var(--iron-darker); padding: 2.5rem 5rem; border-top: 1px solid var(--iron-border); display: grid; grid-template-columns: 1fr auto; grid-template-areas: "left right" "bottom right"; gap: 1.5rem; }
+.footer-left { grid-area: left; }
 .footer-logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
 .footer-logo span { color: var(--green-light); }
 .footer-tagline { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); margin-top: 0.35rem; }
 .footer-address { font-size: 0.8rem; color: rgba(138,145,153,0.6); margin-top: 0.35rem; }
-.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+.footer-right { grid-area: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; align-self: end; }
 .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .footer-links a { font-size: 0.78rem; color: var(--silver); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
 .footer-links a:hover { color: var(--white); }
@@ -82,4 +83,5 @@ footer { background: var(--iron-darker); padding: 2.5rem 5rem; border-top: 1px s
 .footer-social { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
 .social-icon { color: rgba(138,145,153,0.5); display: flex; align-items: center; transition: color 0.2s; }
 .social-icon:hover { color: var(--green-light); }
+.footer-bottom { grid-area: bottom; font-size: 0.72rem; color: rgba(138,145,153,0.4); line-height: 1.4; }
 @media (max-width: 640px) { footer { padding: 2rem 1.5rem; } .footer-right { align-items: flex-start; } }
