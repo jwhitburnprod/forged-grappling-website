@@ -7,7 +7,7 @@
     '<div id="cookie-banner-inner">' +
       '<div id="cookie-banner-text">' +
         '<p id="cookie-banner-title">We use cookies</p>' +
-        '<p id="cookie-banner-body">We use essential cookies to make this site work. We\'d also like to set analytics cookies to help us understand how you use it — these will only be set with your consent. <a href="/cookies">Cookie Policy</a> · <a href="/privacy">Privacy Policy</a></p>' +
+        '<p id="cookie-banner-body">We use essential cookies to make this site work. We\'d also like to set analytics cookies to help us understand how you use it — these will only be set with your consent. <a href="/cookies/">Cookie Policy</a> · <a href="/privacy/">Privacy Policy</a></p>' +
       '</div>' +
       '<div id="cookie-banner-actions">' +
         '<button id="cookie-decline" onclick="cookieChoice(false)">Decline analytics</button>' +
