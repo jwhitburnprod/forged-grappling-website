@@ -24,8 +24,8 @@ body { background: var(--iron); color: var(--white); font-family: 'Inter', sans-
 h1,h2,h3,h4 { font-family: 'Manrope', sans-serif; line-height: 1.1; }
 
 /* ─── UTILITY ─── */
-.label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-light); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
-.label::before { content: ''; width: 28px; height: 1px; background: var(--green-light); flex-shrink: 0; }
+.label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #7a9a5a; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.label::before { content: ''; width: 28px; height: 1px; background: #7a9a5a; flex-shrink: 0; }
 .btn-green { display: inline-block; background: var(--green); color: var(--white); padding: 0.9rem 2.2rem; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.88rem; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; }
 .btn-green:hover { background: var(--green-mid); transform: translateY(-1px); }
 .btn-ghost { display: inline-block; border: 1px solid rgba(196,199,202,0.3); color: var(--brushed); padding: 0.9rem 2.2rem; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.88rem; letter-spacing: 0.06em; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
