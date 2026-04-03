@@ -19,7 +19,7 @@
   left: -120px;
   width: 560px;
   height: 560px;
-  background: radial-gradient(circle, rgba(74,92,56,0.13) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(28,90,47,0.13) 0%, transparent 70%);
   pointer-events: none;
 }
 .policy-hero-inner {
@@ -56,7 +56,7 @@
 @media (max-width: 640px) { .policy-hero { padding: 6rem 1.5rem 3rem; } }
 
 /* ─── POLICY BODY ─── */
-.policy-body { max-width: 960px; margin: 0 auto; padding: 4rem 5rem; animation: policyFadeUp 0.5s ease 0.45s both; background: repeating-linear-gradient(90deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px), repeating-linear-gradient(0deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px); }
+.policy-body { max-width: 960px; margin: 0 auto; padding: 4rem 5rem; animation: policyFadeUp 0.5s ease 0.45s both; background: repeating-linear-gradient(90deg, rgba(28,90,47,0.035) 0, rgba(28,90,47,0.035) 1px, transparent 1px, transparent 72px), repeating-linear-gradient(0deg, rgba(28,90,47,0.035) 0, rgba(28,90,47,0.035) 1px, transparent 1px, transparent 72px); }
 @media (max-width: 1100px) { .policy-body { padding: 4rem 3rem; } }
 @media (max-width: 900px) { .policy-body { padding: 3.5rem 2rem; } }
 @media (max-width: 640px) { .policy-body { padding: 2.5rem 1.5rem; } }
@@ -64,7 +64,7 @@
 .policy-body h2:first-child { margin-top: 0; }
 .policy-body h3 { font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--white); margin: 1.5rem 0 0.6rem; }
 .policy-body p { font-size: 0.95rem; color: var(--brushed); line-height: 1.8; margin-bottom: 1rem; }
-.policy-body a { color: var(--green-light); text-decoration: none; border-bottom: 1px solid rgba(99,125,74,0.4); transition: border-color 0.2s; }
+.policy-body a { color: var(--green-light); text-decoration: none; border-bottom: 1px solid rgba(45,139,71,0.4); transition: border-color 0.2s; }
 .policy-body a:hover { border-color: var(--green-light); }
 .policy-body ul { list-style: none; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
 .policy-body ul li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.92rem; color: var(--brushed); line-height: 1.65; }

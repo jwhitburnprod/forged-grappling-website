@@ -4,9 +4,9 @@ html { scroll-behavior: smooth; }
 
 /* ─── VARIABLES ─── */
 :root {
-  --green: #4A5C38;
-  --green-mid: #566b41;
-  --green-light: #637d4a;
+  --green: #1C5A2F;
+  --green-mid: #22683A;
+  --green-light: #2E8B47;
   --silver: #9BA2AA;
   --iron: #1E2020;
   --iron-mid: #242727;
@@ -14,8 +14,8 @@ html { scroll-behavior: smooth; }
   --iron-border: rgba(255,255,255,0.07);
   --brushed: #C4C7CA;
   --white: #FFFFFF;
-  --green-tint: rgba(74,92,56,0.12);
-  --green-border: rgba(74,92,56,0.35);
+  --green-tint: rgba(28,90,47,0.12);
+  --green-border: rgba(28,90,47,0.35);
   --iron-darker: #161818;
 }
 
@@ -24,8 +24,8 @@ body { background: var(--iron); color: var(--white); font-family: 'Inter', sans-
 h1,h2,h3,h4 { font-family: 'Manrope', sans-serif; line-height: 1.1; }
 
 /* ─── UTILITY ─── */
-.label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #7a9a5a; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
-.label::before { content: ''; width: 28px; height: 1px; background: #7a9a5a; flex-shrink: 0; }
+.label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #4aaa64; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.label::before { content: ''; width: 28px; height: 1px; background: #4aaa64; flex-shrink: 0; }
 .btn-green { display: inline-block; background: var(--green); color: var(--white); padding: 0.9rem 2.2rem; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.88rem; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; }
 .btn-green:hover { background: var(--green-mid); transform: translateY(-1px); }
 .btn-ghost { display: inline-block; border: 1px solid rgba(196,199,202,0.3); color: var(--brushed); padding: 0.9rem 2.2rem; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.88rem; letter-spacing: 0.06em; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
@@ -125,7 +125,7 @@ footer { background: var(--iron-darker); padding: 2.5rem 5rem; border-top: 1px s
 #cookie-banner-body a {
   color: var(--green-light);
   text-decoration: none;
-  border-bottom: 1px solid rgba(99,125,74,0.4);
+  border-bottom: 1px solid rgba(45,139,71,0.4);
 }
 #cookie-banner-body a:hover { border-color: var(--green-light); }
 #cookie-banner-actions {

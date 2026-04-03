@@ -24,7 +24,7 @@
 <style>
 /* HERO */
 .hero-start { min-height: 70vh; display: flex; align-items: center; padding: 7rem 5rem 5rem; position: relative; overflow: hidden; }
-.hero-start::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px), repeating-linear-gradient(0deg, rgba(74,92,56,0.035) 0, rgba(74,92,56,0.035) 1px, transparent 1px, transparent 72px); pointer-events: none; }
+.hero-start::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(28,90,47,0.035) 0, rgba(28,90,47,0.035) 1px, transparent 1px, transparent 72px), repeating-linear-gradient(0deg, rgba(28,90,47,0.035) 0, rgba(28,90,47,0.035) 1px, transparent 1px, transparent 72px); pointer-events: none; }
 .hero-start::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--iron-border); }
 .hero-start-inner { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .hero-left h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; }
@@ -32,7 +32,7 @@
 .hero-left p { font-size: 1.05rem; font-weight: 300; color: var(--brushed); line-height: 1.8; margin-bottom: 2rem; }
 .hero-start-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 .hero-image { width: 100%; aspect-ratio: 4/3; background: var(--iron-mid); border: 1px solid var(--iron-border); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-.hero-image::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(74,92,56,0.06) 0, rgba(74,92,56,0.06) 1px, transparent 1px, transparent 12px); }
+.hero-image::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(28,90,47,0.06) 0, rgba(28,90,47,0.06) 1px, transparent 1px, transparent 12px); }
 .hero-image-label { position: relative; z-index: 2; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); opacity: 0.5; }
 @media (max-width: 900px) {
   .hero-start { padding: 6rem 1.5rem 4rem; }
@@ -57,7 +57,7 @@
 
 /* REASSURANCE */
 .reassure { background: var(--iron); }
-.reassure-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(74,92,56,0.1); }
+.reassure-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(28,90,47,0.1); }
 .reassure-card { background: var(--iron-mid); padding: 2.25rem; }
 .reassure-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; text-transform: uppercase; }
 .reassure-card p { font-size: 0.9rem; color: var(--brushed); line-height: 1.75; }
@@ -68,10 +68,10 @@
 .first-class-header { margin-bottom: 3rem; }
 .first-class-header h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; }
 .first-class-header p { color: var(--silver); font-size: 0.92rem; }
-.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(74,92,56,0.1); }
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(28,90,47,0.1); }
 .step-card { background: var(--iron); padding: 2rem 1.5rem; position: relative; }
 .step-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green); }
-.step-num { font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; color: rgba(74,92,56,0.4); margin-bottom: 0.75rem; }
+.step-num { font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; color: rgba(28,90,47,0.4); margin-bottom: 0.75rem; }
 .step-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; text-transform: uppercase; }
 .step-card p { font-size: 0.85rem; color: var(--brushed); line-height: 1.7; }
 @media (max-width: 800px) { .steps-grid { grid-template-columns: 1fr 1fr; } }
@@ -337,7 +337,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" aria-controls="faq-s4">How much does it cost?<div class="faq-icon"></div></button>
-        <div class="faq-a" id="faq-s4" role="region"><p>Your first class is free. After that, founding membership is £50/month (limited to 25 spots, locked for life) or £80/month standard. Drop-in is £10/session. No contracts, no joining fees. Full details on the <a href="/#pricing" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(99,125,74,0.4);">pricing page</a>.</p></div>
+        <div class="faq-a" id="faq-s4" role="region"><p>Your first class is free. After that, founding membership is £50/month (limited to 25 spots, locked for life) or £80/month standard. Drop-in is £10/session. No contracts, no joining fees. Full details on the <a href="/#pricing" style="color:var(--green-light);text-decoration:none;border-bottom:1px solid rgba(45,139,71,0.4);">pricing page</a>.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" aria-controls="faq-s5">What's the 30-day guarantee?<div class="faq-icon"></div></button>
