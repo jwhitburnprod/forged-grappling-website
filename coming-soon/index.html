@@ -352,6 +352,89 @@ nav .cs-badge {
   .cs-social-cta { grid-column: 1; margin-top: -3.5rem; }
 }
 
+/* ─── WAITLIST MODAL ─── */
+.wl-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.wl-modal[hidden] { display: none; }
+.wl-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+}
+.wl-modal-box {
+  position: relative;
+  z-index: 1;
+  background: var(--iron-mid);
+  border: 1px solid var(--green-border);
+  padding: 2rem;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  animation: fadeUp 0.2s ease both;
+}
+.wl-modal-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 0.6rem;
+}
+.wl-modal-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.wl-modal-body {
+  font-size: 0.88rem;
+  color: var(--brushed);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.wl-modal-body strong { color: var(--white); font-weight: 500; }
+.wl-modal-highlight {
+  background: var(--green-tint);
+  border: 1px solid var(--green-border);
+  border-left: 3px solid var(--green-light);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--brushed);
+  line-height: 1.6;
+}
+.wl-modal-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.wl-modal-back {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: none;
+  border: none;
+  color: rgba(138,145,153,0.5);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  transition: color 0.2s;
+}
+.wl-modal-back:hover { color: var(--silver); }
+
 </style>
 </head>
 <body>
@@ -382,7 +465,7 @@ nav .cs-badge {
       <div class="cs-proof">
         <div class="cs-proof-pill"><strong>No-Gi</strong> Only</div>
         <div class="cs-proof-pill"><strong>25</strong> Founding Spots</div>
-        <div class="cs-proof-pill"><strong>First Class</strong> Free</div>
+        <div class="cs-proof-pill"><strong>All Levels</strong> Welcome</div>
       </div>
     </div>
 
@@ -392,10 +475,10 @@ nav .cs-badge {
         <div class="cs-card-label">Join the Waitlist</div>
         <h2 class="cs-card-title">Be First to Know When We Open</h2>
         <p class="cs-card-desc">
-          Add your name to our waitlist and we'll reach out when we're ready to take bookings. <strong>No payment, no commitment</strong> — just first dibs on your free trial class.
+          Add your name to our waitlist and we'll be in touch when we're ready to take bookings. <strong>No payment, no commitment.</strong> You'll be first in line for your free trial class.
         </p>
         <div class="cs-card-cta">
-          <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" rel="noopener noreferrer" class="btn-green">→ Join the Free Waitlist</a>
+          <a href="https://app.mattrack.io/forged-grappling/start-trial" onclick="openWaitlistModal(event)" class="btn-green">→ Join the Free Waitlist</a>
         </div>
         <p class="cs-card-reassure">No payment required · Takes 2 minutes</p>
 
@@ -403,18 +486,14 @@ nav .cs-badge {
 
         <!-- What happens next -->
         <div class="cs-next-steps">
-          <div class="cs-next-step"><span class="cs-next-num">1</span><span>Join the waitlist — free, no commitment</span></div>
-          <div class="cs-next-step"><span class="cs-next-num">2</span><span>We'll email you the moment we open</span></div>
-          <div class="cs-next-step"><span class="cs-next-num">3</span><span>Book your free trial class</span></div>
+          <div class="cs-next-step"><span class="cs-next-num">1</span><span>Fill in your details. Clicking <strong style="color:var(--white);font-weight:500;">"Start Free Trial"</strong> just secures your spot</span></div>
+          <div class="cs-next-step"><span class="cs-next-num">2</span><span>You'll get a confirmation email. This just means your details are saved</span></div>
+          <div class="cs-next-step"><span class="cs-next-num">3</span><span>We'll be in touch when we open to book your free first class</span></div>
         </div>
 
       </div>
     </div>
 
-    <a href="https://www.instagram.com/forgedgrappling/" target="_blank" rel="noopener noreferrer" class="cs-social-cta">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      Follow us on Instagram for updates
-    </a>
 
   </div>
 </main>
@@ -443,6 +522,34 @@ nav .cs-badge {
 </footer>
 
 <script src="/shared.js?v=2" defer></script>
+
+<!-- Waitlist modal -->
+<div id="waitlist-modal" class="wl-modal" role="dialog" aria-modal="true" aria-labelledby="wl-modal-title" hidden>
+  <div class="wl-modal-backdrop" onclick="closeWaitlistModal()"></div>
+  <div class="wl-modal-box">
+    <div class="wl-modal-label">Just so you know</div>
+    <h3 id="wl-modal-title" class="wl-modal-title">You're joining the waitlist</h3>
+    <p class="wl-modal-body">You'll be taken to our booking system to register your details. When you see the <strong>"Start Free Trial"</strong> button, that's how you confirm your spot on our waitlist.</p>
+    <div class="wl-modal-highlight">You'll also get an email from us saying your trial is confirmed. Don't worry, this is just MatTrack's standard sign-up email. <strong>We're not open yet</strong> and we'll be in touch personally to sort your free first class when we are.</div>
+    <a href="https://app.mattrack.io/forged-grappling/start-trial" target="_blank" rel="noopener noreferrer" class="btn-green wl-modal-cta" onclick="closeWaitlistModal()">Continue to Registration →</a>
+    <button class="wl-modal-back" onclick="closeWaitlistModal()">← Go back</button>
+  </div>
+</div>
+
+<script>
+function openWaitlistModal(e) {
+  e.preventDefault();
+  document.getElementById('waitlist-modal').removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeWaitlistModal() {
+  document.getElementById('waitlist-modal').setAttribute('hidden', '');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeWaitlistModal();
+});
+</script>
 
 </body>
 </html>
