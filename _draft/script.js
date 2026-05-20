@@ -37,17 +37,6 @@
   });
 })();
 (function () {
-  var btn = document.getElementById("vsl-play-btn");
-  var vsl = document.getElementById("hero-vsl");
-  var iframe = document.getElementById("vsl-iframe");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    if (!iframe.src || iframe.src === "" || iframe.src === window.location.href)
-      return;
-    vsl.classList.add("playing");
-  });
-})();
-(function () {
   document.querySelectorAll(".faq-q").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var item = this.closest(".faq-item");
