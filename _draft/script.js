@@ -56,6 +56,46 @@
   });
 })();
 (function () {
+  var featToggle = document.querySelector(".pricing-features-toggle");
+  if (featToggle) {
+    featToggle.addEventListener("click", function () {
+      var expanded = this.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".pricing-feat-extra").forEach(function (el) {
+        el.classList.toggle("visible", !expanded);
+      });
+      this.setAttribute("aria-expanded", String(!expanded));
+      this.textContent = expanded ? "+ 4 more included features" : "− Show fewer features";
+    });
+  }
+  var menuToggle = document.querySelector(".pricing-menu-toggle");
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      var expanded = this.getAttribute("aria-expanded") === "true";
+      var body = this.closest(".pricing-menu").querySelector(".pricing-menu-body");
+      body.classList.toggle("visible", !expanded);
+      this.setAttribute("aria-expanded", String(!expanded));
+    });
+  }
+})();
+(function () {
+  var tabs = document.querySelectorAll(".sched-tab-btn");
+  var days = document.querySelectorAll(".sched-day");
+  if (!tabs.length) return;
+  tabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var day = this.dataset.day;
+      tabs.forEach(function (b) {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      days.forEach(function (d) { d.classList.remove("active"); });
+      this.classList.add("active");
+      this.setAttribute("aria-selected", "true");
+      document.querySelector(".sched-day[data-day='" + day + "']").classList.add("active");
+    });
+  });
+})();
+(function () {
   var els = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
     els.forEach(function (el) {

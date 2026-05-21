@@ -94,8 +94,11 @@ h4 {
   }
 }
 @media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
   .section-wrap {
-    padding: 4rem 1.25rem;
+    padding: 3rem 1.25rem;
   }
 }
 .section-inner {
@@ -680,6 +683,14 @@ h4 {
 @media (max-width: 640px) {
   .hero-inner {
     padding: 2.5rem 1.25rem;
+    gap: 1.5rem;
+  }
+  .hero-h1 {
+    margin-bottom: 0.75rem;
+  }
+  .hero-sub {
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
   .hero-ctas {
     flex-direction: column;
@@ -742,6 +753,9 @@ h4 {
     padding: 0 1.25rem;
     grid-template-columns: repeat(2, 1fr);
   }
+  .stat-item {
+    padding: 2rem 0.75rem;
+  }
   .stat-item:nth-child(2)::after,
   .stat-item:nth-child(4)::after {
     display: none;
@@ -776,6 +790,12 @@ h4 {
   color: var(--brushed);
   line-height: 1.9;
   margin-bottom: 4rem;
+}
+@media (max-width: 640px) {
+  .why-method {
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
 }
 .pillars {
   display: grid;
@@ -1147,30 +1167,62 @@ h4 {
 .schedule-cta-wrap {
   text-align: center;
 }
+.sched-tabs {
+  display: none;
+}
 
-/* Mobile: drop the grid entirely, stack each day as a card */
+/* Mobile: day tabs — show one day at a time */
 @media (max-width: 640px) {
-  .schedule-grid {
+  .sched-tabs {
     display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    border: 1px solid var(--iron-border);
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  .sched-tab-btn {
+    flex: 1;
+    padding: 0.7rem 0;
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--silver);
+    background: var(--iron-light);
+    border: none;
+    border-right: 1px solid var(--iron-border);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .sched-tab-btn:last-child {
+    border-right: none;
+  }
+  .sched-tab-btn.active {
+    background: var(--green);
+    color: var(--white);
+  }
+  .schedule-grid {
+    display: block;
     background: transparent;
     border: none;
     margin-bottom: 2rem;
   }
   .sched-day {
-    display: block;
+    display: none;
     border: 1px solid var(--iron-border);
     overflow: hidden;
   }
+  .sched-day.active {
+    display: block;
+  }
   .sched-day-hd {
-    text-align: left;
-    background: var(--iron-light);
+    display: none;
   }
   .sched-class {
     border-top: 1px solid var(--iron-border);
   }
-  .sched-class:first-of-type {
+  .sched-class:first-child {
     border-top: none;
   }
 }
@@ -1451,8 +1503,63 @@ h4 {
     gap: 3rem;
   }
 }
+@media (max-width: 640px) {
+  .feat-detail {
+    display: none;
+  }
+  .guarantee-block {
+    padding: 1.1rem 1.25rem;
+    gap: 1rem;
+  }
+  .guarantee-num {
+    font-size: 2.2rem;
+  }
+  .guarantee-lbl {
+    font-size: 0.6rem;
+  }
+  .guarantee-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+  .guarantee-body {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+  .pricing-menu-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    text-align: left;
+  }
+  .pricing-menu-arrow {
+    font-size: 1rem;
+    color: var(--green-bright);
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .pricing-menu-toggle[aria-expanded="true"] .pricing-menu-arrow {
+    transform: rotate(45deg);
+  }
+  .pricing-menu-body {
+    display: none;
+  }
+  .pricing-menu-body.visible {
+    display: block;
+  }
+  .pricing-card-body {
+    padding: 1.5rem;
+  }
+}
 
 /* Other options menu */
+.pricing-features-toggle {
+  display: none;
+}
 .pricing-menu {
   border-top: 1px solid var(--iron-border);
   padding-top: 0;
@@ -2008,9 +2115,6 @@ footer {
   }
   .location-note {
     font-size: 0.9rem;
-  }
-  .guarantee-body {
-    font-size: 0.92rem;
   }
   .pricing-checklist li {
     font-size: 0.95rem;
