@@ -26,4 +26,4 @@ jobs:
       env:
         BUCKET: ${{ secrets.DEV_BUCKET }}
       run: |
-        aws s3 cp ./draft/* s3://$DEV_BUCKET/
+        aws s3 cp ./_draft/* s3://$DEV_BUCKET/
