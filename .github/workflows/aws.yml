@@ -1,0 +1,29 @@
+name: Upload to S3
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.IAM_ROLE_DEV }}
+        aws-region: eu-west-2
+
+    - name: Upload files to S3
+      env:
+        BUCKET: ${{ secrets.DEV_BUCKET }}
+      run: |
+        aws s3 cp ./draft/* s3://$DEV_BUCKET/
