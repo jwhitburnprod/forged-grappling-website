@@ -23,6 +23,7 @@ jobs:
         aws-region: eu-west-2
 
     - name: Upload files to S3
+      shell: bash
       env:
         BUCKET: ${{ secrets.DEV_BUCKET }}
       run: |
