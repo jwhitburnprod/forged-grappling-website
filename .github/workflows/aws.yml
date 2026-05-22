@@ -27,4 +27,4 @@ jobs:
       env:
         BUCKET: ${{ secrets.DEV_BUCKET }}
       run: |
-        aws s3 cp . s3://$BUCKET/ --recursive --exclude="*" --include="./site/*"
+        aws s3 cp ./site/ s3://$BUCKET/ --recursive
