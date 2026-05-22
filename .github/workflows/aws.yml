@@ -27,5 +27,4 @@ jobs:
       env:
         BUCKET: ${{ vars.DEV_BUCKET }}
       run: |
-        aws sts get-caller-identity
         aws s3 cp ./site/ s3://$BUCKET/ --recursive
