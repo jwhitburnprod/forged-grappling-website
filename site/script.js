@@ -56,22 +56,48 @@
   });
 })();
 (function () {
-  var tabs = document.querySelectorAll(".sched-tab-btn");
-  var days = document.querySelectorAll(".sched-day");
-  if (!tabs.length) return;
-  tabs.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var day = this.dataset.day;
-      tabs.forEach(function (b) {
-        b.classList.remove("active");
-        b.setAttribute("aria-selected", "false");
+  var featToggle = document.querySelector(".pricing-features-toggle");
+  if (featToggle) {
+    featToggle.addEventListener("click", function () {
+      var expanded = this.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".pricing-feat-extra").forEach(function (el) {
+        el.classList.toggle("visible", !expanded);
       });
-      days.forEach(function (d) { d.classList.remove("active"); });
-      this.classList.add("active");
-      this.setAttribute("aria-selected", "true");
-      document.querySelector(".sched-day[data-day='" + day + "']").classList.add("active");
+      this.setAttribute("aria-expanded", String(!expanded));
+      this.textContent = expanded ? "+ 4 more included features" : "− Show fewer features";
     });
-  });
+  }
+  var menuToggle = document.querySelector(".pricing-menu-toggle");
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      var expanded = this.getAttribute("aria-expanded") === "true";
+      var body = this.closest(".pricing-menu").querySelector(".pricing-menu-body");
+      body.classList.toggle("visible", !expanded);
+      this.setAttribute("aria-expanded", String(!expanded));
+    });
+  }
+})();
+(function () {
+  var target = new Date("2026-06-01T17:00:00Z"); /* 6pm BST = 17:00 UTC */
+  var dEl = document.getElementById("cd-days");
+  var hEl = document.getElementById("cd-hours");
+  var mEl = document.getElementById("cd-mins");
+  var sEl = document.getElementById("cd-secs");
+  if (!dEl) return;
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function tick() {
+    var diff = target - new Date();
+    if (diff <= 0) {
+      dEl.textContent = "0"; hEl.textContent = "00"; mEl.textContent = "00"; sEl.textContent = "00";
+      return;
+    }
+    dEl.textContent = Math.floor(diff / 86400000);
+    hEl.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    mEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    sEl.textContent = pad(Math.floor((diff % 60000) / 1000));
+  }
+  tick();
+  setInterval(tick, 1000);
 })();
 (function () {
   var els = document.querySelectorAll(".reveal");
