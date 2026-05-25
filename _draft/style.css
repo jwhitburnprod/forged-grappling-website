@@ -493,7 +493,7 @@ h4 {
    HERO — centred stack, full-width container
 ════════════════════════════════════ */
 #hero {
-  min-height: 88vh;
+  min-height: 100vh;
   padding-top: var(--nav-h);
   display: flex;
   align-items: center;
@@ -729,8 +729,13 @@ h4 {
   color: var(--silver);
 }
 .countdown-spots {
+  font-family: "Inter", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--green-bright);
-  font-weight: 600;
+  margin-top: 0.5rem;
 }
 .countdown-display {
   display: flex;
