@@ -26,5 +26,7 @@ jobs:
       shell: bash
       env:
         BUCKET: ${{ vars.PROD_BUCKET }}
+        DISTRIBUTION: ${{ vars.PROD_DISTRIBUTION }}
       run: |
         aws s3 cp ./site/ s3://$BUCKET/ --recursive --exclude "_draft/*"
+        aws cloudfront create-invalidation --distribution-id $DISTRIBUTION --paths '/*'
