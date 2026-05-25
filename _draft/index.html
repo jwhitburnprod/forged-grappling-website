@@ -167,6 +167,31 @@
               >Claim Your Free Trial</a
             >
           </div>
+          <!-- Countdown -->
+          <div class="hero-countdown">
+            <div class="countdown-label">Doors open in</div>
+            <div class="countdown-display">
+              <div class="countdown-unit">
+                <span id="cd-days">--</span>
+                <span class="cd-lbl">days</span>
+              </div>
+              <div class="countdown-sep">:</div>
+              <div class="countdown-unit">
+                <span id="cd-hours">--</span>
+                <span class="cd-lbl">hrs</span>
+              </div>
+              <div class="countdown-sep">:</div>
+              <div class="countdown-unit">
+                <span id="cd-mins">--</span>
+                <span class="cd-lbl">min</span>
+              </div>
+              <div class="countdown-sep">:</div>
+              <div class="countdown-unit">
+                <span id="cd-secs">--</span>
+                <span class="cd-lbl">sec</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -191,6 +216,16 @@
           </div>
         </div>
       </div>
+
+      <!-- WHAT IS NO-GI GRAPPLING -->
+      <section id="what-is" class="section-wrap what-is-section">
+        <div class="section-inner">
+          <div class="what-is-inner reveal">
+            <div class="what-is-label">What is no-gi grappling?</div>
+            <p class="what-is-text">No-gi grappling is a form of combat sport with no strikes and no uniform. You use takedowns, positional control and submissions — chokes and joint locks — to outmanoeuvre your opponent. Think wrestling meets chess: physical, technical, and genuinely addictive from the first session.</p>
+          </div>
+        </div>
+      </section>
 
       <!-- WHY FORGED -->
       <section id="why" class="section-wrap" aria-labelledby="why-heading">
@@ -265,7 +300,7 @@
               <p>
                 Whatever your experience level, you&rsquo;ll be welcomed,
                 looked after, and able to train at your own pace. The culture
-                here is built around people enjoying their training, if it&rsquo;
+                here is built around people enjoying their training, if it&rsquo;s
                 your first day or if you&rsquo;ve been training for years.
               </p>
             </div>
@@ -401,115 +436,38 @@
           <div class="section-header reveal">
             <h2 id="schedule-heading">THE SCHEDULE</h2>
           </div>
-          <div class="sched-tabs" role="tablist" aria-label="Day">
-            <button class="sched-tab-btn active" data-day="0" role="tab" aria-selected="true">Mon</button>
-            <button class="sched-tab-btn" data-day="1" role="tab" aria-selected="false">Tue</button>
-            <button class="sched-tab-btn" data-day="2" role="tab" aria-selected="false">Wed</button>
-            <button class="sched-tab-btn" data-day="3" role="tab" aria-selected="false">Thu</button>
-            <button class="sched-tab-btn" data-day="4" role="tab" aria-selected="false">Fri</button>
+          <div class="sched-table reveal">
+            <div class="sched-th"></div>
+            <div class="sched-th">Mon</div>
+            <div class="sched-th">Tue</div>
+            <div class="sched-th">Wed</div>
+            <div class="sched-th">Thu</div>
+            <div class="sched-th">Fri</div>
+            <div class="sched-time-lbl">6 &ndash; 7PM</div>
+            <div class="sched-cell"><span class="sched-cell-name">No-Gi Grappling</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-cell"><span class="sched-cell-name">No-Gi Grappling</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-cell"><span class="sched-cell-name">No-Gi Grappling</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-cell"><span class="sched-cell-name">No-Gi Grappling</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-cell"><span class="sched-cell-name">No-Gi Grappling</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-time-lbl">7 &ndash; 8PM</div>
+            <div class="sched-cell"><span class="sched-cell-name">Structured Open Mat</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-cell"><span class="sched-cell-name">Structured Open Mat</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-cell"><span class="sched-cell-name">Structured Open Mat</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-cell"><span class="sched-cell-name">Structured Open Mat</span><span class="sched-tag all-levels">All Levels</span></div>
+            <div class="sched-cell sched-cell-fri"><span class="sched-cell-name">Community Open Mat</span><span class="sched-tag social">Free</span></div>
           </div>
-          <div class="schedule-grid reveal">
-            <!-- Each .sched-day is display:contents on desktop (children join parent grid directly) -->
-            <!-- and a stacked card on mobile -->
-            <div class="sched-day active" data-day="0">
-              <div class="sched-day-hd">Monday</div>
-              <div class="sched-class">
-                <div class="sched-time">6 &ndash; 7PM</div>
-                <div class="sched-name">No-Gi Grappling</div>
-                <div class="sched-desc">
-                  Taught class with dynamic drills, techniques and sparring.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
-              <div class="sched-class">
-                <div class="sched-time">7 &ndash; 8PM</div>
-                <div class="sched-name">Structured Open Mat</div>
-                <div class="sched-desc">
-                  Supervised time to spar, practise techniques or ask the
-                  coaches questions.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
+          <div class="sched-legend reveal">
+            <div class="sched-legend-item">
+              <span class="sched-legend-name">No-Gi Grappling</span>
+              <span class="sched-legend-desc">Taught class with dynamic drills, techniques and sparring.</span>
             </div>
-            <div class="sched-day" data-day="1">
-              <div class="sched-day-hd">Tuesday</div>
-              <div class="sched-class">
-                <div class="sched-time">6 &ndash; 7PM</div>
-                <div class="sched-name">No-Gi Grappling</div>
-                <div class="sched-desc">
-                  Taught class with dynamic drills, techniques and sparring.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
-              <div class="sched-class">
-                <div class="sched-time">7 &ndash; 8PM</div>
-                <div class="sched-name">Structured Open Mat</div>
-                <div class="sched-desc">
-                  Supervised time to spar, practise techniques or ask the
-                  coaches questions.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
+            <div class="sched-legend-item">
+              <span class="sched-legend-name">Structured Open Mat</span>
+              <span class="sched-legend-desc">Supervised time to spar, practise techniques or ask the coaches questions.</span>
             </div>
-            <div class="sched-day" data-day="2">
-              <div class="sched-day-hd">Wednesday</div>
-              <div class="sched-class">
-                <div class="sched-time">6 &ndash; 7PM</div>
-                <div class="sched-name">No-Gi Grappling</div>
-                <div class="sched-desc">
-                  Taught class with dynamic drills, techniques and sparring.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
-              <div class="sched-class">
-                <div class="sched-time">7 &ndash; 8PM</div>
-                <div class="sched-name">Structured Open Mat</div>
-                <div class="sched-desc">
-                  Supervised time to spar, practise techniques or ask the
-                  coaches questions.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
-            </div>
-            <div class="sched-day" data-day="3">
-              <div class="sched-day-hd">Thursday</div>
-              <div class="sched-class">
-                <div class="sched-time">6 &ndash; 7PM</div>
-                <div class="sched-name">No-Gi Grappling</div>
-                <div class="sched-desc">
-                  Taught class with dynamic drills, techniques and sparring.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
-              <div class="sched-class">
-                <div class="sched-time">7 &ndash; 8PM</div>
-                <div class="sched-name">Structured Open Mat</div>
-                <div class="sched-desc">
-                  Supervised time to spar, practise techniques or ask the
-                  coaches questions.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
-            </div>
-            <div class="sched-day sched-day-friday" data-day="4">
-              <div class="sched-day-hd">Friday</div>
-              <div class="sched-class">
-                <div class="sched-time">6 &ndash; 7PM</div>
-                <div class="sched-name">No-Gi Grappling</div>
-                <div class="sched-desc">
-                  Taught class with dynamic drills, techniques and sparring.
-                </div>
-                <span class="sched-tag all-levels">All Levels</span>
-              </div>
-              <div class="sched-class sched-friday">
-                <div class="sched-time">7 &ndash; 8PM</div>
-                <div class="sched-name">Community Open Mat</div>
-                <div class="sched-desc">
-                  Free and open to all affiliations. Come in, roll and meet
-                  the team.
-                </div>
-                <span class="sched-tag social">Free</span>
-              </div>
+            <div class="sched-legend-item">
+              <span class="sched-legend-name">Community Open Mat <span class="sched-tag social">Free</span></span>
+              <span class="sched-legend-desc">Fri 7–8pm only. Open to all affiliations — come in, roll and meet the team.</span>
             </div>
           </div>
         </div>
@@ -821,6 +779,10 @@
             we&rsquo;ll take care of the rest. This is how every one of our
             members started.
           </p>
+          <div class="trial-proof reveal">
+            <span class="trial-proof-dot"></span>
+            11 members have already secured their founding spot.
+          </div>
           <a
             href="https://app.mattrack.io/forged-grappling/start-trial"
             target="_blank"
