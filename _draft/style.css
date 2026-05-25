@@ -1289,6 +1289,14 @@ h4 {
   color: var(--silver);
   padding: 0.85rem 1.5rem 0;
 }
+.pricing-opt-note {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.6;
+  padding: 0.85rem 1.5rem;
+  border-top: 1px solid var(--iron-border);
+}
 .pricing-opt-row {
   display: flex;
   align-items: center;
@@ -2049,10 +2057,10 @@ footer {
 }
 .footer-main {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   gap: 3rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 .footer-logo {
