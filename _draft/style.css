@@ -1272,18 +1272,51 @@ h4 {
 #pricing {
   background: var(--iron-darker);
 }
-.pricing-split {
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 5rem;
-  align-items: start;
+.pricing-col {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
-.pricing-left-sub {
-  font-size: 0.95rem;
+.pricing-alt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+}
+.pricing-alt-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.pricing-alt-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.pricing-alt-desc {
+  font-size: 0.82rem;
   font-weight: 300;
-  color: var(--brushed);
-  line-height: 1.85;
-  margin-bottom: 2.5rem;
+  color: var(--silver);
+}
+.pricing-alt-price {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--white);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pricing-alt-unit {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--silver);
 }
 .guarantee-block {
   background: var(--green-tint);
