@@ -988,14 +988,19 @@ h4 {
 .testi-card {
   background: var(--iron-light);
   border: 1px solid var(--iron-border);
+  border-top: 2px solid var(--green-bright);
   padding: 2rem;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
   transition:
     border-color 0.25s,
-    transform 0.25s;
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 .testi-card:hover {
   border-color: var(--green-border);
-  transform: translateY(-3px);
+  border-top-color: var(--green-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
 }
 .testi-stars {
   color: var(--green-bright);
