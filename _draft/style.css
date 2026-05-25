@@ -1171,6 +1171,7 @@ h4 {
   color: var(--brushed);
   line-height: 1.9;
   margin-bottom: 0;
+  padding-bottom: 1rem;
   flex: 1;
 }
 .testi-footer {
@@ -1287,6 +1288,8 @@ h4 {
   background: var(--iron-mid);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 0.45rem;
   transition: background 0.2s;
 }
@@ -1305,7 +1308,7 @@ h4 {
 .sched-cell-name {
   font-family: "Manrope", sans-serif;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
   color: var(--white);
   letter-spacing: 0.04em;
@@ -1334,9 +1337,9 @@ h4 {
 /* Schedule legend / key */
 .sched-legend {
   display: flex;
-  gap: 2rem 3rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
   text-align: center;
   margin-top: 0.25rem;
 }
@@ -1372,7 +1375,6 @@ h4 {
     display: grid;
   }
   .sched-legend {
-    flex-direction: column;
     gap: 1rem;
   }
 }
@@ -1713,6 +1715,64 @@ h4 {
 }
 .pricing-spots-combined strong {
   color: var(--white);
+}
+/* Scarcity bar above founding card */
+.pricing-scarcity {
+  margin-bottom: 0.75rem;
+}
+.pricing-scarcity-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--brushed);
+  margin-bottom: 0.5rem;
+}
+.pricing-scarcity-label strong {
+  color: var(--white);
+}
+.pricing-scarcity-track {
+  height: 4px;
+  background: var(--iron-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.pricing-scarcity-fill {
+  height: 100%;
+  width: 36.7%; /* 11 of 30 spots taken */
+  background: var(--green-bright);
+  border-radius: 2px;
+}
+/* Card top: name left, price right */
+.pricing-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+.pricing-card-top .pricing-card-lbl {
+  margin-bottom: 0;
+}
+.pricing-price-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+.pricing-price-right .pricing-price-row {
+  margin-bottom: 0;
+  justify-content: flex-end;
+}
+.pricing-price-right .pricing-price-note {
+  text-align: right;
+  margin-top: 0;
+}
+/* Savings / standard rate line */
+.pricing-std-row {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--silver);
+  margin-bottom: 1.5rem;
 }
 @media (max-width: 480px) {
   .pricing-price-display {
