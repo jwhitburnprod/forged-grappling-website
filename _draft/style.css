@@ -2258,7 +2258,7 @@ h4 {
 footer {
   background: var(--iron-deep);
   border-top: 1px solid var(--iron-border);
-  padding: 3rem 5rem 2rem;
+  padding: 2rem 5rem;
 }
 .footer-main {
   display: flex;
@@ -2357,12 +2357,12 @@ footer {
 }
 @media (max-width: 900px) {
   footer {
-    padding: 3rem 2.5rem 2rem;
+    padding: 2rem 2.5rem;
   }
 }
 @media (max-width: 640px) {
   footer {
-    padding: 3rem 1.25rem 2rem;
+    padding: 2rem 1.25rem;
   }
   .footer-main {
     flex-direction: column;
