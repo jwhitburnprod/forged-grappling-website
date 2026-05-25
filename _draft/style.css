@@ -775,16 +775,26 @@ h4 {
   background: var(--iron);
 }
 .why-head {
+  text-align: center;
   margin-bottom: 2.5rem;
 }
 .why-head h2 {
   font-family: "Manrope", sans-serif;
-  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   color: var(--white);
+  margin-bottom: 0;
+}
+.why-head h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--green-bright);
+  margin: 0.6rem auto 0;
 }
 .h2-green {
   color: var(--green-bright);
@@ -798,6 +808,10 @@ h4 {
   color: var(--brushed);
   line-height: 1.9;
   margin-bottom: 4rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 @media (max-width: 640px) {
   .why-method {
@@ -866,18 +880,25 @@ h4 {
   background: var(--iron-darker);
 }
 .coaches-hd {
+  text-align: center;
   margin-bottom: 2.75rem;
-  border-left: 3px solid var(--green-bright);
-  padding-left: 1.25rem;
 }
 .coaches-hd h2 {
   font-family: "Manrope", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 900;
   text-transform: uppercase;
   color: var(--white);
-  line-height: 1;
-  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+.coaches-hd h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--green-bright);
+  margin: 0.6rem auto 0;
 }
 .coaches-wins-accent {
   color: var(--green-bright);
@@ -1256,23 +1277,6 @@ h4 {
   grid-template-columns: 1fr 1.05fr;
   gap: 5rem;
   align-items: start;
-}
-.pricing-left h2 {
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-.pricing-left h2::after {
-  content: "";
-  display: block;
-  width: 32px;
-  height: 3px;
-  background: var(--green-bright);
-  margin-top: 0.6rem;
 }
 .pricing-left-sub {
   font-size: 0.95rem;
