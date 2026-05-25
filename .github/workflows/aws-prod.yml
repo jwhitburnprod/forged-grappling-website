@@ -19,7 +19,7 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: ${{ secrets.IAM_ROLE_DEV }}
+        role-to-assume: ${{ secrets.IAM_ROLE_PROD }}
         aws-region: eu-west-2
 
     - name: Upload files to S3
