@@ -526,7 +526,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  padding: 5rem 5rem 4rem;
+  padding: 2.5rem 5rem 3rem;
   text-align: center;
 }
 /* Text block sits narrower so H1 reads cleanly */
@@ -980,8 +980,10 @@ h4 {
 }
 .testi-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  max-width: 860px;
+  margin: 0 auto;
 }
 .testi-card {
   background: var(--iron-light);
@@ -1007,7 +1009,7 @@ h4 {
   font-style: italic;
   color: var(--brushed);
   line-height: 1.9;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 .testi-footer {
   display: flex;
@@ -1034,6 +1036,7 @@ h4 {
   font-size: 0.85rem;
   font-weight: 800;
   color: var(--white);
+  margin-bottom: 1rem;
 }
 .testi-role {
   font-size: 0.73rem;
