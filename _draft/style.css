@@ -724,9 +724,13 @@ h4 {
   font-family: "Inter", sans-serif;
   font-size: 0.65rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--silver);
+}
+.countdown-spots {
+  color: var(--green-bright);
+  font-weight: 600;
 }
 .countdown-display {
   display: flex;
@@ -831,25 +835,31 @@ h4 {
 
 /* ─── WHAT IS NO-GI ─── */
 .what-is-section {
-  background: var(--iron-mid);
-  border-top: 1px solid var(--iron-border);
-  border-bottom: 1px solid var(--iron-border);
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  background: var(--iron-darker);
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 .what-is-inner {
-  max-width: 760px;
+  max-width: 720px;
   margin: 0 auto;
   text-align: center;
 }
-.what-is-label {
-  font-family: "Inter", sans-serif;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+.what-is-heading {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 900;
   text-transform: uppercase;
-  color: var(--green-bright);
-  margin-bottom: 0.9rem;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+.what-is-heading::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--green-bright);
+  margin: 0.6rem auto 1.5rem;
 }
 .what-is-text {
   font-size: 1rem;
@@ -2069,7 +2079,7 @@ h4 {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.85;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2rem;
 }
 .trial-note {
   font-size: 0.82rem;
@@ -2085,7 +2095,8 @@ h4 {
   font-size: 0.82rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0;
 }
 .trial-proof-dot {
   width: 7px;

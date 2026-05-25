@@ -78,7 +78,7 @@
   }
 })();
 (function () {
-  var target = new Date("2026-06-01T00:00:00");
+  var target = new Date("2026-06-01T17:00:00Z"); /* 6pm BST = 17:00 UTC */
   var dEl = document.getElementById("cd-days");
   var hEl = document.getElementById("cd-hours");
   var mEl = document.getElementById("cd-mins");
