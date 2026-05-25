@@ -1504,62 +1504,12 @@ h4 {
   }
 }
 @media (max-width: 640px) {
-  .feat-detail {
-    display: none;
-  }
-  .guarantee-block {
-    padding: 1.1rem 1.25rem;
-    gap: 1rem;
-  }
-  .guarantee-num {
-    font-size: 2.2rem;
-  }
-  .guarantee-lbl {
-    font-size: 0.6rem;
-  }
-  .guarantee-title {
-    font-size: 0.8rem;
-    margin-bottom: 0.3rem;
-  }
-  .guarantee-body {
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
-  .pricing-menu-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    text-align: left;
-  }
-  .pricing-menu-arrow {
-    font-size: 1rem;
-    color: var(--green-bright);
-    transition: transform 0.2s;
-    display: inline-block;
-  }
-  .pricing-menu-toggle[aria-expanded="true"] .pricing-menu-arrow {
-    transform: rotate(45deg);
-  }
-  .pricing-menu-body {
-    display: none;
-  }
-  .pricing-menu-body.visible {
-    display: block;
-  }
   .pricing-card-body {
     padding: 1.5rem;
   }
 }
 
 /* Other options menu */
-.pricing-features-toggle {
-  display: none;
-}
 .pricing-menu {
   border-top: 1px solid var(--iron-border);
   padding-top: 0;
