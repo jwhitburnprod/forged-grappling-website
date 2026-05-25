@@ -493,7 +493,7 @@ h4 {
    HERO — centred stack, full-width container
 ════════════════════════════════════ */
 #hero {
-  min-height: 100vh;
+  min-height: 88vh;
   padding-top: var(--nav-h);
   display: flex;
   align-items: center;
@@ -534,7 +534,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  padding: 2.5rem 5rem 3rem;
+  padding: 1.5rem 5rem 2rem;
   text-align: center;
 }
 /* Text block sits narrower so H1 reads cleanly */
@@ -577,7 +577,10 @@ h4 {
   color: var(--brushed);
   line-height: 1.85;
   margin-bottom: 0;
-  max-width: 520px;
+  max-width: 680px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero-ctas {
   display: flex;
@@ -1845,6 +1848,10 @@ h4 {
   gap: 5rem;
   align-items: start;
 }
+.location-info {
+  display: flex;
+  flex-direction: column;
+}
 .location-address {
   margin-bottom: 2rem;
 }
@@ -1914,10 +1921,11 @@ h4 {
   margin-top: 0.5rem;
 }
 .map-container {
-  aspect-ratio: 4/3;
   background: var(--iron-mid);
   border: 1px solid var(--iron-border);
   overflow: hidden;
+  align-self: stretch;
+  min-height: 300px;
 }
 .map-container iframe {
   width: 100%;
