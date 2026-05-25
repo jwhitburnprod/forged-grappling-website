@@ -86,11 +86,11 @@ h4 {
   display: none;
 }
 .section-wrap {
-  padding: 6rem 5rem;
+  padding: 4.5rem 5rem;
 }
 @media (max-width: 1024px) {
   .section-wrap {
-    padding: 5rem 2.5rem;
+    padding: 3.75rem 2.5rem;
   }
 }
 @media (max-width: 640px) {
@@ -577,6 +577,7 @@ h4 {
   color: var(--brushed);
   line-height: 1.85;
   margin-bottom: 0;
+  max-width: 520px;
 }
 .hero-ctas {
   display: flex;
@@ -821,7 +822,7 @@ h4 {
 }
 .pillars {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 .pillar {
@@ -1275,6 +1276,15 @@ h4 {
 .pricing-options-card {
   background: var(--iron-mid);
   border: 1px solid var(--iron-border);
+}
+.pricing-opt-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--silver);
+  padding: 0.85rem 1.5rem 0;
 }
 .pricing-opt-row {
   display: flex;
@@ -1899,6 +1909,9 @@ h4 {
 }
 .loc-card .location-contact {
   font-size: 0.88rem;
+}
+.loc-card .location-contact + .location-contact {
+  margin-top: 0.5rem;
 }
 .map-container {
   aspect-ratio: 4/3;
