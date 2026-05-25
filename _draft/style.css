@@ -1272,6 +1272,51 @@ h4 {
 #pricing {
   background: var(--iron-darker);
 }
+.pricing-options-card {
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+}
+.pricing-opt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--iron-border);
+}
+.pricing-opt-row:last-child {
+  border-bottom: none;
+}
+.pricing-opt-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.pricing-opt-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.pricing-opt-desc {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--silver);
+}
+.pricing-opt-price {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--white);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pricing-opt-unit {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--silver);
+}
 .pricing-col {
   max-width: 620px;
   margin: 0 auto;
@@ -1828,6 +1873,32 @@ h4 {
   line-height: 1.75;
   padding-top: 1.5rem;
   border-top: 1px solid var(--iron-border);
+}
+.loc-card {
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.loc-card-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+  margin-bottom: 0.6rem;
+}
+.loc-card p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.85;
+}
+.loc-card-info p + p {
+  margin-top: 0.6rem;
+}
+.loc-card .location-contact {
+  font-size: 0.88rem;
 }
 .map-container {
   aspect-ratio: 4/3;
