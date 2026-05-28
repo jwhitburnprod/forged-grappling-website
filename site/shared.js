@@ -53,11 +53,14 @@ function toggleMobileNav() {
   nav.classList.toggle('open');
   btn.classList.toggle('open');
   btn.setAttribute('aria-expanded', !isOpen);
+  btn.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
   document.body.style.overflow = isOpen ? '' : 'hidden';
 }
 function closeMobileNav() {
-  document.querySelector('.nav-hamburger').classList.remove('open');
+  var btn = document.querySelector('.nav-hamburger');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Open navigation');
   document.getElementById('mobile-nav').classList.remove('open');
-  document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
