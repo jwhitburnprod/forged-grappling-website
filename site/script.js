@@ -78,28 +78,6 @@
   }
 })();
 (function () {
-  var target = new Date("2026-06-01T17:00:00Z"); /* 6pm BST = 17:00 UTC */
-  var dEl = document.getElementById("cd-days");
-  var hEl = document.getElementById("cd-hours");
-  var mEl = document.getElementById("cd-mins");
-  var sEl = document.getElementById("cd-secs");
-  if (!dEl) return;
-  function pad(n) { return String(n).padStart(2, "0"); }
-  function tick() {
-    var diff = target - new Date();
-    if (diff <= 0) {
-      dEl.textContent = "0"; hEl.textContent = "00"; mEl.textContent = "00"; sEl.textContent = "00";
-      return;
-    }
-    dEl.textContent = Math.floor(diff / 86400000);
-    hEl.textContent = pad(Math.floor((diff % 86400000) / 3600000));
-    mEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
-    sEl.textContent = pad(Math.floor((diff % 60000) / 1000));
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
-(function () {
   var els = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
     els.forEach(function (el) {
