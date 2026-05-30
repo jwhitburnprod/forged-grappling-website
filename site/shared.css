@@ -61,7 +61,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; j
 @media (max-width: 900px) { .nav-hamburger { display: block; } }
 
 /* ─── MOBILE NAV ─── */
-.mobile-nav { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 199; background: rgba(30,32,32,0.98); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+.mobile-nav { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 199; background: rgba(30,32,32,0.98); backdrop-filter: blur(12px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
 .mobile-nav.open { opacity: 1; pointer-events: auto; }
 .mobile-nav-links { display: flex; flex-direction: column; gap: 1.5rem; text-align: center; }
 .mobile-nav-links a { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; transition: color 0.2s; }
