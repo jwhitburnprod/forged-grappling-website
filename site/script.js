@@ -89,7 +89,9 @@
         }
       });
     },
-    { threshold: 0.1 },
+    // Start the reveal 200px before the element scrolls into view so
+    // nothing visibly pops in at the screen edge.
+    { rootMargin: "0px 0px 200px 0px", threshold: 0 },
   );
   els.forEach(function (el) {
     io.observe(el);

@@ -216,7 +216,7 @@
           href="https://app.mattrack.io/forged-grappling/start-trial?utm_source=website&utm_medium=cta&utm_campaign=trial&utm_content=nav_mobile"
           class="mobile-nav-cta"
           data-cta="nav_mobile"
-          >&rarr; Claim Your Free Trial</a
+          >Claim Your Free Trial</a
         >
       </div>
     </div>
@@ -226,6 +226,11 @@
       <section id="hero" aria-label="Welcome to Forged Grappling">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-inner">
+          <!-- Founding scarcity — separate from the rating -->
+          <div class="hero-scarcity">
+            <span class="hero-scarcity-dot" aria-hidden="true"></span>
+            <span><strong><span class="js-spots-left">6</span> founding spots left</strong> at &pound;50/mo</span>
+          </div>
           <!-- Text block — narrower for readability -->
           <div class="hero-text">
             <h1 class="hero-h1">FORGED <span class="h2-green">GRAPPLING</span></h1>
@@ -248,11 +253,6 @@
           <div class="hero-social-proof">
             <div class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <div class="hero-proof-text"><a href="https://www.google.com/maps/search/?api=1&amp;query=Forged+Grappling+Westbury+BA13+3QS" target="_blank" rel="noopener noreferrer" class="hero-proof-link">Rated 5 stars by our members</a></div>
-          </div>
-          <!-- Founding scarcity — separate from the rating -->
-          <div class="hero-scarcity">
-            <span class="hero-scarcity-dot" aria-hidden="true"></span>
-            <span><strong><span class="js-spots-left">6</span> founding spots left</strong> at &pound;50/mo</span>
           </div>
         </div>
       </section>
@@ -304,7 +304,7 @@
       <section id="what-is" class="section-wrap what-is-section">
         <div class="section-inner">
           <div class="what-is-inner reveal">
-            <h2 class="what-is-heading">WHAT IS NO-GI GRAPPLING?</h2>
+            <h2 class="what-is-heading">WHAT IS NO-GI?</h2>
             <p class="what-is-text">No-gi grappling is a combat sport that uses takedowns, positional control, chokes and joint locks to control and submit your opponent. Unlike MMA, there is no striking and we don&rsquo;t wear the heavy kimonos seen in traditional BJJ. It&rsquo;s physical, technical, surprisingly addictive, and far more accessible than most people expect.</p>
           </div>
         </div>
@@ -407,43 +407,30 @@
         aria-labelledby="coaches-heading"
       >
         <div class="section-inner">
-          <div class="coaches-hd reveal">
+          <div class="section-header reveal">
             <h2 id="coaches-heading">THE COACHES</h2>
-            <div class="coaches-hd-stats">
-              <span class="coaches-hd-stat"><strong>125</strong> COMBINED WINS</span>
-              <span class="coaches-hd-sep">&middot;</span>
-              <span class="coaches-hd-stat"><strong>69</strong> MEDALS</span>
-            </div>
           </div>
           <div class="coaches-grid">
-            <div class="coach-card reveal">
+            <div class="coach-card">
               <div class="coach-card-top">
                 <span class="coach-card-badge">5 yrs</span>
+                <span class="coach-card-top-record"><strong>32</strong> W &middot; <strong>18</strong> MDL</span>
               </div>
               <picture>
                 <source srcset="/coach-mitchell.webp" type="image/webp" />
-                <img class="coach-card-photo" src="/coach-mitchell.jpg" alt="Mitchell Cullum" width="150" height="150" loading="lazy" decoding="async" />
+                <img class="coach-card-photo" src="/coach-mitchell.jpg" alt="Mitch Cullum" width="150" height="150" loading="lazy" decoding="async" />
               </picture>
               <div class="coach-card-body">
-                <div class="coach-card-name">Mitchell Cullum</div>
-                <div class="coach-card-record">
-                  <div class="coach-card-stat">
-                    <span class="coach-card-stat-val">32</span>
-                    <span class="coach-card-stat-lbl">W</span>
-                  </div>
-                  <div class="coach-card-stat">
-                    <span class="coach-card-stat-val">18</span>
-                    <span class="coach-card-stat-lbl">MDL</span>
-                  </div>
-                </div>
-                <p class="coach-card-about">Mitchell has been competing since day one, building a relentless top-pressure game that has earned him podium finishes at regional and national level.</p>
+                <div class="coach-card-name">Mitch Cullum</div>
+                <p class="coach-card-about">Mitch has been competing since day one, building a relentless top-pressure game that has earned him podium finishes at regional and national level.</p>
                 <div class="coach-card-section-lbl">FAV. SUBMISSION</div>
                 <div class="coach-card-sub">Triangle</div>
               </div>
             </div>
-            <div class="coach-card reveal reveal-d1">
+            <div class="coach-card">
               <div class="coach-card-top">
-                <span class="coach-card-badge coach-card-badge--intl">INTL</span>
+                <span class="coach-card-badge">3 yrs</span>
+                <span class="coach-card-top-record"><strong>31</strong> W &middot; <strong>19</strong> MDL</span>
               </div>
               <picture>
                 <source srcset="/coach-jack.webp" type="image/webp" />
@@ -451,24 +438,15 @@
               </picture>
               <div class="coach-card-body">
                 <div class="coach-card-name">Jack Whitburn</div>
-                <div class="coach-card-record">
-                  <div class="coach-card-stat">
-                    <span class="coach-card-stat-val">31</span>
-                    <span class="coach-card-stat-lbl">W</span>
-                  </div>
-                  <div class="coach-card-stat">
-                    <span class="coach-card-stat-val">19</span>
-                    <span class="coach-card-stat-lbl">MDL</span>
-                  </div>
-                </div>
                 <p class="coach-card-about">Jack is an international-level competitor whose systematic approach to leg locks and positional control shapes the way Forged coaches the fundamentals.</p>
                 <div class="coach-card-section-lbl">FAV. SUBMISSION</div>
                 <div class="coach-card-sub">Ham Sandwich</div>
               </div>
             </div>
-            <div class="coach-card reveal reveal-d2">
+            <div class="coach-card">
               <div class="coach-card-top">
                 <span class="coach-card-badge">3 yrs</span>
+                <span class="coach-card-top-record"><strong>1</strong> W &middot; <strong>4</strong> MDL</span>
               </div>
               <picture>
                 <source srcset="/coach-nathan.webp" type="image/webp" />
@@ -476,24 +454,15 @@
               </picture>
               <div class="coach-card-body">
                 <div class="coach-card-name">Nathan Cullum</div>
-                <div class="coach-card-record">
-                  <div class="coach-card-stat">
-                    <span class="coach-card-stat-val">1</span>
-                    <span class="coach-card-stat-lbl">W</span>
-                  </div>
-                  <div class="coach-card-stat">
-                    <span class="coach-card-stat-val">4</span>
-                    <span class="coach-card-stat-lbl">MDL</span>
-                  </div>
-                </div>
                 <p class="coach-card-about">Nathan brings fresh competitive energy to the mat and a teaching style that makes complex concepts accessible to beginners and intermediates alike.</p>
                 <div class="coach-card-section-lbl">FAV. SUBMISSION</div>
                 <div class="coach-card-sub">Toe Hold</div>
               </div>
             </div>
-            <div class="coach-card reveal reveal-d3">
+            <div class="coach-card">
               <div class="coach-card-top">
-                <span class="coach-card-badge coach-card-badge--intl">INTL</span>
+                <span class="coach-card-badge">3 yrs</span>
+                <span class="coach-card-top-record"><strong>61</strong> W &middot; <strong>28</strong> MDL</span>
               </div>
               <picture>
                 <source srcset="/coach-harry.webp" type="image/webp" />
@@ -501,16 +470,6 @@
               </picture>
               <div class="coach-card-body">
                 <div class="coach-card-name">Harry Whitburn</div>
-                <div class="coach-card-record">
-                  <div class="coach-card-stat">
-                    <span class="coach-card-stat-val">61</span>
-                    <span class="coach-card-stat-lbl">W</span>
-                  </div>
-                  <div class="coach-card-stat">
-                    <span class="coach-card-stat-val">28</span>
-                    <span class="coach-card-stat-lbl">MDL</span>
-                  </div>
-                </div>
                 <p class="coach-card-about">Harry is the most decorated coach on the roster. His pressure passing and back-take system are the backbone of Forged&rsquo;s competitive identity.</p>
                 <div class="coach-card-section-lbl">FAV. SUBMISSION</div>
                 <div class="coach-card-sub">Mother&rsquo;s Milk</div>
@@ -548,7 +507,7 @@
             <div class="sched-card reveal reveal-d2">
               <div class="sched-card-header">
                 <span class="sched-card-title sched-card-title--community">Community Open Mat</span>
-                <span class="sched-card-time sched-card-time--free">Fri &middot; 7&ndash;8PM &middot; Free</span>
+                <span class="sched-card-time sched-card-time--free">Fri &middot; 7&ndash;8PM</span>
               </div>
               <p class="sched-card-desc">Always free and open to the whole community. Bring friends from local clubs for some rolls and ask the coaches anything.</p>
             </div>
@@ -564,7 +523,7 @@
       >
         <div class="section-inner">
           <div class="section-header reveal">
-            <h2 id="testi-heading">WHAT OUR MEMBERS SAY</h2>
+            <h2 id="testi-heading">MEMBER REVIEWS</h2>
           </div>
         </div>
         <div class="testi-carousel reveal" aria-label="Member reviews">
@@ -647,10 +606,11 @@
                     <div class="pricing-card-top">
                       <div class="pricing-card-top-left">
                         <div class="pricing-card-lbl">Monthly Founding Membership</div>
-                        <div class="pricing-std-row">Save &pound;360/yr &nbsp;&middot;&nbsp; &pound;80/mo standard rate</div>
+                        <div class="pricing-std-row">Save &pound;360 every year on the standard rate</div>
                       </div>
                       <div class="pricing-price-right">
                         <div class="pricing-price-row">
+                          <span class="pricing-was">&pound;80</span>
                           <span class="pricing-currency">&pound;</span>
                           <span class="pricing-amount">50</span>
                           <span class="pricing-price-unit">/mo</span>
@@ -670,6 +630,7 @@
                       data-cta="pricing"
                       >Secure Your Founding Spot</a
                     >
+                    <div class="pricing-cta-note">Your first session is free &mdash; try the gym before you commit.</div>
                   </div>
                 </div>
               </div>
@@ -709,7 +670,6 @@
                   </div>
                   <span class="pricing-opt-price">&pound;10<span class="pricing-opt-unit">/day</span></span>
                 </div>
-                <div class="pricing-opt-note">Speak to one of our coaches on your trial day if you&rsquo;re interested in our other membership options.</div>
               </div>
             </div>
           </div>
@@ -720,7 +680,7 @@
       <section id="faq" class="section-wrap" aria-labelledby="faq-heading">
         <div class="section-inner">
           <div class="section-header reveal">
-            <h2 id="faq-heading">FREQUENTLY ASKED QUESTIONS</h2>
+            <h2 id="faq-heading">COMMON QUESTIONS</h2>
           </div>
           <div class="faq-list">
             <div class="faq-item reveal">
@@ -898,13 +858,13 @@
 
     <!-- STICKY TRIAL BAR -->
     <div class="sticky-trial sticky-trial--hidden" id="stickyTrial" aria-label="Book your free trial">
-      <p class="sticky-trial-text">Your first session is <strong>free</strong> &mdash; no experience needed.</p>
+      <p class="sticky-trial-text">Your first session is <strong>free</strong><span class="sticky-trial-extra"> &mdash; no experience needed.</span></p>
       <a
         href="https://app.mattrack.io/forged-grappling/start-trial?utm_source=website&utm_medium=cta&utm_campaign=trial&utm_content=sticky"
         class="btn-green"
         style="padding: 0.65rem 1.4rem; font-size: 0.82rem;"
         data-cta="sticky"
-      >Claim Free Trial &rarr;</a>
+      >Claim Free Trial</a>
       <button class="sticky-trial-close" aria-label="Dismiss">&#x2715;</button>
     </div>
 

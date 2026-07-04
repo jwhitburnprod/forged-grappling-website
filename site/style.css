@@ -98,7 +98,10 @@ h4 {
     font-size: 16px;
   }
   .section-wrap {
-    padding: 3.75rem 1.25rem;
+    padding: 4.5rem 1.25rem;
+  }
+  .section-header {
+    margin-bottom: 3rem;
   }
 }
 .section-inner {
@@ -172,7 +175,7 @@ h4 {
   z-index: 998;
   pointer-events: none;
   opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
 }
@@ -736,7 +739,7 @@ h4 {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
   padding: 0.5rem 1.1rem;
   background: var(--green-tint);
   border: 1px solid var(--green-border);
@@ -854,11 +857,13 @@ h4 {
 @media (max-width: 640px) {
   #stats {
     overflow: hidden;
+    contain: paint;
   }
   .stats-track {
     display: flex;
     width: max-content;
     animation: stats-scroll 26s linear infinite;
+    will-change: transform;
   }
   .stats-inner,
   .stats-inner--dup {
@@ -904,8 +909,8 @@ h4 {
 /* ─── WHAT IS NO-GI ─── */
 .what-is-section {
   background: var(--iron-darker);
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
 }
 .what-is-inner {
   max-width: 720px;
@@ -1040,49 +1045,19 @@ h4 {
 .why-photos {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+@media (max-width: 640px) {
+  .why-photos {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
 }
 
 /* ─── COACHES ─── */
 #coaches {
   background: var(--iron-darker);
-}
-.coaches-hd {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
-}
-.coaches-hd h2 {
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 0;
-}
-.coaches-hd-stats {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: "Inter", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--silver);
-  white-space: nowrap;
-}
-.coaches-hd-stats strong {
-  color: var(--white);
-  font-weight: 700;
-}
-.coaches-hd-sep {
-  color: var(--iron-border);
 }
 .coaches-grid {
   display: grid;
@@ -1120,11 +1095,17 @@ h4 {
   text-transform: uppercase;
   color: var(--silver);
 }
-.coach-card-badge--intl {
-  color: var(--green-bright);
-  background: var(--green-tint);
-  border: 1px solid var(--green-border);
-  padding: 0.15rem 0.4rem;
+.coach-card-top-record {
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+.coach-card-top-record strong {
+  color: var(--white);
+  font-weight: 700;
 }
 .coach-card-photo {
   width: 100%;
@@ -1147,33 +1128,6 @@ h4 {
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.1;
-}
-.coach-card-record {
-  display: flex;
-  gap: 1.25rem;
-  padding: 0.55rem 0;
-  border-top: 1px solid var(--iron-border);
-  border-bottom: 1px solid var(--iron-border);
-}
-.coach-card-stat {
-  display: flex;
-  align-items: baseline;
-  gap: 0.3rem;
-}
-.coach-card-stat-val {
-  font-family: "Manrope", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1;
-}
-.coach-card-stat-lbl {
-  font-family: "Inter", sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--silver);
-  text-transform: uppercase;
 }
 .coach-card-section-lbl {
   font-family: "Inter", sans-serif;
@@ -1213,7 +1167,7 @@ h4 {
     scroll-snap-type: x mandatory;
     gap: 0.75rem;
     margin: 0 -1.25rem;
-    padding: 0.5rem 12% 0.75rem;
+    padding: 0.5rem 0 0.75rem;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
@@ -1224,23 +1178,25 @@ h4 {
     flex: 0 0 76%;
     scroll-snap-align: center;
   }
+  .coach-card:first-child {
+    margin-left: 12%;
+  }
+  .coach-card:last-child {
+    margin-right: 12%;
+  }
   /* extra specificity so the carousel state beats .reveal.visible */
-  .coaches-grid .coach-card.visible {
+  .coaches-grid .coach-card {
     transform: scale(0.92);
     opacity: 0.55;
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
-  .coaches-grid .coach-card.visible.is-center {
+  .coaches-grid .coach-card.is-center {
     transform: none;
     opacity: 1;
   }
-  .coaches-hd {
-    flex-direction: column;
-    gap: 0.5rem;
   }
-}
 @media (max-width: 540px) and (prefers-reduced-motion: reduce) {
-  .coaches-grid .coach-card.visible {
+  .coaches-grid .coach-card {
     transform: none;
     opacity: 1;
     transition: none;
@@ -1258,6 +1214,7 @@ h4 {
    one group's width for a seamless loop. Pauses on hover/focus. */
 .testi-carousel {
   overflow: hidden;
+  contain: paint;
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent,
@@ -1282,6 +1239,7 @@ h4 {
 .testi-track {
   width: max-content;
   animation: testi-scroll 45s linear infinite;
+  will-change: transform;
 }
 .testi-carousel:hover .testi-track,
 .testi-carousel:focus-within .testi-track {
@@ -1372,7 +1330,7 @@ h4 {
 .sched-cards {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
   width: 100%;
 }
 .sched-card {
@@ -1443,14 +1401,6 @@ h4 {
   color: var(--silver);
   padding: 0.85rem 1.5rem 0;
 }
-.pricing-opt-note {
-  font-size: 0.78rem;
-  font-weight: 300;
-  color: var(--silver);
-  line-height: 1.6;
-  padding: 0.85rem 1.5rem;
-  border-top: 1px solid var(--iron-border);
-}
 .pricing-opt-row {
   display: flex;
   align-items: center;
@@ -1469,6 +1419,7 @@ h4 {
 }
 .pricing-opt-name {
   font-family: "Manrope", sans-serif;
+  white-space: nowrap;
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -1634,6 +1585,24 @@ h4 {
 }
 .pricing-was s {
   color: rgba(155, 162, 170, 0.6);
+}
+.pricing-was {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--silver);
+  text-decoration: line-through;
+  text-decoration-color: rgba(220, 80, 80, 0.75);
+  text-decoration-thickness: 2px;
+  margin-right: 0.6rem;
+  opacity: 0.7;
+}
+.pricing-cta-note {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 0.76rem;
+  font-weight: 300;
+  color: var(--silver);
 }
 .pricing-price-row {
   display: flex;
@@ -2140,7 +2109,7 @@ h4 {
   position: absolute;
   inset: 0;
   opacity: 0.06;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
   pointer-events: none;
@@ -2199,7 +2168,7 @@ h4 {
 }
 .trial-h2 {
   font-family: "Manrope", sans-serif;
-  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-size: clamp(1.6rem, 6.5vw, 4.2rem);
   font-weight: 900;
   text-transform: uppercase;
   color: var(--white);
@@ -2299,8 +2268,10 @@ h4 {
     padding: 0.6rem 2.5rem 0.6rem 1rem;
   }
   .sticky-trial-text {
-    font-size: 0.72rem;
-    white-space: normal;
+    font-size: 0.74rem;
+  }
+  .sticky-trial-extra {
+    display: none;
   }
   .sticky-trial-close {
     right: 0.5rem;
@@ -2539,5 +2510,39 @@ footer {
   }
   .trial-sub {
     font-size: 1.05rem;
+  }
+}
+
+/* Schedule header stays on one line on small screens */
+@media (max-width: 540px) {
+  .sched-card-header {
+    flex-wrap: nowrap;
+    padding: 0.9rem 1rem;
+    gap: 0.6rem;
+  }
+  .sched-card-title {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+  .sched-card-time {
+    font-size: 0.64rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Section headings stay on one line on small screens */
+@media (max-width: 640px) {
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .pricing-opt-name {
+    font-size: 0.74rem;
+  }
+  .pricing-opt-row {
+    gap: 1rem;
+    padding: 1rem 1.1rem;
   }
 }
