@@ -713,29 +713,29 @@ h4 {
 }
 
 /* ─── HERO COUNTDOWN ─── */
-.hero-countdown {
+.hero-social-proof {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.45rem;
   margin-top: 0.5rem;
 }
-.countdown-label {
+.hero-stars {
+  color: #f4b400;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+}
+.hero-proof-text {
   font-family: "Inter", sans-serif;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
   color: var(--silver);
+  text-align: center;
 }
-.countdown-spots {
-  font-family: "Inter", sans-serif;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.hero-proof-text strong {
   color: var(--green-bright);
-  margin-top: 0.5rem;
+  font-weight: 500;
 }
 .countdown-display {
   display: flex;
@@ -983,8 +983,12 @@ h4 {
   background: var(--iron-darker);
 }
 .coaches-hd {
-  text-align: center;
-  margin-bottom: 2.75rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
 .coaches-hd h2 {
   font-family: "Manrope", sans-serif;
@@ -995,242 +999,268 @@ h4 {
   line-height: 1.1;
   margin-bottom: 0;
 }
-.coaches-hd h2::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: var(--green-bright);
-  margin: 0.6rem auto 0;
+.coaches-hd-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--silver);
+  white-space: nowrap;
 }
-.coaches-wins-accent {
+.coaches-hd-stats strong {
+  color: var(--white);
+  font-weight: 700;
+}
+.coaches-hd-sep {
+  color: var(--iron-border);
+}
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.coach-card {
+  border: 1px solid var(--iron-border);
+  background: var(--iron-mid);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.coach-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.75rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid var(--iron-border);
+}
+.coach-card-num {
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--green-bright);
 }
-.coaches-hd-sub {
-  font-size: 0.8rem;
-  font-weight: 300;
+.coach-card-badge {
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--silver);
-  font-style: italic;
 }
-.coaches-roster {
-  border-top: 1px solid var(--iron-border);
+.coach-card-badge--intl {
+  color: var(--green-bright);
+  background: var(--green-tint);
+  border: 1px solid var(--green-border);
+  padding: 0.15rem 0.4rem;
 }
-.coach-row {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 2rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--iron-border);
-  transition: background 0.2s;
-}
-.coach-row:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-.coach-photo {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+.coach-card-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center top;
-  border: 2px solid var(--green-border);
-  flex-shrink: 0;
   display: block;
 }
-.coach-name {
+.coach-card-body {
+  padding: 1rem 0.85rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+.coach-card-name {
   font-family: "Manrope", sans-serif;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+}
+.coach-card-record {
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--iron-border);
+  border-bottom: 1px solid var(--iron-border);
+}
+.coach-card-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+.coach-card-stat-val {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+.coach-card-stat-lbl {
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--silver);
+  text-transform: uppercase;
+}
+.coach-card-section-lbl {
+  font-family: "Inter", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(155, 162, 170, 0.5);
+  margin-bottom: -0.2rem;
+}
+.coach-card-about {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.55;
+  margin: 0;
+}
+.coach-card-sub {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+@media (max-width: 900px) {
+  .coaches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .coaches-grid {
+    grid-template-columns: 1fr;
+  }
+  .coaches-hd {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* ─── TESTIMONIALS ─── */
+#testimonials {
+  background: var(--iron-mid);
+}
+#testimonials .section-header {
+  margin-bottom: 2.5rem;
+}
+.testi-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+/* Featured card */
+.testi-featured {
+  background: var(--iron-darker);
+  border: 1px solid var(--iron-border);
+  border-top: 2px solid var(--green-bright);
+  padding: 2.5rem 2.25rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.testi-featured-quote {
+  font-family: "Manrope", sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--green-bright);
+  line-height: 0.6;
+  opacity: 0.35;
+  user-select: none;
+}
+.testi-featured-stars {
+  color: #f4b400;
   font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+.testi-featured-body {
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.85;
+  margin: 0;
+}
+.testi-featured-byline {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--iron-border);
+  margin-top: auto;
+}
+.testi-featured-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--white);
-  margin-bottom: 0.25rem;
 }
-.coach-meta {
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--silver);
-}
-.coach-bio {
-  font-size: 0.78rem;
-  font-weight: 300;
-  color: rgba(155, 162, 170, 0.6);
-  margin-top: 0.2rem;
-  font-style: italic;
-  display: none;
-}
-.coach-record {
-  text-align: right;
-  flex-shrink: 0;
-}
-.coach-fun {
-  font-size: 0.72rem;
-  font-weight: 300;
-  color: rgba(155, 162, 170, 0.55);
-  font-style: italic;
-  margin-top: 0.2rem;
-}
-.coach-wins {
-  font-family: "Manrope", sans-serif;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--white);
-  white-space: nowrap;
-  margin-bottom: 0.35rem;
-}
-.coach-level {
-  display: inline-block;
-  font-family: "Inter", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--green-bright);
-  background: var(--green-tint);
-  border: 1px solid var(--green-border);
-  padding: 0.2rem 0.5rem;
-  white-space: nowrap;
-}
-@media (max-width: 600px) {
-  .coach-row {
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-  }
-  .coach-record {
-    grid-column: 2;
-    margin-top: -0.25rem;
-  }
-}
-
-/* ─── TESTIMONIALS — auto-scroll carousel ─── */
-#testimonials {
-  background: var(--iron-mid);
-  overflow: hidden;
-}
-#testimonials .section-header {
-  max-width: 100%;
-  margin-bottom: 2rem;
-}
-/* Bleed carousel past section padding to full width */
-.testi-carousel {
-  margin-left: -5rem;
-  margin-right: -5rem;
-  overflow: hidden;
-  position: relative;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-}
-.testi-track {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;
-  padding: 0.5rem 0 1rem;
-  animation: testi-scroll 40s linear infinite;
-  will-change: transform;
-}
-.testi-track:hover {
-  animation-play-state: paused;
-}
-@keyframes testi-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .testi-track { animation: none; }
-}
-.testi-card {
-  flex-shrink: 0;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  background: var(--iron-light);
-  border: 1px solid var(--iron-border);
-  border-top: 2px solid var(--green-bright);
-  padding: 1.75rem 2rem;
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
-  transition:
-    border-color 0.25s,
-    transform 0.25s,
-    box-shadow 0.25s;
-}
-.testi-card:hover {
-  border-color: var(--green-border);
-  border-top-color: var(--green-bright);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
-}
-.testi-stars {
-  color: var(--green-bright);
-  font-size: 0.88rem;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-}
-.testi-body {
-  font-size: 0.93rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--brushed);
-  line-height: 1.9;
-  margin-bottom: 0;
-  padding-bottom: 1rem;
-  flex: 1;
-}
-.testi-footer {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-top: auto;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--iron-border);
-}
-.testi-headshot {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--iron-mid);
-  border: 1px solid var(--iron-border);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.testi-headshot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.testi-headshot svg {
-  stroke: var(--silver);
-  opacity: 0.4;
-}
-.testi-name {
-  font-family: "Manrope", sans-serif;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 0;
-}
-.testi-role {
+.testi-featured-role {
   font-size: 0.73rem;
   font-weight: 300;
   color: var(--silver);
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
 }
-@media (max-width: 1024px) {
-  .testi-carousel {
-    margin-left: -2.5rem;
-    margin-right: -2.5rem;
-  }
+/* Supporting mini cards */
+.testi-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-@media (max-width: 640px) {
-  .testi-carousel {
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
-  }
-  .testi-card {
-    width: 300px;
+.testi-mini {
+  background: var(--iron-light);
+  border: 1px solid var(--iron-border);
+  border-left: 2px solid var(--green-border);
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.testi-mini:hover {
+  border-left-color: var(--green-bright);
+  transform: translateX(3px);
+}
+.testi-mini-stars {
+  color: #f4b400;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+.testi-mini-body {
+  font-size: 0.85rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--brushed);
+  line-height: 1.75;
+  margin: 0 0 0.75rem;
+}
+.testi-mini-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+.testi-mini-name span {
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--silver);
+}
+@media (max-width: 760px) {
+  .testi-layout {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2304,6 +2334,75 @@ h4 {
   background: var(--green-bright);
   border-radius: 50%;
   flex-shrink: 0;
+}
+
+/* ─── STICKY TRIAL BAR ─── */
+.sticky-trial {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 490; /* sits below cookie banner (z-index 500) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.6rem 3rem 0.6rem 1.25rem;
+  background: rgba(10, 12, 14, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--iron-border);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.sticky-trial--hidden {
+  transform: translateY(110%);
+  opacity: 0;
+  pointer-events: none;
+}
+.sticky-trial-text {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--silver);
+  margin: 0;
+  white-space: nowrap;
+}
+.sticky-trial-text strong {
+  color: var(--white);
+  font-weight: 600;
+}
+/* Override btn-green sizing for the slim sticky context */
+.sticky-trial .btn-green {
+  padding: 0.4rem 1rem !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.08em;
+}
+.sticky-trial-close {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: rgba(155, 162, 170, 0.5);
+  font-size: 0.7rem;
+  cursor: pointer;
+  padding: 0.25rem 0.35rem;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.sticky-trial-close:hover {
+  color: var(--silver);
+}
+@media (max-width: 540px) {
+  .sticky-trial {
+    gap: 0.6rem;
+    padding: 0.6rem 2.5rem 0.6rem 1rem;
+  }
+  .sticky-trial-text {
+    font-size: 0.72rem;
+    white-space: normal;
+  }
+  .sticky-trial-close {
+    right: 0.5rem;
+  }
 }
 
 /* ─── FOOTER ─── */
