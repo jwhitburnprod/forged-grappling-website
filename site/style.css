@@ -325,7 +325,12 @@ h4 {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 200;
+  /* Above #mobile-nav (600): #site-nav is its own stacking context, so a
+     z-index on .hamburger alone can't escape it to sit above the full-screen
+     menu. Raising the nav itself keeps the hamburger clickable as the close
+     button once the menu is open (nav-links/nav-cta are hidden on mobile
+     anyway, so nothing else is exposed by this). */
+  z-index: 620;
   height: var(--nav-h);
   display: flex;
   justify-content: flex-end;
@@ -434,7 +439,9 @@ h4 {
 #mobile-nav {
   position: fixed;
   inset: 0;
-  z-index: 190;
+  /* Above the cookie banner (500) and sticky trial bar (490) so the full-screen
+     menu's own CTA is never covered by either while the menu is open. */
+  z-index: 600;
   background: var(--iron-deep);
   display: flex;
   flex-direction: column;
@@ -843,6 +850,7 @@ h4 {
   font-family: "Manrope", sans-serif;
   font-size: clamp(1.6rem, 2.4vw, 2.2rem);
   font-weight: 900;
+  font-variant-numeric: tabular-nums;
   color: var(--green-bright);
   line-height: 1;
   margin-bottom: 0.4rem;
@@ -1117,6 +1125,7 @@ h4 {
   font-family: "Manrope", sans-serif;
   font-size: 1.35rem;
   font-weight: 900;
+  font-variant-numeric: tabular-nums;
   color: var(--white);
   line-height: 1;
 }
@@ -1254,11 +1263,6 @@ h4 {
   border: 1px solid var(--iron-border);
   border-left: 2px solid var(--green-border);
   padding: 1.6rem 1.6rem 1.4rem;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.testi-mini:hover {
-  border-left-color: var(--green-bright);
-  transform: translateX(3px);
 }
 .testi-mini-stars {
   color: #f4b400;
@@ -1355,179 +1359,87 @@ h4 {
   background: var(--iron-mid, #1a1c1c);
 }
 
-/* ─── PRICING — value stack ─── */
+/* ─── PRICING — three-tier comparison ─── */
 #pricing {
   background: var(--iron-darker);
 }
-.pricing-options-card {
-  background: var(--iron-mid);
-  border: 1px solid var(--iron-border);
-}
-.pricing-opt-title {
-  font-family: "Manrope", sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--silver);
-  padding: 0.85rem 1.5rem 0;
-}
-.pricing-opt-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--iron-border);
-}
-.pricing-opt-row:last-child {
-  border-bottom: none;
-}
-.pricing-opt-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-.pricing-opt-name {
-  font-family: "Manrope", sans-serif;
-  white-space: nowrap;
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--white);
-}
-.pricing-opt-desc {
-  font-size: 0.78rem;
-  font-weight: 300;
-  color: var(--silver);
-}
-.pricing-opt-price {
-  font-family: "Manrope", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 900;
-  color: var(--white);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.pricing-opt-unit {
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: var(--silver);
-}
 .pricing-layout {
-  max-width: 980px;
+  max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 1.5rem;
-  align-items: start;
-}
-.pricing-main,
-.pricing-aside {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 2rem;
 }
-@media (max-width: 760px) {
-  .pricing-layout {
-    grid-template-columns: 1fr;
-    max-width: 620px;
+
+/* Scarcity banner: ties Day Pass and Founding (on sale now) to Forged
+   (what it becomes once founding spots are gone). */
+.pricing-scarcity-banner {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--brushed);
+}
+.pricing-scarcity-banner strong {
+  color: var(--white);
+}
+.pricing-spots-dot {
+  width: 8px;
+  height: 8px;
+  margin-right: 0.35rem;
+  background: var(--green-bright);
+  border-radius: 50%;
+  display: inline-block;
+  animation: spot-pulse 2.5s ease-in-out infinite;
+}
+@keyframes spot-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
   }
 }
-.pricing-alt-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.25rem 1.5rem;
+.pricing-scarcity-track {
+  height: 4px;
+  background: var(--iron-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+.pricing-scarcity-fill {
+  height: 100%;
+  width: 76%; /* fallback; set precisely by script.js from FOUNDING_TOTAL/FOUNDING_SPOTS_LEFT */
+  background: var(--green-bright);
+  border-radius: 2px;
+}
+
+/* Three tiers */
+.pricing-compare {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.pricing-tier {
   background: var(--iron-mid);
   border: 1px solid var(--iron-border);
-}
-.pricing-alt-info {
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  position: relative;
 }
-.pricing-alt-name {
-  font-family: "Manrope", sans-serif;
-  font-size: 0.88rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--white);
-}
-.pricing-alt-desc {
-  font-size: 0.82rem;
-  font-weight: 300;
-  color: var(--silver);
-}
-.pricing-alt-price {
-  font-family: "Manrope", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--white);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.pricing-alt-unit {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--silver);
-}
-.guarantee-wrap {
-  max-width: 980px;
-  margin: 0 auto 1.5rem;
-}
-.guarantee-block {
-  background: var(--green-tint);
-  border: 1px solid var(--green-border);
-  border-left: 3px solid var(--green-bright);
-  padding: 1.75rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.5rem;
-  align-items: start;
-  box-shadow: inset 0 0 40px rgba(28, 90, 47, 0.06);
-}
-.guarantee-num-wrap {
-  text-align: center;
-}
-.guarantee-num {
-  font-family: "Manrope", sans-serif;
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--green-bright);
-  line-height: 1;
-}
-.guarantee-lbl {
-  font-family: "Inter", sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--green-bright);
-}
-.guarantee-title {
-  font-family: "Manrope", sans-serif;
-  font-size: 0.88rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 0.5rem;
-}
-.guarantee-body {
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--brushed);
-  line-height: 1.8;
-}
-/* Value stack card */
-.pricing-card {
+.pricing-tier--best {
   background:
     linear-gradient(180deg, rgba(42, 125, 72, 0.12), rgba(42, 125, 72, 0) 40%),
     var(--iron-mid);
-  border: 1px solid var(--green-border);
+  border-color: var(--green-border);
   box-shadow: 0 0 45px rgba(58, 168, 95, 0.12);
-  position: relative;
+}
+.pricing-tier--locked {
+  opacity: 0.6;
 }
 .pricing-card-best {
   position: absolute;
@@ -1542,316 +1454,230 @@ h4 {
   text-transform: uppercase;
   padding: 0.3rem 0.8rem;
 }
-.pricing-card-body {
-  padding: 2rem;
+.pricing-tier-head {
+  margin-bottom: 1.25rem;
 }
-.pricing-card-lbl {
+.pricing-tier-name {
   font-family: "Manrope", sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 1.1rem;
+  font-weight: 900;
   text-transform: uppercase;
   color: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
-/* Standard price struck through for anchoring */
-.pricing-was {
-  font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--silver);
-  margin-bottom: 0.3rem;
-}
-.pricing-was s {
-  color: rgba(155, 162, 170, 0.6);
-}
-.pricing-was {
-  font-family: "Manrope", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--silver);
-  text-decoration: line-through;
-  text-decoration-color: rgba(220, 80, 80, 0.75);
-  text-decoration-thickness: 2px;
-  margin-right: 0.6rem;
-  opacity: 0.7;
-}
-.pricing-cta-note {
-  margin-top: 0.8rem;
-  text-align: center;
-  font-size: 0.76rem;
-  font-weight: 300;
-  color: var(--silver);
-}
-.pricing-price-row {
-  display: flex;
-  align-items: baseline;
-  gap: 0;
-  margin-bottom: 0.35rem;
-}
-.pricing-currency {
-  font-family: "Manrope", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1;
-  align-self: flex-start;
-  margin-top: 0.5rem;
-}
-.pricing-amount {
-  font-family: "Manrope", sans-serif;
-  font-size: 4.5rem;
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1;
-}
-.pricing-period {
+.pricing-tier-desc {
+  /* Reserves room for two lines regardless of actual length, so the price
+     row below starts at the same height on every tier. */
+  min-height: 2.6em;
   font-size: 0.83rem;
   font-weight: 300;
   color: var(--silver);
-  margin-left: 0.4rem;
+  line-height: 1.3em;
 }
-/* Savings badge */
-.pricing-savings {
+.pricing-tier-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+.pricing-tier-amount {
+  font-family: "Manrope", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  color: var(--white);
+  line-height: 1;
+}
+.pricing-tier-unit {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--silver);
+}
+/* Small padlock next to the name instead of a full note line, so the
+   locked tier doesn't sit any taller than the other two. */
+.pricing-tier-lock {
+  display: inline-block;
+  width: 10px;
+  height: 8px;
+  margin-left: 0.5rem;
+  margin-bottom: 1px;
+  background: var(--silver);
+  border-radius: 1px;
+  position: relative;
+  vertical-align: middle;
+}
+.pricing-tier-lock::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 6px;
+  height: 5px;
+  border: 1.5px solid var(--silver);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  transform: translateX(-50%);
+}
+.pricing-tier-included {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--silver);
+  border-top: 1px solid var(--iron-border);
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+}
+.pricing-tier-details {
+  margin-top: 0.9rem;
+}
+.pricing-tier-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.pricing-tier-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+.pricing-tier-list li.is-yes {
+  color: var(--brushed);
+}
+.pricing-tier-list li.is-no {
+  color: rgba(155, 162, 170, 0.45);
+}
+.tier-mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+li.is-yes .tier-mark {
   background: var(--green-tint);
   border: 1px solid var(--green-border);
   color: var(--green-bright);
-  font-family: "Inter", sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
-  margin-bottom: 1.25rem;
 }
-.pricing-savings svg {
-  stroke: var(--green-bright);
-  flex-shrink: 0;
+li.is-yes .tier-mark::before {
+  content: "\2713";
 }
-.pricing-spots {
+li.is-no .tier-mark {
+  background: rgba(155, 162, 170, 0.08);
+  border: 1px solid var(--iron-border);
+  color: rgba(155, 162, 170, 0.5);
+}
+li.is-no .tier-mark::before {
+  content: "\2715";
+}
+
+/* Mobile: stacked cards instead of a swipe carousel, all three fully
+   expanded like desktop so comparing them never needs a tap first. */
+@media (max-width: 900px) {
+  .pricing-compare {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .pricing-tier {
+    padding: 1.5rem;
+  }
+}
+
+/* Guarantee, closes the comparison with a single reassurance + CTA band */
+.pricing-guarantee-strip {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--brushed);
+  gap: 1.5rem;
+  background: var(--green-tint);
+  border: 1px solid var(--green-border);
+  border-left: 3px solid var(--green-bright);
+  padding: 1.5rem 2rem;
 }
-.pricing-spots-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--green-bright);
-  border-radius: 50%;
-  flex-shrink: 0;
-  animation: spot-pulse 2.5s ease-in-out infinite;
-}
-@keyframes spot-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
-}
-.pricing-spots strong {
-  color: var(--white);
-}
-/* Price comparison display — founding vs standard */
-.pricing-price-display {
+.pricing-guarantee-num-wrap {
   display: flex;
-  align-items: flex-end;
-  gap: 2rem;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
 }
-.pricing-price-founding {
-  flex: 1;
+.pricing-guarantee-num {
+  font-family: "Manrope", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  color: var(--green-bright);
+  line-height: 1;
 }
-.pricing-compare-lbl {
+.pricing-guarantee-lbl {
   font-family: "Inter", sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--silver);
-  margin-bottom: 0.15rem;
-}
-.pricing-price-note {
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: var(--silver);
+  color: var(--green-bright);
+  white-space: nowrap;
   margin-top: 0.2rem;
 }
-.pricing-price-std-block {
-  flex-shrink: 0;
-  text-align: right;
-  padding-left: 2rem;
-  border-left: 1px solid var(--iron-border);
-  padding-bottom: 0.4rem;
-}
-.pricing-price-std-block .pricing-compare-lbl {
-  text-align: right;
-}
-.pricing-price-std-block .pricing-price-note {
-  text-align: right;
-}
-.pricing-price-std-amount {
-  font-family: "Manrope", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: rgba(155, 162, 170, 0.4);
-  line-height: 1.1;
-}
-.pricing-price-std-amount s {
-  text-decoration-color: rgba(155, 162, 170, 0.5);
-}
-.pricing-price-std-amount span {
-  font-size: 0.9rem;
-  font-weight: 300;
-}
-.pricing-spots-combined {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--brushed);
-}
-.pricing-spots-combined strong {
-  color: var(--white);
-}
-/* Scarcity bar above founding card */
-.pricing-scarcity {
-  margin-bottom: 0.75rem;
-}
-.pricing-scarcity-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: var(--brushed);
-  margin-bottom: 0.5rem;
-}
-.pricing-scarcity-label strong {
-  color: var(--white);
-}
-.pricing-scarcity-track {
-  height: 4px;
-  background: var(--iron-border);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.pricing-scarcity-fill {
-  height: 100%;
-  width: 76%; /* fallback; set precisely by script.js from FOUNDING_TOTAL/FOUNDING_SPOTS_LEFT */
-  background: var(--green-bright);
-  border-radius: 2px;
-}
-/* Card top: name+savings left, price right */
-.pricing-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.pricing-card-top .pricing-card-lbl {
-  margin-bottom: 0;
-}
-.pricing-card-top-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+.pricing-guarantee-body {
   flex: 1;
-}
-.pricing-price-right {
-  text-align: right;
-  flex-shrink: 0;
-}
-.pricing-price-right .pricing-price-row {
-  margin-bottom: 0;
-  justify-content: flex-end;
-  align-items: baseline;
-}
-.pricing-price-unit {
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--silver);
-  margin-left: 0.2rem;
-}
-/* Savings / standard rate line */
-.pricing-std-row {
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: var(--silver);
-  margin-bottom: 0;
-}
-@media (max-width: 480px) {
-  .pricing-price-display {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .pricing-price-std-block {
-    border-left: none;
-    border-top: 1px solid var(--iron-border);
-    padding-left: 0;
-    padding-top: 1rem;
-    text-align: left;
-  }
-  .pricing-price-std-block .pricing-compare-lbl,
-  .pricing-price-std-block .pricing-price-note {
-    text-align: left;
-  }
-}
-.pricing-checklist {
-  list-style: none;
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 1rem;
 }
-.pricing-checklist li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  font-size: 0.93rem;
+.pricing-guarantee-text {
+  font-size: 0.85rem;
   font-weight: 300;
   color: var(--brushed);
-  line-height: 1.55;
+  line-height: 1.6;
 }
-.pricing-check {
-  color: var(--green-bright);
-  font-weight: 600;
-  font-size: 0.85rem;
-  flex-shrink: 0;
-  margin-top: 0.05rem;
+@media (min-width: 641px) {
+  .pricing-guarantee-body {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .pricing-guarantee-body .btn-green {
+    flex-shrink: 0;
+  }
 }
 @media (max-width: 640px) {
-  .guarantee-block {
+  /* Stack instead of sitting side by side: "30 Day Guarantee" reads as a
+     title, with the paragraph and CTA flowing underneath it. */
+  .pricing-guarantee-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
     padding: 1.1rem 1.25rem;
-    gap: 1rem;
   }
-  .guarantee-num {
-    font-size: 2.2rem;
+  .pricing-guarantee-num-wrap {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
   }
-  .guarantee-lbl {
-    font-size: 0.6rem;
+  .pricing-guarantee-num {
+    font-size: 2rem;
   }
-  .guarantee-title {
-    font-size: 0.8rem;
-    margin-bottom: 0.3rem;
+  .pricing-guarantee-lbl {
+    margin-top: 0;
   }
-  .guarantee-body {
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
-  .pricing-card-body {
-    padding: 1.5rem;
+  .pricing-guarantee-body .btn-green {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -2197,10 +2023,13 @@ h4 {
   justify-content: center;
   gap: 1rem;
   padding: 0.6rem 3rem 0.6rem 1.25rem;
-  background: rgba(10, 12, 14, 0.94);
+  background:
+    linear-gradient(180deg, rgba(28, 90, 47, 0.16), rgba(28, 90, 47, 0) 60%),
+    rgba(10, 12, 14, 0.94);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid var(--iron-border);
+  border-top: 1px solid var(--green-border);
+  box-shadow: 0 -10px 26px rgba(28, 90, 47, 0.1);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .sticky-trial--hidden {
@@ -2499,8 +2328,8 @@ footer {
   .location-note {
     font-size: 0.9rem;
   }
-  .pricing-checklist li {
-    font-size: 0.95rem;
+  .pricing-tier-list li {
+    font-size: 0.88rem;
   }
   .schedule-sub {
     font-size: 0.97rem;
@@ -2534,31 +2363,3 @@ footer {
   }
 }
 
-@media (max-width: 420px) {
-  .pricing-opt-name {
-    font-size: 0.74rem;
-  }
-  .pricing-opt-row {
-    gap: 1rem;
-    padding: 1rem 1.1rem;
-  }
-}
-
-/* Price row scales down on small screens so the card never overflows */
-@media (max-width: 480px) {
-  .pricing-card-top {
-    flex-wrap: wrap;
-    gap: 0.75rem 1rem;
-  }
-  .pricing-amount {
-    font-size: 3.2rem;
-  }
-  .pricing-was {
-    font-size: 1.15rem;
-    margin-right: 0.4rem;
-  }
-  .pricing-currency {
-    font-size: 1.2rem;
-    margin-top: 0.35rem;
-  }
-}

@@ -86,8 +86,7 @@
         "image": [
           "https://forgedgrappling.co.uk/hero-bg.jpg",
           "https://forgedgrappling.co.uk/facility-mats.jpg",
-          "https://forgedgrappling.co.uk/facility-sc.jpg",
-          "https://forgedgrappling.co.uk/facility-medals.jpg"
+          "https://forgedgrappling.co.uk/facility-sc.jpg"
         ],
         "sameAs": [
           "https://www.instagram.com/forgedgrappling/",
@@ -586,88 +585,102 @@
           <div class="section-header reveal">
             <h2 id="pricing-heading">PRICING</h2>
           </div>
-          <div class="guarantee-wrap reveal">
-            <div class="guarantee-block">
-              <div class="guarantee-num-wrap">
-                <div class="guarantee-num">30</div>
-                <div class="guarantee-lbl">Day Guarantee</div>
-              </div>
-              <div>
-                <div class="guarantee-title">Train. Improve. Or Your Money Back.</div>
-                <p class="guarantee-body">
-                  If your grappling hasn&rsquo;t measurably improved within
-                  your first month, we&rsquo;ll refund your first payment in
-                  full. No questions asked.
-                </p>
-              </div>
-            </div>
-          </div>
           <div class="pricing-layout">
-            <div class="pricing-main">
-              <!-- Founding member card -->
-              <div class="pricing-scarcity reveal">
-                <div class="pricing-scarcity-label">
-                  <span class="pricing-spots-dot"></span>
-                  <span><strong><span class="js-spots-left">6</span> founding spots remaining</strong></span>
+            <!-- Scarcity banner ties the three tiers together: Day Pass and
+                 Founding are on sale now, Forged is what it becomes once
+                 founding spots are gone. -->
+            <div class="pricing-scarcity-banner reveal">
+              <span class="pricing-spots-dot"></span>
+              <span><strong><span class="js-spots-left">6</span> founding spots remaining</strong></span>
+              <div class="pricing-scarcity-track">
+                <div class="pricing-scarcity-fill" id="pricingScarcityFill"></div>
+              </div>
+            </div>
+
+            <div class="pricing-compare">
+              <!-- Day Pass -->
+              <div class="pricing-tier reveal">
+                <div class="pricing-tier-head">
+                  <div class="pricing-tier-name">Day Pass</div>
+                  <p class="pricing-tier-desc">Come and train for the day. Full access to everything on the mats.</p>
                 </div>
-                <div class="pricing-scarcity-track">
-                  <div class="pricing-scarcity-fill" id="pricingScarcityFill"></div>
+                <div class="pricing-tier-price">
+                  <span class="pricing-tier-amount">&pound;10</span><span class="pricing-tier-unit">/day</span>
+                </div>
+                <div class="pricing-tier-included">What&rsquo;s included</div>
+                <div class="pricing-tier-details">
+                  <ul class="pricing-tier-list">
+                    <li class="is-yes"><span class="tier-mark"></span>2 hours of grappling</li>
+                    <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
+                    <li class="is-no"><span class="tier-mark"></span>Unlimited training</li>
+                    <li class="is-no"><span class="tier-mark"></span>Members community &amp; video library</li>
+                    <li class="is-no"><span class="tier-mark"></span>Seminar discounts</li>
+                    <li class="is-no"><span class="tier-mark"></span>Price locked in for life</li>
+                  </ul>
                 </div>
               </div>
-              <div class="reveal">
-                <div class="pricing-card">
-                  <span class="pricing-card-best">Best Value</span>
-                  <div class="pricing-card-body">
-                    <div class="pricing-card-top">
-                      <div class="pricing-card-top-left">
-                        <div class="pricing-card-lbl">Monthly Founding Membership</div>
-                        <div class="pricing-std-row">Save &pound;360 every year on the standard rate</div>
-                      </div>
-                      <div class="pricing-price-right">
-                        <div class="pricing-price-row">
-                          <span class="pricing-was">&pound;80</span>
-                          <span class="pricing-currency">&pound;</span>
-                          <span class="pricing-amount">50</span>
-                          <span class="pricing-price-unit">/mo</span>
-                        </div>
-                      </div>
-                    </div>
-                    <ul class="pricing-checklist">
-                      <li><span class="pricing-check">&#10003;</span><span>Unlimited grappling training for less than &pound;1.25 per class</span></li>
-                      <li><span class="pricing-check">&#10003;</span><span>Full S&amp;C area access with barbells, dumbbells, conditioning kit and more</span></li>
-                      <li><span class="pricing-check">&#10003;</span><span>Private members group with direct coach access, competition footage review and a growing video library</span></li>
-                      <li><span class="pricing-check">&#10003;</span><span>Discounts on all Forged seminars and events</span></li>
-                      <li><span class="pricing-check">&#10003;</span><span>Founding price locked in for life. No contracts, no joining fees and a money back guarantee</span></li>
-                    </ul>
-                    <a
-                      href="https://app.mattrack.io/forged-grappling/start-trial?utm_source=website&utm_medium=cta&utm_campaign=trial&utm_content=pricing"
-                      class="btn-green btn-full"
-                      data-cta="pricing"
-                      >Secure Your Founding Spot</a
-                    >
-                    <div class="pricing-cta-note">Your first session is free, so you can try the gym before you commit.</div>
-                  </div>
+
+              <!-- Founding Membership -->
+              <div class="pricing-tier pricing-tier--best reveal reveal-d1">
+                <span class="pricing-card-best">Best Value</span>
+                <div class="pricing-tier-head">
+                  <div class="pricing-tier-name">Founding Membership</div>
+                  <p class="pricing-tier-desc">Discounted rate for our first founding members. Price locked in for life.</p>
+                </div>
+                <div class="pricing-tier-price">
+                  <span class="pricing-tier-amount">&pound;50</span><span class="pricing-tier-unit">/month</span>
+                </div>
+                <div class="pricing-tier-included">What&rsquo;s included</div>
+                <div class="pricing-tier-details">
+                  <ul class="pricing-tier-list">
+                    <li class="is-yes"><span class="tier-mark"></span>40+ hours of training a month</li>
+                    <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Unlimited training</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Members community &amp; video library</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Seminar discounts</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Price locked in for life</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Standard Membership: the rate once founding sells out -->
+              <div class="pricing-tier pricing-tier--locked reveal reveal-d2">
+                <div class="pricing-tier-head">
+                  <div class="pricing-tier-name">Standard Membership<span class="pricing-tier-lock" role="img" aria-label="Locked until founding spots sell out" title="Unlocks once founding spots sell out"></span></div>
+                  <p class="pricing-tier-desc">The standard rate once every founding spot is gone.</p>
+                </div>
+                <div class="pricing-tier-price">
+                  <span class="pricing-tier-amount">&pound;80</span><span class="pricing-tier-unit">/month</span>
+                </div>
+                <div class="pricing-tier-included">What&rsquo;s included</div>
+                <div class="pricing-tier-details">
+                  <ul class="pricing-tier-list">
+                    <li class="is-yes"><span class="tier-mark"></span>40+ hours of training a month</li>
+                    <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Unlimited training</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Members community &amp; video library</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Seminar discounts</li>
+                    <li class="is-no"><span class="tier-mark"></span>Price locked in for life</li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="pricing-aside">
-              <!-- Other membership options combined card -->
-              <div class="pricing-options-card reveal">
-                <div class="pricing-opt-title">Other Options</div>
-                <div class="pricing-opt-row">
-                  <div class="pricing-opt-info">
-                    <span class="pricing-opt-name">Annual Founding Membership</span>
-                    <span class="pricing-opt-desc">All founding membership benefits. 12 months for the price of 10.</span>
-                  </div>
-                  <span class="pricing-opt-price">&pound;499<span class="pricing-opt-unit">/yr</span></span>
-                </div>
-                <div class="pricing-opt-row">
-                  <div class="pricing-opt-info">
-                    <span class="pricing-opt-name">Day Pass</span>
-                    <span class="pricing-opt-desc">Access to all classes for one day.</span>
-                  </div>
-                  <span class="pricing-opt-price">&pound;10<span class="pricing-opt-unit">/day</span></span>
-                </div>
+
+            <div class="pricing-guarantee-strip reveal">
+              <div class="pricing-guarantee-num-wrap">
+                <span class="pricing-guarantee-num">30</span>
+                <span class="pricing-guarantee-lbl">Day Guarantee</span>
+              </div>
+              <div class="pricing-guarantee-body">
+                <span class="pricing-guarantee-text">
+                  If your grappling hasn&rsquo;t measurably improved within your first month, we&rsquo;ll refund your first payment in full. No questions asked.
+                </span>
+                <a
+                  href="https://app.mattrack.io/forged-grappling/start-trial?utm_source=website&utm_medium=cta&utm_campaign=trial&utm_content=pricing"
+                  class="btn-green"
+                  data-cta="pricing"
+                  >Claim Your Free Trial</a
+                >
               </div>
             </div>
           </div>
