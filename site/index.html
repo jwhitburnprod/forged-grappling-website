@@ -8,7 +8,7 @@
     </title>
     <meta
       name="description"
-      content="No-gi grappling gym in Westbury, Wiltshire. Classes Mon–Fri evenings, all levels welcome. Free first session. Founding membership from £50/mo."
+      content="No-gi grappling gym in Westbury, Wiltshire. Classes Mon–Fri evenings, all levels welcome. Free first session. Memberships from £50/mo."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://forgedgrappling.co.uk" />
@@ -233,10 +233,10 @@
       <section id="hero" aria-label="Welcome to Forged Grappling">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-inner">
-          <!-- Founding scarcity, separate from the rating -->
+          <!-- Post-founding: the scarcity pill becomes social proof -->
           <div class="hero-scarcity">
             <span class="hero-scarcity-dot" aria-hidden="true"></span>
-            <span><strong><span class="js-spots-left">6</span> founding spots left</strong> at &pound;50/mo</span>
+            <span><strong>All 25 founding spots claimed</strong> &mdash; memberships open</span>
           </div>
           <!-- Text block, narrower for readability -->
           <div class="hero-text">
@@ -278,7 +278,7 @@
             </div>
             <div class="stat-item">
               <div class="stat-number">&pound;50</div>
-              <div class="stat-label">Founding Price / Month</div>
+              <div class="stat-label">Memberships From / Month</div>
             </div>
             <div class="stat-item">
               <div class="stat-number">30</div>
@@ -297,7 +297,7 @@
             </div>
             <div class="stat-item">
               <div class="stat-number">&pound;50</div>
-              <div class="stat-label">Founding Price / Month</div>
+              <div class="stat-label">Memberships From / Month</div>
             </div>
             <div class="stat-item">
               <div class="stat-number">30</div>
@@ -586,26 +586,15 @@
             <h2 id="pricing-heading">PRICING</h2>
           </div>
           <div class="pricing-layout">
-            <!-- Scarcity banner ties the three tiers together: Day Pass and
-                 Founding are on sale now, Forged is what it becomes once
-                 founding spots are gone. -->
-            <div class="pricing-scarcity-banner reveal">
-              <span class="pricing-spots-dot"></span>
-              <span><strong><span class="js-spots-left">6</span> founding spots remaining</strong></span>
-              <div class="pricing-scarcity-track">
-                <div class="pricing-scarcity-fill" id="pricingScarcityFill"></div>
-              </div>
-            </div>
-
             <div class="pricing-compare">
-              <!-- Day Pass -->
+              <!-- Visitor Pass -->
               <div class="pricing-tier reveal">
                 <div class="pricing-tier-head">
-                  <div class="pricing-tier-name">Day Pass</div>
+                  <div class="pricing-tier-name">Visitor Pass</div>
                   <p class="pricing-tier-desc">Come and train for the day. Full access to everything on the mats.</p>
                 </div>
                 <div class="pricing-tier-price">
-                  <span class="pricing-tier-amount">&pound;10</span><span class="pricing-tier-unit">/day</span>
+                  <span class="pricing-tier-amount">&pound;15</span><span class="pricing-tier-unit">/day</span>
                 </div>
                 <div class="pricing-tier-included">What&rsquo;s included</div>
                 <div class="pricing-tier-details">
@@ -615,17 +604,44 @@
                     <li class="is-no"><span class="tier-mark"></span>Unlimited training</li>
                     <li class="is-no"><span class="tier-mark"></span>Members community &amp; video library</li>
                     <li class="is-no"><span class="tier-mark"></span>Seminar discounts</li>
-                    <li class="is-no"><span class="tier-mark"></span>Price locked in for life</li>
                   </ul>
                 </div>
               </div>
 
-              <!-- Founding Membership -->
+              <!-- Unlimited Membership: monthly by default, annual is 12
+                   months for the price of 10. Both prices stay visible on
+                   the switch so nothing is hidden behind a tap. -->
               <div class="pricing-tier pricing-tier--best reveal reveal-d1">
-                <span class="pricing-card-best">Best Value</span>
+                <span class="pricing-card-best">Most Popular</span>
                 <div class="pricing-tier-head">
-                  <div class="pricing-tier-name">Founding Membership</div>
-                  <p class="pricing-tier-desc">Discounted rate for our first founding members. Price locked in for life.</p>
+                  <div class="pricing-tier-name">Unlimited Membership</div>
+                  <p class="pricing-tier-desc">Every class, five nights a week. Train as much as you want.</p>
+                </div>
+                <div class="pricing-billing-switch" role="group" aria-label="Unlimited membership billing options">
+                  <button type="button" class="pricing-billing-opt is-active" data-billing="monthly" aria-pressed="true">Monthly &middot; &pound;80</button>
+                  <button type="button" class="pricing-billing-opt" data-billing="annual" aria-pressed="false">Annual &middot; &pound;66</button>
+                </div>
+                <div class="pricing-tier-price">
+                  <span class="pricing-tier-amount" id="unlimitedAmount">&pound;80</span><span class="pricing-tier-unit">/month</span>
+                </div>
+                <p class="pricing-billing-note" id="unlimitedBillingNote">Billed monthly. Cancel anytime.</p>
+                <div class="pricing-tier-included">What&rsquo;s included</div>
+                <div class="pricing-tier-details">
+                  <ul class="pricing-tier-list">
+                    <li class="is-yes"><span class="tier-mark"></span>40+ hours of training a month</li>
+                    <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Unlimited training</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Members community &amp; video library</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Seminar discounts</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Lite Membership: capped at one session a week -->
+              <div class="pricing-tier reveal reveal-d2">
+                <div class="pricing-tier-head">
+                  <div class="pricing-tier-name">Lite Membership</div>
+                  <p class="pricing-tier-desc">One session a week, ideal if you&rsquo;re short on time.</p>
                 </div>
                 <div class="pricing-tier-price">
                   <span class="pricing-tier-amount">&pound;50</span><span class="pricing-tier-unit">/month</span>
@@ -633,34 +649,11 @@
                 <div class="pricing-tier-included">What&rsquo;s included</div>
                 <div class="pricing-tier-details">
                   <ul class="pricing-tier-list">
-                    <li class="is-yes"><span class="tier-mark"></span>40+ hours of training a month</li>
+                    <li class="is-yes"><span class="tier-mark"></span>1 session per week</li>
                     <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
-                    <li class="is-yes"><span class="tier-mark"></span>Unlimited training</li>
+                    <li class="is-no"><span class="tier-mark"></span>Unlimited training</li>
                     <li class="is-yes"><span class="tier-mark"></span>Members community &amp; video library</li>
                     <li class="is-yes"><span class="tier-mark"></span>Seminar discounts</li>
-                    <li class="is-yes"><span class="tier-mark"></span>Price locked in for life</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Standard Membership: the rate once founding sells out -->
-              <div class="pricing-tier pricing-tier--locked reveal reveal-d2">
-                <div class="pricing-tier-head">
-                  <div class="pricing-tier-name">Standard Membership<span class="pricing-tier-lock" role="img" aria-label="Locked until founding spots sell out" title="Unlocks once founding spots sell out"></span></div>
-                  <p class="pricing-tier-desc">The standard rate once every founding spot is gone.</p>
-                </div>
-                <div class="pricing-tier-price">
-                  <span class="pricing-tier-amount">&pound;80</span><span class="pricing-tier-unit">/month</span>
-                </div>
-                <div class="pricing-tier-included">What&rsquo;s included</div>
-                <div class="pricing-tier-details">
-                  <ul class="pricing-tier-list">
-                    <li class="is-yes"><span class="tier-mark"></span>40+ hours of training a month</li>
-                    <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
-                    <li class="is-yes"><span class="tier-mark"></span>Unlimited training</li>
-                    <li class="is-yes"><span class="tier-mark"></span>Members community &amp; video library</li>
-                    <li class="is-yes"><span class="tier-mark"></span>Seminar discounts</li>
-                    <li class="is-no"><span class="tier-mark"></span>Price locked in for life</li>
                   </ul>
                 </div>
               </div>

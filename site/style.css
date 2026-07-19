@@ -276,29 +276,6 @@ h4 {
   text-align: center;
   display: block;
 }
-/* Day pass button — silver/ghost, not green */
-.btn-day-pass {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-family: "Inter", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--silver);
-  border: 1px solid rgba(155, 162, 170, 0.25);
-  padding: 0.28rem 0.65rem;
-  text-decoration: none;
-  transition:
-    color 0.2s,
-    border-color 0.2s;
-  white-space: nowrap;
-}
-.btn-day-pass:hover {
-  color: var(--white);
-  border-color: rgba(196, 199, 202, 0.4);
-}
-
 /* ─── SKIP LINK ─── */
 .skip-link {
   position: absolute;
@@ -1371,28 +1348,6 @@ h4 {
   gap: 2rem;
 }
 
-/* Scarcity banner: ties Day Pass and Founding (on sale now) to Forged
-   (what it becomes once founding spots are gone). */
-.pricing-scarcity-banner {
-  max-width: 480px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--brushed);
-}
-.pricing-scarcity-banner strong {
-  color: var(--white);
-}
-.pricing-spots-dot {
-  width: 8px;
-  height: 8px;
-  margin-right: 0.35rem;
-  background: var(--green-bright);
-  border-radius: 50%;
-  display: inline-block;
-  animation: spot-pulse 2.5s ease-in-out infinite;
-}
 @keyframes spot-pulse {
   0%,
   100% {
@@ -1401,19 +1356,6 @@ h4 {
   50% {
     opacity: 0.4;
   }
-}
-.pricing-scarcity-track {
-  height: 4px;
-  background: var(--iron-border);
-  border-radius: 2px;
-  overflow: hidden;
-  margin-top: 0.75rem;
-}
-.pricing-scarcity-fill {
-  height: 100%;
-  width: 76%; /* fallback; set precisely by script.js from FOUNDING_TOTAL/FOUNDING_SPOTS_LEFT */
-  background: var(--green-bright);
-  border-radius: 2px;
 }
 
 /* Three tiers */
@@ -1437,9 +1379,6 @@ h4 {
     var(--iron-mid);
   border-color: var(--green-border);
   box-shadow: 0 0 45px rgba(58, 168, 95, 0.12);
-}
-.pricing-tier--locked {
-  opacity: 0.6;
 }
 .pricing-card-best {
   position: absolute;
@@ -1493,30 +1432,42 @@ h4 {
   font-weight: 300;
   color: var(--silver);
 }
-/* Small padlock next to the name instead of a full note line, so the
-   locked tier doesn't sit any taller than the other two. */
-.pricing-tier-lock {
-  display: inline-block;
-  width: 10px;
-  height: 8px;
-  margin-left: 0.5rem;
-  margin-bottom: 1px;
-  background: var(--silver);
-  border-radius: 1px;
-  position: relative;
-  vertical-align: middle;
+/* Unlimited billing switch: both prices sit on the buttons themselves, so
+   either way the switch is set, monthly and annual are both readable. */
+.pricing-billing-switch {
+  display: flex;
+  border: 1px solid var(--iron-border);
+  margin-bottom: 1rem;
 }
-.pricing-tier-lock::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 100%;
-  width: 6px;
-  height: 5px;
-  border: 1.5px solid var(--silver);
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-  transform: translateX(-50%);
+.pricing-billing-opt {
+  flex: 1;
+  padding: 0.55rem 0.25rem;
+  background: none;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--silver);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.pricing-billing-opt + .pricing-billing-opt {
+  border-left: 1px solid var(--iron-border);
+}
+.pricing-billing-opt.is-active {
+  background: var(--green-tint);
+  color: var(--green-bright);
+}
+.pricing-billing-note {
+  /* Reserves two lines so switching billing never changes the card height. */
+  min-height: 2.4em;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.2em;
 }
 .pricing-tier-included {
   font-family: "Manrope", sans-serif;

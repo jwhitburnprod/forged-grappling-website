@@ -1,19 +1,29 @@
 (function () {
-  // Single source of truth for founding-membership scarcity messaging.
-  // Update FOUNDING_SPOTS_LEFT here only — every count and the progress bar follow.
-  var FOUNDING_TOTAL = 25;
-  var FOUNDING_SPOTS_LEFT = 6;
-  var FOUNDING_SPOTS_JOINED = FOUNDING_TOTAL - FOUNDING_SPOTS_LEFT;
-  document.querySelectorAll(".js-spots-left").forEach(function (el) {
-    el.textContent = FOUNDING_SPOTS_LEFT;
+  // Unlimited membership billing switch. Both prices stay visible on the
+  // buttons; this only swaps which figure the big price shows.
+  var BILLING = {
+    monthly: { amount: "£80", note: "Billed monthly. Cancel anytime." },
+    annual: {
+      amount: "£66",
+      note: "£800 billed annually in advance — 12 months for the price of 10.",
+    },
+  };
+  var amount = document.getElementById("unlimitedAmount");
+  var note = document.getElementById("unlimitedBillingNote");
+  var opts = document.querySelectorAll(".pricing-billing-opt");
+  if (!amount || !note || !opts.length) return;
+  opts.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var plan = BILLING[btn.getAttribute("data-billing")];
+      if (!plan) return;
+      opts.forEach(function (o) {
+        o.classList.toggle("is-active", o === btn);
+        o.setAttribute("aria-pressed", o === btn ? "true" : "false");
+      });
+      amount.textContent = plan.amount;
+      note.textContent = plan.note;
+    });
   });
-  document.querySelectorAll(".js-spots-joined").forEach(function (el) {
-    el.textContent = FOUNDING_SPOTS_JOINED;
-  });
-  var fill = document.getElementById("pricingScarcityFill");
-  if (fill) {
-    fill.style.width = Math.round((FOUNDING_SPOTS_JOINED / FOUNDING_TOTAL) * 100) + "%";
-  }
 })();
 (function () {
   var nav = document.getElementById("site-nav");
