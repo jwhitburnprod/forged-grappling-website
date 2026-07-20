@@ -233,10 +233,10 @@
       <section id="hero" aria-label="Welcome to Forged Grappling">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-inner">
-          <!-- Post-founding: the scarcity pill becomes social proof -->
+          <!-- Post-founding: pill signals open membership + no lock-in -->
           <div class="hero-scarcity">
             <span class="hero-scarcity-dot" aria-hidden="true"></span>
-            <span><strong>All 25 founding spots claimed</strong> &mdash; memberships open</span>
+            <span><strong>Memberships open</strong> &mdash; no contracts</span>
           </div>
           <!-- Text block, narrower for readability -->
           <div class="hero-text">
@@ -269,7 +269,7 @@
         <div class="stats-track">
           <div class="stats-inner">
             <div class="stat-item">
-              <div class="stat-number">14yrs</div>
+              <div class="stat-number">15yrs</div>
               <div class="stat-label">Combined Experience</div>
             </div>
             <div class="stat-item">
@@ -288,7 +288,7 @@
           <!-- Duplicate group: only shown on mobile where the bar becomes a scrolling ticker -->
           <div class="stats-inner stats-inner--dup" aria-hidden="true">
             <div class="stat-item">
-              <div class="stat-number">14yrs</div>
+              <div class="stat-number">15yrs</div>
               <div class="stat-label">Combined Experience</div>
             </div>
             <div class="stat-item">
@@ -586,12 +586,17 @@
             <h2 id="pricing-heading">PRICING</h2>
           </div>
           <div class="pricing-layout">
+            <!-- Ties the free trial to picking a tier: try first, then choose -->
+            <p class="pricing-trial-note reveal">
+              Not sure which fits? Your first day is <strong>free</strong> &mdash; come train before you pick a membership.
+            </p>
+
             <div class="pricing-compare">
               <!-- Visitor Pass -->
               <div class="pricing-tier reveal">
                 <div class="pricing-tier-head">
                   <div class="pricing-tier-name">Visitor Pass</div>
-                  <p class="pricing-tier-desc">Come and train for the day. Full access to everything on the mats.</p>
+                  <p class="pricing-tier-desc">Visiting the area or training at another club? Drop in for the day.</p>
                 </div>
                 <div class="pricing-tier-price">
                   <span class="pricing-tier-amount">&pound;15</span><span class="pricing-tier-unit">/day</span>
@@ -599,27 +604,29 @@
                 <div class="pricing-tier-included">What&rsquo;s included</div>
                 <div class="pricing-tier-details">
                   <ul class="pricing-tier-list">
-                    <li class="is-yes"><span class="tier-mark"></span>2 hours of grappling</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Full evening on the mats &mdash; class + open mat</li>
                     <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
-                    <li class="is-no"><span class="tier-mark"></span>Unlimited training</li>
                     <li class="is-no"><span class="tier-mark"></span>Members community &amp; video library</li>
                     <li class="is-no"><span class="tier-mark"></span>Seminar discounts</li>
+                    <li class="is-no"><span class="tier-mark"></span>30-day money-back guarantee</li>
                   </ul>
                 </div>
               </div>
 
-              <!-- Unlimited Membership: monthly by default, annual is 12
-                   months for the price of 10. Both prices stay visible on
-                   the switch so nothing is hidden behind a tap. -->
+              <!-- Unlimited Membership: slider switches monthly/annual and
+                   the price below follows. Annual = 12 months for 10. -->
               <div class="pricing-tier pricing-tier--best reveal reveal-d1">
-                <span class="pricing-card-best">Most Popular</span>
+                <span class="pricing-card-best">Best Value</span>
                 <div class="pricing-tier-head">
                   <div class="pricing-tier-name">Unlimited Membership</div>
-                  <p class="pricing-tier-desc">Every class, five nights a week. Train as much as you want.</p>
+                  <p class="pricing-tier-desc">You want to improve as fast as possible. Train every night we&rsquo;re open.</p>
                 </div>
-                <div class="pricing-billing-switch" role="group" aria-label="Unlimited membership billing options">
-                  <button type="button" class="pricing-billing-opt is-active" data-billing="monthly" aria-pressed="true">Monthly &middot; &pound;80</button>
-                  <button type="button" class="pricing-billing-opt" data-billing="annual" aria-pressed="false">Annual &middot; &pound;66</button>
+                <div class="pricing-billing-slider">
+                  <span class="pricing-billing-label is-active" id="billingMonthlyLabel">Monthly</span>
+                  <button type="button" class="pricing-billing-track" id="billingSwitch" role="switch" aria-checked="false" aria-label="Bill annually &mdash; 12 months for the price of 10">
+                    <span class="pricing-billing-knob"></span>
+                  </button>
+                  <span class="pricing-billing-label" id="billingAnnualLabel">Annual <span class="pricing-billing-save">Save &pound;160</span></span>
                 </div>
                 <div class="pricing-tier-price">
                   <span class="pricing-tier-amount" id="unlimitedAmount">&pound;80</span><span class="pricing-tier-unit">/month</span>
@@ -628,20 +635,20 @@
                 <div class="pricing-tier-included">What&rsquo;s included</div>
                 <div class="pricing-tier-details">
                   <ul class="pricing-tier-list">
-                    <li class="is-yes"><span class="tier-mark"></span>40+ hours of training a month</li>
+                    <li class="is-yes"><span class="tier-mark"></span>Every class + open mat, five nights a week</li>
                     <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
-                    <li class="is-yes"><span class="tier-mark"></span>Unlimited training</li>
                     <li class="is-yes"><span class="tier-mark"></span>Members community &amp; video library</li>
                     <li class="is-yes"><span class="tier-mark"></span>Seminar discounts</li>
+                    <li class="is-yes"><span class="tier-mark"></span>30-day money-back guarantee</li>
                   </ul>
                 </div>
               </div>
 
-              <!-- Lite Membership: capped at one session a week -->
+              <!-- Lite Membership: capped at one evening a week -->
               <div class="pricing-tier reveal reveal-d2">
                 <div class="pricing-tier-head">
                   <div class="pricing-tier-name">Lite Membership</div>
-                  <p class="pricing-tier-desc">One session a week, ideal if you&rsquo;re short on time.</p>
+                  <p class="pricing-tier-desc">Busy life? Keep your grappling ticking over with one night a week.</p>
                 </div>
                 <div class="pricing-tier-price">
                   <span class="pricing-tier-amount">&pound;50</span><span class="pricing-tier-unit">/month</span>
@@ -649,11 +656,11 @@
                 <div class="pricing-tier-included">What&rsquo;s included</div>
                 <div class="pricing-tier-details">
                   <ul class="pricing-tier-list">
-                    <li class="is-yes"><span class="tier-mark"></span>1 session per week</li>
+                    <li class="is-yes"><span class="tier-mark"></span>One class + open mat each week</li>
                     <li class="is-yes"><span class="tier-mark"></span>S&amp;C area access</li>
-                    <li class="is-no"><span class="tier-mark"></span>Unlimited training</li>
                     <li class="is-yes"><span class="tier-mark"></span>Members community &amp; video library</li>
                     <li class="is-yes"><span class="tier-mark"></span>Seminar discounts</li>
+                    <li class="is-yes"><span class="tier-mark"></span>30-day money-back guarantee</li>
                   </ul>
                 </div>
               </div>
