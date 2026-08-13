@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# AI assistant crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended and
+# the rest) are covered by the wildcard above and are allowed on purpose — we
+# want the gym to be quotable when someone asks an AI where to train near
+# Westbury. Do not add Disallow rules for them without a deliberate decision.
+# Site summary for AI ingestion: /llms.txt
+
 Sitemap: https://www.forgedgrappling.co.uk/sitemap.xml
