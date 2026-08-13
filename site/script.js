@@ -155,49 +155,6 @@ function loadAnalytics() {
     });
 })();
 (function () {
-  // Mobile coach carousel: mark whichever card sits nearest the viewport
-  // centre so CSS can scale it up while its neighbours stay shrunk.
-  var grid = document.querySelector(".coaches-grid");
-  if (!grid) return;
-  var cards = grid.querySelectorAll(".coach-card");
-  var mq = window.matchMedia("(max-width: 540px)");
-  var ticking = false;
-  function highlight() {
-    ticking = false;
-    if (!mq.matches) {
-      cards.forEach(function (c) {
-        c.classList.remove("is-center");
-      });
-      return;
-    }
-    var rect = grid.getBoundingClientRect();
-    var mid = rect.left + rect.width / 2;
-    var best = null;
-    var bestDist = Infinity;
-    cards.forEach(function (c) {
-      var r = c.getBoundingClientRect();
-      var d = Math.abs(r.left + r.width / 2 - mid);
-      if (d < bestDist) {
-        bestDist = d;
-        best = c;
-      }
-    });
-    cards.forEach(function (c) {
-      c.classList.toggle("is-center", c === best);
-    });
-  }
-  function queue() {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(highlight);
-    }
-  }
-  grid.addEventListener("scroll", queue, { passive: true });
-  window.addEventListener("resize", queue);
-  window.addEventListener("load", queue);
-  highlight();
-})();
-(function () {
   // Sticky trial bar: hidden while the hero (with its own CTA) is on screen,
   // slides in once the visitor scrolls past it. Stays gone after dismissal.
   var bar = document.getElementById("stickyTrial");
@@ -213,6 +170,21 @@ function loadAnalytics() {
     bar.classList.toggle("sticky-trial--hidden", entries[0].isIntersecting);
   });
   io.observe(hero);
+})();
+(function () {
+  // Map facade: the Google embed (and its cookies) only load on click.
+  var container = document.getElementById("mapContainer");
+  var facade = document.getElementById("mapFacade");
+  if (!container || !facade) return;
+  facade.addEventListener("click", function () {
+    var frame = document.createElement("iframe");
+    frame.src = container.getAttribute("data-map-src");
+    frame.title = "Map showing Forged Grappling, Eden Vale Road, Westbury";
+    frame.loading = "lazy";
+    frame.allowFullscreen = true;
+    frame.referrerPolicy = "no-referrer-when-downgrade";
+    facade.replaceWith(frame);
+  });
 })();
 (function () {
   document.querySelectorAll("a[data-cta]").forEach(function (a) {
