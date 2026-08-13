@@ -1232,6 +1232,11 @@ h4 {
 .pricing-compare--brief .pricing-tier-price {
   margin-bottom: 0;
 }
+/* Brief cards have no tick list to flex, so grow whatever sits before
+   the CTA — keeps the three buttons level while CTA keeps its margin. */
+.pricing-compare--brief .pricing-tier > :nth-last-child(2) {
+  flex: 1;
+}
 
 /* Route to /beginners/ where the FAQ now lives */
 .beginners-cta {
@@ -1502,7 +1507,8 @@ h4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  align-items: start;
+  /* stretch so the per-card CTAs sit on one line across all three */
+  align-items: stretch;
 }
 .pricing-tier {
   background: var(--iron-mid);
@@ -1511,6 +1517,12 @@ h4 {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+/* Card CTA pinned to the bottom so the three buttons sit level */
+.pricing-tier-cta {
+  margin-top: 1.5rem;
+  width: 100%;
+  text-align: center;
 }
 .pricing-tier--best {
   background:
@@ -1607,6 +1619,8 @@ h4 {
 }
 .pricing-tier-details {
   margin-top: 0.9rem;
+  /* grows so the card CTA below it pins to the bottom across all three */
+  flex: 1;
 }
 .pricing-tier-list {
   list-style: none;
