@@ -1,38 +1,4 @@
 (function () {
-  // Unlimited membership billing slider: monthly ↔ annual, price follows.
-  var BILLING = {
-    monthly: { amount: "£80", note: "Billed monthly. Cancel anytime." },
-    annual: {
-      amount: "£66.67",
-      note: "£800 billed annually in advance — 12 months for the price of 10.",
-    },
-  };
-  var track = document.getElementById("billingSwitch");
-  var amount = document.getElementById("unlimitedAmount");
-  var note = document.getElementById("unlimitedBillingNote");
-  var monthlyLabel = document.getElementById("billingMonthlyLabel");
-  var annualLabel = document.getElementById("billingAnnualLabel");
-  if (!track || !amount || !note) return;
-  function setAnnual(annual) {
-    track.setAttribute("aria-checked", annual ? "true" : "false");
-    track.classList.toggle("is-annual", annual);
-    monthlyLabel.classList.toggle("is-active", !annual);
-    annualLabel.classList.toggle("is-active", annual);
-    var plan = annual ? BILLING.annual : BILLING.monthly;
-    amount.textContent = plan.amount;
-    note.textContent = plan.note;
-  }
-  track.addEventListener("click", function () {
-    setAnnual(track.getAttribute("aria-checked") !== "true");
-  });
-  monthlyLabel.addEventListener("click", function () {
-    setAnnual(false);
-  });
-  annualLabel.addEventListener("click", function () {
-    setAnnual(true);
-  });
-})();
-(function () {
   var nav = document.getElementById("site-nav");
   var hamburger = document.getElementById("hamburger");
   var mobileNav = document.getElementById("mobile-nav");
