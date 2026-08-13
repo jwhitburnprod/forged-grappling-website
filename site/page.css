@@ -1,0 +1,496 @@
+/* ═══════════════════════════════════════════════════════════════
+   page.css — shared furniture for the interior pages
+   (/classes/, /pricing/, /coaches/, /beginners/, /contact/).
+   Loaded after style.css, which supplies the tokens and the
+   component styles these pages reuse (coach cards, pricing
+   tiers, schedule cards, FAQ, map facade).
+════════════════════════════════════════════════════════════════ */
+
+/* ─── PAGE HERO ─── */
+.page-hero {
+  padding: calc(var(--nav-h) + 4rem) 5rem 3rem;
+  background: var(--iron-darker);
+  border-bottom: 1px solid var(--iron-border);
+  position: relative;
+}
+.page-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.page-hero h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  color: var(--white);
+  margin-bottom: 1.1rem;
+  max-width: 20ch;
+}
+.page-hero h1 span {
+  color: var(--green-bright);
+}
+.page-hero-lead {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.8;
+  max-width: 56ch;
+}
+@media (max-width: 1024px) {
+  .page-hero {
+    padding: calc(var(--nav-h) + 3rem) 2.5rem 2.5rem;
+  }
+}
+@media (max-width: 640px) {
+  .page-hero {
+    padding: calc(var(--nav-h) + 2.25rem) 1.25rem 2rem;
+  }
+  .page-hero-lead {
+    font-size: 0.97rem;
+  }
+}
+
+/* ─── BREADCRUMBS ───
+   shared.css styles the bare `nav` element as the fixed site header, so this
+   breadcrumb <nav> has to unset every one of those properties or it gets
+   pinned to the top of the viewport behind the real header. */
+.crumbs {
+  position: static;
+  z-index: auto;
+  padding: 0;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom: 0;
+  justify-content: flex-start;
+  font-family: "Inter", sans-serif;
+  font-size: 0.73rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.crumbs a {
+  color: var(--silver);
+  transition: color 0.2s;
+}
+.crumbs a:hover {
+  color: var(--green-bright);
+}
+.crumbs span[aria-current] {
+  color: var(--white);
+}
+.crumbs .sep {
+  color: rgba(155, 162, 170, 0.45);
+}
+
+/* ─── PROSE ─── */
+.prose {
+  max-width: 68ch;
+}
+.prose h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 2.75rem 0 0.9rem;
+  letter-spacing: -0.01em;
+}
+.prose h2:first-child {
+  margin-top: 0;
+}
+.prose h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 1.9rem 0 0.5rem;
+}
+.prose p {
+  font-size: 0.97rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+}
+.prose strong {
+  color: var(--white);
+  font-weight: 500;
+}
+.prose a:not(.btn-green):not(.btn-dark) {
+  color: var(--green-bright);
+  border-bottom: 1px solid rgba(90, 184, 112, 0.35);
+  transition: border-color 0.2s;
+}
+.prose a:not(.btn-green):not(.btn-dark):hover {
+  border-bottom-color: var(--green-bright);
+}
+.prose ul {
+  list-style: none;
+  margin: 0 0 1.4rem;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.prose ul li {
+  position: relative;
+  padding-left: 1.35rem;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.75;
+}
+.prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 5px;
+  height: 5px;
+  background: var(--green-bright);
+  border-radius: 50%;
+}
+
+/* ─── STEP LIST (numbered, for the trial walkthrough) ─── */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  display: grid;
+  gap: 1rem;
+  max-width: 68ch;
+}
+.steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 1rem;
+  align-items: start;
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+  padding: 1.1rem 1.3rem;
+}
+.steps li::before {
+  content: counter(step);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--green-bright);
+  background: var(--green-tint);
+  border: 1px solid var(--green-border);
+  text-align: center;
+  padding: 0.25rem 0;
+  line-height: 1.4;
+}
+.steps strong {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+  font-size: 0.97rem;
+}
+.steps span {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.7;
+}
+
+/* ─── TIMETABLE ─── */
+.timetable-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0 0.75rem;
+  border: 1px solid var(--iron-border);
+}
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 34rem;
+  background: var(--iron-mid);
+}
+.timetable th,
+.timetable td {
+  text-align: left;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--iron-border);
+  font-size: 0.9rem;
+}
+.timetable thead th {
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+  background: rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+.timetable tbody th {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  width: 1%;
+}
+.timetable td {
+  color: var(--brushed);
+  font-weight: 300;
+}
+.timetable .t-time {
+  font-variant-numeric: tabular-nums;
+  color: var(--white);
+  white-space: nowrap;
+}
+.timetable .t-free {
+  color: var(--green-bright);
+  font-weight: 500;
+}
+.timetable tbody tr:last-child th,
+.timetable tbody tr:last-child td {
+  border-bottom: 0;
+}
+.table-note {
+  font-size: 0.82rem;
+  color: var(--silver);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* ─── SIBLING LINKS ─── */
+.next-pages {
+  border-top: 1px solid var(--iron-border);
+  padding-top: 2rem;
+  margin-top: 1rem;
+}
+.next-pages-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+  margin-bottom: 1.1rem;
+}
+.next-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.85rem;
+}
+.next-card {
+  display: block;
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+  border-left: 2px solid var(--green-border);
+  padding: 1rem 1.2rem;
+  transition: border-left-color 0.2s, background 0.2s;
+}
+.next-card:hover {
+  background: var(--iron-light);
+  border-left-color: var(--green-bright);
+}
+.next-card b {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+.next-card span {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.6;
+}
+
+/* ─── CLOSING CTA ─── */
+.page-cta {
+  background: var(--green);
+  padding: 3.5rem 5rem;
+  text-align: center;
+}
+.page-cta h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.page-cta p {
+  font-size: 0.97rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  max-width: 46ch;
+  margin: 0 auto 1.8rem;
+}
+.btn-dark {
+  display: inline-block;
+  background: var(--iron-deep);
+  color: var(--white);
+  padding: 1.05rem 2.6rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.07em;
+  transition: transform 0.15s, background 0.2s;
+}
+.btn-dark:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+@media (max-width: 640px) {
+  .page-cta {
+    padding: 3rem 1.25rem;
+  }
+  .page-cta .btn-dark {
+    width: 100%;
+  }
+}
+
+/* ─── COACH BIO CARDS (/coaches/) ─── */
+.coach-full {
+  display: grid;
+  gap: 2.5rem;
+}
+.coach-bio {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  gap: 2rem;
+  align-items: start;
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+  padding: 1.6rem;
+}
+.coach-bio-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.coach-bio-name {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+}
+.coach-bio-role {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+  margin-bottom: 1.1rem;
+}
+.coach-bio p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.8;
+  margin-bottom: 0.9rem;
+}
+.coach-bio-record {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-top: 1px solid var(--iron-border);
+  padding-top: 1rem;
+  margin-top: 1.2rem;
+}
+.coach-bio-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+.coach-bio-stat b {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  color: var(--white);
+  line-height: 1;
+}
+.coach-bio-stat span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+@media (max-width: 760px) {
+  .coach-bio {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+    padding: 1.1rem;
+  }
+  .coach-bio-photo {
+    max-width: 15rem;
+  }
+}
+
+/* ─── CONTACT ─── */
+.contact-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .contact-split {
+    grid-template-columns: 1fr;
+  }
+}
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+}
+.hours-table th,
+.hours-table td {
+  text-align: left;
+  padding: 0.7rem 1.1rem;
+  border-bottom: 1px solid var(--iron-border);
+  font-size: 0.9rem;
+}
+.hours-table th {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+.hours-table td {
+  color: var(--brushed);
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.hours-table tr:last-child th,
+.hours-table tr:last-child td {
+  border-bottom: 0;
+}
+.hours-table .closed {
+  color: var(--silver);
+}

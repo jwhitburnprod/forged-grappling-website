@@ -1124,6 +1124,167 @@ h4 {
   }
 }
 
+/* ─── HOMEPAGE HUB BITS ───
+   Condensed stand-ins for sections that now have their own pages. */
+
+/* "See the full X →" link that closes a condensed section */
+.section-more {
+  text-align: center;
+  margin-top: 1.75rem;
+}
+.section-more a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--green-bright);
+  border-bottom: 1px solid rgba(90, 184, 112, 0.35);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.section-more a:hover {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+/* Faces and names only — bios and records are on /coaches/ */
+.coach-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.coach-mini {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--iron-border);
+  background: var(--iron-mid);
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.coach-mini:hover {
+  border-color: var(--green-border);
+  transform: translateY(-2px);
+}
+.coach-mini-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.coach-mini-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0.85rem 0.9rem 0.15rem;
+  line-height: 1.2;
+}
+.coach-mini-yrs {
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--silver);
+  padding: 0 0.9rem 0.95rem;
+}
+@media (max-width: 900px) {
+  .coach-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .coach-strip {
+    gap: 0.7rem;
+  }
+  .coach-mini-name {
+    font-size: 0.82rem;
+    padding: 0.7rem 0.7rem 0.15rem;
+  }
+  .coach-mini-yrs {
+    padding: 0 0.7rem 0.8rem;
+  }
+}
+
+/* Brief pricing cards: no tick lists, so they need less vertical room */
+.pricing-compare--brief .pricing-tier {
+  padding-bottom: 2rem;
+}
+.pricing-compare--brief .pricing-tier-price {
+  margin-bottom: 0;
+}
+
+/* Route to /beginners/ where the FAQ now lives */
+.beginners-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+  border-left: 3px solid var(--green-bright);
+  padding: 2.25rem 2.5rem;
+}
+.beginners-cta-body {
+  flex: 1 1 26rem;
+}
+.beginners-cta h2 {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.beginners-cta p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.8;
+  margin: 0;
+  max-width: 46rem;
+}
+@media (max-width: 640px) {
+  .beginners-cta {
+    padding: 1.75rem 1.4rem;
+    gap: 1.4rem;
+  }
+  .beginners-cta .btn-green {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Location stand-in — map and directions moved to /contact/ */
+.location-more {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.4rem;
+  background: var(--iron-mid);
+  border: 1px solid var(--iron-border);
+  padding: 2.25rem;
+}
+.location-more-lead {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.8;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .location-more {
+    padding: 1.6rem 1.4rem;
+  }
+  .location-more .btn-green {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* ─── TESTIMONIALS ─── */
 #testimonials {
   background: var(--iron-mid);
