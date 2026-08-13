@@ -141,30 +141,19 @@
               </div>
             </div>
 
-            <div
-              class="map-container"
-              id="mapContainer"
-              data-map-src="https://maps.google.com/maps?q=51.257428,-2.190161&amp;z=18&amp;output=embed"
-            >
-              <button type="button" class="map-facade" id="mapFacade">
-                <span class="map-facade-grid" aria-hidden="true"></span>
-                <span class="map-facade-pin" aria-hidden="true">
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </span>
-                <span class="map-facade-label">Forged Grappling</span>
-                <span class="map-facade-addr">Eden Vale Road, Westbury, BA13 3QS</span>
-                <span class="map-facade-action">Load interactive map</span>
-              </button>
+            <div class="map-container">
               <a
-                class="map-directions"
+                class="map-static"
                 href="https://www.google.com/maps/search/?api=1&amp;query=Forged+Grappling+Westbury+BA13+3QS"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Open in Google Maps</a
               >
+                <picture>
+                  <source srcset="/map-westbury.webp" type="image/webp" />
+                  <img src="/map-westbury.jpg" alt="Map of Westbury showing Forged Grappling on Eden Vale Road, just off the A350" width="1200" height="620" loading="lazy" decoding="async" />
+                </picture>
+                <span class="map-static-hint">Open in Google Maps &rarr;</span>
+              </a>
             </div>
           </div>
 
@@ -200,6 +189,17 @@
               Westbury railway station is in the same town, so the gym is reachable by
               train as well as car.
             </p>
+          </div>
+
+          <figure class="prose-figure prose-figure--portrait">
+            <picture>
+              <source srcset="/gym-front.webp" type="image/webp" />
+              <img src="/gym-front.jpg" alt="The front of Unit 21 with the Forged Grappling sign above the door" width="1600" height="2133" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption>Look for the Forged Grappling sign above the door at Unit 21.</figcaption>
+          </figure>
+
+          <div class="prose">
 
             <h2>Questions before you come?</h2>
             <p>

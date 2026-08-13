@@ -269,6 +269,30 @@
   margin-bottom: 2rem;
 }
 
+/* ─── PROSE FIGURES ─── */
+.prose-figure {
+  margin: 2.25rem 0;
+  max-width: 44rem;
+  border: 1px solid var(--iron-border);
+}
+.prose-figure--portrait {
+  max-width: 26rem;
+}
+.prose-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.prose-figure figcaption {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--silver);
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--iron-border);
+  background: var(--iron-mid);
+}
+
 /* ─── SIBLING LINKS ─── */
 .next-pages {
   border-top: 1px solid var(--iron-border);

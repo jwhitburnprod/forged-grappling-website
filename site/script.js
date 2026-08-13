@@ -138,23 +138,6 @@ function loadAnalytics() {
   io.observe(hero);
 })();
 (function () {
-  // Map facades: the Google embed (and its cookies) only load on click.
-  // Class-based so the homepage and /contact/ can both carry one.
-  document.querySelectorAll(".map-container[data-map-src]").forEach(function (container) {
-    var facade = container.querySelector(".map-facade");
-    if (!facade) return;
-    facade.addEventListener("click", function () {
-      var frame = document.createElement("iframe");
-      frame.src = container.getAttribute("data-map-src");
-      frame.title = "Map showing Forged Grappling, Eden Vale Road, Westbury";
-      frame.loading = "lazy";
-      frame.allowFullscreen = true;
-      frame.referrerPolicy = "no-referrer-when-downgrade";
-      facade.replaceWith(frame);
-    });
-  });
-})();
-(function () {
   document.querySelectorAll("a[data-cta]").forEach(function (a) {
     a.addEventListener("click", function () {
       if (typeof gtag !== "function") return;
