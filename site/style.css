@@ -1943,6 +1943,59 @@ li.is-no .tier-mark::before {
   text-transform: uppercase;
   color: var(--silver, #8a9199);
 }
+
+/* GALLERY: uniform grid of member/training photos, all tiles the same size. */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.gallery-item picture {
+  display: block;
+}
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  display: block;
+}
+/* Placeholder tile shown until a real photo replaces the file — see HTML comment */
+.gallery-item--placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  background: var(--iron-mid);
+  border: 1px dashed var(--iron-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+.gallery-item--placeholder span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--green-bright);
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .trial-inner {
   max-width: 960px;
   margin: 0 auto;
