@@ -1277,6 +1277,13 @@ h4 {
   color: var(--brushed);
   line-height: 1.8;
   margin: 0 0 0.75rem;
+  /* Cap long reviews to an excerpt so one outlier can't stretch every
+     card in the row (flex align-items: stretch) and leave short quotes
+     with a big blank gap before the name. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
 }
 .testi-mini-name {
   font-family: "Manrope", sans-serif;
