@@ -80,6 +80,54 @@
     io.observe(el);
   });
 })();
+(function () {
+  // Mobile swipe carousels: mark whichever card sits nearest the viewport
+  // centre so CSS can scale it up while its neighbours stay shrunk.
+  // Same behaviour, shared across the coach strip and pricing tiers.
+  function initCarousel(stripSelector, cardSelector, maxWidth) {
+    var strip = document.querySelector(stripSelector);
+    if (!strip) return;
+    var cards = strip.querySelectorAll(cardSelector);
+    var mq = window.matchMedia("(max-width: " + maxWidth + "px)");
+    var ticking = false;
+    function highlight() {
+      ticking = false;
+      if (!mq.matches) {
+        cards.forEach(function (c) {
+          c.classList.remove("is-center");
+        });
+        return;
+      }
+      var rect = strip.getBoundingClientRect();
+      var mid = rect.left + rect.width / 2;
+      var best = null;
+      var bestDist = Infinity;
+      cards.forEach(function (c) {
+        var r = c.getBoundingClientRect();
+        var d = Math.abs(r.left + r.width / 2 - mid);
+        if (d < bestDist) {
+          bestDist = d;
+          best = c;
+        }
+      });
+      cards.forEach(function (c) {
+        c.classList.toggle("is-center", c === best);
+      });
+    }
+    function queue() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(highlight);
+      }
+    }
+    strip.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
+    window.addEventListener("load", queue);
+    highlight();
+  }
+  initCarousel(".coach-strip", ".coach-mini", 540);
+  initCarousel(".pricing-compare", ".pricing-tier", 900);
+})();
 function loadAnalytics() {
   if (window.dataLayer) return;
   var gaId = "G-KMVGE5L8JL";

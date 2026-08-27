@@ -158,14 +158,12 @@
 
     <!-- NAV -->
     <nav id="site-nav" aria-label="Main navigation">
-      <a href="/" class="nav-brand" aria-label="Forged Grappling home">FORGED <span>GRAPPLING</span></a>
+      <a href="/" class="nav-brand" aria-label="Forged Grappling home">F<span>G</span></a>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="/classes/">Classes</a></li>
           <li><a href="/coaches/">Coaches</a></li>
           <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/beginners/">Beginners</a></li>
-          <li><a href="/articles/">Articles</a></li>
           <li><a href="/contact/">Find Us</a></li>
         </ul>
         <a
@@ -195,8 +193,6 @@
       <a href="/classes/" class="mobile-nav-link">Classes</a>
       <a href="/coaches/" class="mobile-nav-link">Coaches</a>
       <a href="/pricing/" class="mobile-nav-link">Pricing</a>
-      <a href="/beginners/" class="mobile-nav-link">Beginners</a>
-      <a href="/articles/" class="mobile-nav-link">Articles</a>
       <a href="/contact/" class="mobile-nav-link">Find Us</a>
       <div class="mobile-nav-cta-wrap">
         <a
@@ -213,11 +209,6 @@
       <section id="hero" aria-label="Welcome to Forged Grappling">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-inner">
-          <!-- Post-founding: pill signals open membership + no lock-in -->
-          <div class="hero-scarcity">
-            <span class="hero-scarcity-dot" aria-hidden="true"></span>
-            <span><strong>Memberships open</strong> &mdash; no contracts</span>
-          </div>
           <!-- Text block, narrower for readability -->
           <div class="hero-text">
             <!-- Brand keeps the display treatment but is no longer the H1 —
@@ -225,8 +216,9 @@
             <div class="hero-brand">FORGED <span class="h2-green">GRAPPLING</span></div>
             <h1 class="hero-h1">No-Gi Grappling in Westbury, Wiltshire</h1>
             <p class="hero-sub">
-              The only dedicated grappling gym in town. Train five nights a
-              week, no experience needed. Your first session is free.
+              The only dedicated no-gi grappling gym in West Wiltshire.
+              Train five nights a week, no experience needed. Your first
+              session is free.
             </p>
           </div>
           <!-- CTA -->
@@ -248,22 +240,42 @@
 
       <!-- STATS -->
       <div id="stats" role="region" aria-label="At a glance">
-        <div class="stats-inner">
-          <div class="stat-item">
-            <div class="stat-number">15yrs</div>
-            <div class="stat-label">Combined Experience</div>
+        <div class="stats-track">
+          <div class="stats-inner">
+            <div class="stat-item">
+              <div class="stat-number">15yrs</div>
+              <div class="stat-label">Combined Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5</div>
+              <div class="stat-label">Days Per Week</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">&pound;80</div>
+              <div class="stat-label">Full Membership</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">30</div>
+              <div class="stat-label">Day Money-Back Guarantee</div>
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Days Per Week</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">&pound;80</div>
-            <div class="stat-label">Full Membership / Month</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">30</div>
-            <div class="stat-label">Day Money-Back Guarantee</div>
+          <div class="stats-inner stats-inner--dup" aria-hidden="true">
+            <div class="stat-item">
+              <div class="stat-number">15yrs</div>
+              <div class="stat-label">Combined Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5</div>
+              <div class="stat-label">Days Per Week</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">&pound;80</div>
+              <div class="stat-label">Full Membership</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">30</div>
+              <div class="stat-label">Day Money-Back Guarantee</div>
+            </div>
           </div>
         </div>
       </div>
@@ -278,85 +290,40 @@
           </div>
           <div class="pillars">
             <div class="pillar reveal reveal-d1">
-              <div class="pillar-icon">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
-                </svg>
+              <div class="pillar-photo">
+                <picture>
+                  <source srcset="/training-class.webp" type="image/webp" />
+                  <img src="/training-class.jpg" alt="A busy no-gi grappling class drilling in pairs at Forged Grappling in Westbury" width="1600" height="1200" loading="lazy" decoding="async" />
+                </picture>
               </div>
-              <h3>Built for No-Gi Grappling</h3>
-              <p>
-                Forged was built specifically for no-gi grappling by coaches who love the sport. Every session, every drill, every coaching decision is made with one goal in mind: making you a better grappler.
-              </p>
+              <div class="pillar-body">
+                <h3>Built for No-Gi Grappling</h3>
+                <p class="pillar-caption">Every coach here lives and breathes no-gi.</p>
+              </div>
             </div>
             <div class="pillar reveal reveal-d2">
-              <div class="pillar-icon">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
-                </svg>
+              <div class="pillar-photo">
+                <picture>
+                  <source srcset="/training-sparring.webp" type="image/webp" />
+                  <img src="/training-sparring.jpg" alt="Two members sparring on the mats at Forged Grappling while a coach watches" width="1600" height="1067" loading="lazy" decoding="async" />
+                </picture>
               </div>
-              <h3>Developing Effective Skills </h3>
-              <p>
-                Our classes are structured to build skills that actually work under pressure. We explain the why behind every technique, then give you the chance to practice and pressure test it live.
-              </p>
+              <div class="pillar-body">
+                <h3>Developing Effective Skills</h3>
+                <p class="pillar-caption">Drilled, then pressure-tested, every class.</p>
+              </div>
             </div>
             <div class="pillar reveal reveal-d3">
-              <div class="pillar-icon">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
+              <div class="pillar-photo">
+                <picture>
+                  <source srcset="/training-coaching.webp" type="image/webp" />
+                  <img src="/training-coaching.jpg" alt="A Forged Grappling coach demonstrating grip technique with two members" width="1600" height="1067" loading="lazy" decoding="async" />
+                </picture>
               </div>
-              <h3>A Club That Looks After You</h3>
-              <p>
-                Whatever your experience level, you&rsquo;ll be welcomed, looked after, and able to train at your own pace. The culture here is built around people enjoying their training, whether it&rsquo;s your first day or your thousandth.
-              </p>
-            </div>
-          </div>
-          <!-- Real training photos, folded into Why Forged -->
-          <div class="why-photos">
-            <div class="facility-item reveal">
-              <picture>
-                <source srcset="/training-class.webp" type="image/webp" />
-                <img src="/training-class.jpg" alt="A busy no-gi grappling class drilling in pairs at Forged Grappling in Westbury" width="1600" height="1200" loading="lazy" decoding="async" />
-              </picture>
-              <div class="facility-caption">The 6PM Class</div>
-            </div>
-            <div class="facility-item reveal reveal-d1">
-              <picture>
-                <source srcset="/training-coaching.webp" type="image/webp" />
-                <img src="/training-coaching.jpg" alt="A Forged Grappling coach demonstrating grip technique with two members" width="1600" height="1067" loading="lazy" decoding="async" />
-              </picture>
-              <div class="facility-caption">Coaching On The Mat</div>
-            </div>
-            <div class="facility-item reveal reveal-d2">
-              <picture>
-                <source srcset="/facility-sc.webp" type="image/webp" />
-                <img src="/facility-sc.jpg" alt="Strength and conditioning area at Forged Grappling, Westbury: power rack, rower and air bike" width="900" height="1200" loading="lazy" decoding="async" />
-              </picture>
-              <div class="facility-caption">Strength &amp; Conditioning Area</div>
+              <div class="pillar-body">
+                <h3>A Club That Looks After You</h3>
+                <p class="pillar-caption">Personal coaching, whatever your pace.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -372,44 +339,46 @@
           <div class="section-header reveal">
             <h2 id="coaches-heading">THE COACHES</h2>
           </div>
-          <!-- Homepage carries the faces and names only; the full bios and
-               competition records live on /coaches/. -->
           <div class="coach-strip">
-            <a href="/coaches/" class="coach-mini">
+            <div class="coach-mini">
               <picture>
                 <source srcset="/coach-mitchell.webp" type="image/webp" />
                 <img class="coach-mini-photo" src="/coach-mitchell.jpg" alt="Mitch Cullum, no-gi grappling coach at Forged Grappling in Westbury" width="800" height="1000" loading="lazy" decoding="async" />
               </picture>
               <span class="coach-mini-name">Mitch Cullum</span>
               <span class="coach-mini-yrs">5 yrs</span>
-            </a>
-            <a href="/coaches/" class="coach-mini">
+              <span class="coach-mini-record"><b>32</b> Wins &middot; <b>18</b> Medals</span>
+            </div>
+            <div class="coach-mini">
               <picture>
                 <source srcset="/coach-jack.webp" type="image/webp" />
                 <img class="coach-mini-photo" src="/coach-jack.jpg" alt="Jack Whitburn, no-gi grappling coach at Forged Grappling in Westbury" width="800" height="1000" loading="lazy" decoding="async" />
               </picture>
               <span class="coach-mini-name">Jack Whitburn</span>
               <span class="coach-mini-yrs">4 yrs</span>
-            </a>
-            <a href="/coaches/" class="coach-mini">
+              <span class="coach-mini-record"><b>31</b> Wins &middot; <b>19</b> Medals</span>
+            </div>
+            <div class="coach-mini">
               <picture>
                 <source srcset="/coach-nathan.webp" type="image/webp" />
                 <img class="coach-mini-photo" src="/coach-nathan.jpg" alt="Nathan Cullum, no-gi grappling coach at Forged Grappling in Westbury" width="800" height="1000" loading="lazy" decoding="async" />
               </picture>
               <span class="coach-mini-name">Nathan Cullum</span>
               <span class="coach-mini-yrs">3 yrs</span>
-            </a>
-            <a href="/coaches/" class="coach-mini">
+              <span class="coach-mini-record"><b>1</b> Win &middot; <b>4</b> Medals</span>
+            </div>
+            <div class="coach-mini">
               <picture>
                 <source srcset="/coach-harry.webp" type="image/webp" />
                 <img class="coach-mini-photo" src="/coach-harry.jpg" alt="Harry Whitburn, no-gi grappling coach at Forged Grappling in Westbury" width="800" height="1000" loading="lazy" decoding="async" />
               </picture>
               <span class="coach-mini-name">Harry Whitburn</span>
               <span class="coach-mini-yrs">3 yrs</span>
-            </a>
+              <span class="coach-mini-record"><b>61</b> Wins &middot; <b>28</b> Medals</span>
+            </div>
           </div>
           <p class="section-more reveal">
-            <a href="/coaches/">Meet the coaches &rarr;</a>
+            <a href="https://smoothcomp.com/en/club/86870" target="_blank" rel="noopener noreferrer">See our full Smoothcomp record &rarr;</a>
           </p>
         </div>
       </section>
@@ -472,26 +441,50 @@
           </div>
         </div>
         <div class="testi-carousel reveal" aria-label="Member reviews">
-          <div class="testi-group">
-            <div class="testi-mini">
-              <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-mini-body">&ldquo;The coaches are knowledgeable, approachable, and take the time to help everyone improve, regardless of experience level. The atmosphere is welcoming and feels like a community.&rdquo;</p>
-              <div class="testi-mini-name">Hayden &middot; <span>Member</span></div>
+          <div class="testi-track">
+            <div class="testi-group">
+              <div class="testi-mini">
+                <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-mini-body">&ldquo;The coaches are knowledgeable, approachable, and take the time to help everyone improve, regardless of experience level. The atmosphere is welcoming and feels like a community.&rdquo;</p>
+                <div class="testi-mini-name">Hayden &middot; <span>Member</span></div>
+              </div>
+              <div class="testi-mini">
+                <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-mini-body">&ldquo;The coaches at Forged are some of the nicest you&rsquo;ll ever meet. There&rsquo;s never any pressure to perform, and they always find ways to make techniques suit you individually.&rdquo;</p>
+                <div class="testi-mini-name">Rhys &middot; <span>Member</span></div>
+              </div>
+              <div class="testi-mini">
+                <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-mini-body">&ldquo;Great facilities at Forged with a great team of coaches with all unique experiences. Highly recommend for beginners and experienced alike.&rdquo;</p>
+                <div class="testi-mini-name">Connor &middot; <span>Member</span></div>
+              </div>
+              <div class="testi-mini">
+                <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-mini-body">&ldquo;Amazing new club with amazing coaching staff.&rdquo;</p>
+                <div class="testi-mini-name">Sam &middot; <span>Member</span></div>
+              </div>
             </div>
-            <div class="testi-mini">
-              <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-mini-body">&ldquo;The coaches at Forged are some of the nicest you&rsquo;ll ever meet. There&rsquo;s never any pressure to perform, and they always find ways to make techniques suit you individually.&rdquo;</p>
-              <div class="testi-mini-name">Rhys &middot; <span>Member</span></div>
-            </div>
-            <div class="testi-mini">
-              <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-mini-body">&ldquo;Great facilities at Forged with a great team of coaches with all unique experiences. Highly recommend for beginners and experienced alike.&rdquo;</p>
-              <div class="testi-mini-name">Connor &middot; <span>Member</span></div>
-            </div>
-            <div class="testi-mini">
-              <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-mini-body">&ldquo;Amazing new club with amazing coaching staff.&rdquo;</p>
-              <div class="testi-mini-name">Sam &middot; <span>Member</span></div>
+            <div class="testi-group" aria-hidden="true">
+              <div class="testi-mini">
+                <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-mini-body">&ldquo;The coaches are knowledgeable, approachable, and take the time to help everyone improve, regardless of experience level. The atmosphere is welcoming and feels like a community.&rdquo;</p>
+                <div class="testi-mini-name">Hayden &middot; <span>Member</span></div>
+              </div>
+              <div class="testi-mini">
+                <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-mini-body">&ldquo;The coaches at Forged are some of the nicest you&rsquo;ll ever meet. There&rsquo;s never any pressure to perform, and they always find ways to make techniques suit you individually.&rdquo;</p>
+                <div class="testi-mini-name">Rhys &middot; <span>Member</span></div>
+              </div>
+              <div class="testi-mini">
+                <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-mini-body">&ldquo;Great facilities at Forged with a great team of coaches with all unique experiences. Highly recommend for beginners and experienced alike.&rdquo;</p>
+                <div class="testi-mini-name">Connor &middot; <span>Member</span></div>
+              </div>
+              <div class="testi-mini">
+                <div class="testi-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-mini-body">&ldquo;Amazing new club with amazing coaching staff.&rdquo;</p>
+                <div class="testi-mini-name">Sam &middot; <span>Member</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -513,11 +506,8 @@
               <div class="assure-item"><span class="assure-tick" aria-hidden="true">&#10003;</span>No commitments</div>
               <div class="assure-item"><span class="assure-tick" aria-hidden="true">&#10003;</span>No joining fees</div>
               <div class="assure-item"><span class="assure-tick" aria-hidden="true">&#10003;</span>30-day money-back guarantee</div>
+              <div class="assure-item"><span class="assure-tick" aria-hidden="true">&#10003;</span>First day free</div>
             </div>
-            <!-- Ties the free trial to picking a tier: try first, then choose -->
-            <p class="pricing-trial-note reveal">
-              Not sure which fits? Your first day is <strong>free</strong> &mdash; come train before you pick a membership.
-            </p>
 
             <!-- Full comparison on the homepage too — same cards as /pricing/
                  minus the label row, so nothing needs a click to compare. -->
@@ -541,7 +531,7 @@
                     <li class="is-no"><span class="tier-mark"></span>Guest pass, one a month</li>
                   </ul>
                 </div>
-                <a href="https://app.mattrack.io/access-pass/forged-grappling?utm_source=website&utm_medium=cta&utm_campaign=access_pass&utm_content=home_visitor" class="btn-ghost pricing-tier-cta" data-cta="home_pass_visitor">Buy a Visitors Pass</a>
+                <a href="https://app.mattrack.io/access-pass/forged-grappling?utm_source=website&utm_medium=cta&utm_campaign=access_pass&utm_content=home_visitor" class="btn-ghost pricing-tier-cta" data-cta="home_pass_visitor">Get a Visitors Pass</a>
               </div>
 
               <div class="pricing-tier pricing-tier--best reveal reveal-d1">
@@ -586,7 +576,7 @@
                     <li class="is-no"><span class="tier-mark"></span>Guest pass, one a month</li>
                   </ul>
                 </div>
-                <a href="https://app.mattrack.io/access-pass/forged-grappling?utm_source=website&utm_medium=cta&utm_campaign=access_pass&utm_content=home_multi" class="btn-ghost pricing-tier-cta" data-cta="home_pass_multi">Buy a Multiple Visit Pass</a>
+                <a href="https://app.mattrack.io/access-pass/forged-grappling?utm_source=website&utm_medium=cta&utm_campaign=access_pass&utm_content=home_multi" class="btn-ghost pricing-tier-cta" data-cta="home_pass_multi">Get a Multiple Visit Pass</a>
               </div>
             </div>
 
@@ -599,12 +589,6 @@
                 <span class="pricing-guarantee-text">
                   If your grappling hasn&rsquo;t measurably improved within your first month, we&rsquo;ll refund your first payment in full. No questions asked.
                 </span>
-                <a
-                  href="https://app.mattrack.io/forged-grappling/start-trial?utm_source=website&utm_medium=cta&utm_campaign=trial&utm_content=pricing"
-                  class="btn-green"
-                  data-cta="pricing"
-                  >Claim Your Free Trial</a
-                >
               </div>
             </div>
           </div>
