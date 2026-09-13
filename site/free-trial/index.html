@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Free Trial Class &mdash; Forged Grappling, Westbury</title>
+    <meta name="description" content="No-gi grappling in Westbury, five nights a week, built for complete beginners. Your first session is free. Claim your trial class." />
+    <!-- Ad landing page: kept out of the index so it never competes with the homepage organically. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://www.forgedgrappling.co.uk/free-trial/" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:title" content="Your first grappling class in Westbury is free" />
+    <meta property="og:description" content="No-gi coaching five nights a week, built for people who have never trained before." />
+    <meta property="og:url" content="https://www.forgedgrappling.co.uk/free-trial/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.forgedgrappling.co.uk/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0A0D0A" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Hero image preloaded: it is the LCP element and ad traffic is impatient. -->
+    <link rel="preload" as="image" href="/lp-poster.webp" type="image/webp" />
+    <link rel="stylesheet" href="/shared.css" />
+
+    <style>
+      /* ─── PAGE PALETTE ───
+         Skews darker and greener than the main site, to match the Instagram
+         carousel graphics. Derived from the shared green tokens. */
+      .lp {
+        --lp-black: #0A0D0A;
+        --lp-deep: #0D2116;
+        --lp-green: #1C5A2F;
+        --lp-green-bright: #2E8B47;
+        --lp-check: #3FBF63;
+        --lp-line: rgba(255, 255, 255, 0.09);
+        --lp-body: #C9CFC9;
+      }
+
+      html { scroll-behavior: smooth; }
+      body {
+        background: var(--lp-black);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .lp {
+        background:
+          radial-gradient(110% 58% at 50% 2%, rgba(46, 139, 71, 0.07) 0%, transparent 82%),
+          radial-gradient(150% 90% at 50% 0%, rgba(28, 90, 47, 0.10) 0%, transparent 85%),
+          linear-gradient(180deg, #0E1F17 0%, #0B1410 38%, #0A0D0A 72%, #0A0D0A 100%);
+        min-height: 100dvh;
+        overflow-x: hidden;
+      }
+
+      /* Fine grain over the whole page. Gives the top half some texture so
+         the green wash does not have to carry it. */
+      .lp-grain {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 190px 190px;
+      }
+
+      .lp-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+
+      /* ─── MASTHEAD (no links, deliberately) ─── */
+      .lp-masthead {
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem 1.25rem 0;
+      }
+      .lp-mark {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+      }
+      .lp-shield {
+        display: block;
+        width: auto;
+        height: clamp(42px, 5.2vw, 48px);
+        flex-shrink: 0;
+      }
+      .lp-mark-stack { display: flex; flex-direction: column; gap: 0.22rem; text-align: center; }
+      /* Location sits tight under the wordmark; the breathing space now
+         falls between this pair and the headline, not above it. */
+      .lp-locale {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.66rem;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--lp-check);
+      }
+      .lp-mark svg { display: block; width: 34px; height: auto; }
+      .lp-mark-text {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        font-size: 0.95rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fff;
+        line-height: 1.15;
+      }
+      .lp-mark-text span { color: var(--lp-green-bright); }
+
+      /* ─── HERO ─── */
+      /* Gap tracks the headline size instead of holding a fixed value while
+         the type grows, which is what made 400-700px look off. */
+      .lp-hero { padding: clamp(1.9rem, 6vw, 2.2rem) 0 0; text-align: center; }
+
+      .lp-eyebrow {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.66rem;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--lp-check);
+        margin-bottom: 0.85rem;
+      }
+
+      .lp-h1 {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.015em;
+        line-height: 0.98;
+        font-size: clamp(2rem, 7.6vw, 3.5rem);
+        color: #fff;
+        margin-bottom: 0.85rem;
+        text-wrap: balance;
+      }
+      /* Held narrower than the sub on purpose: headline tightest, sub a
+         little wider, video widest. */
+      @media (min-width: 700px) {
+        .lp-h1 { max-width: 580px; margin-inline: auto; }
+      }
+      .lp-h1 em {
+        font-style: normal;
+        color: var(--lp-green-bright);
+      }
+
+      .lp-sub {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(0.95rem, 3.3vw, 1.15rem);
+        line-height: 1.55;
+        color: var(--lp-body);
+        max-width: 100%;
+        margin: 0 auto;
+        text-wrap: pretty;
+      }
+      @media (min-width: 700px) { .lp-sub { max-width: 600px; } }
+
+      /* ─── PORTRAIT HERO ───
+         The VSL is 9:16. Mobile stacks it under the copy with its height
+         capped so the button stays on the first screen; desktop puts it
+         beside the copy so the two share the vertical space. */
+      .lp-hero--portrait .lp-hero-copy { text-align: center; }
+      .lp-cta-block--desktop { display: none; }
+      .lp-cta-block--mobile  { display: block; }
+
+      /* Doubled class so these beat the base .lp-shot rules that follow. */
+      .lp-shot.lp-shot--portrait {
+        width: min(100%, calc(42vh * 9 / 16));
+        max-width: 300px;
+        margin: 1.4rem auto 0;
+      }
+      /* Short phones (iPhone SE class): shrink the slot further so the
+         button still clears the cookie banner on first load. */
+      @media (max-height: 700px) and (max-width: 899px) {
+        .lp-shot.lp-shot--portrait { width: min(100%, calc(33vh * 9 / 16)); margin-top: 1rem; }
+      }
+      .lp-shot.lp-shot--portrait img {
+        aspect-ratio: 9 / 16;
+        object-position: 50% 30%;
+      }
+      .lp-shot.lp-shot--portrait .lp-play-disc { width: 58px; height: 58px; }
+      .lp-shot.lp-shot--portrait video,
+      .lp-shot.lp-shot--portrait iframe { aspect-ratio: 9 / 16; }
+
+      @media (min-width: 900px) {
+        .lp-hero--portrait {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          gap: 3rem;
+          max-width: 1000px;
+          margin: 0 auto;
+          text-align: left;
+        }
+        .lp-hero--portrait .lp-hero-copy { text-align: left; }
+        .lp-hero--portrait .lp-h1 { max-width: none; margin-inline: 0; }
+        .lp-hero--portrait .lp-sub { max-width: 34rem; margin-inline: 0; }
+        .lp-cta-block--desktop { display: block; text-align: left; padding-top: 1.4rem; }
+        .lp-cta-block--mobile  { display: none; }
+        .lp-shot.lp-shot--portrait {
+          width: 300px;
+          max-width: 300px;
+          margin: 0;
+        }
+      }
+
+      /* ─── HERO IMAGE ─── */
+      .lp-shot {
+        position: relative;
+        margin: 1.5rem auto 0;
+        max-width: 900px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+      .lp-shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: 50% 45%;
+      }
+      @media (min-width: 700px) {
+        /* 16:9 is taller than the old crop, so the slot narrows to keep the
+           button above the fold on an 800px-tall laptop. */
+        .lp-shot { max-width: 640px; margin-top: 0.5rem; }
+        .lp-shot img { object-position: 50% 50%; }
+        .lp-cta-block { padding-top: 0.7rem; }
+      }
+      /* Play button appears only once a video source is configured.
+         The [hidden] rule must come with it: a class setting display
+         would otherwise beat the browser default and show a dead button. */
+      .lp-play[hidden] { display: none; }
+      .lp-play {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        width: 100%;
+        border: 0;
+        background: rgba(10, 13, 10, 0.34);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        transition: background 0.2s;
+      }
+      .lp-play:hover { background: rgba(10, 13, 10, 0.2); }
+      .lp-play-disc {
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background: var(--lp-green);
+        border: 2px solid var(--lp-green-bright);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 26px rgba(10, 13, 10, 0.5);
+        transition: transform 0.18s;
+      }
+      .lp-play:hover .lp-play-disc { transform: scale(1.06); }
+      .lp-play-disc svg { width: 24px; height: 24px; margin-left: 1px; }
+      .lp-shot video,
+      .lp-shot iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        background: #000;
+      }
+      /* Once playing, the gradient scrim must not sit over the controls. */
+      .lp-shot.is-playing::after { display: none; }
+
+      .lp-shot::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(180deg, rgba(10, 13, 10, 0.12) 0%, transparent 35%, rgba(10, 13, 10, 0.72) 100%);
+      }
+
+      /* ─── CTA ─── */
+      .lp-cta-block { padding: 1.4rem 0 0; text-align: center; }
+
+      .lp-cta {
+        display: inline-block;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        background: var(--lp-green);
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        font-size: clamp(0.88rem, 3.6vw, 1.15rem);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        padding: 1.1rem clamp(1.2rem, 5vw, 2.6rem);
+        border: none;
+        white-space: nowrap;
+        box-shadow: 0 10px 30px rgba(28, 90, 47, 0.32);
+        transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      }
+      .lp-cta:hover {
+        background: var(--lp-green-bright);
+        transform: translateY(-2px);
+        box-shadow: 0 14px 36px rgba(46, 139, 71, 0.4);
+      }
+      .lp-cta:active { transform: translateY(0); }
+
+      .lp-cta-micro {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.83rem;
+        line-height: 1.55;
+        color: rgba(201, 207, 201, 0.72);
+        margin-top: 0.9rem;
+        max-width: 40ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ─── WHAT HAPPENS NEXT ───
+         Sits under the button. Knowing the next four steps is what stops
+         people hesitating over the click, so it earns its place. */
+      .lp-steps {
+        list-style: none;
+        margin: 0;
+        text-align: left;
+        display: grid;
+        gap: 0.7rem;
+      }
+      .lp-steps li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        line-height: 1.45;
+        color: var(--lp-body);
+      }
+      .lp-steps li span {
+        flex-shrink: 0;
+        width: 19px;
+        height: 19px;
+        margin-top: 0.1rem;
+        border-radius: 50%;
+        background: rgba(63, 191, 99, 0.16);
+        border: 1px solid rgba(63, 191, 99, 0.5);
+        color: var(--lp-check);
+        font-size: 0.66rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lp-steps-note {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.82rem;
+        color: rgba(201, 207, 201, 0.62);
+        margin-top: 0.85rem;
+      }
+
+      /* ─── WHAT TO EXPECT ─── */
+      .lp-expect { padding: 3.4rem 1.25rem 3rem; text-align: center; }
+      .lp-fact-grid {
+        max-width: 620px;
+        margin: 0 auto;
+      }
+      .lp-fact {
+        position: relative;
+        text-align: left;
+        padding: 1.9rem 1.5rem 1.7rem;
+        background:
+          radial-gradient(90% 60% at 50% 0%, rgba(46, 139, 71, 0.18) 0%, transparent 70%),
+          linear-gradient(180deg, rgba(20, 40, 27, 0.62) 0%, rgba(10, 13, 10, 0.55) 100%);
+        border: 1px solid var(--lp-line);
+      }
+      .lp-closer .lp-fact { text-align: center; }
+      .lp-fact::before {
+        content: "";
+        position: absolute;
+        top: -1px; left: -1px; right: -1px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--lp-green), var(--lp-check), var(--lp-green));
+      }
+
+      /* ─── PAIN-POINT BLOCKS ─── */
+      .lp-blocks { padding: 3rem 1.25rem 3rem; text-align: center; }
+
+      .lp-blocks-h2 {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: clamp(1.75rem, 6.6vw, 2.9rem);
+        line-height: 1.02;
+        letter-spacing: -0.015em;
+        color: #fff;
+        margin-bottom: 2.4rem;
+        text-wrap: balance;
+      }
+      .lp-blocks-h2 em { font-style: normal; color: var(--lp-green-bright); }
+
+      .lp-block-grid {
+        max-width: 1040px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1.1rem;
+      }
+      @media (min-width: 860px) {
+        .lp-block-grid { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+      }
+
+      .lp-block {
+        position: relative;
+        text-align: center;
+        padding: 2.5rem 1.5rem 1.9rem;
+        background:
+          radial-gradient(90% 60% at 50% 0%, rgba(46, 139, 71, 0.22) 0%, transparent 70%),
+          linear-gradient(180deg, rgba(20, 40, 27, 0.7) 0%, rgba(10, 13, 10, 0.6) 100%);
+        border: 1px solid var(--lp-line);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      /* Green top edge: the accent that makes the cards read as a set. */
+      .lp-block::before {
+        content: "";
+        position: absolute;
+        top: -1px; left: -1px; right: -1px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--lp-green), var(--lp-check), var(--lp-green));
+      }
+      @media (hover: hover) {
+        .lp-block:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+        }
+      }
+
+      .lp-block-icon {
+        position: absolute;
+        top: -21px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--lp-check);
+        color: #0A0D0A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 20px rgba(63, 191, 99, 0.35);
+      }
+      .lp-block-icon svg { width: 20px; height: 20px; }
+
+      .lp-block-h3 {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: clamp(1.15rem, 4.4vw, 1.35rem);
+        line-height: 1.12;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+      .lp-block-body {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.92rem;
+        line-height: 1.62;
+        color: var(--lp-body);
+        text-wrap: pretty;
+      }
+      .nb { white-space: nowrap; }
+
+      /* ─── PHOTO BREAK (framed like the hero, not full-bleed) ─── */
+      /* Equal breathing space above and below, so each photo reads as a
+         break between two sections rather than the tail of the one above. */
+      .lp-shotband {
+        position: relative;
+        overflow: hidden;
+        margin: 3rem auto;
+        max-width: 820px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(10, 13, 10, 0.6);
+      }
+      /* Hairline highlight along the top and a soft scrim at the foot, so the
+         photo reads as set into the page rather than pasted on top of it. */
+      .lp-shotband::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, transparent 4%),
+          linear-gradient(0deg, rgba(10, 13, 10, 0.42) 0%, transparent 22%);
+      }
+      .lp-shotband img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: 50% 40%;
+      }
+      @media (min-width: 700px) { .lp-shotband { max-width: 760px; } }
+
+      /* ─── REVEAL ON SCROLL ───
+         Same timing as the rest of the site (script.js), reimplemented here
+         so this page stays self-contained. */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.visible { opacity: 1; transform: none; }
+      .reveal-d1 { transition-delay: 0.08s; }
+      .reveal-d2 { transition-delay: 0.18s; }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+      }
+
+      /* ─── SOCIAL PROOF ─── */
+      .lp-proof-b { padding: 3rem 1.25rem 3rem; text-align: center; }
+      .lp-quote-grid {
+        max-width: 1040px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1.1rem;
+      }
+      @media (min-width: 700px) {
+        .lp-quote-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+      }
+      @media (min-width: 1080px) {
+        .lp-quote-grid { grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+      }
+      .lp-qcard blockquote { flex: 1; }
+      .lp-qcard {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 1.7rem 1.4rem 1.6rem;
+        text-align: center;
+        background:
+          radial-gradient(90% 60% at 50% 0%, rgba(46, 139, 71, 0.2) 0%, transparent 72%),
+          linear-gradient(180deg, rgba(20, 40, 27, 0.68) 0%, rgba(10, 13, 10, 0.6) 100%);
+        border: 1px solid var(--lp-line);
+      }
+      .lp-qcard::before {
+        content: "";
+        position: absolute;
+        top: -1px; left: -1px; right: -1px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--lp-green), var(--lp-check), var(--lp-green));
+      }
+      /* Byline: photo beside the name at the foot of the card. Sitting it
+         inline avoids the clipping the overlapping version suffered. */
+      .lp-byline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        margin-top: 1.1rem;
+      }
+      .lp-head {
+        display: block;
+        width: 31px;
+        height: 31px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: 50% 30%;
+        border: 1.5px solid rgba(63, 191, 99, 0.75);
+        background: var(--lp-black);
+        flex-shrink: 0;
+      }
+      .lp-qcard .lp-stars { margin-bottom: 0.75rem; font-size: 0.9rem; }
+      .lp-qcard blockquote {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.93rem;
+        line-height: 1.6;
+        color: #fff;
+        text-wrap: pretty;
+      }
+      .lp-byline span {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(201, 207, 201, 0.62);
+      }
+
+      /* ─── CLOSER ─── */
+      .lp-closer { padding: 1rem 1.25rem 3.4rem; text-align: center; }
+      .lp-closer-body {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--lp-body);
+        margin: 0 0 1.1rem;
+        text-wrap: pretty;
+      }
+      .lp-closer-mail { margin-bottom: 0; }
+      /* Extra air so the last button reads as its own step, not part of the
+         questions block above it. */
+      .lp-cta--tail { margin-top: 3.4rem; }
+      .lp-closer-mail a {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--lp-check);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(63, 191, 99, 0.4);
+        padding-bottom: 2px;
+      }
+      .lp-closer-mail a:hover { border-color: var(--lp-check); }
+
+      /* ─── FOOTER ─── */
+      /* Legal only. Deliberately small and quiet: it has to be here, but
+         nothing about it should compete with the button. */
+      .lp-footer {
+        margin-top: 2.4rem;
+        padding: 0.85rem 1.25rem 0.9rem;
+        border-top: 1px solid var(--lp-line);
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem 0.9rem;
+      }
+      .lp-footer-addr {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.66rem;
+        line-height: 1.45;
+        color: rgba(201, 207, 201, 0.34);
+      }
+      .lp-footer-legal {
+        margin-top: 0;
+        display: flex;
+        gap: 0.9rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .lp-footer-legal a {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.66rem;
+        color: rgba(201, 207, 201, 0.34);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+      }
+      .lp-footer-legal a:hover { color: #fff; }
+
+      /* Cookie banner, cut down to one strip. Still says what the cookies
+         are for, still offers accept and decline at equal size, still links
+         the policy: everything PECR asks for, in a fraction of the space. */
+      #cookie-banner {
+        padding: 0.55rem 0.9rem;
+        border-top: 1px solid rgba(63, 191, 99, 0.35);
+        box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.45);
+      }
+      #cookie-banner-inner {
+        gap: 0.5rem 1.1rem;
+        align-items: center;
+        justify-content: center;
+      }
+      #cookie-banner-title { display: none; }
+      #cookie-banner-body {
+        font-size: 0.72rem;
+        line-height: 1.35;
+        max-width: none;
+        color: rgba(201, 207, 201, 0.85);
+        white-space: nowrap;
+      }
+      @media (max-width: 400px) { #cookie-banner-body { font-size: 0.68rem; } }
+      #cookie-banner-actions { gap: 0.45rem; }
+      #cookie-decline,
+      #cookie-accept {
+        padding: 0.4rem 0.85rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+      }
+      @media (max-width: 640px) {
+        #cookie-banner-inner { flex-direction: column; text-align: center; gap: 0.5rem; }
+        #cookie-banner-actions { width: auto; }
+        #cookie-decline, #cookie-accept { flex: 0 0 auto; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .lp-cta { transition: none; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="lp">
+      <div class="lp-grain" aria-hidden="true"></div>
+      <!-- ─── MASTHEAD: mark only, no links off the page ─── -->
+      <div class="lp-masthead">
+        <div class="lp-mark">
+          <img class="lp-shield" src="/lp-logo.png" alt="Forged Grappling" width="236" height="220" fetchpriority="high" decoding="async" />
+          <div class="lp-mark-stack">
+            <div class="lp-mark-text">Forged <span>Grappling</span></div>
+            <p class="lp-locale">Westbury, Wiltshire</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-wrap">
+        <!-- ─── HERO ─── -->
+        <section class="lp-hero lp-hero--portrait">
+          <div class="lp-hero-copy">
+            <h1 class="lp-h1 reveal">Everyone started where you are</h1>
+
+            <p class="lp-sub reveal reveal-d1">
+              The hardest class you will ever take is your first one. Getting
+              through the door is the bit that stops most people, so we have
+              made that part easy. Your first class is free.
+            </p>
+
+            <div class="lp-cta-block lp-cta-block--desktop">
+              <a
+                href="https://app.mattrack.io/forged-grappling/start-trial?utm_source=paid&utm_medium=cpc&utm_campaign=free_trial_lp&utm_content=hero"
+                class="lp-cta reveal reveal-d2"
+                data-cta="hero"
+                >Claim your free trial class</a
+              >
+            </div>
+          </div>
+
+          <!-- Hero media: the VSL slot, portrait. The poster frame shows until
+               a video source is set in the script block at the foot of the
+               page, at which point the play button switches itself on. -->
+          <div class="lp-shot lp-shot--portrait reveal reveal-d2" id="lpMedia">
+            <picture>
+              <source srcset="/lp-poster.webp" type="image/webp" />
+              <img
+                src="/lp-poster.jpg"
+                alt="Harry from Forged Grappling talking to camera on the mats"
+                width="540"
+                height="960"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+
+            <button class="lp-play" id="lpPlay" hidden type="button">
+              <span class="lp-play-disc" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4.5v15l13-7.5L7 4.5z"/></svg>
+              </span>
+            </button>
+          </div>
+
+          <!-- On mobile the button follows the video, so it repeats here and
+               the desktop one above is hidden; only one is ever visible. -->
+          <div class="lp-cta-block lp-cta-block--mobile">
+            <a
+              href="https://app.mattrack.io/forged-grappling/start-trial?utm_source=paid&utm_medium=cpc&utm_campaign=free_trial_lp&utm_content=hero"
+              class="lp-cta"
+              data-cta="hero"
+              >Claim your free trial class</a
+            >
+          </div>
+        </section>
+      </div>
+
+      <!-- ─── 1. WHAT TO EXPECT ─── -->
+      <div class="lp-band lp-band--deep">
+        <section class="lp-expect" aria-label="What happens next">
+          <h2 class="lp-blocks-h2 reveal">What happens next?</h2>
+          <div class="lp-fact-grid">
+            <article class="lp-fact reveal">
+              <ol class="lp-steps">
+                <li><span>1</span>Hit the button on this page to claim your free trial and fill in your details.</li>
+                <li><span>2</span>We will get in touch to book you into one of our 6pm weeknight classes.</li>
+                <li><span>3</span>Arrive at the club on the Woodlands Industrial Estate a few minutes early for your free trial.</li>
+                <li><span>4</span>One of the coaches will show you round, introduce you to the other members and get you on the mat.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div class="lp-wrap">
+        <div class="lp-shotband reveal">
+          <picture>
+            <source srcset="/lp-welcome.webp" type="image/webp" />
+            <img src="/lp-welcome.jpg" alt="A coach demonstrating a position while the class watches at Forged Grappling" width="1200" height="675" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+      </div>
+
+      <!-- ─── 2. PAIN POINTS ─── -->
+      <div class="lp-band lp-band--tint">
+        <section class="lp-blocks" aria-label="What stops people, and why it should not">
+          <h2 class="lp-blocks-h2 reveal">Sound familiar?</h2>
+
+          <div class="lp-block-grid">
+            <article class="lp-block reveal">
+              <span class="lp-block-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+              </span>
+              <h3 class="lp-block-h3">&ldquo;I have never<br />done it before.&rdquo;</h3>
+              <p class="lp-block-body">
+                Neither had most of the room. We teach every class from the
+                ground up and one of us walks you through it, so you are never
+                stood there guessing what to do.
+              </p>
+            </article>
+
+            <article class="lp-block reveal reveal-d1">
+              <span class="lp-block-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+              </span>
+              <h3 class="lp-block-h3">&ldquo;I am stressed and<br />have nowhere to put it.&rdquo;</h3>
+              <p class="lp-block-body">
+                An hour on the mats is the one part of the week where you
+                cannot think about anything else. You get fitter without it
+                ever feeling like a workout, and you do it alongside people who
+                are glad you turned up.
+              </p>
+            </article>
+
+            <article class="lp-block reveal reveal-d2">
+              <span class="lp-block-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+              </span>
+              <h3 class="lp-block-h3">&ldquo;I want to handle myself<br />but do not know where to start.&rdquo;</h3>
+              <p class="lp-block-body">
+                Grappling is how you learn to control someone without strikes
+                or punches, and it works whatever size you are. You will leave
+                your first session knowing more than you walked in with.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div class="lp-wrap">
+        <div class="lp-shotband reveal">
+          <picture>
+            <source srcset="/lp-community.webp" type="image/webp" />
+            <img src="/lp-community.jpg" alt="Forged Grappling members together under the club sign after a session" width="1200" height="675" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+      </div>
+
+      <!-- ─── SOCIAL PROOF ───
+           Sits immediately before the closing CTA: proof, then the ask.
+           Three Google reviews, picked for the hesitation each one names. -->
+      <div class="lp-band lp-band--deep">
+        <section class="lp-proof-b" aria-label="Member reviews">
+          <h2 class="lp-blocks-h2 reveal">Still not sure?</h2>
+
+          <div class="lp-quote-grid">
+            <figure class="lp-qcard reveal">
+              <div class="lp-stars" aria-label="Five out of five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <blockquote>&ldquo;I was pretty nervous starting out at 41, but from the very first Facebook enquiry to four weeks in, I couldn&rsquo;t have asked for a better welcome &hellip; If you&rsquo;re on the fence, don&rsquo;t let nerves stop you.&rdquo;</blockquote>
+              <figcaption class="lp-byline">
+                <picture>
+                  <source srcset="/head-dan.webp" type="image/webp" />
+                  <img class="lp-head" src="/head-dan.jpg" alt="Dan" width="200" height="200" loading="lazy" decoding="async" />
+                </picture>
+                <span>Dan</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lp-qcard reveal reveal-d1">
+              <div class="lp-stars" aria-label="Five out of five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <blockquote>&ldquo;All my training partners have been supportive and helped challenge me to improve while keeping safety a priority. Definitely recommend for beginners or well trained people.&rdquo;</blockquote>
+              <figcaption class="lp-byline">
+                <picture>
+                  <source srcset="/head-hayden.webp" type="image/webp" />
+                  <img class="lp-head" src="/head-hayden.jpg" alt="Hayden" width="200" height="200" loading="lazy" decoding="async" />
+                </picture>
+                <span>Hayden</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lp-qcard reveal reveal-d2">
+              <div class="lp-stars" aria-label="Five out of five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <blockquote>&ldquo;Great facilities at Forged with a great team of coaches with all unique experiences. Highly recommend for beginners and experienced alike.&rdquo;</blockquote>
+              <figcaption class="lp-byline">
+                <picture>
+                  <source srcset="/head-connor.webp" type="image/webp" />
+                  <img class="lp-head" src="/head-connor.jpg" alt="Connor" width="200" height="200" loading="lazy" decoding="async" />
+                </picture>
+                <span>Connor</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lp-qcard reveal reveal-d2">
+              <div class="lp-stars" aria-label="Five out of five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <blockquote>&ldquo;Brilliant place to train. Knowledgeable, friendly coaches &hellip; Relaxed, welcoming vibe.&rdquo;</blockquote>
+              <figcaption class="lp-byline">
+                <picture>
+                  <source srcset="/head-richard.webp" type="image/webp" />
+                  <img class="lp-head" src="/head-richard.jpg" alt="Richard" width="200" height="200" loading="lazy" decoding="async" />
+                </picture>
+                <span>Richard</span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+
+      <div class="lp-wrap">
+        <div class="lp-shotband reveal">
+          <picture>
+            <source srcset="/lp-class.webp" type="image/webp" />
+            <img src="/lp-class.jpg" alt="A Forged Grappling class sat on the mats listening to the coach" width="1200" height="675" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+      </div>
+
+      <!-- ─── CLOSER ─── -->
+      <div class="lp-band lp-band--tint">
+        <section class="lp-closer">
+          <h2 class="lp-blocks-h2 reveal">Still got questions?</h2>
+          <div class="lp-fact-grid">
+            <article class="lp-fact reveal">
+              <p class="lp-closer-body">
+                If there is anything else you need to know before you decide,
+                email us.
+              </p>
+              <p class="lp-closer-mail">
+                <a href="mailto:info@forgedgrappling.co.uk">info@forgedgrappling.co.uk</a>
+              </p>
+            </article>
+          </div>
+          <a
+            href="https://app.mattrack.io/forged-grappling/start-trial?utm_source=paid&utm_medium=cpc&utm_campaign=free_trial_lp&utm_content=closer"
+            class="lp-cta lp-cta--tail reveal"
+            data-cta="closer"
+            >Claim your free trial class</a
+          >
+        </section>
+      </div>
+
+      <!-- ─── FOOTER: legal only, no navigation ─── -->
+      <footer class="lp-footer">
+        <p class="lp-footer-addr">
+          &copy; Forged Grappling, Westbury BA13 3QS
+        </p>
+        <div class="lp-footer-legal">
+          <a href="/privacy/" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="/terms/" target="_blank" rel="noopener">Terms</a>
+          <a href="/cookies/" target="_blank" rel="noopener">Cookies</a>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Cookie banner + consented GA4 come from the shared script -->
+    <script src="/shared.js"></script>
+    <script>
+      /* Trim the shared banner's copy for this page. The wording has to
+         cover ad measurement here, since the pixel and Ads tag load on
+         accept, which the site-wide text does not mention. */
+      (function () {
+        var body = document.getElementById("cookie-banner-body");
+        if (!body) return;
+        body.innerHTML =
+          'Cookies help us measure traffic and ads. ' +
+          '<a href="/cookies/" target="_blank" rel="noopener">Cookie policy</a>';
+        var d = document.getElementById("cookie-decline");
+        if (d) d.textContent = "Decline";
+        var a = document.getElementById("cookie-accept");
+        if (a) a.textContent = "Accept";
+      })();
+    </script>
+
+    <script>
+      /* ─── REVEAL ON SCROLL ───
+         Mirrors the main site's behaviour. Two safety nets, because an ad
+         landing page must never render blank: if IntersectionObserver is
+         missing everything shows immediately, and a timer reveals anything
+         still hidden after 2.5s regardless of whether the observer fired. */
+      (function () {
+        var els = [].slice.call(document.querySelectorAll(".reveal"));
+        if (!els.length) return;
+
+        function showAll() {
+          els.forEach(function (el) { el.classList.add("visible"); });
+        }
+
+        if (!("IntersectionObserver" in window)) { showAll(); return; }
+
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px 200px 0px", threshold: 0 }
+        );
+        els.forEach(function (el) { io.observe(el); });
+
+        setTimeout(showAll, 2500);
+      })();
+
+      /* ─── HERO VIDEO (VSL) ───
+         ============================================================
+         TODO (Jack): fill in ONE of these to switch the video on.
+
+           VIDEO_FILE   a self-hosted file you drop in /site,
+                        e.g. "/first-session.mp4"
+           VIDEO_EMBED  a YouTube or Vimeo URL,
+                        e.g. "https://www.youtube.com/embed/XXXXXXXXXXX"
+
+         Leave both empty and the hero stays exactly as it is now: the
+         photo, no play button, nothing broken. Nothing from YouTube or
+         Vimeo is requested until someone actually clicks play, so an
+         empty or unwatched video costs no load time.
+         ============================================================ */
+      var VIDEO_FILE = "";
+      var VIDEO_EMBED = "https://www.youtube.com/embed/C97_Ue7-1Zc";
+
+      (function () {
+        var media = document.getElementById("lpMedia");
+        var play = document.getElementById("lpPlay");
+        if (!media || !play) return;
+        if (!VIDEO_FILE && !VIDEO_EMBED) return; /* no source yet, leave the photo */
+
+        play.hidden = false;
+
+        play.addEventListener("click", function () {
+          var node;
+          if (VIDEO_FILE) {
+            node = document.createElement("video");
+            node.src = VIDEO_FILE;
+            node.controls = true;
+            node.autoplay = true;
+            node.playsInline = true;
+            node.setAttribute("playsinline", "");
+          } else {
+            node = document.createElement("iframe");
+            node.src =
+              VIDEO_EMBED +
+              (VIDEO_EMBED.indexOf("?") > -1 ? "&" : "?") +
+              "autoplay=1";
+            node.allow =
+              "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+            node.setAttribute("allowfullscreen", "");
+            node.title = "What your first session at Forged Grappling looks like";
+          }
+          media.classList.add("is-playing");
+          media.innerHTML = "";
+          media.appendChild(node);
+
+          if (window.fbq) window.fbq("trackCustom", "VideoPlay");
+          if (window.gtag) gtag("event", "video_play", { placement: "hero" });
+        });
+      })();
+
+      /* ─── CONVERSION TRACKING ───
+         Both tags are gated behind the same cookie consent as GA4, so
+         nothing loads and no event fires until a visitor accepts. */
+      var META_PIXEL_ID = "1327405662591208";
+      var GOOGLE_ADS = { id: "AW-18349180655", label: "4mHFCOm5o-8cEO-Nya1E" };
+
+      (function () {
+        function hasConsent() {
+          try {
+            return localStorage.getItem("fg_cookie_consent") === "accepted";
+          } catch (e) {
+            return false;
+          }
+        }
+
+        function loadPixel() {
+          if (!META_PIXEL_ID || window.fbq) return;
+          /* Standard Meta base code */
+          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+          n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+          (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+          window.fbq("init", META_PIXEL_ID);
+          window.fbq("track", "PageView");
+        }
+
+        function loadGoogleAds() {
+          if (!GOOGLE_ADS.id) return;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = window.gtag || function () { dataLayer.push(arguments); };
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=" + GOOGLE_ADS.id;
+          document.head.appendChild(s);
+          gtag("js", new Date());
+          gtag("config", GOOGLE_ADS.id);
+        }
+
+        function start() {
+          if (!hasConsent()) return;
+          loadPixel();
+          loadGoogleAds();
+        }
+
+        start();
+        /* shared.js writes consent on click, so re-check just after. */
+        document.addEventListener("click", function (e) {
+          if (e.target && e.target.id === "cookie-accept") setTimeout(start, 60);
+        });
+
+        /* Fire the lead event on the way out to MatTrack. This is the
+           conversion the ad platforms optimise against.
+
+           The click leaves the site immediately, which can cut off a tag's
+           request before it is sent. So for a plain left click we hold the
+           navigation, let the conversion ping go, and follow the link on
+           gtag's callback, with a short timeout in case the callback never
+           arrives (blocked tag, offline, adblocker). Modified and
+           middle clicks open elsewhere and are left completely alone. */
+        document.addEventListener("click", function (e) {
+          var link = e.target.closest ? e.target.closest("[data-cta]") : null;
+          if (!link) return;
+          var placement = link.getAttribute("data-cta");
+
+          if (window.fbq) window.fbq("track", "Lead", { content_name: placement });
+
+          var trackable =
+            window.gtag && GOOGLE_ADS.id && GOOGLE_ADS.label;
+          var plainClick =
+            e.button === 0 &&
+            !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey &&
+            link.target !== "_blank";
+
+          var navigated = false;
+          function go() {
+            if (navigated) return;
+            navigated = true;
+            window.location.href = link.href;
+          }
+
+          if (window.gtag) {
+            gtag("event", "trial_click", { placement: placement });
+            if (trackable) {
+              gtag("event", "conversion", {
+                send_to: GOOGLE_ADS.id + "/" + GOOGLE_ADS.label,
+                event_callback: plainClick ? go : undefined,
+              });
+            }
+          }
+
+          if (trackable && plainClick) {
+            e.preventDefault();
+            setTimeout(go, 350);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
