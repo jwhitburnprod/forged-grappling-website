@@ -139,7 +139,7 @@
         border: 1px solid rgba(63, 191, 99, 0.38);
         border-radius: 999px;
         padding: 0.32rem 0.85rem;
-        margin-bottom: 0.9rem;
+        margin-bottom: 0.75rem;
         white-space: nowrap;
         max-width: 100%;
       }
@@ -187,14 +187,14 @@
 
       /* Doubled class so these beat the base .lp-shot rules that follow. */
       .lp-shot.lp-shot--portrait {
-        width: min(100%, calc(39vh * 9 / 16));
+        width: min(100%, calc(40vh * 9 / 16));
         max-width: 300px;
-        margin: 1.4rem auto 0;
+        margin: 1.1rem auto 0;
       }
       /* Short phones (iPhone SE class): shrink the slot further so the
          button still clears the cookie banner on first load. */
       @media (max-height: 780px) and (max-width: 899px) {
-        .lp-shot.lp-shot--portrait { width: min(100%, calc(28vh * 9 / 16)); margin-top: 0.8rem; }
+        .lp-shot.lp-shot--portrait { width: min(100%, calc(30vh * 9 / 16)); margin-top: 0.8rem; }
         .lp-shot.lp-shot--portrait .lp-play-disc { width: 48px; height: 48px; }
       }
       .lp-shot.lp-shot--portrait img {
@@ -202,8 +202,6 @@
         object-position: 50% 30%;
       }
       .lp-shot.lp-shot--portrait .lp-play-disc { width: 58px; height: 58px; }
-      .lp-shot.lp-shot--portrait video,
-      .lp-shot.lp-shot--portrait iframe { aspect-ratio: 9 / 16; }
 
       @media (min-width: 900px) {
         .lp-hero--portrait {
@@ -225,6 +223,51 @@
           max-width: 300px;
           margin: 0;
         }
+      }
+
+      /* ─── VIDEO LIGHTBOX ─── */
+      .lp-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        background: rgba(6, 9, 7, 0.96);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+      }
+      .lp-lightbox-frame {
+        /* Width is whichever bound bites first (screen width, or screen
+           height scaled to 9:16); height then follows from the ratio, so
+           the frame is always exactly 9:16 with no letterboxing. */
+        width: min(calc(100vw - 24px), calc((100dvh - 72px) * 9 / 16), 506px);
+        aspect-ratio: 9 / 16;
+        background: #000;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+      }
+      .lp-lightbox-frame iframe,
+      .lp-lightbox-frame video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #000;
+      }
+      .lp-lightbox-close {
+        position: absolute;
+        top: max(14px, env(safe-area-inset-top));
+        right: 14px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(10, 13, 10, 0.7);
+        color: #fff;
+        font-size: 1.05rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       /* ─── HERO IMAGE ─── */
@@ -294,8 +337,6 @@
         border: 0;
         background: #000;
       }
-      /* Once playing, the gradient scrim must not sit over the controls. */
-      .lp-shot.is-playing::after { display: none; }
 
       .lp-shot::after {
         content: "";
@@ -1053,7 +1094,7 @@
 
         play.hidden = false;
 
-        play.addEventListener("click", function () {
+        function buildPlayer() {
           var node;
           if (VIDEO_FILE) {
             node = document.createElement("video");
@@ -1067,15 +1108,42 @@
             node.src =
               VIDEO_EMBED +
               (VIDEO_EMBED.indexOf("?") > -1 ? "&" : "?") +
-              "autoplay=1";
+              "autoplay=1&playsinline=1";
             node.allow =
-              "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+              "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";
             node.setAttribute("allowfullscreen", "");
             node.title = "What your first session at Forged Grappling looks like";
           }
-          media.classList.add("is-playing");
-          media.innerHTML = "";
-          media.appendChild(node);
+          return node;
+        }
+
+        /* The video opens in an overlay that fills the screen, rather than
+           playing inside the small poster. iPhones do not let an embedded
+           iframe go full screen, so this is the only way a portrait video
+           gets watched at a usable size there. */
+        var overlay = null;
+
+        function closeOverlay() {
+          if (!overlay) return;
+          overlay.remove();
+          overlay = null;
+          document.body.style.overflow = "";
+          document.removeEventListener("keydown", onKey);
+        }
+        function onKey(e) { if (e.key === "Escape") closeOverlay(); }
+
+        play.addEventListener("click", function () {
+          overlay = document.createElement("div");
+          overlay.className = "lp-lightbox";
+          overlay.innerHTML =
+            '<button class="lp-lightbox-close" type="button" aria-label="Close video">&#x2715;</button>' +
+            '<div class="lp-lightbox-frame"></div>';
+          overlay.querySelector(".lp-lightbox-frame").appendChild(buildPlayer());
+          overlay.querySelector(".lp-lightbox-close").addEventListener("click", closeOverlay);
+          overlay.addEventListener("click", function (e) { if (e.target === overlay) closeOverlay(); });
+          document.addEventListener("keydown", onKey);
+          document.body.style.overflow = "hidden";
+          document.body.appendChild(overlay);
 
           if (window.fbq) window.fbq("trackCustom", "VideoPlay");
           if (window.gtag) gtag("event", "video_play", { placement: "hero" });
