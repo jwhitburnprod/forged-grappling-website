@@ -124,17 +124,26 @@
          the type grows, which is what made 400-700px look off. */
       .lp-hero { padding: clamp(1.4rem, 5vw, 2.2rem) 0 0; text-align: center; }
 
-      /* Says what the club is before the headline says how it feels. */
+      /* Says what the club is before the headline says how it feels.
+         Sentence case in a bordered tag, so it reads as its own element and
+         not as a second copy of the tracked-caps lockup above it. */
       .lp-eyebrow {
+        display: inline-block;
         font-family: 'Inter', sans-serif;
-        font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--lp-check);
-        margin-bottom: 0.55rem;
-        text-wrap: balance;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        text-transform: none;
+        color: #fff;
+        background: rgba(46, 139, 71, 0.14);
+        border: 1px solid rgba(63, 191, 99, 0.38);
+        border-radius: 999px;
+        padding: 0.32rem 0.85rem;
+        margin-bottom: 0.9rem;
+        white-space: nowrap;
+        max-width: 100%;
       }
+      @media (max-width: 345px) { .lp-eyebrow { font-size: 0.7rem; padding: 0.3rem 0.7rem; } }
 
       .lp-h1 {
         font-family: 'Manrope', sans-serif;
@@ -184,7 +193,7 @@
       }
       /* Short phones (iPhone SE class): shrink the slot further so the
          button still clears the cookie banner on first load. */
-      @media (max-height: 700px) and (max-width: 899px) {
+      @media (max-height: 780px) and (max-width: 899px) {
         .lp-shot.lp-shot--portrait { width: min(100%, calc(28vh * 9 / 16)); margin-top: 0.8rem; }
         .lp-shot.lp-shot--portrait .lp-play-disc { width: 48px; height: 48px; }
       }
