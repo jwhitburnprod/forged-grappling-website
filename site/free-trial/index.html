@@ -122,16 +122,18 @@
       /* ─── HERO ─── */
       /* Gap tracks the headline size instead of holding a fixed value while
          the type grows, which is what made 400-700px look off. */
-      .lp-hero { padding: clamp(1.9rem, 6vw, 2.2rem) 0 0; text-align: center; }
+      .lp-hero { padding: clamp(1.4rem, 5vw, 2.2rem) 0 0; text-align: center; }
 
+      /* Says what the club is before the headline says how it feels. */
       .lp-eyebrow {
         font-family: 'Inter', sans-serif;
-        font-size: 0.66rem;
+        font-size: 0.68rem;
         font-weight: 600;
-        letter-spacing: 0.24em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--lp-check);
-        margin-bottom: 0.85rem;
+        margin-bottom: 0.55rem;
+        text-wrap: balance;
       }
 
       .lp-h1 {
@@ -176,14 +178,15 @@
 
       /* Doubled class so these beat the base .lp-shot rules that follow. */
       .lp-shot.lp-shot--portrait {
-        width: min(100%, calc(42vh * 9 / 16));
+        width: min(100%, calc(39vh * 9 / 16));
         max-width: 300px;
         margin: 1.4rem auto 0;
       }
       /* Short phones (iPhone SE class): shrink the slot further so the
          button still clears the cookie banner on first load. */
       @media (max-height: 700px) and (max-width: 899px) {
-        .lp-shot.lp-shot--portrait { width: min(100%, calc(33vh * 9 / 16)); margin-top: 1rem; }
+        .lp-shot.lp-shot--portrait { width: min(100%, calc(28vh * 9 / 16)); margin-top: 0.8rem; }
+        .lp-shot.lp-shot--portrait .lp-play-disc { width: 48px; height: 48px; }
       }
       .lp-shot.lp-shot--portrait img {
         aspect-ratio: 9 / 16;
@@ -724,6 +727,7 @@
         <!-- ─── HERO ─── -->
         <section class="lp-hero lp-hero--portrait">
           <div class="lp-hero-copy">
+            <p class="lp-eyebrow reveal">Westbury&rsquo;s only dedicated no-gi grappling gym</p>
             <h1 class="lp-h1 reveal">Everyone started where you are</h1>
 
             <p class="lp-sub reveal reveal-d1">
