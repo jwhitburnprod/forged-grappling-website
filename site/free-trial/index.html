@@ -1204,25 +1204,38 @@
         /* Fire the lead event on the way out to MatTrack. This is the
            conversion the ad platforms optimise against.
 
-           The click leaves the site immediately, which can cut off a tag's
-           request before it is sent. So for a plain left click we hold the
-           navigation, let the conversion ping go, and follow the link on
-           gtag's callback, with a short timeout in case the callback never
-           arrives (blocked tag, offline, adblocker). Modified and
-           middle clicks open elsewhere and are left completely alone. */
+           Meta's pixel (2.9.400+) sends Lead as a form POST into a hidden
+           iframe, not a fire-and-forget image. Measured at 80-130ms on
+           desktop broadband, so a few hundred on mobile. Navigating before
+           it completes cancels it and the Lead never arrives. So on a plain
+           left click we hold the navigation for a floor of MIN_WAIT, and
+           also until Google's conversion callback if that tag is present,
+           with MAX_WAIT as the ceiling so a blocked tag cannot stall the
+           click. Modified and middle clicks open elsewhere and are left
+           completely alone. */
+        var MIN_WAIT = 400;
+        var MAX_WAIT = 700;
+
         document.addEventListener("click", function (e) {
           var link = e.target.closest ? e.target.closest("[data-cta]") : null;
           if (!link) return;
           var placement = link.getAttribute("data-cta");
 
-          if (window.fbq) window.fbq("track", "Lead", { content_name: placement });
+          var hasMeta = !!window.fbq;
+          var hasAds = !!(window.gtag && GOOGLE_ADS.id && GOOGLE_ADS.label);
 
-          var trackable =
-            window.gtag && GOOGLE_ADS.id && GOOGLE_ADS.label;
+          if (hasMeta) window.fbq("track", "Lead", { content_name: placement });
+          if (window.gtag) gtag("event", "trial_click", { placement: placement });
+
           var plainClick =
             e.button === 0 &&
             !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey &&
             link.target !== "_blank";
+
+          /* Nothing to wait for, or the click opens elsewhere: let it be. */
+          if (!plainClick || (!hasMeta && !hasAds)) return;
+
+          e.preventDefault();
 
           var navigated = false;
           function go() {
@@ -1231,20 +1244,18 @@
             window.location.href = link.href;
           }
 
-          if (window.gtag) {
-            gtag("event", "trial_click", { placement: placement });
-            if (trackable) {
-              gtag("event", "conversion", {
-                send_to: GOOGLE_ADS.id + "/" + GOOGLE_ADS.label,
-                event_callback: plainClick ? go : undefined,
-              });
-            }
-          }
+          var adsDone = !hasAds;
+          var floorDone = false;
+          function maybeGo() { if (adsDone && floorDone) go(); }
 
-          if (trackable && plainClick) {
-            e.preventDefault();
-            setTimeout(go, 350);
+          if (hasAds) {
+            gtag("event", "conversion", {
+              send_to: GOOGLE_ADS.id + "/" + GOOGLE_ADS.label,
+              event_callback: function () { adsDone = true; maybeGo(); },
+            });
           }
+          setTimeout(function () { floorDone = true; maybeGo(); }, MIN_WAIT);
+          setTimeout(go, MAX_WAIT);
         });
       })();
     </script>
