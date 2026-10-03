@@ -97,26 +97,12 @@
     io.observe(el);
   });
 })();
-function loadAnalytics() {
-  if (window.dataLayer) return;
-  var gaId = "G-KMVGE5L8JL";
-  var s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + gaId;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function () {
-    dataLayer.push(arguments);
-  };
-  gtag("js", new Date());
-  gtag("config", gaId);
-}
 (function () {
   var KEY = "fg_cookie_consent";
   var banner = document.getElementById("cookie-banner");
-  if (localStorage.getItem(KEY) === "accepted") {
-    loadAnalytics();
-  } else if (!localStorage.getItem(KEY)) {
+  // The Google tag lives in <head> with consent denied by default and re-applies an
+  // earlier "accepted" choice itself, so the banner only shows when undecided.
+  if (!localStorage.getItem(KEY)) {
     banner.style.display = "";
   }
   document
@@ -124,7 +110,7 @@ function loadAnalytics() {
     .addEventListener("click", function () {
       localStorage.setItem(KEY, "accepted");
       banner.style.display = "none";
-      loadAnalytics();
+      if (window.fgGrantConsent) window.fgGrantConsent();
       gtag("event", "cookie_consent", {
         event_category: "consent",
         event_label: "accepted",

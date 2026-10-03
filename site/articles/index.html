@@ -3,6 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) + Consent Mode v2. Loads on every page view so Google's tag checker can see it.
+     Ad/analytics storage stays denied until the visitor accepts the cookie banner; an earlier
+     "accepted" choice (localStorage fg_cookie_consent) is re-applied below, before the config calls. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMVGE5L8JL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+  window.fgGrantConsent = function () {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+  };
+  try { if (localStorage.getItem('fg_cookie_consent') === 'accepted') window.fgGrantConsent(); } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', 'G-KMVGE5L8JL');
+  gtag('config', 'AW-18349180655');
+</script>
 <title>Articles — Forged Grappling</title>
 <meta name="description" content="Guides, updates and insights from Forged Grappling — Westbury's no-gi grappling gym.">
 <meta name="theme-color" content="#1E2020">
@@ -147,7 +174,7 @@
       <a href="mailto:info&#64;forgedgrappling.co.uk" title="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
     </div>
     <div class="footer-contact"><a href="mailto:info&#64;forgedgrappling.co.uk">info&#64;forgedgrappling.co.uk</a> · <a href="tel:07463580506">07463 580506</a></div>
-    <div class="footer-copy"><a href="/articles/" style="color:inherit;text-decoration:none;">Articles</a> · <a href="/privacy/" style="color:inherit;text-decoration:none;">Privacy Policy</a> · <a href="/cookies/" style="color:inherit;text-decoration:none;">Cookie Policy</a> · <a href="/terms/" style="color:inherit;text-decoration:none;">Terms &amp; Conditions</a></div>
+    <div class="footer-copy"><a href="/timetable/" style="color:inherit;text-decoration:none;">Timetable</a> · <a href="/prices/" style="color:inherit;text-decoration:none;">Prices</a> · <a href="/what-to-expect/" style="color:inherit;text-decoration:none;">What to Expect</a> · <a href="/articles/" style="color:inherit;text-decoration:none;">Articles</a> · <a href="/privacy/" style="color:inherit;text-decoration:none;">Privacy Policy</a> · <a href="/cookies/" style="color:inherit;text-decoration:none;">Cookie Policy</a> · <a href="/terms/" style="color:inherit;text-decoration:none;">Terms &amp; Conditions</a></div>
   </div>
   <div class="footer-bottom">
     Unit 21, Woodlands Industrial Estate, Eden Vale Rd, Westbury, Wiltshire, BA13 3QS<br>
@@ -156,7 +183,7 @@
   </div>
 </footer>
 
-<script src="/shared.js?v=2" defer></script>
-<script src="/ads-conversion.js" defer></script>
+<script src="/shared.js?v=3" defer></script>
+<script src="/ads-conversion.js?v=2" defer></script>
 </body>
 </html>

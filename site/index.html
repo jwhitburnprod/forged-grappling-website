@@ -3,6 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google tag (gtag.js) + Consent Mode v2. Loads on every page view so Google's tag checker can see it.
+         Ad/analytics storage stays denied until the visitor accepts the cookie banner; an earlier
+         "accepted" choice (localStorage fg_cookie_consent) is re-applied below, before the config calls. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMVGE5L8JL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
+      window.fgGrantConsent = function () {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      };
+      try { if (localStorage.getItem('fg_cookie_consent') === 'accepted') window.fgGrantConsent(); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-KMVGE5L8JL');
+      gtag('config', 'AW-18349180655');
+    </script>
     <title>
       Forged Grappling | No-Gi Grappling Gym in Westbury, Wiltshire
     </title>
@@ -212,7 +239,7 @@
       }
     </script>
     <link rel="stylesheet" href="/shared.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=2" />
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -1101,7 +1128,9 @@
             </a>
           </div>
           <div class="footer-legal">
-            <a href="/privacy/">Privacy</a><a href="/cookies/">Cookies</a
+            <a href="/timetable/">Timetable</a><a href="/prices/">Prices</a
+            ><a href="/what-to-expect/">What to Expect</a
+            ><a href="/privacy/">Privacy</a><a href="/cookies/">Cookies</a
             ><a href="/terms/">Terms</a>
           </div>
         </div>
@@ -1130,7 +1159,7 @@
       </div>
     </div>
 
-    <script src="script.js" defer></script>
-    <script src="/ads-conversion.js" defer></script>
+    <script src="script.js?v=2" defer></script>
+    <script src="/ads-conversion.js?v=2" defer></script>
   </body>
 </html>

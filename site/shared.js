@@ -16,10 +16,9 @@
     '</div>';
   document.body.appendChild(banner);
 
-  var consent = localStorage.getItem('fg_cookie_consent');
-  if (consent === 'accepted') {
-    loadAnalytics();
-  } else if (!consent) {
+  // The Google tag is in each page's <head> with consent denied by default; an earlier
+  // "accepted" choice is re-applied there, so the banner only needs to show when undecided.
+  if (!localStorage.getItem('fg_cookie_consent')) {
     banner.style.display = 'block';
   }
 })();
@@ -28,22 +27,10 @@ function cookieChoice(accepted) {
   document.getElementById('cookie-banner').style.display = 'none';
   if (accepted) {
     localStorage.setItem('fg_cookie_consent', 'accepted');
-    loadAnalytics();
+    if (window.fgGrantConsent) window.fgGrantConsent();
   } else {
     localStorage.setItem('fg_cookie_consent', 'declined');
   }
-}
-
-function loadAnalytics() {
-  var gaId = 'G-KMVGE5L8JL';
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', gaId);
 }
 
 function toggleMobileNav() {

@@ -3,6 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google tag (gtag.js) + Consent Mode v2. Loads on every page view so Google's tag checker can see it.
+         Ad/analytics storage stays denied until the visitor accepts the cookie banner; an earlier
+         "accepted" choice (localStorage fg_cookie_consent) is re-applied below, before the config calls. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMVGE5L8JL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
+      window.fgGrantConsent = function () {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      };
+      try { if (localStorage.getItem('fg_cookie_consent') === 'accepted') window.fgGrantConsent(); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-KMVGE5L8JL');
+      gtag('config', 'AW-18349180655');
+    </script>
     <title>Free Trial Class &mdash; Forged Grappling, Westbury</title>
     <meta name="description" content="No-gi grappling in Westbury, five nights a week, built for complete beginners. Your first session is free. Claim your trial class." />
     <!-- Ad landing page: kept out of the index so it never competes with the homepage organically. -->
@@ -1019,7 +1046,7 @@
     </main>
 
     <!-- Cookie banner + consented GA4 come from the shared script -->
-    <script src="/shared.js"></script>
+    <script src="/shared.js?v=3"></script>
     <script>
       /* Trim the shared banner's copy for this page. The wording has to
          cover ad measurement here, since the pixel and Ads tag load on
@@ -1151,8 +1178,9 @@
       })();
 
       /* ─── CONVERSION TRACKING ───
-         Both tags are gated behind the same cookie consent as GA4, so
-         nothing loads and no event fires until a visitor accepts. */
+         The Google tag (GA4 + Ads) and its Consent Mode v2 defaults are inline in
+         <head> and load for everyone, with storage denied until the banner is
+         accepted. Only the Meta Pixel stays gated on the accepted-cookies flag. */
       var META_PIXEL_ID = "1743028710308190";
       var GOOGLE_ADS = { id: "AW-18349180655", label: "4mHFCOm5o-8cEO-Nya1E" };
 
@@ -1177,22 +1205,9 @@
           window.fbq("track", "PageView");
         }
 
-        function loadGoogleAds() {
-          if (!GOOGLE_ADS.id) return;
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = window.gtag || function () { dataLayer.push(arguments); };
-          var s = document.createElement("script");
-          s.async = true;
-          s.src = "https://www.googletagmanager.com/gtag/js?id=" + GOOGLE_ADS.id;
-          document.head.appendChild(s);
-          gtag("js", new Date());
-          gtag("config", GOOGLE_ADS.id);
-        }
-
         function start() {
           if (!hasConsent()) return;
           loadPixel();
-          loadGoogleAds();
         }
 
         start();
