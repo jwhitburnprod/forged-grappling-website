@@ -3,6 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google tag (gtag.js) + Consent Mode v2. Loads on every page view so Google's tag checker can see it.
+         Ad/analytics storage stays denied until the visitor accepts the cookie banner; an earlier
+         "accepted" choice (localStorage fg_cookie_consent) is re-applied below, before the config calls. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMVGE5L8JL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
+      window.fgGrantConsent = function () {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      };
+      try { if (localStorage.getItem('fg_cookie_consent') === 'accepted') window.fgGrantConsent(); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-KMVGE5L8JL');
+      gtag('config', 'AW-18349180655');
+    </script>
     <title>Thank You &mdash; Forged Grappling, Westbury</title>
     <meta name="description" content="Thanks for training at Forged Grappling in Westbury. If your time here has been worth it, a quick review helps other people in the area find us." />
     <meta name="robots" content="noindex, follow" />

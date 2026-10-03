@@ -78,3 +78,44 @@
 .data-table th { background: var(--green-tint); border: 1px solid var(--green-border); padding: 0.75rem 1rem; text-align: left; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-light); white-space: nowrap; }
 .data-table td { border: 1px solid var(--iron-border); padding: 0.75rem 1rem; color: var(--brushed); vertical-align: top; line-height: 1.6; }
 .data-table tr:hover td { background: var(--iron-mid); }
+
+/* ─── SERVICE PAGES (/timetable/, /prices/, /what-to-expect/) ─── */
+.policy-body .page-cta { background: var(--iron-mid); border: 1px solid var(--green-border); padding: 2rem; margin: 2.5rem 0 0; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.page-cta-title { font-family: 'Manrope', sans-serif; font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.35rem; }
+.policy-body .page-cta p { margin-bottom: 0; font-size: 0.88rem; max-width: 480px; }
+.policy-body .page-cta .btn-green { border-bottom: none; color: var(--white); }
+.page-cta--top { margin: 0 0 3rem !important; }
+@media (max-width: 640px) { .policy-body .page-cta { padding: 1.5rem; } .policy-body .page-cta .btn-green { width: 100%; text-align: center; } }
+
+.sched-grid { display: flex; flex-direction: column; gap: 1rem; margin: 1.25rem 0 0.5rem; }
+.sched-item { background: var(--iron-mid); border: 1px solid var(--iron-border); padding: 1.4rem 1.5rem; }
+.sched-item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.sched-item-title { font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); }
+.sched-item-time { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-light); white-space: nowrap; }
+.policy-body .sched-item p { margin-bottom: 0; font-size: 0.9rem; }
+.week-table { min-width: 0; }
+.week-table td:first-child, .week-table th:first-child { white-space: nowrap; color: var(--white); font-weight: 500; }
+
+.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0 1.5rem; }
+@media (max-width: 800px) { .price-grid { grid-template-columns: 1fr; } }
+.price-card { background: var(--iron-mid); border: 1px solid var(--iron-border); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; position: relative; }
+.price-card--best { border-color: var(--green-border); background: linear-gradient(180deg, var(--green-tint), var(--iron-mid) 55%); }
+.price-card-flag { position: absolute; top: 0; right: 0; background: var(--green); color: var(--white); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.3rem 0.7rem; }
+.price-card-name { font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.9rem; }
+.price-card-price { font-family: 'Manrope', sans-serif; color: var(--white); line-height: 1; margin-bottom: 0.9rem; }
+.price-card-amount { font-size: 2.6rem; font-weight: 800; }
+.price-card-unit { font-size: 0.8rem; font-weight: 500; color: var(--silver); margin-left: 0.35rem; }
+.policy-body .price-card > p { font-size: 0.88rem; line-height: 1.6; }
+.policy-body .price-card ul { margin: 0.25rem 0 0; gap: 0.5rem; }
+.policy-body .price-card ul li { font-size: 0.86rem; }
+
+.step-list { list-style: none; counter-reset: step; margin: 1.25rem 0 1.5rem; display: flex; flex-direction: column; gap: 1rem; padding: 0; }
+.policy-body ol.step-list { margin: 1.25rem 0 1.5rem; padding: 0; list-style: none; }
+.policy-body .step-list li { display: block; counter-increment: step; position: relative; padding: 1.2rem 1.25rem 1.2rem 4rem; background: var(--iron-mid); border: 1px solid var(--iron-border); font-size: 0.92rem; }
+.policy-body .step-list li::before { content: counter(step); position: absolute; left: 1.25rem; top: 1.1rem; width: 1.9rem; height: 1.9rem; margin: 0; border-radius: 50%; background: var(--green); color: var(--white); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; }
+.policy-body .step-list li strong { display: block; font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 800; margin-bottom: 0.2rem; }
+.bring-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0 1.5rem; }
+@media (max-width: 640px) { .bring-grid { grid-template-columns: 1fr; } }
+.bring-box { background: var(--iron-mid); border: 1px solid var(--iron-border); padding: 1.4rem 1.5rem; }
+.bring-box h3 { margin-top: 0; text-transform: uppercase; letter-spacing: 0.05em; }
+.policy-body .bring-box ul { margin-bottom: 0; }

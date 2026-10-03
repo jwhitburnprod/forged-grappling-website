@@ -16,9 +16,11 @@
     '</div>';
   document.body.appendChild(banner);
 
+  // Pages with the head snippet (window.fgGrantConsent) re-apply an earlier "accepted" choice
+  // themselves. Pages without it (the /free-trial/ ad LP) keep the old consent-gated GA4 load.
   var consent = localStorage.getItem('fg_cookie_consent');
   if (consent === 'accepted') {
-    loadAnalytics();
+    if (!window.fgGrantConsent) loadAnalytics();
   } else if (!consent) {
     banner.style.display = 'block';
   }
@@ -28,12 +30,13 @@ function cookieChoice(accepted) {
   document.getElementById('cookie-banner').style.display = 'none';
   if (accepted) {
     localStorage.setItem('fg_cookie_consent', 'accepted');
-    loadAnalytics();
+    if (window.fgGrantConsent) window.fgGrantConsent(); else loadAnalytics();
   } else {
     localStorage.setItem('fg_cookie_consent', 'declined');
   }
 }
 
+// Legacy loader, only reached on pages without the head snippet (see above).
 function loadAnalytics() {
   var gaId = 'G-KMVGE5L8JL';
   var s = document.createElement('script');

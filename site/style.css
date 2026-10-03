@@ -2249,7 +2249,8 @@ footer {
 }
 .footer-legal {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
 }
 .footer-legal a {
   font-size: 0.72rem;
