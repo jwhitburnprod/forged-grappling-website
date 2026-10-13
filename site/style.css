@@ -335,6 +335,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
   padding: 0 5rem;
   background: rgba(13, 15, 15, 0.95);
   backdrop-filter: blur(12px);
@@ -427,6 +428,19 @@ h4 {
 }
 .hamburger.open span:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
+}
+/* Narrower desktops: tighten the nav so the logo and links both fit */
+@media (max-width: 1320px) {
+  #site-nav {
+    padding: 0 2.5rem;
+    gap: 1.5rem;
+  }
+  .nav-right {
+    gap: 1.5rem;
+  }
+  .nav-links {
+    gap: 1.25rem;
+  }
 }
 @media (max-width: 1100px) {
   #site-nav {
@@ -1434,6 +1448,48 @@ h4 {
   width: 76%; /* fallback; set precisely by script.js from FOUNDING_TOTAL/FOUNDING_SPOTS_LEFT */
   background: var(--green-bright);
   border-radius: 2px;
+}
+
+/* Audience groups: "Adults memberships" / "Kids memberships" */
+.pricing-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.pricing-group + .pricing-group {
+  margin-top: 1.5rem;
+}
+.pricing-group-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--white);
+}
+.pricing-group-title::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--green-bright);
+  margin: 0.5rem auto 0;
+}
+.pricing-group-intro {
+  max-width: 640px;
+  margin: 0 auto 0.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--brushed);
+  line-height: 1.7;
+}
+/* Kids descriptions run longer than the adult ones; reserve four lines on
+   the side-by-side layout so the price rows still line up across cards. */
+@media (min-width: 901px) {
+  .pricing-compare--kids .pricing-tier-desc {
+    min-height: 5.2em;
+  }
 }
 
 /* Three tiers */
