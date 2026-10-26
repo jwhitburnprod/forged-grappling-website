@@ -1,0 +1,429 @@
+/* Welcome pages (/welcome/, /welcome-kids/, /welcome-trial/).
+   Same palette, fonts and card idiom as /free-trial/. Loads after shared.css
+   (which supplies the reset, focus states and cookie banner). */
+
+.wl {
+  --wl-black: #0A0D0A;
+  --wl-green: #1C5A2F;
+  --wl-green-bright: #2E8B47;
+  --wl-check: #3FBF63;
+  --wl-line: rgba(255, 255, 255, 0.09);
+  --wl-body: #C9CFC9;
+  --wl-muted: rgba(201, 207, 201, 0.72);
+
+  background:
+    radial-gradient(110% 58% at 50% 2%, rgba(46, 139, 71, 0.07) 0%, transparent 82%),
+    radial-gradient(150% 90% at 50% 0%, rgba(28, 90, 47, 0.10) 0%, transparent 85%),
+    linear-gradient(180deg, #0E1F17 0%, #0B1410 38%, #0A0D0A 72%, #0A0D0A 100%);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  color: var(--wl-body);
+}
+body.wl-body { background: #0A0D0A; -webkit-font-smoothing: antialiased; }
+
+.wl-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 190px 190px;
+}
+
+.wl-wrap {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.wl-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ─── MASTHEAD (no links) ─── */
+.wl-masthead { display: flex; justify-content: center; padding: 1.5rem 1.25rem 0; }
+.wl-mark { display: flex; align-items: center; gap: 0.7rem; }
+.wl-shield { display: block; width: auto; height: 44px; flex-shrink: 0; }
+.wl-mark-stack { display: flex; flex-direction: column; gap: 0.22rem; }
+.wl-mark-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.15;
+}
+.wl-mark-text span { color: var(--wl-green-bright); }
+.wl-locale {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--wl-check);
+}
+
+/* ─── HERO ─── */
+.wl-hero { padding: 2.2rem 0 0; text-align: center; }
+.wl-eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(46, 139, 71, 0.14);
+  border: 1px solid rgba(63, 191, 99, 0.38);
+  border-radius: 999px;
+  padding: 0.32rem 0.9rem;
+  margin-bottom: 0.9rem;
+}
+.wl-h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.98;
+  font-size: clamp(2.6rem, 13vw, 4.2rem);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.wl-lead {
+  font-size: clamp(1rem, 3.8vw, 1.15rem);
+  line-height: 1.55;
+  color: var(--wl-body);
+  max-width: 34rem;
+  margin: 0 auto;
+  text-wrap: pretty;
+}
+
+/* ─── SECTIONS ─── */
+.wl-section { padding-top: 3rem; }
+.wl-section--tight { padding-top: 2rem; }
+.wl-h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.04;
+  font-size: clamp(1.6rem, 7vw, 2.2rem);
+  color: #fff;
+  margin-bottom: 0.7rem;
+  text-wrap: balance;
+}
+.wl-intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--wl-body);
+  margin-bottom: 1.3rem;
+  text-wrap: pretty;
+}
+.wl-body-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--wl-body);
+  text-wrap: pretty;
+}
+.wl-body-text strong { color: #fff; font-weight: 600; }
+.wl-small {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--wl-muted);
+}
+.wl-p-gap { margin-top: 0.9rem; }
+.wl-small--gap { margin-top: 0.9rem; }
+.wl-parking { margin-top: 0.8rem; }
+.wl-parking strong { color: #fff; font-weight: 600; }
+.wl a:not(.wl-btn) {
+  color: var(--wl-check);
+  text-decoration: underline;
+  text-decoration-color: rgba(63, 191, 99, 0.45);
+  text-underline-offset: 3px;
+}
+.wl a:not(.wl-btn):hover { text-decoration-color: var(--wl-check); }
+
+/* ─── CARD ─── */
+.wl-card {
+  position: relative;
+  padding: 1.7rem 1.4rem 1.5rem;
+  background:
+    radial-gradient(90% 60% at 50% 0%, rgba(46, 139, 71, 0.18) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(20, 40, 27, 0.62) 0%, rgba(10, 13, 10, 0.55) 100%);
+  border: 1px solid var(--wl-line);
+}
+.wl-card::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wl-green), var(--wl-check), var(--wl-green));
+}
+.wl-card + .wl-card { margin-top: 1rem; }
+.wl-card-h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+
+/* ─── GREEN CHECK LIST ─── */
+.wl-checks { list-style: none; display: grid; gap: 0.75rem; }
+.wl-checks li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--wl-body);
+}
+.wl-checks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233FBF63' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")
+    center / 72% no-repeat,
+    rgba(63, 191, 99, 0.16);
+  border: 1px solid rgba(63, 191, 99, 0.5);
+}
+.wl-checks strong { color: #fff; font-weight: 600; }
+.wl-guarantee {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--wl-line);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--wl-muted);
+}
+
+/* ─── BUTTONS ─── */
+.wl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.9rem 1.2rem;
+  text-align: center;
+  background: var(--wl-green);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  border: 0;
+  box-shadow: 0 10px 30px rgba(28, 90, 47, 0.32);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.wl-btn:hover {
+  background: var(--wl-green-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(46, 139, 71, 0.4);
+}
+.wl-btn:active { transform: translateY(0); }
+.wl-btn--ghost {
+  background: transparent;
+  border: 1px solid rgba(63, 191, 99, 0.5);
+  box-shadow: none;
+  color: #fff;
+}
+.wl-btn--ghost:hover { background: rgba(46, 139, 71, 0.18); box-shadow: none; }
+.wl-btn-row { display: grid; gap: 0.7rem; margin-top: 1.1rem; }
+
+/* ─── DO THESE NOW ─── */
+.wl-steps { list-style: none; counter-reset: wl-step; display: grid; gap: 1rem; }
+.wl-step { counter-increment: wl-step; }
+.wl-step-head { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem; }
+.wl-step-head::before {
+  content: counter(wl-step);
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--wl-check);
+  color: #0A0D0A;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wl-step .wl-card-h3 { margin-bottom: 0; }
+.wl-step p { margin-bottom: 1.1rem; font-size: 1rem; line-height: 1.55; color: var(--wl-body); }
+
+/* ─── CALLOUT ─── */
+.wl-note {
+  margin-top: 1.3rem;
+  padding: 1.1rem 1.2rem;
+  background: rgba(46, 139, 71, 0.14);
+  border: 1px solid rgba(63, 191, 99, 0.38);
+}
+.wl-note strong {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+.wl-note p { font-size: 1rem; line-height: 1.55; color: var(--wl-body); }
+
+.wl-subhead {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wl-check);
+  margin: 1.8rem 0 0.8rem;
+}
+
+/* ─── TIMETABLE ─── */
+.wl-slot {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.1rem 1.2rem;
+  background: rgba(20, 40, 27, 0.45);
+  border: 1px solid var(--wl-line);
+}
+.wl-slot + .wl-slot { margin-top: 0.7rem; }
+.wl-slot-when { display: flex; flex-wrap: wrap; gap: 0.1rem 0.7rem; align-items: baseline; }
+.wl-slot-when span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wl-check);
+}
+.wl-slot-when strong { font-size: 0.95rem; font-weight: 600; color: #fff; }
+.wl-slot h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+.wl-slot p { font-size: 0.95rem; line-height: 1.5; color: var(--wl-body); }
+
+/* ─── TIMELINE ─── */
+.wl-timeline { list-style: none; position: relative; display: grid; gap: 1.5rem; padding-left: 1.7rem; }
+.wl-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.43rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--wl-check), rgba(63, 191, 99, 0.15));
+}
+.wl-timeline li { position: relative; }
+.wl-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -1.7rem;
+  top: 0.3rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--wl-black);
+  border: 2px solid var(--wl-check);
+}
+.wl-timeline h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+.wl-timeline p { font-size: 1rem; line-height: 1.6; color: var(--wl-body); text-wrap: pretty; }
+.wl-closing { margin-top: 1.6rem; font-size: 1rem; line-height: 1.6; color: #fff; text-wrap: pretty; }
+
+/* ─── QUESTIONS ─── */
+.wl-contact { display: grid; gap: 0.7rem; margin-top: 1.1rem; }
+
+/* ─── FOOTER (legal only) ─── */
+.wl-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.9rem;
+  margin-top: 3.2rem;
+  padding: 1rem 1.25rem 1.1rem;
+  border-top: 1px solid var(--wl-line);
+  background: transparent;
+  text-align: center;
+}
+.wl-footer p,
+.wl-footer a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: rgba(201, 207, 201, 0.6);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.wl-footer a:hover { color: #fff; }
+.wl-footer-legal { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; }
+
+/* Cookie banner, cut down to one strip like /free-trial/ */
+#cookie-banner {
+  padding: 0.55rem 0.9rem;
+  border-top: 1px solid rgba(63, 191, 99, 0.35);
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.45);
+}
+#cookie-banner-inner { gap: 0.5rem 1.1rem; align-items: center; justify-content: center; }
+#cookie-banner-title { display: none; }
+#cookie-banner-body {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  max-width: none;
+  color: rgba(201, 207, 201, 0.85);
+  white-space: nowrap;
+}
+#cookie-banner-actions { gap: 0.45rem; }
+#cookie-decline,
+#cookie-accept { padding: 0.4rem 0.85rem; font-size: 0.72rem; letter-spacing: 0.02em; white-space: nowrap; }
+@media (max-width: 640px) {
+  #cookie-banner-inner { flex-direction: column; text-align: center; gap: 0.5rem; }
+  #cookie-banner-actions { width: auto; }
+  #cookie-decline, #cookie-accept { flex: 0 0 auto; }
+}
+
+/* ─── LARGER SCREENS ─── */
+@media (min-width: 700px) {
+  .wl-wrap { padding: 0 1.5rem; }
+  .wl-hero { padding-top: 3rem; }
+  .wl-section { padding-top: 3.6rem; }
+  .wl-card { padding: 2rem 1.9rem 1.8rem; }
+  .wl-btn-row { grid-template-columns: repeat(2, 1fr); }
+  .wl-contact { grid-template-columns: repeat(2, 1fr); }
+  .wl-slot { grid-template-columns: 11rem 1fr; gap: 1.2rem; align-items: start; }
+  .wl-slot-when { flex-direction: column; gap: 0.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wl-btn { transition: none; }
+  .wl-btn:hover { transform: none; }
+}

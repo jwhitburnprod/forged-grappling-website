@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ============================================================
+         PAGE CONFIG: /welcome-kids/ (kids recurring memberships)
+         Replace anything still in [BRACKETS], brackets included.
+         Shared values (MatTrack and community links, address, parking,
+         contact, pixel ID) live in /welcome-config.js.
+         ============================================================ -->
+    <script>
+      window.WELCOME_PAGE = {
+        /* Meta Pixel event for this page, fired once per visit */
+        PIXEL_EVENT: "Subscribe",
+
+        /* Finishes the sentence "Your first payment will be taken ...".
+           Example: "on the 1st of next month" */
+        FIRST_PAYMENT_DATE_NOTE: "[FIRST_PAYMENT_DATE_NOTE]",
+
+        /* Links to the two policies */
+        CODE_OF_CONDUCT_URL: "[CODE_OF_CONDUCT_URL]",
+        SAFEGUARDING_URL: "[SAFEGUARDING_URL]",
+
+        /* Answer to "Can I stay and watch?". One or two full sentences.
+           Example: "Yes, you are welcome to watch from the side of the mats." */
+        PARENT_POLICY: "[PARENT_POLICY]"
+      };
+    </script>
+
+    <!-- Google tag (gtag.js) + Consent Mode v2. Loads on every page view so Google's tag checker can see it.
+         Ad/analytics storage stays denied until the visitor accepts the cookie banner; an earlier
+         "accepted" choice (localStorage fg_cookie_consent) is re-applied below, before the config calls. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMVGE5L8JL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
+      window.fgGrantConsent = function () {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      };
+      try { if (localStorage.getItem('fg_cookie_consent') === 'accepted') window.fgGrantConsent(); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-KMVGE5L8JL');
+      gtag('config', 'AW-18349180655');
+    </script>
+
+    <title>Welcome to Forged Kids | Forged Grappling</title>
+    <meta name="description" content="Welcome to Forged Grappling kids. Here is what to do next and what to expect at your child's first class." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://forgedgrappling.co.uk/welcome-kids/" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0A0D0A" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/shared.css" />
+    <link rel="stylesheet" href="/welcome.css" />
+  </head>
+
+  <body class="wl-body">
+    <main class="wl">
+      <div class="wl-grain" aria-hidden="true"></div>
+
+      <div class="wl-masthead">
+        <div class="wl-mark">
+          <img class="wl-shield" src="/lp-logo.png" alt="Forged Grappling" width="236" height="220" decoding="async" />
+          <div class="wl-mark-stack">
+            <div class="wl-mark-text">Forged <span>Grappling</span></div>
+            <p class="wl-locale">Westbury, Wiltshire</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wl-wrap">
+
+        <!-- ─── 1. CONFIRMATION ─── -->
+        <section class="wl-hero" aria-labelledby="confirm-h">
+          <p class="wl-eyebrow">Kids membership confirmed</p>
+          <h1 class="wl-h1" id="confirm-h">You&rsquo;re in</h1>
+          <p class="wl-lead">
+            Welcome to Forged. Here is what to do now, and everything you need for your child&rsquo;s first class.
+          </p>
+        </section>
+
+        <section class="wl-section wl-section--tight" aria-label="Your payment">
+          <div class="wl-card">
+            <ul class="wl-checks">
+              <li>Your Direct Debit is set up.</li>
+              <li>Your first payment will be taken <span data-cfg="FIRST_PAYMENT_DATE_NOTE">[FIRST_PAYMENT_DATE_NOTE]</span>.</li>
+              <li>It will show on your bank statement as <strong>GoCardless</strong>.</li>
+            </ul>
+            <p class="wl-guarantee">
+              Every payment is covered by the Direct Debit Guarantee, so if one is ever taken in error you are
+              entitled to a full and immediate refund from your bank.
+            </p>
+          </div>
+        </section>
+
+        <!-- ─── 2. DO THESE NOW ─── -->
+        <section class="wl-section" aria-labelledby="now-h">
+          <h2 class="wl-h2" id="now-h">Do these now</h2>
+          <p class="wl-intro">Two quick jobs. Do them on your phone before you put it down.</p>
+
+          <ol class="wl-steps" role="list">
+            <li class="wl-step wl-card">
+              <div class="wl-step-head"><h3 class="wl-card-h3">Set up MatTrack</h3></div>
+              <p>This is how your child is signed in and out of every class. Get it set up now so it is ready on the day.</p>
+              <a class="wl-btn" data-cfg-href="MATTRACK_URL" href="#" target="_blank" rel="noopener">Set up MatTrack<span class="wl-sr"> (opens in a new tab)</span></a>
+            </li>
+            <li class="wl-step wl-card">
+              <div class="wl-step-head"><h3 class="wl-card-h3">Join the community platform</h3></div>
+              <p>This is where families and coaches keep in touch. Join now and say hello.</p>
+              <a class="wl-btn" data-cfg-href="COMMUNITY_URL" href="#" target="_blank" rel="noopener">Join the community<span class="wl-sr"> (opens in a new tab)</span></a>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ─── 3. FIRST CLASS ─── -->
+        <section class="wl-section" aria-labelledby="first-h">
+          <h2 class="wl-h2" id="first-h">Your child&rsquo;s first class</h2>
+          <p class="wl-intro">No experience needed. It is normal for children to feel nervous before their first class, and the coaches are used to it.</p>
+
+          <div class="wl-card">
+            <h3 class="wl-card-h3">When</h3>
+            <p class="wl-body-text"><strong>Tuesdays and Thursdays, 5pm to 5.45pm.</strong><br />For ages 7 to 15.</p>
+          </div>
+
+          <div class="wl-note">
+            <strong>Arrive 10 minutes early</strong>
+            <p>That gives us time to finish a quick medical and media form with you and introduce your child to the coach.</p>
+          </div>
+
+          <h3 class="wl-subhead">Signing in and out</h3>
+          <div class="wl-card">
+            <p class="wl-body-text">We use MatTrack check-ins. Check your child in when you arrive and check them out when you collect them, every class.</p>
+          </div>
+
+          <h3 class="wl-subhead">What to wear and bring</h3>
+          <div class="wl-card">
+            <ul class="wl-checks">
+              <li>Shorts or sports leggings</li>
+              <li>A rashguard or a fitted t-shirt</li>
+              <li>A bottle of water</li>
+              <li>No jewellery, so take it off or leave it at home</li>
+              <li>Short nails, and hair tied back if it is long</li>
+            </ul>
+          </div>
+
+          <h3 class="wl-subhead">Where to find us</h3>
+          <div class="wl-card">
+            <p class="wl-body-text">Forged Grappling<br /><span data-cfg="ADDRESS">[ADDRESS]</span></p>
+            <p class="wl-small wl-parking"><strong>Parking:</strong> <span data-cfg="PARKING_NOTE">[PARKING_NOTE]</span></p>
+            <div class="wl-btn-row">
+              <a class="wl-btn wl-btn--ghost" data-map href="#" target="_blank" rel="noopener">Open in Maps<span class="wl-sr"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ─── 4. LOOKING AFTER YOUR CHILD ─── -->
+        <section class="wl-section" aria-labelledby="safe-h">
+          <h2 class="wl-h2" id="safe-h">Looking after your child</h2>
+
+          <div class="wl-card">
+            <ul class="wl-checks">
+              <li>Our coaches are enhanced DBS checked.</li>
+              <li>UKBJJA insurance covers all under-18s.</li>
+            </ul>
+          </div>
+
+          <div class="wl-card">
+            <h3 class="wl-card-h3">Can I stay and watch?</h3>
+            <p class="wl-body-text" data-cfg="PARENT_POLICY">[PARENT_POLICY]</p>
+          </div>
+
+          <div class="wl-card">
+            <h3 class="wl-card-h3">Our policies</h3>
+            <p class="wl-body-text">Please take a few minutes to read both.</p>
+            <div class="wl-btn-row">
+              <a class="wl-btn wl-btn--ghost" data-cfg-href="CODE_OF_CONDUCT_URL" href="#" target="_blank" rel="noopener">Parent code of conduct<span class="wl-sr"> (opens in a new tab)</span></a>
+              <a class="wl-btn wl-btn--ghost" data-cfg-href="SAFEGUARDING_URL" href="#" target="_blank" rel="noopener">Safeguarding policy<span class="wl-sr"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ─── 5. WHAT THEY LEARN FIRST ─── -->
+        <section class="wl-section" aria-labelledby="learn-h">
+          <h2 class="wl-h2" id="learn-h">What your child will learn first</h2>
+          <p class="wl-intro">We keep it simple and we keep it fun. In the first few weeks they will learn:</p>
+          <div class="wl-card">
+            <ul class="wl-checks">
+              <li>How to move around on the mats and get back up safely</li>
+              <li>How to fall without getting hurt</li>
+              <li>A few basic positions, and how to get out of them</li>
+              <li>How to train with a partner: taking turns, being kind and tapping when they need to</li>
+              <li>How to listen to the coach and follow what the group is doing</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ─── 6. THE FIRST FEW MONTHS ─── -->
+        <section class="wl-section" aria-labelledby="months-h">
+          <h2 class="wl-h2" id="months-h">How the first few months go</h2>
+          <p class="wl-intro">Do not worry about how good they are. Turning up and getting comfortable is the job.</p>
+
+          <ol class="wl-timeline" role="list">
+            <li>
+              <h3>First week</h3>
+              <p>Some children walk in and get stuck straight in. Others hold on to your leg. Both are fine. They are learning how class works and who everyone is.</p>
+            </li>
+            <li>
+              <h3>First month</h3>
+              <p>They know the routine, they know the coaches and they start to make friends. Moves that felt strange begin to feel familiar. Regular attendance is what makes this happen.</p>
+            </li>
+            <li>
+              <h3>Three months</h3>
+              <p>They are confident on the mats and they look forward to class. Techniques start to link together, and you will probably notice more confidence outside the gym too.</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ─── 7. QUESTIONS ─── -->
+        <section class="wl-section" aria-labelledby="q-h">
+          <h2 class="wl-h2" id="q-h">Questions?</h2>
+          <div class="wl-card">
+            <p class="wl-body-text">If anything is unclear, just ask. We are happy to help, and we look forward to meeting your child.</p>
+            <div class="wl-contact">
+              <a class="wl-btn wl-btn--ghost" data-cfg-href="CONTACT_EMAIL" data-scheme="mailto:" href="#">Email us</a>
+              <a class="wl-btn wl-btn--ghost" data-cfg-href="CONTACT_PHONE" data-scheme="tel:" href="#">Call <span data-cfg="CONTACT_PHONE">[CONTACT_PHONE]</span></a>
+            </div>
+            <p class="wl-small wl-small--gap"><span data-cfg="CONTACT_EMAIL">[CONTACT_EMAIL]</span></p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="wl-footer">
+        <p>&copy; Forged Grappling, Westbury BA13 3QS</p>
+        <div class="wl-footer-legal">
+          <a href="/privacy/" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="/terms/" target="_blank" rel="noopener">Terms</a>
+          <a href="/cookies/" target="_blank" rel="noopener">Cookies</a>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Order matters: config, then the cookie banner, then the page script. -->
+    <script src="/welcome-config.js?v=1"></script>
+    <script src="/shared.js?v=3"></script>
+    <script src="/welcome.js?v=1"></script>
+
+    <!-- GOOGLE ADS CONVERSION: STUB, OFF BY DEFAULT
+         Google Ads account 400-816-9511. To switch on, replace CONVERSION_LABEL
+         with the label from the conversion action's event snippet, then remove
+         the comment markers. Fires once per visit.
+    <script>
+      (function () {
+        var key = "fg_welcome_ads_fired:" + location.pathname;
+        try { if (sessionStorage.getItem(key)) return; } catch (e) {}
+        if (typeof gtag !== "function") return;
+        gtag("event", "conversion", { send_to: "AW-18349180655/CONVERSION_LABEL" });
+        try { sessionStorage.setItem(key, "1"); } catch (e) {}
+      })();
+    </script>
+    -->
+  </body>
+</html>
