@@ -1631,7 +1631,8 @@ h4 {
   background: var(--green-bright);
   margin: 0.5rem auto 0;
 }
-.pricing-group-intro {
+.pricing-group-intro,
+.pricing-group-note {
   max-width: 640px;
   margin: 0 auto 0.25rem;
   text-align: center;
@@ -1640,11 +1641,17 @@ h4 {
   color: var(--brushed);
   line-height: 1.7;
 }
-/* Kids descriptions run longer than the adult ones; reserve four lines on
-   the side-by-side layout so the price rows still line up across cards. */
+/* Tier names and descriptions wrap differently per card: stretch the cards to
+   one height and let the head absorb the slack, so the price row and list
+   start at the same height on every card (side-by-side layout only). */
 @media (min-width: 901px) {
-  .pricing-compare--kids .pricing-tier-desc {
-    min-height: 5.2em;
+  .pricing-compare.pricing-compare--adults,
+  .pricing-compare.pricing-compare--kids {
+    align-items: stretch;
+  }
+  .pricing-compare--adults .pricing-tier-head,
+  .pricing-compare--kids .pricing-tier-head {
+    flex: 1;
   }
 }
 
